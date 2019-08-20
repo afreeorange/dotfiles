@@ -1,0 +1,7 @@
+{
+    "anaconda_linting": false,
+    "anaconda_linter_underlines": false,
+    "anaconda_linter_mark_style": "none",
+    "pep8_max_line_length": 120,
+    "disable_anaconda_completion": false
+}

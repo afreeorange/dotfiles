@@ -1,0 +1,5 @@
+# When I screw up and my knowledge of git fails me
+
+rm -rf "$HOME/.yadm"
+yadm clone git@github.com:afreeorange/dotfiles.git
+yadm stash clear

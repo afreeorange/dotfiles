@@ -1,0 +1,26 @@
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore.global
+    ignorecase = false
+[user]
+	name = Nikhil Anand
+	email = mail@nikhil.io
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+    s = status
+    d = diff
+    a = add
+    c = commit
+    co = checkout
+    b = branch
+    ba = branch --all
+    r = remote --verbose
+    p = push
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true

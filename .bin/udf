@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# For "Update Dot Files"
+# Sync dotfiles to some remote repo
+
+cd $HOME
+source $HOME/.bash_colors
+
+OS=$(uname -s)
+if [ "$OS" = "Darwin" ]; then
+    echo $CYAN"✔︎  Backing up Brewfile"$STOP
+    brew bundle dump --file=~/.Brewfile --force
+fi
+
+echo $CYAN"✔︎  Attempting pull from Github"$STOP
+yadm pull origin master --quiet
+
+echo $CYAN"✔︎  Collecting any changed or deleted files"$STOP
+FILES=($(yadm status -uno --short | awk '{print $2}'))
+if [[ "${#FILES[@]}" -eq 0 ]]; then
+    echo $GREEN"🤷‍♀️ Looks like nothing's changed"$STOP
+    exit 1
+fi
+
+for FILE in ${FILES[@]}; do
+    echo $GREEN"+  Adding $HOME/$FILE"$STOP
+    yadm add "$HOME/$FILE"
+done
+
+echo $CYAN"✔︎  Committing"$STOP
+yadm commit --quiet --message "Bleh."
+
+echo $CYAN"✔︎  Attempting push to Github"$STOP
+yadm push origin master --quiet
