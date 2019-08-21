@@ -5,6 +5,7 @@
 
 cd $HOME
 source $HOME/.bash_colors
+source $HOME/.bash_excuses
 
 OS=$(uname -s)
 if [ "$OS" = "Darwin" ]; then
@@ -28,7 +29,8 @@ IFS=$'\n'; for FILE in ${FILES[@]}; do
 done
 
 echo $CYAN"✔︎  Committing"$STOP
-yadm commit --quiet --message "Bleh."
+yadm commit --quiet --message "$(random_excuse)"
 
 echo $CYAN"✔︎  Attempting push to Github"$STOP
 yadm push origin master --quiet
+
