@@ -1,5 +1,15 @@
 # When I screw up and my knowledge of git fails me
 
+TRACKED_FILES=$(yadm list)
+
+IFS=$'\n'; for FILE in $TRACKED_FILES; do
+    echo "Removing $FILE"
+    rm -rf "$FILE"
+done
+
+echo "Removing yadm folder"
 rm -rf "$HOME/.yadm"
-yadm clone git@github.com:afreeorange/dotfiles.git
-yadm stash clear
+
+echo "Cloning remote"
+yadm clone "git@github.com:afreeorange/dotfiles.git"
+

@@ -16,13 +16,13 @@ echo $CYAN"✔︎  Attempting pull from Github"$STOP
 yadm pull origin master --quiet
 
 echo $CYAN"✔︎  Collecting any changed or deleted files"$STOP
-FILES=($(yadm status -uno --short | awk '{print $2}'))
+FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
 if [[ "${#FILES[@]}" -eq 0 ]]; then
     echo $GREEN"🤷‍♀️ Looks like nothing's changed"$STOP
     exit 1
 fi
 
-for FILE in ${FILES[@]}; do
+IFS=$'\n'; for FILE in ${FILES[@]}; do
     echo $GREEN"+  Adding $HOME/$FILE"$STOP
     yadm add "$HOME/$FILE"
 done
