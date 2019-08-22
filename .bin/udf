@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# For "Update Dot Files"
-# Sync dotfiles to some remote repo
+# Pull and push changes to my dotfiles
+
+IFS=$'\n'
 
 cd $HOME
 source $HOME/.bash_colors
@@ -23,7 +24,7 @@ if [[ "${#FILES[@]}" -eq 0 ]]; then
     exit 1
 fi
 
-IFS=$'\n'; for FILE in ${FILES[@]}; do
+for FILE in ${FILES[@]}; do
     echo $GREEN"+  Adding $HOME/$FILE"$STOP
     yadm add "$HOME/$FILE"
 done
