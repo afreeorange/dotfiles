@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # When I screw up and my knowledge of git fails me
 
 TRACKED_FILES=$(yadm list)
