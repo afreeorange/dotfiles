@@ -219,9 +219,10 @@ alias drmi='docker rmi -f $(docker images -q)'
 # Git
 alias gs='git status'
 alias gd='git diff'
-alias ga='git add .'
+alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias gpom='git push origin master'
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
 
