@@ -76,8 +76,6 @@ dist
 dist/
 downloads/
 eggs/
-lib/
-lib64/
 MANIFEST
 node_modules
 parts/

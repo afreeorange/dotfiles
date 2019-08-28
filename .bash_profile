@@ -223,7 +223,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gpom='git push origin master'
-alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
+alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
 
 # Create a data URL from a file
