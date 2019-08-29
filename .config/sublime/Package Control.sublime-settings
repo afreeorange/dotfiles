@@ -41,6 +41,7 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-flow",
 		"SublimeLinter-golint",
+		"SublimeLinter-shellcheck",
 		"SublimeLinter-tslint",
 		"SublimeREPL",
 		"Sublimerge 3",
