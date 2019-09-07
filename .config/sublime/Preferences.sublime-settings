@@ -33,6 +33,7 @@
 	[
 		"Gofmt",
 		"Markdown",
+		"Python Imports Sorter",
 		"SublimeLinter-csslint",
 		"Vintage"
 	],
