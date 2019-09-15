@@ -11,7 +11,8 @@ source "$HOME/.bash_excuses"
 OS=$(uname -s)
 
 # TODO: Parse shortopts later but for now adding any argument
-# backups up the Brewfile on macOS
+# backups up the Brewfile on macOS. I add `udf -b` to fake it
+# till I make it.
 BACKUP_BREWFILE=$1
 
 if [[ "$OS" == "Darwin" && -n "$BACKUP_BREWFILE" ]]; then
