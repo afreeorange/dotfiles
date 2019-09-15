@@ -4,9 +4,9 @@
 
 IFS=$'\n'
 
-cd $HOME
-source $HOME/.bash_colors
-source $HOME/.bash_excuses
+cd "$HOME"
+source "$HOME/.bash_colors"
+source "$HOME/.bash_excuses"
 
 OS=$(uname -s)
 
@@ -14,7 +14,7 @@ OS=$(uname -s)
 # backups up the Brewfile on macOS
 BACKUP_BREWFILE=$1
 
-if [ "$OS" = "Darwin" && ! -z "$BACKUP_BREWFILE" ]; then
+if [[ "$OS" == "Darwin" && -n "$BACKUP_BREWFILE" ]]; then
     echo $CYAN"✔︎  Backing up Brewfile"$STOP
     brew bundle dump --file=~/.Brewfile --force
 fi
