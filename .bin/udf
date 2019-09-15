@@ -37,7 +37,7 @@ fi
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet
 CHANGED_FILES=($(yadm diff --name-status HEAD~1 HEAD))
-echo "${GREEN}>  ${#CHANGED_FILES[@]} file(s) have changed"
+echo "${GREEN}>  ${#CHANGED_FILES[@]} file(s) have changed since last commit"
 for FILE in "${CHANGED_FILES[@]}"; do
     echo "${GREEN}${FILE}${STOP}"
 done
