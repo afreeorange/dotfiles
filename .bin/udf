@@ -42,7 +42,7 @@ for FILE in "${CHANGED_FILES[@]}"; do
     echo "${GREEN}${FILE}${STOP}"
 done
 
-echo "${CYAN}✔︎  Collecting any changed or deleted files${STOP}"
+echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
 FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
 if [[ "${#FILES[@]}" -eq 0 ]]; then
     echo "${GREEN}🤷‍♀️ Looks like nothing's changed${STOP}"
