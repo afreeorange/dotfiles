@@ -16,9 +16,13 @@ OS=$(uname -s)
 #   adding "d" backs up platform dependencies on all OSes
 EXTRA_BACKUP_OPTION=$1
 
-if [[ "$OS" == "Darwin" && "$EXTRA_BACKUP_OPTION" == "b" ]]; then
+if [[ "$EXTRA_BACKUP_OPTION" == "b" && "$OS" == "Darwin" ]]; then
     echo "${CYAN}✔︎  Backing up Brewfile${STOP}"
     brew bundle dump --file=~/.Brewfile --force
+fi
+
+if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
+    echo "${CYAN}✔︎  Backing up dependencies${STOP}"
 fi
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
