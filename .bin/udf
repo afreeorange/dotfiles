@@ -27,14 +27,12 @@ if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
     echo "${YELLOW}+  Node${STOP}"
     "$HOME/.bin/backup-node"
 
-
     echo "${YELLOW}+  Python${STOP}"
-    OUT_FILE="$HOME/.bin/backup-node | grep \"Will write to\" | cut -d\" -f2"
+    "$HOME/.bin/backup-node"
 
+    # TODO: Only add paths output by the scripts above
     echo "$OUT_FILE"
-    # yadm add "$HOME/.platform-dependencies/*"
-
-    exit
+    yadm add -f "$HOME/.platform-dependencies/*"
 fi
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
