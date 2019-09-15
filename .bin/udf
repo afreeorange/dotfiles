@@ -23,6 +23,18 @@ fi
 
 if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
     echo "${CYAN}✔︎  Backing up dependencies${STOP}"
+
+    echo "${YELLOW}+  Node${STOP}"
+    "$HOME/.bin/backup-node"
+
+
+    echo "${YELLOW}+  Python${STOP}"
+    OUT_FILE="$HOME/.bin/backup-node | grep \"Will write to\" | cut -d\" -f2"
+
+    echo "$OUT_FILE"
+    # yadm add "$HOME/.platform-dependencies/*"
+
+    exit
 fi
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
