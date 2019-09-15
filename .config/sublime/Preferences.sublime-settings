@@ -31,11 +31,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Gofmt",
 		"Markdown",
-		"Python Imports Sorter",
-		"rainbow_csv",
-		"SublimeLinter-csslint",
 		"Vintage"
 	],
 	"node_path": "/Users/nikhil/.nvm/versions/node/v12.0.0/bin/node",

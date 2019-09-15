@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Update Dot Files
 # Pull and push changes to my dotfiles
 
 IFS=$'\n'
@@ -10,34 +11,34 @@ source "$HOME/.bash_excuses"
 
 OS=$(uname -s)
 
-# TODO: Parse shortopts later but for now adding any argument
-# backups up the Brewfile on macOS. I add `udf -b` to fake it
-# till I make it.
-BACKUP_BREWFILE=$1
+# TODO: Parse shortopts later but for now
+#   adding "b" backs up Brewfiles on macOS
+#   adding "d" backs up platform dependencies on all OSes
+EXTRA_BACKUP_OPTION=$1
 
-if [[ "$OS" == "Darwin" && -n "$BACKUP_BREWFILE" ]]; then
-    echo $CYAN"✔︎  Backing up Brewfile"$STOP
+if [[ "$OS" == "Darwin" && "$EXTRA_BACKUP_OPTION" == "b" ]]; then
+    echo "${CYAN}✔︎  Backing up Brewfile${STOP}"
     brew bundle dump --file=~/.Brewfile --force
 fi
 
-echo $CYAN"✔︎  Attempting pull from Github"$STOP
+echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet
 
-echo $CYAN"✔︎  Collecting any changed or deleted files"$STOP
+echo "${CYAN}✔︎  Collecting any changed or deleted files${STOP}"
 FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
 if [[ "${#FILES[@]}" -eq 0 ]]; then
-    echo $GREEN"🤷‍♀️ Looks like nothing's changed"$STOP
+    echo "${GREEN}🤷‍♀️ Looks like nothing's changed${STOP}"
     exit 1
 fi
 
-for FILE in ${FILES[@]}; do
-    echo $GREEN"+  Adding $HOME/$FILE"$STOP
+for FILE in "${FILES[@]}"; do
+    echo "${GREEN}+  Adding $HOME/$FILE${STOP}"
     yadm add "$HOME/$FILE"
 done
 
-echo $CYAN"✔︎  Committing"$STOP
+echo "${CYAN}✔︎  Committing${STOP}"
 yadm commit --quiet --message "$(random_excuse)"
 
-echo $CYAN"✔︎  Attempting push to Github"$STOP
+echo "${CYAN}✔︎  Attempting push to Github${STOP}"
 yadm push origin master --quiet
 
