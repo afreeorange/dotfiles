@@ -31,7 +31,6 @@ if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
     "$HOME/.bin/backup-python"
 
     # TODO: Only add paths output by the scripts above
-    echo "$OUT_FILE"
     yadm add -f "$HOME/.platform-dependencies/*"
 fi
 
