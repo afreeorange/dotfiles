@@ -37,7 +37,13 @@ fi
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet
 CHANGED_FILES=($(yadm diff --name-status HEAD~1 HEAD))
-echo "${GRAY}>  ${#CHANGED_FILES[@]} file(s) have changed since last commit"
+
+if [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
+    echo "${GRAY}🤷‍♀> Just one file changed${STOP}"
+else
+    echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
+fi
+
 for FILE in "${CHANGED_FILES[@]}"; do
     echo "${GRAY}${FILE}${STOP}"
 done
@@ -47,10 +53,13 @@ FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
 if [[ "${#FILES[@]}" -eq 0 ]]; then
     echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
     exit 1
+elif [[ "${#FILES[@]}" -eq 1 ]]; then
+    echo "${GRAY}🤷‍♀> Just one file has changed${STOP}"
+else
+    echo "${GREEN}>  ${#FILES[@]} file(s) have changed"
 fi
 
 for FILE in "${FILES[@]}"; do
-    echo "${GREEN}>  ${#FILES[@]} file(s) have changed"
     echo "${GREEN}+  Adding $HOME/$FILE${STOP}"
     yadm add "$HOME/$FILE"
 done
