@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# YUGE WIP.
+# Assume that python and pip are installed
+
+source "$HOME/.bash_colors"
+
+PYTHON_VERSION="$(python --version | cut -d' ' -f2)"
+DEPENDENCIES="$(pip freeze)"
+OUTPUT_FILE="$HOME/.platform-dependencies/python-$PYTHON_VERSION"
+
+echo "Will write to \"${CYAN}${OUTPUT_FILE}${STOP}\""
+truncate -s0 "$OUTPUT_FILE"
+
+echo "$DEPENDENCIES" > "$OUTPUT_FILE"
+echo "Done"

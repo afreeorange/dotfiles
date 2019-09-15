@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# YUGE WIP.
+# Assume that nvm and npm are installed
+
+source "$HOME/.bash_colors"
+
+if [[ -z "$NVM_BIN" ]]; then
+    echo "${RED}NVM might not be installed. Aborting.${STOP}"
+fi
+
+NODE_VERSION="$(node --version)"
+NVM_NODE_MODULES_PATH="${NVM_BIN%bin}lib/node_modules/"
+OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
+
+
+echo "Modules path is ${CYAN}${NVM_NODE_MODULES_PATH}${STOP}"
+echo "Will write to ${CYAN}${OUTPUT_FILE}${STOP}"
+truncate -s0 "$OUTPUT_FILE"
+
+DEPENDENCIES="$(npm list -g --depth 0 --parseable | grep node_modules)"
+IFS=$'\n' && for DEP in $DEPENDENCIES; do
+    echo "${DEP#$NVM_NODE_MODULES_PATH}" >> "$OUTPUT_FILE"
+done
+
+echo "Done"
