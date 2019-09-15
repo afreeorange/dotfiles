@@ -9,7 +9,12 @@ source $HOME/.bash_colors
 source $HOME/.bash_excuses
 
 OS=$(uname -s)
-if [ "$OS" = "Darwin" ]; then
+
+# TODO: Parse shortopts later but for now adding any argument
+# backups up the Brewfile on macOS
+BACKUP_BREWFILE=$1
+
+if [ "$OS" = "Darwin" && ! -z "$BACKUP_BREWFILE" ]; then
     echo $CYAN"✔︎  Backing up Brewfile"$STOP
     brew bundle dump --file=~/.Brewfile --force
 fi
