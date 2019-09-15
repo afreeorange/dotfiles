@@ -8,7 +8,7 @@ source "$HOME/.bash_colors"
 NODE_VERSION="$(node --version)"
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 
-echo "Will write to ${CYAN}${OUTPUT_FILE}${STOP}"
+echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
 truncate -s0 "$OUTPUT_FILE"
 
 DEPENDENCIES="$(npm list -g --depth 0 --parseable | grep node_modules)"
