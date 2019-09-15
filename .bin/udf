@@ -36,6 +36,11 @@ fi
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet
+CHANGED_FILES=($(yadm diff --name-status HEAD~1 HEAD))
+echo "${GREEN}>  ${#CHANGED_FILES[@]} files have changed"
+for FILE in "${CHANGED_FILES[@]}"; do
+    echo "${GREEN}${FILE}${STOP}"
+done
 
 echo "${CYAN}✔︎  Collecting any changed or deleted files${STOP}"
 FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
@@ -45,6 +50,7 @@ if [[ "${#FILES[@]}" -eq 0 ]]; then
 fi
 
 for FILE in "${FILES[@]}"; do
+    echo "${GREEN}>  ${#FILES[@]} files have changed"
     echo "${GREEN}+  Adding $HOME/$FILE${STOP}"
     yadm add "$HOME/$FILE"
 done

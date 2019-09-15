@@ -16,7 +16,6 @@ IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
     PACKAGE="$(basename "$PACKAGE_PATH")"
     VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
 
-    echo "${PACKAGE}@${VERSION}"
     echo "${PACKAGE}@${VERSION}" >> "$OUTPUT_FILE"
 done
 
