@@ -45,7 +45,7 @@ done
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
 FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
 if [[ "${#FILES[@]}" -eq 0 ]]; then
-    echo "${GREEN}🤷‍♀️ Looks like there's nothing new to push${STOP}"
+    echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
     exit 1
 fi
 
