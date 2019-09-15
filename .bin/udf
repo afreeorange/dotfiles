@@ -39,7 +39,7 @@ yadm pull origin master --quiet
 CHANGED_FILES=($(yadm diff --name-status HEAD~1 HEAD))
 
 if [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
-    echo "${GRAY}🤷‍♀> Just one file changed${STOP}"
+    echo "${GRAY}>  Just one file changed${STOP}"
 else
     echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
 fi
@@ -51,10 +51,10 @@ done
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
 FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
 if [[ "${#FILES[@]}" -eq 0 ]]; then
-    echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
+    echo "${GRAY}🤷‍♀️  Looks like there's nothing new to push${STOP}"
     exit 1
 elif [[ "${#FILES[@]}" -eq 1 ]]; then
-    echo "${GREEN}🤷‍> Just one file has changed${STOP}"
+    echo "${GREEN}>  Just one file has changed${STOP}"
 else
     echo "${GREEN}>  ${#FILES[@]} files have changed"
 fi
