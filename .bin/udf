@@ -54,9 +54,9 @@ if [[ "${#FILES[@]}" -eq 0 ]]; then
     echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
     exit 1
 elif [[ "${#FILES[@]}" -eq 1 ]]; then
-    echo "${GRAY}🤷‍♀> Just one file has changed${STOP}"
+    echo "${GREEN}🤷‍> Just one file has changed${STOP}"
 else
-    echo "${GREEN}>  ${#FILES[@]} file(s) have changed"
+    echo "${GREEN}>  ${#FILES[@]} files have changed"
 fi
 
 for FILE in "${FILES[@]}"; do
