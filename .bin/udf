@@ -11,16 +11,10 @@ source "$HOME/.bash_excuses"
 
 OS=$(uname -s)
 
-<<<<<<< HEAD
 # TODO: Parse shortopts later but for now
 #   adding "b" backs up Brewfiles on macOS
 #   adding "d" backs up platform dependencies on all OSes
 EXTRA_BACKUP_OPTION=$1
-=======
-# TODO: Parse shortopts later but for now adding any argument backups up the
-# Brewfile on macOS. I add `udf -b` to fake it till I make it.
-BACKUP_BREWFILE=$1
->>>>>>> a545dfa3e55a1a50d5568bba6b4f7c3bc10ce2ea
 
 if [[ "$EXTRA_BACKUP_OPTION" == "b" && "$OS" == "Darwin" ]]; then
     echo "${CYAN}✔︎  Backing up Brewfile${STOP}"
