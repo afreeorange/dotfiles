@@ -11,11 +11,12 @@ OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
 truncate -s0 "$OUTPUT_FILE"
 
-DEPENDENCIES="$(npm list -g --depth 0 --parseable | grep node_modules)"
-IFS=$'\n' && for DEP in $DEPENDENCIES; do
-    PACKAGE="$(basename "$DEP")"
-    VERSION="$(cat $DEP/package.json | grep \"version\" | cut -d\" -f4)"
+PACKAGE_PATHS="$(npm list -g --depth 0 --parseable | grep node_modules)"
+IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
+    PACKAGE="$(basename "$PACKAGE_PATH")"
+    VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
 
+    echo "${PACKAGE}@${VERSION}"
     echo "${PACKAGE}@${VERSION}" >> "$OUTPUT_FILE"
 done
 
