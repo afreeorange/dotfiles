@@ -22,7 +22,6 @@
 		"Gitignore",
 		"Gofmt",
 		"Golang Build",
-		"isort",
 		"JsPrettier",
 		"Liquid",
 		"MarkdownEditing",
@@ -32,6 +31,7 @@
 		"Package Control",
 		"Protobuf Syntax Hightlighting",
 		"Pug",
+		"Python Imports Sorter",
 		"rainbow_csv",
 		"Sass",
 		"SCSS",
@@ -51,6 +51,7 @@
 		"Sublimerge 3",
 		"Table Editor",
 		"TypeScript",
+		"WordCount",
 		"Wrap Plus"
 	]
 }
