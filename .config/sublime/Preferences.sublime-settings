@@ -25,13 +25,12 @@
 		"build"
 	],
 	"font_face": "Operator Mono Lig Book",
-	"font_size": 19,
+	"font_size": 20,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Flow",
 		"Markdown",
 		"Vintage"
 	],
