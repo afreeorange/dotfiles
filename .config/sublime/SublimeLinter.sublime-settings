@@ -6,6 +6,12 @@
         },
         "sass": {
             "executable": "$NVM_BIN/sass-lint"
+        },
+        "eslint": {
+            "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/eslint"
+        },
+        "node": {
+            "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/node"
         }
     }
 }
