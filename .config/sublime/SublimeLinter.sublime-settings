@@ -10,9 +10,6 @@
         "eslint": {
             "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/eslint"
         },
-        "node": {
-            "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/node"
-        },
         "flow": {
             "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/flow"
         }
@@ -21,6 +18,7 @@
         "linux": [],
         "osx": [
             "/usr/bin/",
+            "$HOME/.nvm/versions/node/v12.0.0/bin/"
         ],
         "windows": []
     }
