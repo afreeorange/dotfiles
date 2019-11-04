@@ -12,6 +12,16 @@
         },
         "node": {
             "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/node"
+        },
+        "flow": {
+            "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/flow"
         }
+    },
+    "paths": {
+        "linux": [],
+        "osx": [
+            "/usr/bin/",
+        ],
+        "windows": []
     }
 }
