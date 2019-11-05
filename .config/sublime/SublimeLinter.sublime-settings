@@ -1,24 +1,20 @@
 // SublimeLinter Settings - User
 {
     "linters": {
-        "flake8": {
-            "executable": "$HOME/.pyenv/shims/flake8"
-        },
-        "sass": {
-            "executable": "$NVM_BIN/sass-lint"
-        },
         "eslint": {
-            "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/eslint"
-        },
-        "flow": {
-            "executable": "$HOME/.nvm/versions/node/v12.0.0/bin/flow"
+            "env": {
+                "PATH": "$NVM_BIN/"
+            },
         }
     },
     "paths": {
-        "linux": [],
+        "linux": [
+            "$NVM_BIN/",
+            "$HOME/.pyenv/shims/"
+        ],
         "osx": [
-            "/usr/bin/",
-            "$HOME/.nvm/versions/node/v12.0.0/bin/"
+            "$NVM_BIN/",
+            "$HOME/.pyenv/shims/"
         ],
         "windows": []
     }
