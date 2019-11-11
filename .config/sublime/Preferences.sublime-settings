@@ -1,53 +1,53 @@
 {
-    "WrapPlus.wrap_width": 79,
-    "always_show_minimap_viewport": true,
-    "bold_folder_labels": true,
-    "color_scheme": "Packages/Agila Theme/Agila Cobalt.tmTheme",
-    "draw_minimap_border": true,
-    "enable_inline_error_tips": true,
-    "file_exclude_patterns":
-    [
-        ".DS_Store",
-        "Thumbs.db",
-        "*.pid",
-        "*.pyc"
-    ],
-    "folder_exclude_patterns":
-    [
-        ".git",
-        "__pycache__",
-        ".sass-cache",
-        "node_modules",
-        "venv",
-        "_site",
-        ".mypy_cache",
-        ".pytest_cache",
-        "build"
-    ],
-    "font_face": "Operator Mono Lig Book",
-    "font_size": 23,
-    "gpu_window_buffer": false,
-    "highlight_line": true,
-    "highlight_modified_tabs": true,
-    "ignored_packages":
-    [
-        "Markdown",
-        "Vintage"
-    ],
-    "node_path": "/Users/nikhil/.nvm/versions/node/v12.0.0/bin/node",
-    "rulers":
-    [
-        120,
-        100,
-        79
-    ],
-    "scroll_past_end": true,
-    "show_git_status": false,
-    "tab_size": 4,
-    "theme": "Agila Cobalt.sublime-theme",
-    "theme_agila_camouflage": true,
-    "theme_agila_compact_sidebar": true,
-    "theme_agila_sidebar_font_big": true,
-    "theme_agila_sidebar_xsmall": true,
-    "translate_tabs_to_spaces": true
+	"WrapPlus.wrap_width": 79,
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Agila Theme/Agila Cobalt.tmTheme",
+	"draw_minimap_border": true,
+	"enable_inline_error_tips": true,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"Thumbs.db",
+		"*.pid",
+		"*.pyc"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		"__pycache__",
+		".sass-cache",
+		"node_modules",
+		"venv",
+		"_site",
+		".mypy_cache",
+		".pytest_cache",
+		"build"
+	],
+	"font_face": "Operator Mono Lig Book",
+	"font_size": 18,
+	"gpu_window_buffer": false,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"node_path": "/Users/nikhil/.nvm/versions/node/v12.0.0/bin/node",
+	"rulers":
+	[
+		120,
+		100,
+		79
+	],
+	"scroll_past_end": true,
+	"show_git_status": false,
+	"tab_size": 4,
+	"theme": "Agila Cobalt.sublime-theme",
+	"theme_agila_camouflage": true,
+	"theme_agila_compact_sidebar": true,
+	"theme_agila_sidebar_font_big": true,
+	"theme_agila_sidebar_xsmall": true,
+	"translate_tabs_to_spaces": true
 }
