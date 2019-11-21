@@ -226,11 +226,6 @@ alias gp='git pull'
 alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
 
-# TODO: Centralize this some place
-if [[ $(uname) == "Darwin" ]]; then
-    alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin'
-fi
-
 # Create a data URL from a file
 function dataurl() {
     local mimeType=$(file -b --mime-type "$1");
