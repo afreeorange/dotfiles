@@ -1,8 +1,5 @@
 {
     "trailingComma": "all",
-    "printWidth": 100,
-    "semi": true,
-    "singleQuote": false,
-    "parser": "flow"
+    "semi": true
 }
 
