@@ -21,6 +21,3 @@
     ba = branch --all
     r = remote --verbose
     p = push
-[credential]
-	helper = !aws codecommit credential-helper $@
-	UseHttpPath = true
