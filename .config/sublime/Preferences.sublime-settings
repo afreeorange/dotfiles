@@ -2,11 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-<<<<<<< HEAD
 	"color_scheme": "Packages/ayu/ayu-light.sublime-color-scheme",
-=======
-	"color_scheme": "Packages/Agila Theme/Agila Cobalt.tmTheme",
->>>>>>> 6679e756e9e7f57c6cc630b7a4e5cee37f001219
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
 	"file_exclude_patterns":
@@ -29,7 +25,7 @@
 		"build"
 	],
 	"font_face": "Operator Mono Lig Book",
-	"font_size": 22,
+	"font_size": 21,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -47,7 +43,7 @@
 	"scroll_past_end": true,
 	"show_git_status": false,
 	"tab_size": 4,
-	"theme": "Agila Cobalt.sublime-theme",
+	"theme": "ayu-light.sublime-theme",
 	"theme_agila_camouflage": true,
 	"theme_agila_compact_sidebar": true,
 	"theme_agila_sidebar_font_big": true,
