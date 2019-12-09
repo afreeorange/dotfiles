@@ -70,9 +70,9 @@ export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 # Base16 <3 <3 <3
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
-[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-eval "$("$BASE16_SHELL/profile_helper.sh")"
-base16_material-lighter
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+    eval "$("$BASE16_SHELL/profile_helper.sh")"
+base16_solarized-light
 
 # --- LANGUAGE CONFIGS ---
 
