@@ -24,13 +24,8 @@
 		".pytest_cache",
 		"build"
 	],
-<<<<<<< HEAD
 	"font_face": "Dank Mono",
 	"font_size": 18,
-=======
-	"font_face": "Operator Mono Lig Book",
-	"font_size": 19,
->>>>>>> 99b5cff9771919e6c15817ef62386f2c6a11a04e
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
