@@ -18,6 +18,9 @@ set cursorline
 " Show a ruler at various widths
 set colorcolumn=79,100,120
 
+" Force vertical diffing
+set diffopt+=vertical
+
 " In netrw, don't show the banner
 let g:netrw_banner=0
 
