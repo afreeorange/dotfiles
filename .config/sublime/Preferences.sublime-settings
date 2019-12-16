@@ -2,7 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Agila Theme/Agila Light Solarized.tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Lighter.tmTheme",
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
 	"file_exclude_patterns":
@@ -24,13 +24,14 @@
 		".pytest_cache",
 		"build"
 	],
-	"font_face": "Operator Mono Lig Book",
-	"font_size": 21,
+	"font_face": "Dank Mono",
+	"font_size": 19,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"isort",
 		"Markdown",
 		"Vintage"
 	],

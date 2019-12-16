@@ -295,9 +295,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>1960 1348 770 429 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>851 410 1050 767 0 0 1920 1177 </string>
+	<string>0 0 1680 1050 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 1356 1050 767 0 0 3840 2137 </string>
+	<string>0 802 1050 767 0 0 2560 1577 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 1346 1065 767 0 0 3840 2137 </string>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0</key>
@@ -886,7 +886,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>OperatorMono-Book 24</string>
+			<string>DankMono-Regular 22</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -956,14 +956,21 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.2.9</string>
+		<string>3.3.4</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
+		<string>3.2.9</string>
 		<string>3.3.0</string>
 		<string>3.3.2</string>
-		<string>3.3.4</string>
+	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Dank Mono</string>
+		<string>PT Mono</string>
+		<string>OCR A Std</string>
+		<string>Letter Gothic Std</string>
 	</array>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
 	<true/>
@@ -972,16 +979,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {3840, 2160}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{357, 980}</string>
+		<string>{275, 828}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>51C2E94B-2935-46D7-85FD-05EF2E557867</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>20</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1698,6 +1705,9 @@
 	</array>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>conflict</string>
+		<string>merge</string>
+		<string>list</string>
 		<string>15068_FFFFFF</string>
 		<string>quantity</string>
 	</array>
@@ -1755,7 +1765,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-27T10:40:38Z</date>
+	<date>2019-12-12T02:52:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
