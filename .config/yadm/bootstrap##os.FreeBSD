@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# shellcheck source=/dev/null
+. "$HOME/.bash_colors"
+
+echo "${CYAN}✔︎ Bootstrapping yadm${STOP}"
+cd "$HOME" || return
+
+echo "${CYAN}✔︎ Initializing submodules${STOP}"
+yadm submodule update --recursive --init
+
+pkg update
+pkg install --yes \
+    bat \
+    cowsay \
+    curl \
+    fd-find \
+    fzf \
+    git \
+    neovim \
+    node \
+    rvm \
+    ruby \
+    the_silver_searcher
+
+echo "${CYAN}✔︎ Configuring vim${STOP}"
+mkdir -p "$HOME/.vim/plugged"
+curl --silent -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+$VIM +PlugClean +PlugInstall +PlugUpdate +qall
+
+echo "${CYAN}✔︎ Configuring NeoVim${STOP}"
+curl --silent -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
