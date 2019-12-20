@@ -72,7 +72,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
-base16_solarized-light
+base16_material-lighter
 
 # --- LANGUAGE CONFIGS ---
 
@@ -94,6 +94,10 @@ export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # --- COMPLETIONS ---
+
+if [[ $(uname) == "Darwin" ]]; then
+    source $(brew --prefix)/etc/bash_completion
+fi
 
 command -v complete >> /dev/null 2>&1 && {
     for COMPLETION in $HOME/.completions/*; do

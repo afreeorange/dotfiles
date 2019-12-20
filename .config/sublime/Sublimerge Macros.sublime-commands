@@ -1,5 +1,6 @@
 [
     {
+        "caption": "Sublimerge: Show Uncommited Changes...",
         "command": "sublimerge_macro",
         "args": {
             "run": 0
@@ -7,6 +8,7 @@
         "caption": "Sublimerge: Show Uncommited Changes..."
     },
     {
+        "caption": "Sublimerge: Compare to Other Branch...",
         "command": "sublimerge_macro",
         "args": {
             "run": 1
@@ -14,6 +16,7 @@
         "caption": "Sublimerge: Compare to Other Branch..."
     },
     {
+        "caption": "Sublimerge: Show Unpushed Changes...",
         "command": "sublimerge_macro",
         "args": {
             "run": 2
@@ -21,6 +24,7 @@
         "caption": "Sublimerge: Show Unpushed Changes..."
     },
     {
+        "caption": "Sublimerge: Show Changes Between Current and Remote...",
         "command": "sublimerge_macro",
         "args": {
             "run": 3
@@ -28,6 +32,7 @@
         "caption": "Sublimerge: Show Changes Between Current and Remote..."
     },
     {
+        "caption": "Sublimerge: List and Resolve Conflicts...",
         "command": "sublimerge_macro",
         "args": {
             "run": 4
@@ -35,6 +40,7 @@
         "caption": "Sublimerge: List and Resolve Conflicts..."
     },
     {
+        "caption": "Sublimerge: Resolve Conflicts in Current File",
         "command": "sublimerge_macro",
         "args": {
             "run": 5
@@ -42,6 +48,7 @@
         "caption": "Sublimerge: Resolve Conflicts in Current File"
     },
     {
+        "caption": "Sublimerge: Compare to Custom Git Command Output...",
         "command": "sublimerge_macro",
         "args": {
             "run": 6
@@ -49,6 +56,7 @@
         "caption": "Sublimerge: Compare to Custom Git Command Output..."
     },
     {
+        "caption": "Sublimerge: Show Uncommited Changes...",
         "command": "sublimerge_macro",
         "args": {
             "run": 7
@@ -56,6 +64,7 @@
         "caption": "Sublimerge: Show Uncommited Changes..."
     },
     {
+        "caption": "Sublimerge: Compare to Custom SVN Command Output...",
         "command": "sublimerge_macro",
         "args": {
             "run": 8
@@ -63,6 +72,7 @@
         "caption": "Sublimerge: Compare to Custom SVN Command Output..."
     },
     {
+        "caption": "Sublimerge: Show Uncommited Changes...",
         "command": "sublimerge_macro",
         "args": {
             "run": 9
@@ -70,6 +80,7 @@
         "caption": "Sublimerge: Show Uncommited Changes..."
     },
     {
+        "caption": "Sublimerge: Compare to Named Branch...",
         "command": "sublimerge_macro",
         "args": {
             "run": 10
@@ -77,6 +88,7 @@
         "caption": "Sublimerge: Compare to Named Branch..."
     },
     {
+        "caption": "Sublimerge: Compare to Custom Hg Command Output...",
         "command": "sublimerge_macro",
         "args": {
             "run": 11
