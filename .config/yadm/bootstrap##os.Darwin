@@ -1,42 +1,18 @@
 #!/bin/bash
+#
+#
+# Mostly use Ubuntu; add Arch stuff later
+#
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-echo "${CYAN}✔︎ Bootstrapping yadm${STOP}"
-cd "$HOME" || return
+echo "${CYAN}✔︎ Installing required packages${STOP}"
+apt -y update
+apt -y install lsb-release curl
 
-echo "${CYAN}✔︎ Initializing submodules${STOP}"
+echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
 yadm submodule update --recursive --init
-
-OS=$(uname -s)
-
-REQUIRED_PACKAGES=(
-    "curl"
-    "git"
-    "neovim"
-    "ruby"
-    "vim"
-)
-
-if ! command -v brew >/dev/null 2>&1; then
-    echo "${CYAN}✔︎ Installing homebrew${STOP}"
-    $RUBY -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-if [ -f "$HOME/.Brewfile" ]; then
-    echo "${CYAN}✔︎ Updating homebrew bundle${STOP}"
-    $BREW bundle --file="$HOME/.Brewfile"
-fi
-
-echo "${CYAN}✔︎ Configuring iTerm2${STOP}"
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
-echo "${CYAN}✔︎ Configuring Sublime Text${STOP}"
-sudo ln -s  "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
-rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-ln -s "$HOME/.config/sublime" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 echo "${CYAN}✔︎ Configuring vim${STOP}"
 mkdir -p "$HOME/.vim/plugged"
