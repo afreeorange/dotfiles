@@ -3,6 +3,7 @@
 # YUGE WIP.
 # Assume that python and pip are installed
 
+# shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
 PYTHON_VERSION="$(python --version | cut -d' ' -f2)"

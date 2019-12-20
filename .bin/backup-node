@@ -3,6 +3,7 @@
 # YUGE WIP.
 # Assume that npm is installed
 
+# shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
 NODE_VERSION="$(node --version)"

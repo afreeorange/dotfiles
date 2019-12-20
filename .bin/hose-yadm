@@ -14,4 +14,3 @@ rm -rf "$HOME/.yadm"
 
 echo "Cloning remote"
 yadm clone "git@github.com:afreeorange/dotfiles.git"
-

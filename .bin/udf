@@ -6,6 +6,7 @@
 IFS=$'\n'
 
 cd "$HOME" || return
+
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 # shellcheck source=/dev/null
