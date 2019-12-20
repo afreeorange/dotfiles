@@ -39,8 +39,8 @@ fi
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet
 CHANGED_FILES=()
-while IFS='' read -r line; do FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
-echo "!!!! $CHANGED_FILES"
+while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
+
 if [[ "${#CHANGED_FILES[@]}" -eq 0 ]]; then
     echo "${GRAY}>  Nothing has changed since the last commit${STOP}"
 elif [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
