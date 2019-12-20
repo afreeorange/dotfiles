@@ -72,7 +72,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
-base16_material-lighter
+base16_material-darker
 
 # --- LANGUAGE CONFIGS ---
 
@@ -127,7 +127,7 @@ function __prompt_basic() {
 }
 
 function __prompt_last_exit_code() {
-    [[ $1 != 0 ]] && echo -n "$RED"" and coughed $1""$STOP"
+    [[ $1 != 0 ]] && echo -n "$RED"" and coughed a $1""$STOP"
 }
 
 function __prompt_pyenv_version() {

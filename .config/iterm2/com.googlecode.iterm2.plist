@@ -293,7 +293,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>599 222 970 717 0 0 2048 1257 </string>
+	<string>0 0 2048 1280 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-499 2970 1065 767 -698 1600 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -964,7 +964,11 @@
 		<string>3.3.1</string>
 		<string>3.3.4</string>
 		<string>3.3.3</string>
-		<string>3.3.6</string>
+		<string>3.3.5</string>
+		<string>3.3.7</string>
+		<string>3.2.9</string>
+		<string>3.3.2</string>
+		<string>3.3.0</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -974,9 +978,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-698, 1050}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{-450, 1887}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -985,7 +989,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>3B5F8184-F6ED-4FBB-A490-3C3E8586936C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>39</integer>
+	<integer>22</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1733,16 +1737,12 @@
 	</array>
 	<key>NoSyncSearchHistory2</key>
 	<array>
-		<string>nvm use --heglobal</string>
-		<string>nvm use --hglobal</string>
-		<string>nvm use --global</string>
-		<string>nvm use -global</string>
-		<string>nvm use global</string>
-		<string>nvm useglobal</string>
-		<string>nvm usglobal</string>
-		<string>nvm uglobal</string>
-		<string>nvm global</string>
-		<string>nvmglobal</string>
+		<string>-tqiper</string>
+		<string>conflict</string>
+		<string>merge</string>
+		<string>list</string>
+		<string>15068_FFFFFF</string>
+		<string>quantity</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>550776219.27255702</real>
@@ -1798,7 +1798,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-19T06:57:45Z</date>
+	<date>2019-12-14T05:57:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUSkippedVersion</key>
