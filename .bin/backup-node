@@ -11,7 +11,7 @@ OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
 truncate -s0 "$OUTPUT_FILE"
 
-PACKAGE_PATHS="$(npm list -g --depth 0 --parseable | grep node_modules)"
+PACKAGE_PATHS="$(npm list -g --depth 0 --parseable 2> /dev/null | grep node_modules)"
 IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
     PACKAGE="$(basename "$PACKAGE_PATH")"
     VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
