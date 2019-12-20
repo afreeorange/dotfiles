@@ -44,7 +44,7 @@ while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --nam
 if [[ "${#CHANGED_FILES[@]}" -eq 0 ]]; then
     echo "${GRAY}>  Nothing has changed since the last commit${STOP}"
 elif [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
-    echo "${GRAY}>  Just one file changed some place else${STOP}"
+    echo "${GRAY}>  Just one file changed since the last commit${STOP}"
 else
     echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
 fi
