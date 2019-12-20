@@ -41,7 +41,9 @@ yadm pull origin master --quiet
 CHANGED_FILES=()
 while IFS='' read -r line; do FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
 
-if [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
+if [[ "${#CHANGED_FILES[@]}" -eq 0 ]]; then
+    echo "${GRAY}> Nothing has changed since the last commit${STOP}"
+elif [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
     echo "${GRAY}>  Just one file changed${STOP} some place else"
 else
     echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
