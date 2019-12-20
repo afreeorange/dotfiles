@@ -51,6 +51,7 @@ for FILE in "${CHANGED_FILES[@]}"; do
     echo "${GRAY}${FILE}${STOP}"
 done
 
+
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
 FILES=()
 while IFS='' read -r line; do FILES+=("$line"); done < <(yadm status -uno --porcelain | cut -c4- | sed s/\"//g)
