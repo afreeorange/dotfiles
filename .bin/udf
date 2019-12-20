@@ -5,8 +5,10 @@
 
 IFS=$'\n'
 
-cd "$HOME"
+cd "$HOME" || return
+# shellcheck source=/dev/null
 source "$HOME/.bash_colors"
+# shellcheck source=/dev/null
 source "$HOME/.bash_excuses"
 
 OS=$(uname -s)
@@ -49,7 +51,9 @@ for FILE in "${CHANGED_FILES[@]}"; do
 done
 
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
-FILES=($(yadm status -uno --porcelain | cut -c4- | sed s/\"//g))
+FILES=()
+while IFS='' read -r line; do FILES+=("$line"); done < <(yadm status -uno --porcelain | cut -c4- | sed s/\"//g)
+# FILES=($())
 if [[ "${#FILES[@]}" -eq 0 ]]; then
     echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
     exit 1
