@@ -103,7 +103,9 @@ command -v complete >> /dev/null 2>&1 && {
     for COMPLETION in $HOME/.completions/*; do
         source "$COMPLETION";
     done
+
     command -v aws_completer > /dev/null 2>&1 && complete -C aws_completer aws
+    command -v terraform > /dev/null 2>&1 && complete -C terraform terraform
 }
 
 # --- PROMPT CUSTOMIZATION <3 ---
