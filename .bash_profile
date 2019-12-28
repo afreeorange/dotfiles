@@ -3,6 +3,7 @@
 # --- UTILITY FUNCTIONS ---
 
 source_if_exists() {
+    # shellcheck source=/dev/null
     [[ -e "$1" ]] && source "$1"
 }
 
@@ -56,13 +57,14 @@ shopt -s checkwinsize # Update LINES and COLUMNS on screen resize
 export CLICOLOR=1
 
 # Colors
+# shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
 # The Generic Colorizer <3
 source_if_exists /usr/local/etc/grc.bashrc
 
 # fzf
-source_if_exists $HOME/.fzf.bash
+source_if_exists "$HOME/.fzf.bash"
 
 # Tell ls to be colorful
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
@@ -87,7 +89,8 @@ source_if_exists "$HOME/.rvm/scripts/rvm"
 
 # Node
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# shellcheck source=/dev/null
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
 
 # GO!
 export GOPATH="$HOME/go"
@@ -96,12 +99,14 @@ export PATH="$GOPATH/bin:$PATH"
 # --- COMPLETIONS ---
 
 if [[ $(uname) == "Darwin" ]]; then
-    source $(brew --prefix)/etc/bash_completion
+    # shellcheck source=/dev/null
+    source "$(brew --prefix)/etc/bash_completion"
 fi
 
 command -v complete >> /dev/null 2>&1 && {
-    for COMPLETION in $HOME/.completions/*; do
-        source "$COMPLETION";
+    for COMPLETION in "$HOME"/.completions/*; do
+        # shellcheck source=/dev/null
+        source "$COMPLETION"
     done
 
     command -v aws_completer > /dev/null 2>&1 && complete -C aws_completer aws
@@ -140,30 +145,30 @@ function __prompt_git_info() {
     local STATUS='';
     local BRANCH_NAME='';
 
-    if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
-        if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+    if [[ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]]; then
+        if [[ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]]; then
 
             # Ensure the index is up to date.
             git update-index --really-refresh -q &>/dev/null
 
             # Check for uncommitted changes
-            if ! $(git diff --quiet --ignore-submodules --cached); then
-                STATUS+=':us';
+            if ! git diff --quiet --ignore-submodules --cached; then
+                STATUS+=":us";
             fi
 
             # Check for unstaged changes.
-            if ! $(git diff-files --quiet --ignore-submodules --); then
-                STATUS+=':us';
+            if ! git diff-files --quiet --ignore-submodules --; then
+                STATUS+=":us";
             fi
 
             # Check for untracked files.
-            if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-                STATUS+=':ut';
+            if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+                STATUS+=":ut";
             fi
 
             # Check for stashed files.
-            if $(git rev-parse --verify refs/stash &>/dev/null); then
-                STATUS+=':st';
+            if git rev-parse --verify refs/stash &>/dev/null; then
+                STATUS+=":st";
             fi
         fi;
 
@@ -235,20 +240,22 @@ alias gpom='git push origin master'
 
 # Create a data URL from a file
 function dataurl() {
-    local mimeType=$(file -b --mime-type "$1");
-    if [[ $mimeType == text/* ]]; then
-        mimeType="${mimeType};charset=utf-8";
+    local MIMETYPE
+    MIMETYPE=$(file -b --mime-type "$1")
+
+    if [[ $MIMETYPE == text/* ]]; then
+        MIMETYPE="${MIMETYPE};charset=utf-8";
     fi
-    echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
+    echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')";
 }
 
 # Enterprise Engine white noise generator :D Need "sox" on OS X
 # http://goo.gl/x1Ow6k
-ENGAGE_PLAY_COMMAND="play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +25 fade h 1 864000 1"
+export ENGAGE_PLAY_COMMAND="play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +25 fade h 1 864000 1"
 if [[ $(uname) == "Darwin" ]]; then
-    alias engage="say -v alex Engage;""$ENGAGE_PLAY_COMMAND"
+    alias engage='say -v alex Engage && $ENGAGE_PLAY_COMMAND'
 elif [[ $(uname) == "Linux" ]]; then
-    alias engage="$ENGAGE_PLAY_COMMAND"
+    alias engage='$ENGAGE_PLAY_COMMAND'
 fi
 
 # For Arch, since I miss 'open' on OS X
@@ -258,13 +265,13 @@ fi
 function _blog() {
     open "$LOG_LOCATION/static"
     sublime "$LOG_LOCATION"
-    echo $ORANGE"Starting server... on http://localhost:4000"$STOP
-    cd "$LOG_LOCATION"
+    echo "${ORANGE}Starting server... on http://localhost:4000${STOP}"
+    cd "$LOG_LOCATION" || return
 
     # Frakking thing doesn't livereload when a background process 🙄
-    ./serve
+    .scripts/serve
 }
-alias blog="cd "$LOG_LOCATION" && _blog"
+alias blog='cd $LOG_LOCATION && _blog'
 
 
 # --- MISCELLANEOUS ---
@@ -280,15 +287,15 @@ echo -n ""
 # Use vim if nvim not available
 VIM=vim
 command -v nvim > /dev/null 2>&1 && VIM=nvim
-alias vim=$VIM
+alias vim='$VIM'
 export EDITOR=$VIM
 export GIT_EDITOR=$VIM
 export MANPAGER="/bin/sh -c \"col -b | $VIM -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # Use ping if prettyping not available
-PINGER=ping
+export PINGER=ping
 command -v prettyping > /dev/null 2>&1 && PINGER="prettyping --nolegend"
-alias ping=$PINGER
+alias ping='$PINGER'
 
 # --- REFERENCES ---
 #
