@@ -219,9 +219,9 @@ alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
 
 # Moving around
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Docker
 alias dkill='docker kill $(docker ps -aq)'

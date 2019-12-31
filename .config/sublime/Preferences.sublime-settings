@@ -49,5 +49,6 @@
 	"theme_agila_compact_sidebar": true,
 	"theme_agila_sidebar_font_big": true,
 	"theme_agila_sidebar_xsmall": true,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+    "close_windows_when_empty": false
 }
