@@ -26,7 +26,7 @@ export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 
 # My log
-export LOG_LOCATION="$HOME/Dropbox/log.nikhil.io/"
+export LOG_LOCATION="$HOME/log.nikhil.io/"
 
 # Some scripts I may have in $HOME
 export PATH="$HOME/.bin:$PATH"

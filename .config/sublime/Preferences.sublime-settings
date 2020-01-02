@@ -2,6 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
@@ -25,7 +26,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 19,
+	"font_size": 21,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -49,6 +50,5 @@
 	"theme_agila_compact_sidebar": true,
 	"theme_agila_sidebar_font_big": true,
 	"theme_agila_sidebar_xsmall": true,
-	"translate_tabs_to_spaces": true,
-    "close_windows_when_empty": false
+	"translate_tabs_to_spaces": true
 }
