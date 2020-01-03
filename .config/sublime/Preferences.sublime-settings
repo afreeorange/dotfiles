@@ -3,7 +3,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
+	"color_scheme": "Packages/ayu/ayu-light.sublime-color-scheme",
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
 	"file_exclude_patterns":
@@ -26,7 +26,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 21,
+	"font_size": 19,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -45,7 +45,7 @@
 	"scroll_past_end": true,
 	"show_git_status": false,
 	"tab_size": 4,
-	"theme": "Agila Neon.sublime-theme",
+	"theme": "ayu-light.sublime-theme",
 	"theme_agila_camouflage": true,
 	"theme_agila_compact_sidebar": true,
 	"theme_agila_sidebar_font_big": true,
