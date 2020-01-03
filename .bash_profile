@@ -232,6 +232,7 @@ alias gp='git pull'
 alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
 alias gpom='git push origin master'
+alias gpb='git push origin $(git branch --show-current)'
 
 # Create a data URL from a file
 function dataurl() {
