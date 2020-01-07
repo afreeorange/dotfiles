@@ -10,6 +10,9 @@
 	[
 		".DS_Store",
 		"Thumbs.db",
+		"yarn.lock",
+		"yarn-error.log",
+		"package-lock.json",
 		"*.pid",
 		"*.pyc"
 	],
@@ -26,7 +29,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 21,
+	"font_size": 19,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
