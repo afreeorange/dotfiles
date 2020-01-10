@@ -10,6 +10,9 @@
 	[
 		".DS_Store",
 		"Thumbs.db",
+		"yarn.lock",
+		"yarn-error.log",
+		"package-lock.json",
 		"*.pid",
 		"*.pyc"
 	],
