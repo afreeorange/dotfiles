@@ -85,6 +85,7 @@ Plug 'tpope/vim-fugitive'              " Amazing git integration <3
 Plug 'mattn/emmet-vim'                 " Emmet!
 Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
 Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
+Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
 
 " Colors
 Plug 'chriskempson/base16-vim'
@@ -118,6 +119,10 @@ let g:user_emmet_leader_key='<Leader>e'
 " Enable LimeLight when in distraction-free mode
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Terraform autoformatter
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 " ------------- Colors --------------
 
