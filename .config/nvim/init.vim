@@ -84,6 +84,7 @@ Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
 Plug 'tpope/vim-fugitive'              " Amazing git integration <3
 Plug 'mattn/emmet-vim'                 " Emmet!
 Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
+Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
 
 " Colors
 Plug 'chriskempson/base16-vim'
