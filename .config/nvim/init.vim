@@ -122,7 +122,7 @@ autocmd! User GoyoLeave Limelight!
 
 " Access colors present in 256 colorspace, set theme
 let base16colorspace=256
-colorscheme base16-material-lighter
+colorscheme base16-gruvbox-dark-pale
 
 " ------------- References --------------
 "

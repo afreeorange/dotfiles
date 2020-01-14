@@ -26,6 +26,7 @@
 		"Golang Build",
 		"HTMLBeautify",
 		"isort",
+		"JSCustom",
 		"JsPrettier",
 		"Liquid",
 		"Makefile Plus",
