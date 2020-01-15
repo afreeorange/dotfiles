@@ -3,7 +3,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Lighter.tmTheme",
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
 	"file_exclude_patterns":
@@ -48,7 +48,7 @@
 	"scroll_past_end": true,
 	"show_git_status": false,
 	"tab_size": 4,
-	"theme": "Material-Theme.sublime-theme",
+	"theme": "ayu-light.sublime-theme",
 	"theme_agila_camouflage": true,
 	"theme_agila_compact_sidebar": true,
 	"theme_agila_sidebar_font_big": true,
