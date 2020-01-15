@@ -84,6 +84,8 @@ Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
 Plug 'tpope/vim-fugitive'              " Amazing git integration <3
 Plug 'mattn/emmet-vim'                 " Emmet!
 Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
+Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
+Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
 
 " Colors
 Plug 'chriskempson/base16-vim'
@@ -118,11 +120,15 @@ let g:user_emmet_leader_key='<Leader>e'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+" Terraform autoformatter
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
 " ------------- Colors --------------
 
 " Access colors present in 256 colorspace, set theme
 let base16colorspace=256
-colorscheme base16-material-lighter
+colorscheme base16-gruvbox-dark-pale
 
 " ------------- References --------------
 "

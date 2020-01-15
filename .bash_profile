@@ -74,7 +74,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
-base16_cupcake
+base16_gruvbox-dark-pale
 
 # --- LANGUAGE CONFIGS ---
 
@@ -199,9 +199,10 @@ function __prompt() {
 }
 
 # Spit a random excuse
-#source "$HOME/.bash_excuses"
-#random_excuse | cowsay
-#echo ""
+# shellcheck source=/dev/null
+source "$HOME/.bash_excuses"
+random_excuse | cowsay
+echo ""
 
 # Put everything together
 export PS1="$GREEN\\u$STOP at $BLUE\\h$STOP \$(__prompt)
@@ -236,7 +237,7 @@ alias gc='git commit'
 alias gp='git pull'
 alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
-alias gpom='git push origin master'
+alias gpom='git push origin master --tags'
 alias gpb='git push origin $(git branch --show-current)'
 
 # Create a data URL from a file
