@@ -27,6 +27,7 @@
 		"gruvbox",
 		"HTMLBeautify",
 		"isort",
+		"Jest",
 		"JSCustom",
 		"JsPrettier",
 		"Liquid",

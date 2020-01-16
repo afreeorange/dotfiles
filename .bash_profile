@@ -205,7 +205,7 @@ random_excuse | cowsay
 echo ""
 
 # Put everything together
-export PS1="$GREEN\\u$STOP at $BLUE\\h$STOP \$(__prompt)
+export PS1="${GREEN}nikhil${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
 $PS_SYMBOL "
 
 
