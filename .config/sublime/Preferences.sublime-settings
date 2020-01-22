@@ -3,7 +3,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
+	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
 	"file_exclude_patterns":
@@ -29,7 +29,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 20,
+	"font_size": 18,
 	"gpu_window_buffer": false,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
@@ -55,7 +55,7 @@
 	"scroll_past_end": true,
 	"show_git_status": false,
 	"tab_size": 4,
-	"theme": "gruvbox.sublime-theme",
+	"theme": "ayu-mirage.sublime-theme",
 	"theme_agila_camouflage": true,
 	"theme_agila_compact_sidebar": true,
 	"theme_agila_sidebar_font_big": true,
