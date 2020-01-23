@@ -11,5 +11,6 @@ npm@6.13.4
 parcel-bundler@1.12.4
 shapefile-upload-wizard@1.1.0
 source-map-explorer@2.2.1
+tslint@6.0.0
 typings@2.1.1
 yarn@1.21.1

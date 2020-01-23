@@ -200,9 +200,9 @@ function __prompt() {
 
 # Spit a random excuse
 # shellcheck source=/dev/null
-source "$HOME/.bash_excuses"
-random_excuse | cowsay
-echo ""
+#source "$HOME/.bash_excuses"
+#random_excuse | cowsay
+#echo ""
 
 # Put everything together
 export PS1="${GREEN}nikhil${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
