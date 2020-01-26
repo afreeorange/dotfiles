@@ -198,14 +198,14 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-# Spit a random excuse
-# shellcheck source=/dev/null
-source "$HOME/.bash_excuses"
-random_excuse | cowsay
-echo ""
+## Spit a random excuse
+## shellcheck source=/dev/null
+#source "$HOME/.bash_excuses"
+#random_excuse | cowsay
+#echo ""
 
 # Put everything together
-export PS1="${GREEN}nikhil${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
+export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
 $PS_SYMBOL "
 
 
