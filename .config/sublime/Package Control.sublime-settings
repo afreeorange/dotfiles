@@ -34,7 +34,6 @@
 		"MarkdownEditing",
 		"MarkdownPreview",
 		"Material Theme",
-		"Nodejs",
 		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
@@ -61,12 +60,10 @@
 		"SublimeREPL",
 		"Sublimerge 3",
 		"Table Editor",
-		"tern_for_sublime",
 		"Terrafmt",
 		"Terraform",
 		"TOML",
 		"TypeScript",
-		"WordCount",
 		"Wrap Plus"
 	]
 }
