@@ -1,0 +1,53 @@
+{
+    "window.zoomLevel": 1,
+    "breadcrumbs.enabled": false,
+    "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
+    "fontshortcuts.step": 1,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/node_modules": true
+    },
+    "editor.fontLigatures": true,
+    "editor.rulers": [72, 79, 100, 120],
+    "python.jediEnabled": false,
+    "git.autofetch": true,
+    "explorer.confirmDelete": false,
+    "workbench.colorCustomizations": {},
+    "editor.lineHeight": 25,
+    "editor.fontSize": 19,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.fontSize": 18,
+    "workbench.activityBar.visible": false,
+    "explorer.decorations.colors": false,
+    "git.decorations.enabled": false,
+    "editor.hover.delay": 700,
+    "explorer.decorations.badges": false,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Gruvbox Minor Dark Hard",
+    "editor.quickSuggestionsDelay": 25,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "editor.tabCompletion": "on",
+    "workbench.tree.indent": 22
+}
