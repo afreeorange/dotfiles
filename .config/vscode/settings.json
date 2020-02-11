@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "breadcrumbs.enabled": false,
     "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
     "fontshortcuts.step": 1,
@@ -21,7 +21,7 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 25,
+    "editor.lineHeight": 23,
     "editor.fontSize": 19,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -49,5 +49,11 @@
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "editor.tabCompletion": "on",
-    "workbench.tree.indent": 22
+    "workbench.tree.indent": 22,
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
