@@ -34,7 +34,6 @@
 		"MarkdownEditing",
 		"MarkdownPreview",
 		"Material Theme",
-		"Nodejs",
 		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
@@ -65,7 +64,6 @@
 		"Terraform",
 		"TOML",
 		"TypeScript",
-		"WordCount",
 		"Wrap Plus"
 	]
 }
