@@ -26,3 +26,7 @@ curl --silent -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dir
 
 echo "${CYAN}✔︎ Configuring VSCode${STOP}"
 ln -s "$HOME/.config/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+
+echo "${CYAN}✔︎ Linking Applications${STOP}"
+"$HOME/.bin/link-applications"
+
