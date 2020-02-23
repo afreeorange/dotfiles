@@ -29,11 +29,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-<<<<<<< HEAD
 	"font_size": 20,
-=======
-	"font_size": 21,
->>>>>>> ef8ec835d26d9a4acad89b3d3e2f22c71747f320
 	"gpu_window_buffer": false,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
