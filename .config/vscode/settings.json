@@ -1,6 +1,6 @@
 {
-    "window.zoomLevel": 0,
-    "breadcrumbs.enabled": false,
+    "window.zoomLevel": 1,
+    "breadcrumbs.enabled": true,
     "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
     "fontshortcuts.step": 1,
     "[javascript]": {
@@ -21,8 +21,8 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 28,
-    "editor.fontSize": 22,
+    "editor.lineHeight": 23,
+    "editor.fontSize": 18,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -56,5 +56,29 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.editor.enablePreview": false,
+    "breadcrumbs.showArrays": false,
+    "breadcrumbs.showBooleans": false,
+    "breadcrumbs.showClasses": false,
+    "breadcrumbs.showConstants": false,
+    "breadcrumbs.showConstructors": false,
+    "breadcrumbs.showEnumMembers": false,
+    "breadcrumbs.showEvents": false,
+    "breadcrumbs.showFields": false,
+    "breadcrumbs.showInterfaces": false,
+    "breadcrumbs.showKeys": false,
+    "breadcrumbs.showMethods": false,
+    "breadcrumbs.showNull": false,
+    "breadcrumbs.showNumbers": false,
+    "breadcrumbs.showVariables": false,
+    "breadcrumbs.showTypeParameters": false,
+    "breadcrumbs.showStructs": false,
+    "breadcrumbs.showStrings": false,
+    "breadcrumbs.showProperties": false,
+    "breadcrumbs.showPackages": false,
+    "breadcrumbs.showOperators": false,
+    "breadcrumbs.showObjects": false,
+    "breadcrumbs.symbolPath": "off",
+    "breadcrumbs.icons": false
 }
