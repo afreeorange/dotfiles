@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "breadcrumbs.enabled": true,
     "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
     "fontshortcuts.step": 1,
@@ -21,15 +21,15 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 23,
-    "editor.fontSize": 18,
+    "editor.lineHeight": 25,
+    "editor.fontSize": 19,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 19,
     "workbench.activityBar.visible": false,
     "explorer.decorations.colors": false,
     "git.decorations.enabled": false,
@@ -37,7 +37,7 @@
     "explorer.decorations.badges": false,
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Gruvbox Minor Dark Hard",
+    "workbench.colorTheme": "Noctis Lux",
     "editor.quickSuggestionsDelay": 25,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "[json]": {
@@ -57,7 +57,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "vsicons.dontShowNewVersionMessage": true,
-    "workbench.editor.enablePreview": false,
     "breadcrumbs.showArrays": false,
     "breadcrumbs.showBooleans": false,
     "breadcrumbs.showClasses": false,
@@ -80,5 +79,6 @@
     "breadcrumbs.showOperators": false,
     "breadcrumbs.showObjects": false,
     "breadcrumbs.symbolPath": "off",
-    "breadcrumbs.icons": false
+    "breadcrumbs.icons": false,
+    "workbench.editor.enablePreview": false
 }
