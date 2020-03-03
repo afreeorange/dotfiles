@@ -21,7 +21,7 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 23,
+    "editor.lineHeight": 22,
     "editor.fontSize": 17,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -81,5 +81,6 @@
     "explorer.compactFolders": false,
     "explorer.decorations.badges": false,
     "explorer.decorations.colors": false,
-    "explorer.sortOrder": "type"
+    "explorer.sortOrder": "type",
+    "liquid.format": true
 }
