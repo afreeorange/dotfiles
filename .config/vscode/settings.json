@@ -82,5 +82,6 @@
     "explorer.decorations.badges": false,
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
-    "liquid.format": true
+    "liquid.format": true,
+    "prettier.htmlWhitespaceSensitivity": "ignore"
 }
