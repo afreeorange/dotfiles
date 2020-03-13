@@ -83,5 +83,8 @@
     "explorer.decorations.colors": false,
     "explorer.sortOrder": "type",
     "liquid.format": true,
-    "prettier.htmlWhitespaceSensitivity": "ignore"
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
