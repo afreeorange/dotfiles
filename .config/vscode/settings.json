@@ -22,7 +22,7 @@
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
     "editor.lineHeight": 23,
-    "editor.fontSize": 18,
+    "editor.fontSize": 17,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
