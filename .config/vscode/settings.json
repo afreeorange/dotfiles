@@ -21,8 +21,8 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 23,
-    "editor.fontSize": 17,
+    "editor.lineHeight": 26,
+    "editor.fontSize": 19,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -86,5 +86,18 @@
     "prettier.htmlWhitespaceSensitivity": "ignore",
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
     }
 }
