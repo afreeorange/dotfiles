@@ -18,10 +18,9 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
 # Bash History
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE='ls:bg:fg:history'
-export HISTFILESIZE=100000
-export HISTSIZE=100000
+export HISTSIZE=10000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 

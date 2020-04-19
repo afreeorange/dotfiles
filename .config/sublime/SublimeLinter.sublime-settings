@@ -3,19 +3,18 @@
     "linters": {
         "eslint": {
             "env": {
-                "PATH": "$NVM_BIN/"
-            },
+                "PATH": "$HOME/.nvm/versions/node/v12.14.0/bin/"
+            }
+        },
+        "flow": {
+            "env": {
+                "PATH": "$HOME/.nvm/versions/node/v12.14.0/bin/"
+            }
         }
     },
     "paths": {
-        "linux": [
-            "$NVM_BIN/",
-            "$HOME/.pyenv/shims/"
-        ],
-        "osx": [
-            "$NVM_BIN/",
-            "$HOME/.pyenv/shims/"
-        ],
+        "linux": ["$NVM_BIN/", "$HOME/.pyenv/shims/"],
+        "osx": ["$NVM_BIN/", "$HOME/.pyenv/shims/"],
         "windows": []
     }
 }
