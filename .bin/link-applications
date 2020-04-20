@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    ln -s "/usr/local/bin/code" "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-    ln -s "/usr/local/bin/subl" "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+    ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "/usr/local/bin/code"
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/sublime"
 fi
