@@ -15,10 +15,12 @@ truncate -s0 "$OUTPUT_FILE"
 PACKAGE_PATHS="$(npm list -g --depth 0 --parseable 2> /dev/null | grep node_modules)"
 IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
     PACKAGE="$(basename "$PACKAGE_PATH")"
-    VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
 
-    echo "${PACKAGE}@${VERSION}"
-    echo "${PACKAGE}@${VERSION}" >> "$OUTPUT_FILE"
+    # Weirdness with this 🤷‍♂️ Not capturing package versions.
+    # VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
+    # echo "${PACKAGE}@${VERSION}" >> "$OUTPUT_FILE"
+
+    echo "${PACKAGE}" >> "$OUTPUT_FILE"
 done
 
 echo "Done"
