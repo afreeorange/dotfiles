@@ -14,7 +14,7 @@ IFS=$'\n'
 WHAT_TO_INSTALL=$1
 
 function install_node {
-    echo "${YELLOW}→ Node${STOP}"
+    echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
     local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
 
     if [[ ! -e "$DEPS_FILE" ]]; then
@@ -27,7 +27,7 @@ function install_node {
 }
 
 function install_python {
-    echo "${YELLOW}→ Python${STOP}"
+    echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
     local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
 
     if [[ ! -e "$DEPS_FILE" ]]; then
