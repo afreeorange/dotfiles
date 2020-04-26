@@ -42,9 +42,12 @@ function install_python {
 function install_homebrew {
     echo "${YELLOW}→ Homebrew${STOP}"
     if [[ "$(uname -s)" == "Darwin" ]]; then
-        brew bundle --file=~/.Brewfile
+        MACOS_VERSION=$(sw_vers -productVersion)
+        brew bundle --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
+        echo "${GREEN}✓ Done${STOP}"
+    else
+        echo "${RED}ⅹ Not macOS. Quitting.${STOP}"
     fi
-    echo "${GREEN}✓ Done${STOP}"
 }
 
 if [[ "$WHAT_TO_INSTALL" == "node" ]]; then
