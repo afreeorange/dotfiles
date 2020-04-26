@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Install Platorm Dependencies
+
+# shellcheck source=/dev/null
+source "$HOME/.bash_colors"
+
+NODE_VERSION=$(node --version)
+PYTHON_VERSION=$(python --version | cut -d" " -f2)
+
+PLATFORM_DEPENDENCIES_ROOT="$HOME/.platform-dependencies"
+IFS=$'\n'
+
+WHAT_TO_INSTALL=$1
+
+function install_node {
+    echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
+    local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
+
+    if [[ ! -e "$DEPS_FILE" ]]; then
+        echo "${RED}Could not find Node dependencies file for ${NODE_VERSION}${STOP}"
+    else
+        # shellcheck disable=SC2046
+        npm i -g $(cat "$DEPS_FILE")
+        echo "${GREEN}✓ Done${STOP}"
+    fi
+}
+
+function install_python {
+    echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
+    local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
+
+    if [[ ! -e "$DEPS_FILE" ]]; then
+        echo "${RED}Could not find Python dependencies file for ${PYTHON_VERSION}${STOP}"
+    else
+        # shellcheck disable=SC2046
+        pip install $(cat "$DEPS_FILE")
+        echo "${GREEN}✓ Done${STOP}"
+    fi
+}
+
+function install_homebrew {
+    echo "${YELLOW}→ Homebrew${STOP}"
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        brew bundle --file=~/.Brewfile
+    fi
+    echo "${GREEN}✓ Done${STOP}"
+}
+
+if [[ "$WHAT_TO_INSTALL" == "node" ]]; then
+    install_node
+elif [[ "$WHAT_TO_INSTALL" == "python" ]]; then
+    install_python
+elif [[ "$WHAT_TO_INSTALL" == "brew" ]]; then
+    install_homebrew
+elif [[ "$WHAT_TO_INSTALL" == "all" ]]; then
+    install_node
+    install_python
+    install_homebrew
+else
+    echo "👉 ${RED}Must be one of 'node', 'python', 'brew', or 'all'${STOP}"
+fi
