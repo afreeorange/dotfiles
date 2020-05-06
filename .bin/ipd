@@ -40,9 +40,10 @@ function install_python {
 }
 
 function install_homebrew {
-    echo "${YELLOW}→ Homebrew${STOP}"
     if [[ "$(uname -s)" == "Darwin" ]]; then
         MACOS_VERSION=$(sw_vers -productVersion)
+        echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
+
         brew bundle --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
         echo "${GREEN}✓ Done${STOP}"
     else

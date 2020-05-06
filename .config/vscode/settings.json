@@ -1,7 +1,7 @@
 {
     "window.zoomLevel": 1,
     "breadcrumbs.enabled": true,
-    "editor.fontFamily": "Input, \"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
     "fontshortcuts.step": 1,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -21,8 +21,8 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 22,
-    "editor.fontSize": 15,
+    "editor.lineHeight": 23,
+    "editor.fontSize": 17,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
