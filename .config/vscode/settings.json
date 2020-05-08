@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "breadcrumbs.enabled": true,
     "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
     "fontshortcuts.step": 1,
@@ -21,8 +21,8 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 23,
-    "editor.fontSize": 17,
+    "editor.lineHeight": 28,
+    "editor.fontSize": 20,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -102,5 +102,10 @@
     },
     "workbench.list.openMode": "doubleClick",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "sync.gist": "b11ef461cbc4d7118f9e977cd3026f44"
+    "sync.gist": "b11ef461cbc4d7118f9e977cd3026f44",
+    "smoothtype.duration": 200,
+    "editor.cursorSmoothCaretAnimation": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    }
 }
