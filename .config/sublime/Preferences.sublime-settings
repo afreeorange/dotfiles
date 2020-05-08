@@ -1,64 +1,64 @@
 {
-    "WrapPlus.wrap_width": 79,
-    "always_show_minimap_viewport": true,
-    "bold_folder_labels": true,
-    "close_windows_when_empty": false,
-    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
-    "draw_minimap_border": true,
-    "enable_inline_error_tips": true,
-    "file_exclude_patterns":
-    [
-        ".DS_Store",
-        "Thumbs.db",
-        "yarn.lock",
-        "yarn-error.log",
-        "package-lock.json",
-        "*.pid",
-        "*.pyc"
-    ],
-    "folder_exclude_patterns":
-    [
-        ".git",
-        "__pycache__",
-        ".sass-cache",
-        "node_modules",
-        "venv",
-        "_site",
-        ".mypy_cache",
-        ".pytest_cache",
-        "build"
-    ],
-    "font_face": "Dank Mono",
-    "font_size": 17,
-    "gpu_window_buffer": false,
-    "gruvbox_accent_yellow": true,
-    "gruvbox_animate_icons": true,
-    "gruvbox_disable_greyscale": true,
-    "gruvbox_folder_icons_plus_minus": true,
-    "gruvbox_sidebar_font_size_14": true,
-    "gruvbox_statusbar_xxs": true,
-    "gruvbox_tabs_xs": true,
-    "highlight_line": true,
-    "highlight_modified_tabs": true,
-    "ignored_packages":
-    [
-        "isort",
-        "Markdown",
-        "Vintage"
-    ],
-    "rulers":
-    [
-        120,
-        100,
-        79
-    ],
-    "scroll_past_end": true,
-    "show_git_status": false,
-    "tab_size": 4,
-    "theme": "gruvbox.sublime-theme",
-    "theme_agila_camouflage": true,
-    "theme_agila_compact_sidebar": true,
-    "theme_agila_sidebar_font_big": true,
-    "theme_agila_sidebar_xsmall": true,
-    "translate_tabs_to_spaces": true
+	"WrapPlus.wrap_width": 79,
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
+	"draw_minimap_border": true,
+	"enable_inline_error_tips": true,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"Thumbs.db",
+		"yarn.lock",
+		"yarn-error.log",
+		"package-lock.json",
+		"*.pid",
+		"*.pyc"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		"__pycache__",
+		".sass-cache",
+		"node_modules",
+		"venv",
+		"_site",
+		".mypy_cache",
+		".pytest_cache",
+		"build"
+	],
+	"font_face": "Dank Mono",
+	"font_size": 23,
+	"gpu_window_buffer": false,
+	"gruvbox_accent_yellow": true,
+	"gruvbox_animate_icons": true,
+	"gruvbox_disable_greyscale": true,
+	"gruvbox_folder_icons_plus_minus": true,
+	"gruvbox_sidebar_font_size_14": true,
+	"gruvbox_statusbar_xxs": true,
+	"gruvbox_tabs_xs": true,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"isort",
+		"Markdown",
+		"Vintage"
+	],
+	"rulers":
+	[
+		120,
+		100,
+		79
+	],
+	"scroll_past_end": true,
+	"show_git_status": false,
+	"tab_size": 4,
+	"theme": "gruvbox.sublime-theme",
+	"theme_agila_camouflage": true,
+	"theme_agila_compact_sidebar": true,
+	"theme_agila_sidebar_font_big": true,
+	"theme_agila_sidebar_xsmall": true,
+	"translate_tabs_to_spaces": true
 }
