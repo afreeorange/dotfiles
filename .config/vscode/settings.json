@@ -21,8 +21,8 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 28,
-    "editor.fontSize": 20,
+    "editor.lineHeight": 25,
+    "editor.fontSize": 19,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -107,5 +107,24 @@
     "editor.cursorSmoothCaretAnimation": true,
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "beautify.config": {
+        "indent_size": "2",
+        "indent_char": " ",
+        "max_preserve_newlines": "5",
+        "preserve_newlines": true,
+        "keep_array_indentation": false,
+        "break_chained_methods": false,
+        "indent_scripts": "normal",
+        "brace_style": "collapse",
+        "space_before_conditional": true,
+        "unescape_strings": false,
+        "jslint_happy": false,
+        "end_with_newline": false,
+        "wrap_line_length": "0",
+        "indent_inner_html": true,
+        "comma_first": false,
+        "e4x": false,
+        "indent_empty_lines": false
     }
 }
