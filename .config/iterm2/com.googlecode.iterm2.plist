@@ -288,18 +288,20 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1537 110 445 394 0 0 2048 1257 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>1720 1506 400 129 0 0 3840 2137 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>714 648 620 392 0 0 2048 1257 </string>
+	<string>650 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>364 568 918 512 0 0 2048 1257 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>446 403 970 717 0 0 2048 1257 </string>
+	<string>0 540 970 717 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>25 82 1642 1027 0 0 1920 1177 </string>
+	<string>654 340 985 717 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 2560 1600 0 0 2560 1577 </string>
+	<string>0 270 1102 744 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>-309 900 1920 1080 -309 900 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -961,25 +963,32 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.2</string>
-		<string>3.2.9</string>
-		<string>3.3.1</string>
-		<string>3.3.4</string>
-		<string>3.3.8</string>
-		<string>3.3.3</string>
 		<string>3.3.6</string>
+		<string>3.3.8</string>
+		<string>3.3.1</string>
+		<string>3.3.3</string>
+		<string>3.3.9</string>
+		<string>3.2.9</string>
+		<string>3.3.2</string>
+		<string>3.3.4</string>
+	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>Dank Mono</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
 		<string>Dank Mono</string>
-		<string>Operator Mono</string>
+		<string>Sudo</string>
+		<string>Monoid</string>
+		<string>Inconsolata</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-698, 1050}, {2560, 1440}}</string>
+		<string>{{0, 0}, {3840, 2160}}</string>
 		<key>topLeft</key>
-		<string>{-450, 1887}</string>
+		<string>{884, 1371}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -988,7 +997,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>3B5F8184-F6ED-4FBB-A490-3C3E8586936C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>44</integer>
+	<integer>58</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1783,13 +1792,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-05T21:34:30Z</date>
+	<date>2020-05-25T16:35:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>4215216929</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -1817,7 +1828,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
