@@ -291,13 +291,13 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1720 1506 400 129 0 0 3840 2137 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
+	<string>970 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>364 568 918 512 0 0 2048 1257 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 540 970 717 0 0 2048 1257 </string>
+	<string>859 156 1375 1062 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>654 340 985 717 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -997,7 +997,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>3B5F8184-F6ED-4FBB-A490-3C3E8586936C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>58</integer>
+	<integer>60</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1792,15 +1792,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-25T16:35:01Z</date>
+	<date>2020-06-08T16:46:00Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>4215216929</integer>
+	<integer>1924842497</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

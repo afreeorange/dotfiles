@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "breadcrumbs.enabled": true,
     "editor.fontFamily": "\"Dank Mono\", \"Operator Mono Lig\", Menlo, Monaco, 'Courier New', monospace",
     "fontshortcuts.step": 1,
@@ -20,8 +20,8 @@
     "python.jediEnabled": false,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 24,
-    "editor.fontSize": 17,
+    "editor.lineHeight": 21,
+    "editor.fontSize": 16,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -126,5 +126,6 @@
         "e4x": false,
         "indent_empty_lines": false
     },
-    "sync.quietSync": true
+    "sync.quietSync": true,
+    "explorer.autoReveal": false
 }
