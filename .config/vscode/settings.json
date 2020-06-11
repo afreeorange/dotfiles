@@ -18,11 +18,10 @@
     "editor.fontLigatures": true,
     "editor.rulers": [72, 79, 100, 120],
     "python.jediEnabled": false,
-    "git.autofetch": true,
     "explorer.confirmDelete": false,
     "workbench.colorCustomizations": {},
-    "editor.lineHeight": 24,
-    "editor.fontSize": 17,
+    "editor.lineHeight": 20,
+    "editor.fontSize": 15,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -126,5 +125,7 @@
         "comma_first": false,
         "e4x": false,
         "indent_empty_lines": false
-    }
+    },
+    "sync.quietSync": true,
+    "explorer.autoReveal": false
 }

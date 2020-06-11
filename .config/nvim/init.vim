@@ -74,7 +74,7 @@ Plug 'cespare/vim-toml'
 
 " Utility
 Plug 'airblade/vim-gitgutter'          " Show changes to file if in a git repo
-Plug 'bling/vim-airline'               " Because everyone uses it :|
+"Plug 'bling/vim-airline'               " Because everyone uses it :|
 Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
 Plug 'junegunn/fzf'                    " Fuzzy file finder! See .bash_profile for export
 Plug 'junegunn/goyo.vim'               " Zen-like full-screen editing
