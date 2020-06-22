@@ -1,8 +1,8 @@
 {
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
+    "remember_open_files": true,
 	"bold_folder_labels": true,
-	"close_windows_when_empty": false,
 	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
 	"draw_minimap_border": true,
 	"enable_inline_error_tips": true,
@@ -29,8 +29,12 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
+<<<<<<< HEAD
 	"font_size": 16,
 	"gpu_window_buffer": false,
+=======
+	"font_size": 17,
+>>>>>>> 0ab06e9238631e339fc990ad7929e63490cec20e
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -56,9 +60,5 @@
 	"show_git_status": false,
 	"tab_size": 4,
 	"theme": "gruvbox.sublime-theme",
-	"theme_agila_camouflage": true,
-	"theme_agila_compact_sidebar": true,
-	"theme_agila_sidebar_font_big": true,
-	"theme_agila_sidebar_xsmall": true,
 	"translate_tabs_to_spaces": true
 }
