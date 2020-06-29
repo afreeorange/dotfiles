@@ -1,7 +1,6 @@
 {
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
-    "remember_open_files": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
 	"draw_minimap_border": true,
@@ -29,7 +28,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 17,
+	"font_size": 16,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -45,6 +44,7 @@
 		"Markdown",
 		"Vintage"
 	],
+	"remember_open_files": true,
 	"rulers":
 	[
 		120,
