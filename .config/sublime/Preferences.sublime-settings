@@ -28,11 +28,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-<<<<<<< HEAD
-	"font_size": 20,
-=======
 	"font_size": 22,
->>>>>>> b4ccfc5b89cfee2b535bd2d86b4a76b449a5f69b
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
