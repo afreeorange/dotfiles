@@ -192,6 +192,7 @@ function __prompt() {
     __prompt_basic
     __prompt_git_info
     __prompt_pyenv_version
+
     if [[ "$PWD" == "$HOME" ]]; then
         echo -n " "
     fi
@@ -218,6 +219,7 @@ alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 #alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
+alias daily-log='touch log-`date "+%Y-%m-%d"`.md'
 
 # Moving around
 alias ..='cd ..'
@@ -318,7 +320,6 @@ alias ping='$PINGER'
 # Bash cheatsheet
 # https://devhints.io/bash
 
-
 export PATH="$HOME/.poetry/bin:$PATH"
-
 export PATH="$HOME/.cargo/bin:$PATH"
+
