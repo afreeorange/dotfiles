@@ -39,7 +39,7 @@ if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
 fi
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
-yadm pull origin master --quiet
+yadm pull origin master --quiet --strategy-option=theirs
 CHANGED_FILES=()
 while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
 
