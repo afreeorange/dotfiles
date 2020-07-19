@@ -21,3 +21,5 @@
     ba = branch --all
     r = remote --verbose
     p = push
+[pull]
+	rebase = false
