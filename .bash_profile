@@ -219,7 +219,7 @@ alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 #alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
-alias newlog='touch log-`date "+%Y-%m-%d"`.md'
+alias worklog='touch log-`date "+%Y-%m-%d"`.md'
 
 # Moving around
 alias ..='cd ..'
