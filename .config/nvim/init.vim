@@ -71,6 +71,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-liquid'
 Plug 'cespare/vim-toml'
+Plug 'lepture/vim-jinja'
 
 " Utility
 Plug 'airblade/vim-gitgutter'          " Show changes to file if in a git repo
