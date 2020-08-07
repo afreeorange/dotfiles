@@ -84,9 +84,6 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PATH="$HOME/.poetry/bin:$PATH"
 command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 
-# Ruby
-source_if_exists "$HOME/.rvm/scripts/rvm"
-
 # Node
 export NVM_DIR="$HOME/.nvm"
 # shellcheck source=/dev/null
@@ -320,7 +317,4 @@ alias ping='$PINGER'
 #
 # Bash cheatsheet
 # https://devhints.io/bash
-
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 
