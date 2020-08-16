@@ -11,6 +11,17 @@ warn() {
     echo "$RED""❕$1""$STOP"
 }
 
+gif-to-mp4() {
+    ffmpeg \
+        # This is the framerate
+        -r 30 \
+        -i $1 \
+        -movflags faststart \
+        -pix_fmt yuv420p \
+        -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
+        "$1.mp4"
+}
+
 # --- EXPORTS & BASH OPTIONS ---
 
 # Unicode!
