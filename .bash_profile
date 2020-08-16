@@ -12,14 +12,14 @@ warn() {
 }
 
 gif-to-mp4() {
+    FILENAME="$1"
     ffmpeg \
-        # This is the framerate
         -r 30 \
-        -i $1 \
+        -i "$FILENAME" \
         -movflags faststart \
         -pix_fmt yuv420p \
         -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
-        "$1.mp4"
+        "${FILENAME%%.gif}.mp4"
 }
 
 # --- EXPORTS & BASH OPTIONS ---
