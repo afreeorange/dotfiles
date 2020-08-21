@@ -221,7 +221,8 @@ $PS_SYMBOL "
 # --- CUSTOM COMMANDS & ALIASES ---
 
 alias ll='ls -l'
-alias bru='brew update && brew upgrade'
+alias bru='brew cleanup && brew update && brew upgrade'
+alias ep='$EDITOR $HOME/.bash_profile'
 alias brew-update='brew bundle --file=~/.Brewfile'
 alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
