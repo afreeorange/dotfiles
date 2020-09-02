@@ -61,6 +61,8 @@ shopt -s nocaseglob   # Case-insensitive globbing
 shopt -s cdspell      # Autocorrect typos in path names when using `cd`
 shopt -s checkwinsize # Update LINES and COLUMNS on screen resize
 
+# macOS
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # --- COLORS ---
 
