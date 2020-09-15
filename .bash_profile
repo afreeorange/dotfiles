@@ -11,7 +11,7 @@ warn() {
     echo "$RED""❕$1""$STOP"
 }
 
-gif-to-mp4() {
+gif_to_mp4() {
     FILENAME="$1"
     ffmpeg \
         -r 30 \
@@ -34,9 +34,6 @@ export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=10000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
-
-# My log
-export LOG_LOCATION="$HOME/log.nikhil.io/"
 
 # Some scripts I may have in $HOME
 export PATH="$HOME/.bin:$PATH"
@@ -223,9 +220,7 @@ $PS_SYMBOL "
 # --- CUSTOM COMMANDS & ALIASES ---
 
 alias ll='ls -l'
-alias bru='brew cleanup && brew update && brew upgrade'
 alias ep='$EDITOR $HOME/.bash_profile'
-alias brew-update='brew bundle --file=~/.Brewfile'
 alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 #alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
@@ -276,19 +271,6 @@ fi
 
 # For Arch, since I miss 'open' on OS X
 [[ -f /etc/arch-release ]] && alias open='xdg-open'
-
-# Open my log
-function _blog() {
-    open "$LOG_LOCATION/static"
-    sublime "$LOG_LOCATION"
-    echo "${ORANGE}Starting server... on http://localhost:4000${STOP}"
-    cd "$LOG_LOCATION" || return
-
-    # Frakking thing doesn't livereload when a background process 🙄
-    .scripts/serve
-}
-alias blog='cd $LOG_LOCATION && _blog'
-
 
 # --- MISCELLANEOUS ---
 #
