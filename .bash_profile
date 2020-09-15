@@ -11,7 +11,7 @@ warn() {
     echo "$RED""❕$1""$STOP"
 }
 
-gif_to_mp4() {
+gif-to-mp4() {
     FILENAME="$1"
     ffmpeg \
         -r 30 \
@@ -232,6 +232,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# Brew
+alias bru='brew cleanup && brew update && brew upgrade'
+
 # Docker
 alias dkill='docker kill $(docker ps -aq)'
 alias drm='docker rm -f $(docker ps -aq)'
@@ -271,6 +274,7 @@ fi
 
 # For Arch, since I miss 'open' on OS X
 [[ -f /etc/arch-release ]] && alias open='xdg-open'
+
 
 # --- MISCELLANEOUS ---
 #
@@ -314,3 +318,4 @@ alias ping='$PINGER'
 # Bash cheatsheet
 # https://devhints.io/bash
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
