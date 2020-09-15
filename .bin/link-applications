@@ -1,6 +1,16 @@
 #!/bin/bash
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
+    if [[ ! -e "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]]; then
+        echo "Sublime text is not installed"
+        exit
+    fi
+
+    if [[ ! -e "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]]; then
+        echo "VSCode is not installed"
+        exit
+    fi
+
     ln -sf "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "/usr/local/bin/code"
     ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/sublime"
 fi
