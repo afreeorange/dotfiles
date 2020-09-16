@@ -1,32 +1,51 @@
 #!/bin/bash
-#
-#
-# Mostly use Ubuntu; add Arch stuff later
-#
+
+# Got tired of having ton of scripts. This does _everything_. Does all
+# the checks, sets things up, backs things up, updates things.
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-echo "${CYAN}✔︎ Installing required packages${STOP}"
-apt -y update
-apt -y install lsb-release curl
+# Need HomeBrew before anything
+command -v brew &> /dev/null || {
+    echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
+    echo "https://docs.brew.sh/Installation"
+    exit
+}
 
-echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
-yadm submodule update --recursive --init
+# Back up dependencies for Node, Python, and Brew
+# Set up these:
+#   Sublime
+#   VSCode
+#   nvim
+#   Github Desktop
+#   iTerm2
 
-echo "${CYAN}✔︎ Configuring vim${STOP}"
-mkdir -p "$HOME/.vim/plugged"
-curl --silent -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-$VIM +PlugClean +PlugInstall +PlugUpdate +qall
+# Check if we have everything
+REQUIRED_APPS=(
+    "brew"
+)
 
-echo "${CYAN}✔︎ Configuring NeoVim${STOP}"
-curl --silent -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Use Brewfile to install stuff
 
-echo "${CYAN}✔︎ Configuring VSCode${STOP}"
-ln -s "$HOME/.config/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+# Configure nvim
+$VIM +PlugClean +PlugInstall +qall
 
-echo "${CYAN}✔︎ Linking Applications${STOP}"
-"$HOME/.bin/link-applications"
+# Configure Sublime Text
+
+# echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
+# yadm submodule update --recursive --init
+
+# echo "${CYAN}✔︎ Configuring vim${STOP}"
+# mkdir -p "$HOME/.vim/plugged"
+# curl --silent -fLo ~/.vim/autoload/plug.vim --create-dirs \
+#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# $VIM +PlugClean +PlugInstall +PlugUpdate +qall
+
+# echo "${CYAN}✔︎ Configuring NeoVim${STOP}"
+# curl --silent -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
+#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# echo "${CYAN}✔︎ Linking Applications${STOP}"
+# "$HOME/.bin/link-applications"
 
