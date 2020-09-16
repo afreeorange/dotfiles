@@ -1,17 +1,29 @@
 #!/bin/bash
 
-# YUGE WIP.
-# Assume that python and pip are installed
-
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
+# Check if pyenv is managing things
+if [[ -z "$PYENV_ROOT" ]]; then
+    echo "${RED}Pyenv is not managing Python. Stopping.${STOP}"
+    exit
+fi
+
 PYTHON_VERSION="$(python --version | cut -d' ' -f2)"
-DEPENDENCIES="$(pip freeze)"
 OUTPUT_FILE="$HOME/.platform-dependencies/python-$PYTHON_VERSION"
 
-echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
-truncate -s0 "$OUTPUT_FILE"
+# Check for pip
+command -v pip &> /dev/null || {
+    echo "${RED}Could not find pip. Stopping.${STOP}"
+    exit
+}
 
+# Make an empty output file
+# `truncate` not found on fucking macOS
+echo "" > "$OUTPUT_FILE"
+
+# Finally write dependencies
+echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
+DEPENDENCIES="$(pip freeze)"
 echo "$DEPENDENCIES" > "$OUTPUT_FILE"
 echo "Done"
