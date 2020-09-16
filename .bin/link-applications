@@ -1,16 +1,26 @@
 #!/bin/bash
 
+source "$HOME/.bash_colors"
+
+LINKS_MACOS=(
+    # Source;Target;Name
+    '/Applications/GitHub Desktop.app/Contents/Resources/app/static/github.sh;/usr/local/bin/github;Github Desktop'
+    '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl;/usr/local/bin/sublime;Sublime Text'
+    '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code;/usr/local/bin/code;VSCode'
+)
+
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    if [[ ! -e "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]]; then
-        echo "Sublime text is not installed"
-        exit
-    fi
+    for LINK in "${LINKS_MACOS[@]}"; do
+        SOURCE=$(echo "$LINK" | cut -d";" -f1)
+        TARGET=$(echo "$LINK" | cut -d";" -f2)
+        NAME=$(echo "$LINK" | cut -d";" -f3)
 
-    if [[ ! -e "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]]; then
-        echo "VSCode is not installed"
-        exit
-    fi
-
-    ln -sf "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "/usr/local/bin/code"
-    ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/sublime"
+        if [[ ! -e "$SOURCE" ]]; then
+            echo "${RED}$NAME is not installed... skipping${STOP}"
+            continue
+        else
+            echo "${GREEN}Symlinking \"$NAME\": $SOURCE 👉 $TARGET${STOP}"
+            ln -sf "$SOURCE" "$TARGET"
+        fi
+    done
 fi
