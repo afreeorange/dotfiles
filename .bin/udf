@@ -20,9 +20,14 @@ OS=$(uname -s)
 EXTRA_BACKUP_OPTION=$1
 
 if [[ "$EXTRA_BACKUP_OPTION" == "b" && "$OS" == "Darwin" ]]; then
-    echo "${CYAN}✔︎  Backing up Brewfile${STOP}"
-    MACOS_VERSION=$(sw_vers -productVersion)
+    MACOS_VERSION="$(sw_vers -productVersion | cut -d"." -f1).$(sw_vers -productVersion | cut -d"." -f2)"
+    OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
+
+    echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
     brew bundle dump --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" --force
+
+    echo "${CYAN}Quitting. Don't forget to run 'udf' again!${STOP}"
+    exit
 fi
 
 if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
@@ -36,6 +41,9 @@ if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
 
     # TODO: Only add paths output by the scripts above
     yadm add -f "$HOME/.platform-dependencies/*"
+
+    echo "${CYAN}Quitting. Don't forget to run 'udf' again!${STOP}"
+    exit
 fi
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"

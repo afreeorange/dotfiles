@@ -9,7 +9,9 @@ if [[ -z "$PYENV_ROOT" ]]; then
     exit
 fi
 
-PYTHON_VERSION="$(python --version | cut -d' ' -f2)"
+MAJOR_VERSION=$(python -c "import sys; print(sys.version_info.major)")
+MINOR_VERSION=$(python -c "import sys; print(sys.version_info.minor)")
+PYTHON_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
 OUTPUT_FILE="$HOME/.platform-dependencies/python-$PYTHON_VERSION"
 
 # Check for pip

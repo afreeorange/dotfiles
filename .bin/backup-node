@@ -9,7 +9,9 @@ if [[ -z "$NVM_BIN" ]]; then
     exit
 fi
 
-NODE_VERSION="$(node --version)"
+MAJOR_VERSION=$(node -e "console.log(process.versions.node.split('.')[0]);")
+MINOR_VERSION=$(node -e "console.log(process.versions.node.split('.')[1]);")
+NODE_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"

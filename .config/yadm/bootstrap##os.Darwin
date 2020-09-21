@@ -16,7 +16,8 @@ command -v brew &> /dev/null || {
     exit
 }
 
-MACOS_VERSION=$(sw_vers -productVersion)
+# Only interested in Major.Minor
+MACOS_VERSION="$(sw_vers -productVersion | cut -d"." -f1).$(sw_vers -productVersion | cut -d"." -f2)"
 BREWFILE="$HOME/.platform-dependencies/macos-$MACOS_VERSION"
 
 echo "${CYAN}✔︎ Using this Brewfile to install stuff: ${BREWFILE}${STOP}"
