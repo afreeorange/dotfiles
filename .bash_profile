@@ -11,14 +11,16 @@ warn() {
     echo "$RED""❕$1""$STOP"
 }
 
+# Reference:
+# https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
 gif-to-mp4() {
     FILENAME="$1"
     ffmpeg \
-        -r 30 \
         -i "$FILENAME" \
+        -filter_complex "[0:v] fps=24" \
+        -vsync 0 \
         -movflags faststart \
         -pix_fmt yuv420p \
-        -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
         "${FILENAME%%.gif}.mp4"
 }
 
@@ -325,4 +327,3 @@ alias scratch="$EDITOR $HOME/Dropbox/Scratchpad.md"
 # Bash cheatsheet
 # https://devhints.io/bash
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
