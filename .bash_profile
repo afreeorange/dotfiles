@@ -99,6 +99,10 @@ export NVM_DIR="$HOME/.nvm"
 # shellcheck source=/dev/null
 [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
 
+# Deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # GO!
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
