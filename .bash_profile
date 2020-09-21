@@ -276,14 +276,6 @@ fi
 [[ -f /etc/arch-release ]] && alias open='xdg-open'
 
 
-# --- MISCELLANEOUS ---
-#
-# Source any local files
-# Not sure why this returns a non-zero exit...
-source_if_exists ~/.bash_profile.local
-echo -n ""
-
-
 # --- REPLACEMENTS ---
 
 # Use vim if nvim not available
@@ -298,6 +290,17 @@ export MANPAGER="/bin/sh -c \"col -b | $VIM -c 'set ft=man ts=8 nomod nolist non
 export PINGER=ping
 command -v prettyping > /dev/null 2>&1 && PINGER="prettyping --nolegend"
 alias ping='$PINGER'
+
+# --- MISCELLANEOUS ---
+#
+# Source any local files
+# Not sure why this returns a non-zero exit...
+source_if_exists ~/.bash_profile.local
+echo -n ""
+
+# My Scratchpads
+alias life="$EDITOR $HOME/Dropbox/Life.md"
+alias scratch="$EDITOR $HOME/Dropbox/Scratchpad.md"
 
 # --- REFERENCES ---
 #

@@ -6,46 +6,21 @@
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-# Need HomeBrew before anything
+echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
+yadm submodule update --recursive --init
+
+# Need HomeBrew on macOS for all other stuff
 command -v brew &> /dev/null || {
     echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
     echo "https://docs.brew.sh/Installation"
     exit
 }
 
-# Back up dependencies for Node, Python, and Brew
-# Set up these:
-#   Sublime
-#   VSCode
-#   nvim
-#   Github Desktop
-#   iTerm2
+MACOS_VERSION=$(sw_vers -productVersion)
+BREWFILE="$HOME/.platform-dependencies/macos-$MACOS_VERSION"
 
-# Check if we have everything
-REQUIRED_APPS=(
-    "brew"
-)
+echo "${CYAN}✔︎ Using this Brewfile to install stuff: ${BREWFILE}${STOP}"
+brew bundle --file="$BREWFILE"
 
-# Use Brewfile to install stuff
-
-# Configure nvim
-$VIM +PlugClean +PlugInstall +qall
-
-# Configure Sublime Text
-
-# echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
-# yadm submodule update --recursive --init
-
-# echo "${CYAN}✔︎ Configuring vim${STOP}"
-# mkdir -p "$HOME/.vim/plugged"
-# curl --silent -fLo ~/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# $VIM +PlugClean +PlugInstall +PlugUpdate +qall
-
-# echo "${CYAN}✔︎ Configuring NeoVim${STOP}"
-# curl --silent -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# echo "${CYAN}✔︎ Linking Applications${STOP}"
-# "$HOME/.bin/link-applications"
-
+echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
+"$HOME/.bin/setup-apps"
