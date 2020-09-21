@@ -327,4 +327,3 @@ alias scratch="$EDITOR $HOME/Dropbox/Scratchpad.md"
 # Bash cheatsheet
 # https://devhints.io/bash
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
