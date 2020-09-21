@@ -10,18 +10,14 @@ echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
 yadm submodule update --recursive --init
 
 # Need HomeBrew on macOS for all other stuff
-command -v brew &> /dev/null || {
+command -v brew &>/dev/null || {
     echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
     echo "https://docs.brew.sh/Installation"
     exit
 }
 
-# Only interested in Major.Minor
-MACOS_VERSION="$(sw_vers -productVersion | cut -d"." -f1).$(sw_vers -productVersion | cut -d"." -f2)"
-BREWFILE="$HOME/.platform-dependencies/macos-$MACOS_VERSION"
-
-echo "${CYAN}✔︎ Using this Brewfile to install stuff: ${BREWFILE}${STOP}"
-brew bundle --file="$BREWFILE"
+echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
+"$HOME/.bin/ipd"
 
 echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 "$HOME/.bin/setup-apps"
