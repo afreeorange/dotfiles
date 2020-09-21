@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Update Dot Files
 # Pull and push changes to my dotfiles
@@ -9,34 +9,40 @@ cd "$HOME" || return
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
+
 # shellcheck source=/dev/null
 source "$HOME/.bash_excuses"
 
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
+
 OS=$(uname -s)
 
-# TODO: Parse shortopts later but for now
-#   adding "b" backs up Brewfiles on macOS
-#   adding "d" backs up platform dependencies on all OSes
-EXTRA_BACKUP_OPTION=$1
+if [[ "$OS" == "Darwin" ]]; then
+    OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
 
-if [[ "$EXTRA_BACKUP_OPTION" == "b" && "$OS" == "Darwin" ]]; then
-    echo "${CYAN}✔︎  Backing up Brewfile${STOP}"
-    MACOS_VERSION=$(sw_vers -productVersion)
-    brew bundle dump --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" --force
+    echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
+    brew bundle dump \
+        --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" \
+        --force
 fi
 
-if [[ "$EXTRA_BACKUP_OPTION" == "d" ]]; then
-    echo "${CYAN}✔︎  Backing up dependencies${STOP}"
+# ---
 
-    echo "${YELLOW}+  Node${STOP}"
-    "$HOME/.bin/backup-node"
+echo "${CYAN}✔︎  Backing up dependencies${STOP}"
 
-    echo "${YELLOW}+  Python${STOP}"
-    "$HOME/.bin/backup-python"
+echo "${YELLOW}+  Node${STOP}"
+"$HOME/.bin/backup-node"
 
-    # TODO: Only add paths output by the scripts above
-    yadm add -f "$HOME/.platform-dependencies/*"
-fi
+echo "${YELLOW}+  Python${STOP}"
+"$HOME/.bin/backup-python"
+
+# Forcing since I can use nvm or pyenv to switch interpreters and
+# don't want to forget to commit the packages associated with the
+# new interpreter.
+yadm add -f "$HOME/.platform-dependencies/*"
+
+# ---
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet --strategy-option=theirs
@@ -54,7 +60,6 @@ fi
 for FILE in "${CHANGED_FILES[@]}"; do
     echo "${GRAY}${FILE}${STOP}"
 done
-
 
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
 FILES=()
@@ -79,4 +84,3 @@ yadm commit --quiet --message "$(random_excuse)"
 
 echo "${CYAN}✔︎  Attempting push to Github${STOP}"
 yadm push origin master --quiet
-

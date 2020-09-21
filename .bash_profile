@@ -37,9 +37,6 @@ export HISTSIZE=10000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 
-# My log
-export LOG_LOCATION="$HOME/log.nikhil.io/"
-
 # Some scripts I may have in $HOME
 export PATH="$HOME/.bin:$PATH"
 
@@ -103,6 +100,10 @@ command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 # shellcheck source=/dev/null
 [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
+
+# Deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # GO!
 export GOPATH="$HOME/go"
@@ -225,9 +226,7 @@ $PS_SYMBOL "
 # --- CUSTOM COMMANDS & ALIASES ---
 
 alias ll='ls -l'
-alias bru='brew cleanup && brew update && brew upgrade'
 alias ep='$EDITOR $HOME/.bash_profile'
-alias brew-update='brew bundle --file=~/.Brewfile'
 alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 #alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
@@ -238,6 +237,9 @@ alias worklog='touch log-`date "+%Y-%m-%d"`.md'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# Brew
+alias bru='brew cleanup && brew update && brew upgrade'
 
 # Docker
 alias dkill='docker kill $(docker ps -aq)'
@@ -279,26 +281,6 @@ fi
 # For Arch, since I miss 'open' on OS X
 [[ -f /etc/arch-release ]] && alias open='xdg-open'
 
-# Open my log
-function _blog() {
-    open "$LOG_LOCATION/static"
-    sublime "$LOG_LOCATION"
-    echo "${ORANGE}Starting server... on http://localhost:4000${STOP}"
-    cd "$LOG_LOCATION" || return
-
-    # Frakking thing doesn't livereload when a background process 🙄
-    .scripts/serve
-}
-alias blog='cd $LOG_LOCATION && _blog'
-
-
-# --- MISCELLANEOUS ---
-#
-# Source any local files
-# Not sure why this returns a non-zero exit...
-source_if_exists ~/.bash_profile.local
-echo -n ""
-
 
 # --- REPLACEMENTS ---
 
@@ -314,6 +296,17 @@ export MANPAGER="/bin/sh -c \"col -b | $VIM -c 'set ft=man ts=8 nomod nolist non
 export PINGER=ping
 command -v prettyping > /dev/null 2>&1 && PINGER="prettyping --nolegend"
 alias ping='$PINGER'
+
+# --- MISCELLANEOUS ---
+#
+# Source any local files
+# Not sure why this returns a non-zero exit...
+source_if_exists ~/.bash_profile.local
+echo -n ""
+
+# My Scratchpads
+alias life="$EDITOR $HOME/Dropbox/Life.md"
+alias scratch="$EDITOR $HOME/Dropbox/Scratchpad.md"
 
 # --- REFERENCES ---
 #
@@ -334,3 +327,4 @@ alias ping='$PINGER'
 # Bash cheatsheet
 # https://devhints.io/bash
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

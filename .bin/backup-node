@@ -1,16 +1,23 @@
-#!/bin/bash
-
-# YUGE WIP.
-# Assume that npm is installed
+#!/usr/bin/env bash
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-NODE_VERSION="$(node --version)"
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
+
+# Check if NVM is managing node versions
+if [[ -z "$NVM_BIN" ]]; then
+    echo "${RED}NVM is not managing Node. Stopping.${STOP}"
+    exit
+fi
+
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
-truncate -s0 "$OUTPUT_FILE"
+
+# `truncate` not found on fucking macOS
+echo "" > "$OUTPUT_FILE"
 
 PACKAGE_PATHS="$(npm list -g --depth 0 --parseable 2> /dev/null | grep node_modules)"
 IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do

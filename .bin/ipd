@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Install Platorm Dependencies
+# Install Platform Dependencies
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-NODE_VERSION=$(node --version)
-PYTHON_VERSION=$(python --version | cut -d" " -f2)
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
 
 PLATFORM_DEPENDENCIES_ROOT="$HOME/.platform-dependencies"
 IFS=$'\n'
 
 WHAT_TO_INSTALL=$1
 
-function install_node {
+function install_node() {
     echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
     local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
 
@@ -26,7 +26,7 @@ function install_node {
     fi
 }
 
-function install_python {
+function install_python() {
     echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
     local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
 
@@ -39,9 +39,8 @@ function install_python {
     fi
 }
 
-function install_homebrew {
+function install_homebrew() {
     if [[ "$(uname -s)" == "Darwin" ]]; then
-        MACOS_VERSION=$(sw_vers -productVersion)
         echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
 
         brew bundle --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
@@ -57,10 +56,8 @@ elif [[ "$WHAT_TO_INSTALL" == "python" ]]; then
     install_python
 elif [[ "$WHAT_TO_INSTALL" == "brew" ]]; then
     install_homebrew
-elif [[ "$WHAT_TO_INSTALL" == "all" ]]; then
+elif [[ -z "$WHAT_TO_INSTALL" ]]; then
     install_node
     install_python
     install_homebrew
-else
-    echo "👉 ${RED}Must be one of 'node', 'python', 'brew', or 'all'${STOP}"
 fi

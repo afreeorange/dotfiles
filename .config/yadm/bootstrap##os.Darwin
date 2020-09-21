@@ -1,32 +1,23 @@
-#!/bin/bash
-#
-#
-# Mostly use Ubuntu; add Arch stuff later
-#
+#!/usr/bin/env bash
+
+# Got tired of having ton of scripts. This does _everything_. Does all
+# the checks, sets things up, backs things up, updates things.
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-echo "${CYAN}✔︎ Installing required packages${STOP}"
-apt -y update
-apt -y install lsb-release curl
-
 echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
 yadm submodule update --recursive --init
 
-echo "${CYAN}✔︎ Configuring vim${STOP}"
-mkdir -p "$HOME/.vim/plugged"
-curl --silent -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-$VIM +PlugClean +PlugInstall +PlugUpdate +qall
+# Need HomeBrew on macOS for all other stuff
+command -v brew &>/dev/null || {
+    echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
+    echo "https://docs.brew.sh/Installation"
+    exit
+}
 
-echo "${CYAN}✔︎ Configuring NeoVim${STOP}"
-curl --silent -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
+"$HOME/.bin/ipd"
 
-echo "${CYAN}✔︎ Configuring VSCode${STOP}"
-ln -s "$HOME/.config/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
-
-echo "${CYAN}✔︎ Linking Applications${STOP}"
-"$HOME/.bin/link-applications"
-
+echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
+"$HOME/.bin/setup-apps"
