@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Update Dot Files
 # Pull and push changes to my dotfiles

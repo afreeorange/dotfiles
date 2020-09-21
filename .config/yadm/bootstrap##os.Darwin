@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Got tired of having ton of scripts. This does _everything_. Does all
 # the checks, sets things up, backs things up, updates things.

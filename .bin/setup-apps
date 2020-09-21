@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Most of this is just symlinking, except for Sublime.
 
