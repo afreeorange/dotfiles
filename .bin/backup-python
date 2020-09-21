@@ -3,15 +3,15 @@
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
+
 # Check if pyenv is managing things
 if [[ -z "$PYENV_ROOT" ]]; then
     echo "${RED}Pyenv is not managing Python. Stopping.${STOP}"
     exit
 fi
 
-MAJOR_VERSION=$(python -c "import sys; print(sys.version_info.major)")
-MINOR_VERSION=$(python -c "import sys; print(sys.version_info.minor)")
-PYTHON_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
 OUTPUT_FILE="$HOME/.platform-dependencies/python-$PYTHON_VERSION"
 
 # Check for pip

@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
-# Install Platorm Dependencies
+# Install Platform Dependencies
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
-NODE_VERSION=$(node --version)
-PYTHON_VERSION=$(python --version | cut -d" " -f2)
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
+
+echo "$NODE_VERSION"
+echo "$PYTHON_VERSION"
+echo "$MACOS_VERSION"
 
 PLATFORM_DEPENDENCIES_ROOT="$HOME/.platform-dependencies"
 IFS=$'\n'

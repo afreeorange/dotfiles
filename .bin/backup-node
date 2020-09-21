@@ -3,15 +3,15 @@
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
+
 # Check if NVM is managing node versions
 if [[ -z "$NVM_BIN" ]]; then
     echo "${RED}NVM is not managing Node. Stopping.${STOP}"
     exit
 fi
 
-MAJOR_VERSION=$(node -e "console.log(process.versions.node.split('.')[0]);")
-MINOR_VERSION=$(node -e "console.log(process.versions.node.split('.')[1]);")
-NODE_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"

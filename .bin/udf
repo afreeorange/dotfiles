@@ -9,8 +9,12 @@ cd "$HOME" || return
 
 # shellcheck source=/dev/null
 source "$HOME/.bash_colors"
+
 # shellcheck source=/dev/null
 source "$HOME/.bash_excuses"
+
+# shellcheck source=/dev/null
+source "$HOME/.bin/platform-versions"
 
 OS=$(uname -s)
 
@@ -20,7 +24,6 @@ OS=$(uname -s)
 EXTRA_BACKUP_OPTION=$1
 
 if [[ "$EXTRA_BACKUP_OPTION" == "b" && "$OS" == "Darwin" ]]; then
-    MACOS_VERSION="$(sw_vers -productVersion | cut -d"." -f1).$(sw_vers -productVersion | cut -d"." -f2)"
     OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
 
     echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
