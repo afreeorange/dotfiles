@@ -19,8 +19,7 @@ udf
 udf b
 
 # Update dependencies for Node, Python and place them in
-# "$HOME/.platform-dependencies" using a full version number
-# (whatever's reported by the interpreter.)
+# "$HOME/.platform-dependencies" using a MAJOR.MINOR number
 udf d
 
 # Redo yadm if all else fails
