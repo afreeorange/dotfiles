@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Most of this is just symlinking, except for Sublime.
+
+# shellcheck source=/dev/null
 source "$HOME/.bash_colors"
 
 LINKS_MACOS=(
@@ -23,4 +26,25 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
             ln -sf "$SOURCE" "$TARGET"
         fi
     done
+
+    # For Sublime Text, make sure we are pointing to our config
+    SUBLIME_PREFS_FOLDER="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    echo "${CYAN}✔︎ Configuring Sublime Text${STOP}"
+    rm -rf "${SUBLIME_PREFS_FOLDER}.old"
+    mv "$SUBLIME_PREFS_FOLDER" "${SUBLIME_PREFS_FOLDER}.old"
+    ln -s "$HOME/.config/sublime" "$SUBLIME_PREFS_FOLDER"
+    echo "${GREEN}! Done but you need to start it and install Package Control!${STOP}"
+
+    # Neovim
+    echo "${CYAN}✔︎ Configuring Neovim${STOP}"
+    curl    --silent \
+            --create-dirs \
+            -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    $VIM +PlugClean +PlugInstall +PlugUpdate +qall
+
+    # Deno
+    curl -fsSL https://deno.land/x/install/install.sh | sh
 fi
+
+
