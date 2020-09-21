@@ -22,7 +22,7 @@ if [[ "$OS" == "Darwin" ]]; then
     OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
 
     echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
-    brew bundle dump --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" --force
+    brew bundle dump --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
 fi
 
 # ---
@@ -35,6 +35,9 @@ echo "${YELLOW}+  Node${STOP}"
 echo "${YELLOW}+  Python${STOP}"
 "$HOME/.bin/backup-python"
 
+# Forcing since I can use nvm or pyenv to switch interpreters and
+# don't want to forget to commit the packages associated with the
+# new interpreter.
 yadm add -f "$HOME/.platform-dependencies/*"
 
 # ---
