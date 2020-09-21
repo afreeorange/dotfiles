@@ -33,6 +33,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     rm -rf "${SUBLIME_PREFS_FOLDER}.old"
     mv "$SUBLIME_PREFS_FOLDER" "${SUBLIME_PREFS_FOLDER}.old"
     ln -s "$HOME/.config/sublime" "$SUBLIME_PREFS_FOLDER"
+    rm -rf "${SUBLIME_PREFS_FOLDER}.old"
     echo "${GREEN}! Done but you need to start it and install Package Control!${STOP}"
 
     # Neovim
@@ -41,13 +42,14 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
             --create-dirs \
             -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    $VIM +PlugClean +PlugInstall +PlugUpdate +qall
+    $(which nvim) +PlugClean +PlugInstall +PlugUpdate +qall
 
     # Deno
-    curl -fsSL https://deno.land/x/install/install.sh | sh
+    command -v deno || {
+        curl -fsSL https://deno.land/x/install/install.sh | sh
+    }
 
     # iTerm2
     echo "${GREEN}! Remember to set up iTerm2 in its preferences!${STOP}"
 fi
-
 
