@@ -22,7 +22,9 @@ if [[ "$OS" == "Darwin" ]]; then
     OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
 
     echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
-    brew bundle dump --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
+    brew bundle dump \
+        --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" \
+        --force
 fi
 
 # ---
