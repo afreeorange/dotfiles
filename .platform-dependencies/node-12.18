@@ -3,6 +3,7 @@ create-react-app
 http-server
 lr-http-server
 npm
+readability-cli
 typescript
 yalc
 yarn
