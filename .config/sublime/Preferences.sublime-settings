@@ -4,7 +4,6 @@
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
 	"draw_minimap_border": true,
-	"enable_inline_error_tips": true,
 	"file_exclude_patterns":
 	[
 		".DS_Store",
@@ -29,7 +28,7 @@
 		"lib"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 20,
+	"font_size": 19,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -53,7 +52,7 @@
 		79
 	],
 	"scroll_past_end": true,
-	"show_git_status": false,
+	"show_git_status": true,
 	"tab_size": 4,
 	"theme": "gruvbox.sublime-theme",
 	"translate_tabs_to_spaces": true
