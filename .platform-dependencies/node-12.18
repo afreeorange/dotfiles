@@ -1,5 +1,6 @@
 
 create-react-app
+eslint
 expo-cli
 http-server
 lr-http-server
