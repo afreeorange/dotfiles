@@ -232,6 +232,7 @@ alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 #alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
 alias worklog='touch log-`date "+%Y-%m-%d"`.md'
+alias please='sudo'
 
 # Moving around
 alias ..='cd ..'
