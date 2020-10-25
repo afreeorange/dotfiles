@@ -2,6 +2,7 @@
 create-react-app
 eslint
 expo-cli
+git-stats
 http-server
 lr-http-server
 npm
