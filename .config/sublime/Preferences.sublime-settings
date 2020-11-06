@@ -2,7 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Agila Theme/Agila Dracula.tmTheme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
 	"draw_minimap_border": true,
 	"file_exclude_patterns":
 	[
@@ -28,7 +28,7 @@
 		"lib"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 19,
+	"font_size": 16,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -54,6 +54,6 @@
 	"scroll_past_end": true,
 	"show_git_status": true,
 	"tab_size": 4,
-	"theme": "Agila Dracula.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
