@@ -4,8 +4,8 @@ filetype plugin indent on
 " Show line numbers
 set number
 
-" Don't wrap long lines
-set nowrap
+" Wrap long lines
+set wrap
 
 " Indentation behaviour
 set tabstop=4
