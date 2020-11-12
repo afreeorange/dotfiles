@@ -28,7 +28,7 @@
 		"lib"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 16,
+	"font_size": 22,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -41,6 +41,7 @@
 	"ignored_packages":
 	[
 		"isort",
+		"Markdown",
 		"Vintage"
 	],
 	"remember_open_files": true,
@@ -53,6 +54,6 @@
 	"scroll_past_end": true,
 	"show_git_status": true,
 	"tab_size": 4,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "gruvbox.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
