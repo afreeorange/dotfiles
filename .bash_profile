@@ -11,19 +11,6 @@ warn() {
     echo "$RED""❕$1""$STOP"
 }
 
-# Reference:
-# https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
-gif-to-mp4() {
-    FILENAME="$1"
-    ffmpeg \
-        -i "$FILENAME" \
-        -filter_complex "[0:v] fps=24" \
-        -vsync 0 \
-        -movflags faststart \
-        -pix_fmt yuv420p \
-        "${FILENAME%%.gif}.mp4"
-}
-
 # --- EXPORTS & BASH OPTIONS ---
 
 # Unicode!
@@ -85,6 +72,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 base16_gruvbox-dark-pale
 
 # --- LANGUAGE CONFIGS ---
@@ -212,16 +200,15 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-## Spit a random excuse
-## shellcheck source=/dev/null
-#source "$HOME/.bash_excuses"
-#random_excuse | cowsay
-#echo ""
+# # ## Spit a random excuse
+# # ## shellcheck source=/dev/null
+# # #source "$HOME/.bash_excuses"
+# # #random_excuse | cowsay
+# # #echo ""
 
 # Put everything together
 export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
 $PS_SYMBOL "
-
 
 # --- CUSTOM COMMANDS & ALIASES ---
 
@@ -270,6 +257,19 @@ function dataurl() {
     echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')";
 }
 
+# Reference:
+# https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
+function gif-to-mp4() {
+    FILENAME="$1"
+    ffmpeg \
+        -i "$FILENAME" \
+        -filter_complex "[0:v] fps=24" \
+        -vsync 0 \
+        -movflags faststart \
+        -pix_fmt yuv420p \
+        "${FILENAME%%.gif}.mp4"
+}
+
 # Enterprise Engine white noise generator :D Need "sox" on OS X
 # http://goo.gl/x1Ow6k
 export ENGAGE_PLAY_COMMAND="play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +25 fade h 1 864000 1"
@@ -281,7 +281,6 @@ fi
 
 # For Arch, since I miss 'open' on OS X
 [[ -f /etc/arch-release ]] && alias open='xdg-open'
-
 
 # --- REPLACEMENTS ---
 
@@ -306,8 +305,8 @@ source_if_exists ~/.bash_profile.local
 echo -n ""
 
 # My Scratchpads
-alias life="$EDITOR $HOME/Dropbox/Life.md"
-alias scratch="$EDITOR $HOME/Dropbox/Scratchpad.md"
+alias life="sublime \$HOME/Dropbox/Life.md"
+alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 
 # --- REFERENCES ---
 #
@@ -327,4 +326,3 @@ alias scratch="$EDITOR $HOME/Dropbox/Scratchpad.md"
 #
 # Bash cheatsheet
 # https://devhints.io/bash
-
