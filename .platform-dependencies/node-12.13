@@ -9,7 +9,6 @@ gatsby-cli
 inline-source-cli
 npm
 parcel
-prettier
 stylelint
 stylelint-config-recommended-scss
 stylelint-config-standard-scss

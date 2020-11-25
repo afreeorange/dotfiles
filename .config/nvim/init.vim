@@ -7,6 +7,9 @@ set number
 " Wrap long lines
 set wrap
 
+" Make it easy to jump around
+set relativenumber
+
 " Indentation behaviour
 set tabstop=4
 set shiftwidth=4
@@ -35,9 +38,9 @@ endif
 " ------------- Key Mappings --------------
 
 " Tab control (Why am I not using emacs again?)
+map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
-map <C-n> :tabnew<CR>
 
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
@@ -64,35 +67,28 @@ let mapleader=","
 call plug#begin('$HOME/.vim/plugged')
 
 " Syntax
+Plug 'cespare/vim-toml'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-liquid'
-Plug 'cespare/vim-toml'
 Plug 'lepture/vim-jinja'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+Plug 'stephpy/vim-yaml'
+Plug 'tpope/vim-markdown'
 
 " Utility
-Plug 'airblade/vim-gitgutter'          " Show changes to file if in a git repo
-"Plug 'bling/vim-airline'               " Because everyone uses it :|
-Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
-Plug 'junegunn/fzf'                    " Fuzzy file finder! See .bash_profile for export
-Plug 'junegunn/goyo.vim'               " Zen-like full-screen editing
-Plug 'junegunn/limelight.vim'          " Focus on the stuff you want to edit... best with Goyo
-Plug 'nelstrom/vim-visual-star-search' " Make * useful when searching
-Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
-Plug 'tpope/vim-fugitive'              " Amazing git integration <3
-Plug 'mattn/emmet-vim'                 " Emmet!
-Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
-Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
-Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
+Plug 'dhruvasagar/vim-table-mode'               " Because I'm too lazy and inept to hack tabular.vim
+Plug 'junegunn/fzf'                             " Fuzzy file finder! See .bash_profile for export
+Plug 'junegunn/goyo.vim'                        " Zen-like full-screen editing
+Plug 'junegunn/limelight.vim'                   " Focus on the stuff you want to edit... best with Goyo
+Plug 'nelstrom/vim-visual-star-search'          " Make * useful when searching
+Plug 'tpope/vim-surround'                       " Surround stuff with all sorts of things
+Plug 'tpope/vim-fugitive'                       " Amazing git integration <3
+Plug 'mattn/emmet-vim'                          " Emmet!
+Plug 'scrooloose/nerdcommenter'                 " Because I don't want to copypasta key bindings I don't understand
+Plug 'itspriddle/vim-shellcheck'                " Check bash scripts
+Plug 'hashivim/vim-terraform'                   " Autoformat Terraform files
 
-" Colors
+" Colors, Themes, etc
 Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
