@@ -7,9 +7,6 @@ set number
 " Wrap long lines
 set wrap
 
-" Make it easy to jump around
-set relativenumber
-
 " Indentation behaviour
 set tabstop=4
 set shiftwidth=4
