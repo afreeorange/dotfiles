@@ -135,3 +135,18 @@ colorscheme base16-gruvbox-dark-pale
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim
 " https://github.com/vim-airline/vim-airline/wiki/Dummies-Guide-to-the-status-bar-symbols-(Powerline-fonts)-on-Fedora,-Ubuntu-and-Windows
 
+" This is very lovely stuff:
+" https://stackoverflow.com/a/61625741
+"
+"= GENERIC CLIPBOARD YANK  <F2>y (Y for Yank)
+"= Yank the entire contents of the file into the clipboard; quit without saving.
+"
+"define F2 followed by y to be:
+"|      Go to line 1.
+"|      | From there, into the * buffer (system clipboard),
+"|      | | yank to the end of the file.
+"|      | | | Go to sleep for 1 second (to allow the clipboard to be updated).
+"|      | | | |  Quit without saving the file.
+"|      | | | |  |
+map #2y 1G"*yG1gs:q!<CR>
+
