@@ -40,8 +40,15 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"isort",
+		"Golang Build",
+		"HTMLBeautify",
 		"Markdown",
+		"MarkdownPreview",
+		"Nunjucks Syntax",
+		"Protobuf Syntax Hightlighting",
+		"SublimeLinter-contrib-protoc-gen-lint",
+		"SublimeLinter-csslint",
+		"SublimeLinter-golint",
 		"Vintage"
 	],
 	"remember_open_files": true,
