@@ -218,7 +218,7 @@ alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 #alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
-alias worklog='touch $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && $EDITOR $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
+alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
 alias please='sudo'
 alias co='cd $HOME/code'
 
@@ -327,3 +327,6 @@ alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 #
 # Bash cheatsheet
 # https://devhints.io/bash
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+

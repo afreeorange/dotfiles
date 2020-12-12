@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"EditorConfig",
+		"Erl-AutoCompletion",
 		"gruvbox",
 		"JsPrettier",
 		"MarkdownEditing",
