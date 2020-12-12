@@ -28,7 +28,7 @@
 		"lib"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 19,
+	"font_size": 20,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -40,8 +40,15 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"A File Icon",
+		"Agila Theme",
+		"Base16 Color Schemes",
+		"DocBlockr",
+		"Emmet",
+		"Git",
 		"Golang Build",
 		"HTMLBeautify",
+		"Makefile Plus",
 		"Markdown",
 		"MarkdownPreview",
 		"Nunjucks Syntax",
@@ -49,6 +56,7 @@
 		"SublimeLinter-contrib-protoc-gen-lint",
 		"SublimeLinter-csslint",
 		"SublimeLinter-golint",
+		"TOML",
 		"Vintage"
 	],
 	"remember_open_files": true,
