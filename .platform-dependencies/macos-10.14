@@ -36,7 +36,7 @@ brew "harfbuzz"
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["HEAD", "with-fdk-aac"]
 brew "jpeg"
 brew "xvid"
-brew "cmus", link: false
+brew "cmus"
 brew "cowsay"
 brew "go"
 brew "dep"
