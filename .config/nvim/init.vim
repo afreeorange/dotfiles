@@ -4,9 +4,6 @@ filetype plugin indent on
 " Show line numbers
 set number
 
-" Wrap long lines
-set wrap
-
 " Indentation behaviour
 set tabstop=4
 set shiftwidth=4
@@ -32,12 +29,29 @@ if has ('autocmd')
     augroup END
 endif
 
+" ------------- OS Detection --------------
+" https://vi.stackexchange.com/a/2577
+"
+" Now you can say `if g:os == "Darwin"`
+" Other values are "Linux" and "Windows"
+
+if !exists("g:os")
+    if has("win64") || has("win32") || has("win16")
+        let g:os = "Windows"
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+
 " ------------- Key Mappings --------------
 
 " Tab control (Why am I not using emacs again?)
 map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
+
+" Toggle checkboxes in checklists (for vim-checklist plugin)
+map <C-t> :ChecklistToggleCheckbox<CR>
 
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
@@ -56,6 +70,11 @@ inoremap {, {<CR>},<C-c>O<Tab>
 inoremap [; [<CR>];<C-c>O<Tab>
 inoremap [, [<CR>],<C-c>O<Tab>
 
+" Alt + z toggles wrapping
+if g:os == "Darwin"
+   nnoremap <silent> Ω :set wrap!<CR>
+endif
+
 let mapleader=","
 
 " ------------- Plugin Loading --------------
@@ -70,19 +89,20 @@ Plug 'godlygeek/tabular'
 Plug 'lepture/vim-jinja'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
+Plug 'SidOfc/mkdx'
 
 " Utility
-Plug 'dhruvasagar/vim-table-mode'               " Because I'm too lazy and inept to hack tabular.vim
-Plug 'junegunn/fzf'                             " Fuzzy file finder! See .bash_profile for export
-Plug 'junegunn/goyo.vim'                        " Zen-like full-screen editing
-Plug 'junegunn/limelight.vim'                   " Focus on the stuff you want to edit... best with Goyo
-Plug 'nelstrom/vim-visual-star-search'          " Make * useful when searching
-Plug 'tpope/vim-surround'                       " Surround stuff with all sorts of things
-Plug 'tpope/vim-fugitive'                       " Amazing git integration <3
-Plug 'mattn/emmet-vim'                          " Emmet!
-Plug 'scrooloose/nerdcommenter'                 " Because I don't want to copypasta key bindings I don't understand
-Plug 'itspriddle/vim-shellcheck'                " Check bash scripts
-Plug 'hashivim/vim-terraform'                   " Autoformat Terraform files
+Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
+Plug 'evansalter/vim-checklist'        " For checklists!
+Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
+Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
+Plug 'junegunn/fzf'                    " Fuzzy file finder! See .bash_profile for export
+Plug 'junegunn/goyo.vim'               " Zen-like full-screen editing
+Plug 'mattn/emmet-vim'                 " Emmet!
+Plug 'nelstrom/vim-visual-star-search' " Make * useful when searching
+Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
+Plug 'tpope/vim-fugitive'              " Amazing git integration <3
+Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
 
 " Colors, Themes, etc
 Plug 'chriskempson/base16-vim'

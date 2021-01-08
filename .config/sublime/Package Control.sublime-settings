@@ -7,7 +7,9 @@
 	[
 		"gruvbox",
 		"JsPrettier",
+		"JSX",
 		"MarkdownEditing",
+		"Nunjucks",
 		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
@@ -21,7 +23,6 @@
 		"Table Editor",
 		"Terrafmt",
 		"Terraform",
-		"Text Pastry",
 		"TypeScript",
 		"Wrap Plus"
 	]
