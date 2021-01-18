@@ -200,11 +200,11 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-# # ## Spit a random excuse
-# # ## shellcheck source=/dev/null
-# # #source "$HOME/.bash_excuses"
-# # #random_excuse | cowsay
-# # #echo ""
+## Spit a random excuse
+## shellcheck source=/dev/null
+#source "$HOME/.bash_excuses"
+#random_excuse | cowsay
+#echo ""
 
 # Put everything together
 export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
@@ -212,15 +212,14 @@ $PS_SYMBOL "
 
 # --- CUSTOM COMMANDS & ALIASES ---
 
-alias ll='ls -l'
-alias ep='$EDITOR $HOME/.bash_profile'
-alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
-alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
-#alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
-alias udl='yadm ls-tree --full-tree -r --name-only master'
-alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
-alias please='sudo'
 alias co='cd $HOME/code'
+alias ep='$EDITOR $HOME/.bash_profile'
+alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
+alias ll='ls -l'
+alias please='sudo'
+alias udl='yadm ls-tree --full-tree -r --name-only master'
+alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
+alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
 
 # Moving around
 alias ..='cd ..'
@@ -244,7 +243,7 @@ alias gp='git pull'
 alias gco='git checkout'
 alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
-alias gpom='git push origin master --tags'
+alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
 
 # Create a data URL from a file
@@ -330,5 +329,3 @@ alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
