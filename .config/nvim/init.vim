@@ -59,16 +59,19 @@ nnoremap <silent> <C-p> :FZF<CR>
 " Show me the tree of files with netrw (habit from Sublime...)
 nnoremap <silent> <C-k><C-b> :Vexplore<CR>
 
+" Insert a Markdown picture tag
+nnoremap <leader>p i![]()<Esc>2hi
+
 " Auto match parentheses sans plugin
 " By the great romainl: https://bit.ly/2Wx5h8t
 " He has a few functions on that thread but I won't add until I
 " get what he's doing
-inoremap (; (<CR>);<C-c>O<Tab>
-inoremap (, (<CR>),<C-c>O<Tab>
-inoremap {; {<CR>};<C-c>O<Tab>
-inoremap {, {<CR>},<C-c>O<Tab>
-inoremap [; [<CR>];<C-c>O<Tab>
-inoremap [, [<CR>],<C-c>O<Tab>
+" inoremap (; (<CR>);<C-c>O<Tab>
+" inoremap (, (<CR>),<C-c>O<Tab>
+" inoremap {; {<CR>};<C-c>O<Tab>
+" inoremap {, {<CR>},<C-c>O<Tab>
+" inoremap [; [<CR>];<C-c>O<Tab>
+" inoremap [, [<CR>],<C-c>O<Tab>
 
 " Alt + z toggles wrapping
 if g:os == "Darwin"
@@ -112,9 +115,14 @@ call plug#end()
 
 " ------------- Syntaxes --------------
 
+autocmd FileType js set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType json set shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType yaml set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType jsx set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType make set shiftwidth=4 softtabstop=0 noexpandtab
+autocmd FileType ts set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType tsx set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType yaml set shiftwidth=2 softtabstop=2 expandtab
+
 autocmd BufNewFile,BufRead *.sublime-settings set syntax=javascript
 autocmd BufNewFile,BufRead *.scss set syntax=css
 
