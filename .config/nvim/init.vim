@@ -60,7 +60,7 @@ nnoremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> <C-k><C-b> :Vexplore<CR>
 
 " Insert a Markdown picture tag
-nnoremap <leader>p i![]()<Esc>2hi
+"nnoremap <leader>pi i![]()<Esc>2hi
 
 " Auto match parentheses sans plugin
 " By the great romainl: https://bit.ly/2Wx5h8t
@@ -99,7 +99,8 @@ Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack 
 Plug 'evansalter/vim-checklist'        " For checklists!
 Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
 Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
-Plug 'junegunn/fzf'                    " Fuzzy file finder! See .bash_profile for export
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'                " Fuzzy file finder! See .bash_profile for export
 Plug 'junegunn/goyo.vim'               " Zen-like full-screen editing
 Plug 'mattn/emmet-vim'                 " Emmet!
 Plug 'nelstrom/vim-visual-star-search' " Make * useful when searching
@@ -148,6 +149,10 @@ autocmd! User GoyoLeave Limelight!
 " Terraform autoformatter
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" FZF! Don't need all the options for now.
+imap <c-x><c-f> <plug>(fzf-complete-path)
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
 
 " ------------- Colors --------------
 
