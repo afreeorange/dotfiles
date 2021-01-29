@@ -51,7 +51,7 @@ map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
 
 " Toggle checkboxes in checklists (for vim-checklist plugin)
-map <C-t> :ChecklistToggleCheckbox<CR>
+map <leader>c :ChecklistToggleCheckbox<CR>
 
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
