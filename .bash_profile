@@ -200,11 +200,11 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-# # ## Spit a random excuse
-# # ## shellcheck source=/dev/null
-# # #source "$HOME/.bash_excuses"
-# # #random_excuse | cowsay
-# # #echo ""
+## Spit a random excuse
+## shellcheck source=/dev/null
+#source "$HOME/.bash_excuses"
+#random_excuse | cowsay
+#echo ""
 
 # Put everything together
 export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
@@ -212,15 +212,16 @@ $PS_SYMBOL "
 
 # --- CUSTOM COMMANDS & ALIASES ---
 
-alias ll='ls -l'
-alias ep='$EDITOR $HOME/.bash_profile'
-alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
-alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
-#alias tree='tree -aC -I ".git|node_modules|bower_components" --dirsfirst "$@" | less -FRNX'
-alias udl='yadm ls-tree --full-tree -r --name-only master'
-alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
-alias please='sudo'
 alias co='cd $HOME/code'
+alias ep='$EDITOR $HOME/.bash_profile'
+alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
+alias ll='ls -l'
+alias please='sudo'
+alias udl='yadm ls-tree --full-tree -r --name-only master'
+alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
+alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
+alias life="sublime \$HOME/Dropbox/Life.md"
+alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 
 # Moving around
 alias ..='cd ..'
@@ -240,45 +241,11 @@ alias gs='git status'
 alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
-alias gp='git pull'
-alias gco='git checkout'
+alias gp='git pull origin $(git branch --show-current)'
 alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
-alias gpom='git push origin master --tags'
+alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
-
-# Create a data URL from a file
-function dataurl() {
-    local MIMETYPE
-    MIMETYPE=$(file -b --mime-type "$1")
-
-    if [[ $MIMETYPE == text/* ]]; then
-        MIMETYPE="${MIMETYPE};charset=utf-8";
-    fi
-    echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')";
-}
-
-# Reference:
-# https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
-function gif-to-mp4() {
-    FILENAME="$1"
-    ffmpeg \
-        -i "$FILENAME" \
-        -filter_complex "[0:v] fps=24" \
-        -vsync 0 \
-        -movflags faststart \
-        -pix_fmt yuv420p \
-        "${FILENAME%%.gif}.mp4"
-}
-
-# Enterprise Engine white noise generator :D Need "sox" on OS X
-# http://goo.gl/x1Ow6k
-export ENGAGE_PLAY_COMMAND="play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +25 fade h 1 864000 1"
-if [[ $(uname) == "Darwin" ]]; then
-    alias engage='say -v alex Engage && $ENGAGE_PLAY_COMMAND'
-elif [[ $(uname) == "Linux" ]]; then
-    alias engage='$ENGAGE_PLAY_COMMAND'
-fi
 
 # For Arch, since I miss 'open' on OS X
 [[ -f /etc/arch-release ]] && alias open='xdg-open'
@@ -305,10 +272,6 @@ alias ping='$PINGER'
 source_if_exists ~/.bash_profile.local
 echo -n ""
 
-# My Scratchpads
-alias life="sublime \$HOME/Dropbox/Life.md"
-alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
-
 # --- REFERENCES ---
 #
 # Make an animated GIF with ImageMagick
@@ -328,7 +291,3 @@ alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 # Bash cheatsheet
 # https://devhints.io/bash
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

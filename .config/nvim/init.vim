@@ -51,7 +51,7 @@ map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
 
 " Toggle checkboxes in checklists (for vim-checklist plugin)
-map <C-t> :ChecklistToggleCheckbox<CR>
+map <leader>c :ChecklistToggleCheckbox<CR>
 
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
@@ -89,7 +89,6 @@ call plug#begin('$HOME/.vim/plugged')
 Plug 'cespare/vim-toml'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
-Plug 'lepture/vim-jinja'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
 Plug 'SidOfc/mkdx'
@@ -103,7 +102,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                " Fuzzy file finder! See .bash_profile for export
 Plug 'junegunn/goyo.vim'               " Zen-like full-screen editing
 Plug 'mattn/emmet-vim'                 " Emmet!
-Plug 'nelstrom/vim-visual-star-search' " Make * useful when searching
 Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
 Plug 'tpope/vim-fugitive'              " Amazing git integration <3
 Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
@@ -150,9 +148,8 @@ autocmd! User GoyoLeave Limelight!
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-" FZF! Don't need all the options for now.
-imap <c-x><c-f> <plug>(fzf-complete-path)
-inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
+" EditorConfig
+let g:EditorConfig_core_mode = 'external_command'
 
 " ------------- Colors --------------
 
