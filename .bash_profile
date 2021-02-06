@@ -222,6 +222,7 @@ alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
 alias life="sublime \$HOME/Dropbox/Life.md"
 alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
+alias lo="cd $HOME/log; yarn new"
 
 # Moving around
 alias ..='cd ..'
