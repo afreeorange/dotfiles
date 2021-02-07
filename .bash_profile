@@ -223,6 +223,11 @@ alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDI
 alias life="sublime \$HOME/Dropbox/Life.md"
 alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 alias lo="cd $HOME/log; yarn new"
+if [[ $(uname) == "Darwin" ]]; then
+    alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
+    alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
+fi
+
 
 # Moving around
 alias ..='cd ..'
