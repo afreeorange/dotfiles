@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Reference:
+# https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
+
+FILENAME="$1"
+ffmpeg \
+    -i "$FILENAME" \
+    -filter_complex "[0:v] fps=24" \
+    -vsync 0 \
+    -movflags faststart \
+    -pix_fmt yuv420p \
+    "${FILENAME%%.gif}.mp4"
+
