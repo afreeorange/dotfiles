@@ -47,7 +47,7 @@ brew "fdk-aac-encoder"
 brew "figlet"
 brew "fish"
 brew "flake8"
-brew "fontforge", link: false
+brew "fontforge"
 brew "freetds"
 brew "node"
 brew "fx"
