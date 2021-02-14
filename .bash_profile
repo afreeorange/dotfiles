@@ -20,7 +20,7 @@ export LANG="en_US.UTF-8"
 # Bash History
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE='ls:bg:fg:history'
-export HISTSIZE=10000
+export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 
@@ -128,7 +128,7 @@ fi
 
 function __prompt_basic() {
     if [[ $PWD == "$HOME" ]]; then
-        echo -n "$YELLOW""is home ❤""$STOP"
+        echo -n "$YELLOW""is home ♥️""$STOP"
     else
         echo -n "in $YELLOW""$(basename "$PWD")""$STOP"
     fi
@@ -197,17 +197,20 @@ function __prompt() {
     if [[ "$PWD" == "$HOME" ]]; then
         echo -n " "
     fi
+
     __prompt_last_exit_code $EXIT_CODE
 }
 
-## Spit a random excuse
-## shellcheck source=/dev/null
-#source "$HOME/.bash_excuses"
-#random_excuse | cowsay
-#echo ""
+# Spit a random excuse
+# shellcheck source=/dev/null
+# source "$HOME/.bash_excuses"
+# random_excuse | cowsay
+# echo ""
 
 # Put everything together
-export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
+# export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
+# $PS_SYMBOL "
+export PS1="${GREEN}\u${STOP} \$(__prompt)
 $PS_SYMBOL "
 
 # --- CUSTOM COMMANDS & ALIASES ---
@@ -227,6 +230,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
+command -v exa > /dev/null 2>&1 && alias ls="exa" # Use exa instead of ls if present
 
 
 # Moving around
