@@ -230,7 +230,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
-command -v exa > /dev/null 2>&1 && alias ls="exa" # Use exa instead of ls if present
+#command -v exa > /dev/null 2>&1 && alias ls="exa" # Use exa instead of ls if present
 alias dro="cd $HOME/Dropbox"
 alias dow="cd $HOME/Downloads"
 alias des="cd $HOME/Desktop"
