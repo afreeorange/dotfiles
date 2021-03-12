@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Anaconda",
 		"Dockerfile Syntax Highlighting",
 		"gruvbox",
 		"JsPrettier",
