@@ -2,10 +2,12 @@
 eleventy
 git-stats
 http-server
+jsdom
 lr-http-server
 nexe
 npm
 pkg
 readability-cli
+single-file
 typescript
 yarn
