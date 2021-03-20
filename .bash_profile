@@ -234,6 +234,7 @@ fi
 alias dro="cd $HOME/Dropbox"
 alias dow="cd $HOME/Downloads"
 alias des="cd $HOME/Desktop"
+alias sf="single-file --back-end jsdom"
 
 # Moving around
 alias ..='cd ..'

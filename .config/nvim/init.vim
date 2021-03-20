@@ -49,6 +49,8 @@ endif
 map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
+map <C-w> :tabclose<CR>
+
 
 " Toggle checkboxes in checklists (for vim-checklist plugin)
 map <leader>c :ChecklistToggleCheckbox<CR>
