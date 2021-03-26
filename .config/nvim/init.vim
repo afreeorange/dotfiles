@@ -55,6 +55,9 @@ map <C-w> :tabclose<CR>
 " Toggle checkboxes in checklists (for vim-checklist plugin)
 map <leader>c :ChecklistToggleCheckbox<CR>
 
+" Insert date (for my blog posts)
+map <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
+
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
 
