@@ -1,13 +1,19 @@
 
 eleventy
+copyfiles
+field-list
 git-stats
 http-server
 jsdom
 lr-http-server
 nexe
+npe
 npm
 pkg
 readability-cli
+replace-in-file
 single-file
+ts-node
+ttypescript
 typescript
 yarn
