@@ -283,11 +283,15 @@ command -v prettyping >/dev/null 2>&1 && PINGER="prettyping --nolegend"
 alias ping='$PINGER'
 
 # --- MISCELLANEOUS ---
-#
-# Source any local files
-# Not sure why this returns a non-zero exit...
+
+# Source any local files. Not sure why this returns a non-zero exit...
 source_if_exists ~/.bash_profile.local
 echo -n ""
+
+# Archive articles
+function archive_article() {
+    echo "$1"
+}
 
 # --- REFERENCES ---
 #
