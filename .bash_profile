@@ -29,15 +29,15 @@ export PATH="$HOME/.bin:$PATH"
 
 # FZF configuration
 export FZF_DEFAULT_COMMAND="fd \
-    --type f \
-    --hidden \
-    --follow \
-    --exclude .git \
-    --exclude .nvm \
-    --exclude node_modules
+   --type f \
+   --hidden \
+   --follow \
+   --exclude .git \
+   --exclude .nvm \
+   --exclude node_modules
 "
 export FZF_DEFAULT_OPTS="\
-    --ansi
+   --ansi
 "
 
 # Shell options
@@ -69,8 +69,8 @@ export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 
 # Base16 <3 <3 <3
 BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+[ -n "$PS1" ] &&
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 base16_gruvbox-dark-pale
@@ -82,7 +82,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PATH="$HOME/.poetry/bin:$PATH"
-command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
+command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
 # Node
 export NVM_DIR="$HOME/.nvm"
@@ -104,26 +104,26 @@ if [[ $(uname) == "Darwin" ]]; then
     source "$(brew --prefix)/etc/bash_completion"
 fi
 
-command -v complete >> /dev/null 2>&1 && {
+command -v complete >>/dev/null 2>&1 && {
     for COMPLETION in "$HOME"/.completions/*; do
         # shellcheck source=/dev/null
         source "$COMPLETION"
     done
 
-    command -v aws_completer > /dev/null 2>&1 && complete -C aws_completer aws
-    command -v terraform > /dev/null 2>&1 && complete -C terraform terraform
+    command -v aws_completer >/dev/null 2>&1 && complete -C aws_completer aws
+    command -v terraform >/dev/null 2>&1 && complete -C terraform terraform
 }
 
 # --- PROMPT CUSTOMIZATION <3 ---
 
 # Why not?
 if [[ -z "$PS_SYMBOL" ]]; then
-  case "$(uname)" in
-      Darwin  ) PS_SYMBOL='';;
-      Linux   ) PS_SYMBOL='🐧';;
-      FreeBSD ) PS_SYMBOL='😈';;
-      *       ) PS_SYMBOL='→';;
-  esac
+    case "$(uname)" in
+    Darwin) PS_SYMBOL='' ;;
+    Linux) PS_SYMBOL='🐧' ;;
+    FreeBSD) PS_SYMBOL='😈' ;;
+    *) PS_SYMBOL='→' ;;
+    esac
 fi
 
 function __prompt_basic() {
@@ -143,43 +143,46 @@ function __prompt_pyenv_version() {
 }
 
 function __prompt_git_info() {
-    local STATUS='';
-    local BRANCH_NAME='';
+    local STATUS=''
+    local BRANCH_NAME=''
 
-    if [[ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]]; then
-        if [[ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]]; then
+    if [[ $(
+        git rev-parse --is-inside-work-tree &>/dev/null
+        echo "${?}"
+    ) == '0' ]]; then
+        if [[ "$(git rev-parse --is-inside-git-dir 2>/dev/null)" == 'false' ]]; then
 
             # Ensure the index is up to date.
             git update-index --really-refresh -q &>/dev/null
 
             # Check for uncommitted changes
             if ! git diff --quiet --ignore-submodules --cached; then
-                STATUS+=":us";
+                STATUS+=":us"
             fi
 
             # Check for unstaged changes.
             if ! git diff-files --quiet --ignore-submodules --; then
-                STATUS+=":us";
+                STATUS+=":us"
             fi
 
             # Check for untracked files.
             if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
-                STATUS+=":ut";
+                STATUS+=":ut"
             fi
 
             # Check for stashed files.
             if git rev-parse --verify refs/stash &>/dev/null; then
-                STATUS+=":st";
+                STATUS+=":st"
             fi
-        fi;
+        fi
 
         # Get the short symbolic ref. If HEAD isn’t a symbolic ref, get the
         # short SHA for the latest commit Otherwise, just give up.
-        BRANCH_NAME="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
-            git rev-parse --short HEAD 2> /dev/null || \
-            echo '(unknown)')";
+        BRANCH_NAME="$(git symbolic-ref --quiet --short HEAD 2>/dev/null ||
+            git rev-parse --short HEAD 2>/dev/null ||
+            echo '(unknown)')"
 
-        [ -n "${STATUS}" ] && STATUS="${FADED_PURPLE}${STATUS}${STOP}";
+        [ -n "${STATUS}" ] && STATUS="${FADED_PURPLE}${STATUS}${STOP}"
         echo -ne "${PURPLE} on ᚠ ${BRANCH_NAME}${STOP}${STATUS}"
 
     else
@@ -201,11 +204,13 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-# Spit a random excuse
-# shellcheck source=/dev/null
-# source "$HOME/.bash_excuses"
-# random_excuse | cowsay
-# echo ""
+# Spit out a random excuse <3
+command -v cowsay >/dev/null 2>&1 && {
+    # shellcheck source=/dev/null
+    source "$HOME/.bash_excuses"
+    random_excuse | cowsay
+    echo ""
+}
 
 # Put everything together
 # export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
@@ -225,16 +230,15 @@ alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias worklog='touch "$HOME"/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md && "$EDITOR" $HOME/Dropbox/Work/worklog-`date "+%Y-%m-%d"`.md'
 alias life="sublime \$HOME/Dropbox/Life.md"
 alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
-alias lo="cd $HOME/log; yarn new"
+alias lo='cd $HOME/log; yarn new'
 if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
 #command -v exa > /dev/null 2>&1 && alias ls="exa" # Use exa instead of ls if present
-alias dro="cd $HOME/Dropbox"
-alias dow="cd $HOME/Downloads"
-alias des="cd $HOME/Desktop"
-alias sf="single-file --back-end jsdom"
+alias dro='cd $HOME/Dropbox'
+alias dow='cd $HOME/Downloads'
+alias des='cd $HOME/Desktop'
 
 # Moving around
 alias ..='cd ..'
@@ -267,7 +271,7 @@ alias gpb='git push origin $(git branch --show-current)'
 
 # Use vim if nvim not available
 VIM=vim
-command -v nvim > /dev/null 2>&1 && VIM=nvim
+command -v nvim >/dev/null 2>&1 && VIM=nvim
 alias vim='$VIM'
 export EDITOR=$VIM
 export GIT_EDITOR=$VIM
@@ -275,24 +279,27 @@ export MANPAGER="/bin/sh -c \"col -b | $VIM -c 'set ft=man ts=8 nomod nolist non
 
 # Use ping if prettyping not available
 export PINGER=ping
-command -v prettyping > /dev/null 2>&1 && PINGER="prettyping --nolegend"
+command -v prettyping >/dev/null 2>&1 && PINGER="prettyping --nolegend"
 alias ping='$PINGER'
 
 # --- MISCELLANEOUS ---
-#
-# Source any local files
-# Not sure why this returns a non-zero exit...
+
+# Source any local files. Not sure why this returns a non-zero exit...
 source_if_exists ~/.bash_profile.local
 echo -n ""
+
+# Archive articles
+function archive_article() {
+    echo "$1"
+}
 
 # --- REFERENCES ---
 #
 # Make an animated GIF with ImageMagick
 # /usr/local/bin/convert -delay 20 -loop 1 "$@" animated.gif
 #
-# More git ingo
+# More git info
 # https://github.com/riobard/bash-powerline/blob/master/bash-powerline.sh
-#
 #
 # Interesting unicode characters
 # ⑂ 𣎴 ౻ ✎
@@ -303,4 +310,3 @@ echo -n ""
 #
 # Bash cheatsheet
 # https://devhints.io/bash
-
