@@ -204,13 +204,13 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-# Spit out a random excuse <3
-command -v cowsay >/dev/null 2>&1 && {
-    # shellcheck source=/dev/null
-    source "$HOME/.bash_excuses"
-    random_excuse | cowsay
-    echo ""
-}
+## Spit out a random excuse <3
+#command -v cowsay >/dev/null 2>&1 && {
+#    # shellcheck source=/dev/null
+#    source "$HOME/.bash_excuses"
+#    random_excuse | cowsay
+#    echo ""
+#}
 
 # Put everything together
 # export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
