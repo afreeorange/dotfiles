@@ -288,11 +288,6 @@ alias ping='$PINGER'
 source_if_exists ~/.bash_profile.local
 echo -n ""
 
-# Archive articles
-function archive_article() {
-    echo "$1"
-}
-
 # --- REFERENCES ---
 #
 # Make an animated GIF with ImageMagick

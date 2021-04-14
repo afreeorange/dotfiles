@@ -24,11 +24,10 @@
 		"_site",
 		".mypy_cache",
 		".pytest_cache",
-		"build",
-		"lib"
+		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 18,
+	"font_size": 15,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
