@@ -50,9 +50,6 @@ map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
 
-" Toggle checkboxes in checklists (for vim-checklist plugin)
-map <leader>c :ChecklistToggleCheckbox<CR>
-
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
 
@@ -95,11 +92,9 @@ Plug 'SidOfc/mkdx'
 
 " Utility
 Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
-Plug 'evansalter/vim-checklist'        " For checklists!
 Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
 Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
 Plug 'junegunn/fzf'                    " Fuzzy file finder! See .bash_profile for export
-Plug 'junegunn/goyo.vim'               " Zen-like full-screen editing
 Plug 'mattn/emmet-vim'                 " Emmet!
 Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
 Plug 'tpope/vim-fugitive'              " Amazing git integration <3
@@ -138,10 +133,6 @@ let g:user_emmet_mode='a'
 " Remap the Emmett leader (C-y is a bit awkward).
 " Still have to type the ',' !
 let g:user_emmet_leader_key='<Leader>e'
-
-" Enable LimeLight when in distraction-free mode
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
 
 " Terraform autoformatter
 let g:terraform_align=1
