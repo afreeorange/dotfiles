@@ -6,7 +6,9 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"Color Scheme - Gray Matter",
 		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
 		"gruvbox",
 		"JsPrettier",
 		"JSX",
@@ -15,6 +17,7 @@
 		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
+		"poetry",
 		"rainbow_csv",
 		"Random Everything",
 		"Sass",
@@ -25,6 +28,7 @@
 		"Table Editor",
 		"Terrafmt",
 		"Terraform",
+		"TOML",
 		"TypeScript",
 		"Wrap Plus"
 	]
