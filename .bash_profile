@@ -290,7 +290,7 @@ echo -n ""
 
 # Archive articles
 function archive_article() {
-    echo "$1"
+    single-file --back-end jsdom "$1"
 }
 
 # --- REFERENCES ---
