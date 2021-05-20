@@ -115,9 +115,11 @@ autocmd FileType make set shiftwidth=4 softtabstop=0 noexpandtab
 autocmd FileType ts set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType tsx set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType yaml set shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType yml set shiftwidth=2 softtabstop=2 expandtab
 
 autocmd BufNewFile,BufRead *.sublime-settings set syntax=javascript
 autocmd BufNewFile,BufRead *.scss set syntax=css
+autocmd BufNewFile,BufRead *.toml set syntax=yaml
 
 " ------------- Plugin Configuration --------------
 
