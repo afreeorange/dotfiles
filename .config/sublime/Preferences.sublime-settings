@@ -40,7 +40,6 @@
 	"ignored_packages":
 	[
 		"A File Icon",
-		"Agila Theme",
 		"Base16 Color Schemes",
 		"DocBlockr",
 		"Emmet",
@@ -48,7 +47,6 @@
 		"Golang Build",
 		"HTMLBeautify",
 		"Makefile Plus",
-		"Markdown",
 		"MarkdownPreview",
 		"Nunjucks Syntax",
 		"Protobuf Syntax Hightlighting",

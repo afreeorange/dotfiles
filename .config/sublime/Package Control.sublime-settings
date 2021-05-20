@@ -5,16 +5,8 @@
 	],
 	"installed_packages":
 	[
-		"Anaconda",
-		"Color Scheme - Gray Matter",
-		"Dockerfile Syntax Highlighting",
-		"EditorConfig",
 		"gruvbox",
-		"JsPrettier",
-		"JSX",
-		"MarkdownEditing",
 		"Nunjucks",
-		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
 		"poetry",
