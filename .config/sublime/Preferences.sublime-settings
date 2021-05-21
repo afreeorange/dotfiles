@@ -2,7 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"draw_minimap_border": true,
 	"file_exclude_patterns":
 	[
@@ -27,7 +27,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 19,
+	"font_size": 17,
 	"gruvbox_accent_yellow": true,
 	"gruvbox_animate_icons": true,
 	"gruvbox_disable_greyscale": true,
@@ -48,7 +48,6 @@
 		"Golang Build",
 		"HTMLBeautify",
 		"Makefile Plus",
-		"Markdown",
 		"MarkdownPreview",
 		"Nunjucks Syntax",
 		"Protobuf Syntax Hightlighting",
@@ -58,8 +57,7 @@
 		"SublimeLinter-csslint",
 		"SublimeLinter-eslint",
 		"SublimeLinter-golint",
-		"TOML",
-		"Vintage"
+		"Vintage",
 	],
 	"remember_open_files": true,
 	"rulers":
@@ -71,6 +69,6 @@
 	"scroll_past_end": true,
 	"show_git_status": true,
 	"tab_size": 4,
-	"theme": "gruvbox.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true,
 }
