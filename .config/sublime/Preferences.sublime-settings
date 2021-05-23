@@ -42,7 +42,7 @@
 		"Terrafmt",
 		"Terraform",
 		"TOML",
-		"Vintage"
+		"Vintage",
 	],
 	"remember_open_files": true,
 	"rulers":
@@ -55,5 +55,5 @@
 	"show_git_status": true,
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
 }
