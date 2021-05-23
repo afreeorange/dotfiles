@@ -32,7 +32,17 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage",
+		"gruvbox",
+		"poetry",
+		"Sass",
+		"sublack",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
+		"Table Editor",
+		"Terrafmt",
+		"Terraform",
+		"TOML",
+		"Vintage"
 	],
 	"remember_open_files": true,
 	"rulers":
@@ -45,5 +55,5 @@
 	"show_git_status": true,
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"translate_tabs_to_spaces": true
 }
