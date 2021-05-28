@@ -49,6 +49,8 @@ endif
 map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
+map <C-w> :tabclose<CR>
+
 
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
@@ -57,7 +59,7 @@ nnoremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> <C-k><C-b> :Vexplore<CR>
 
 " Insert a Markdown picture tag
-nnoremap <leader>p i![]()<Esc>2hi
+"nnoremap <leader>pi i![]()<Esc>2hi
 
 " Auto match parentheses sans plugin
 " By the great romainl: https://bit.ly/2Wx5h8t

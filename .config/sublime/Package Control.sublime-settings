@@ -5,8 +5,7 @@
 	],
 	"installed_packages":
 	[
-		"Dockerfile Syntax Highlighting",
-		"gruvbox",
+		"AutoFileName",
 		"Package Control",
 		"TOML",
 	],

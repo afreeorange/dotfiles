@@ -27,11 +27,21 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 15,
+	"font_size": 18,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"gruvbox",
+		"poetry",
+		"Sass",
+		"sublack",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
+		"Table Editor",
+		"Terrafmt",
+		"Terraform",
+		"TOML",
 		"Vintage",
 	],
 	"remember_open_files": true,

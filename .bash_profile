@@ -78,11 +78,11 @@ base16_gruvbox-dark-pale
 # --- LANGUAGE CONFIGS ---
 
 # Python
+export PATH="$HOME/.poetry/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PATH="$HOME/.poetry/bin:$PATH"
-command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 # Node
 export NVM_DIR="$HOME/.nvm"
@@ -135,7 +135,7 @@ function __prompt_basic() {
 }
 
 function __prompt_last_exit_code() {
-    [[ $1 != 0 ]] && echo -n "$RED"" and coughed a $1""$STOP"
+    [[ $1 != 0 ]] && echo -n "$RED"" coughed a $1""$STOP"
 }
 
 function __prompt_pyenv_version() {
