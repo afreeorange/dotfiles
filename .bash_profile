@@ -25,7 +25,7 @@ export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 
 # Some scripts I may have in $HOME
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 
 # FZF configuration
 export FZF_DEFAULT_COMMAND="fd \
