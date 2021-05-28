@@ -2,7 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"draw_minimap_border": true,
 	"file_exclude_patterns":
 	[
@@ -32,7 +32,6 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"gruvbox",
 		"poetry",
 		"Sass",
 		"sublack",
