@@ -39,6 +39,22 @@ function install_python() {
     fi
 }
 
+function install_pipx() {
+    echo "${YELLOW}→ Pipx${STOP}"
+    local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/pipx"
+
+    if [[ ! -e "$DEPS_FILE" ]]; then
+        echo "${RED}Could not find Pipx dependencies file for ${PYTHON_VERSION}${STOP}"
+    else
+        # shellcheck disable=SC2013
+        for DEP in $(cat "$DEPS_FILE"); do
+            pipx install "$DEP"
+        done
+
+        echo "${GREEN}✓ Done${STOP}"
+    fi
+}
+
 function install_homebrew() {
     if [[ "$(uname -s)" == "Darwin" ]]; then
         echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
@@ -56,8 +72,11 @@ elif [[ "$WHAT_TO_INSTALL" == "python" ]]; then
     install_python
 elif [[ "$WHAT_TO_INSTALL" == "brew" ]]; then
     install_homebrew
+elif [[ "$WHAT_TO_INSTALL" == "pipx" ]]; then
+    install_pipx
 elif [[ -z "$WHAT_TO_INSTALL" ]]; then
     install_node
     install_python
+    install_pipx
     install_homebrew
 fi

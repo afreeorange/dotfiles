@@ -37,6 +37,9 @@ echo "${YELLOW}+  Node${STOP}"
 echo "${YELLOW}+  Python${STOP}"
 "$HOME/.bin/backup-python"
 
+echo "${YELLOW}+  Pipx${STOP}"
+"$HOME/.bin/backup-pipx"
+
 # Forcing since I can use nvm or pyenv to switch interpreters and
 # don't want to forget to commit the packages associated with the
 # new interpreter.

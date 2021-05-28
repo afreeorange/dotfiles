@@ -5,8 +5,10 @@
 	],
 	"installed_packages":
 	[
-		"AutoFileName",
 		"Package Control",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"SublimeLinter-shellcheck",
 		"TOML",
 	],
 }
