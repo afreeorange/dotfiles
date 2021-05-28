@@ -1,10 +1,27 @@
 # dotfiles
 
-#️⃣ Dotfiles, mine. Managed with [yadm](https://yadm.io).
+Dotfiles, mine. Managed with [yadm](https://yadm.io).
 
-### Usage
+## Usage
 
-Most of this is for macOS which the only thing I use these days 🤷‍♂️
+Most of this is for macOS which the only thing I use these days 🤷‍♂️ Should work on Linux.
+
+### Structure
+
+|             Folder             |                            Purpose                            |
+|--------------------------------|---------------------------------------------------------------|
+| `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                      |
+| `$HOME/.bin`                   | Custom executables                                            |
+| `$HOME/.config`                | Standard XDG Base Directory stuff                             |
+| `$HOME/.completions`           | `bash` completions that I copy and place here for some reason |
+
+### `udf`
+
+Update Dot Files. Will back up Python, Node, macOS and other dependencies.
+
+### `ipd`
+
+Install Platform Dependencies. Given the detected version of macOS or Python or Node, install all the _global_ dependencies.
 
 ```bash
 # Bootstrap will check for Homebrew and install stuff
@@ -13,18 +30,6 @@ Most of this is for macOS which the only thing I use these days 🤷‍♂️
 # and Python.
 yadm submodule init
 
-# Update this repo. Will back up dependencies for Node,
-# Python and place them in "$HOME/.platform-dependencies"
-# using a MAJOR.MINOR number format.
-#
-# If on macOS, will back up all Homebrew bundles.
-udf
-
-# Should run at bootstrap, but install dependencies for
-# a given 'platform'. For example, just copy Node 12.14
-# to Node 12.17 in $HOME/.platform-dependencies and run
-# this while you get coffee ☕️
-idf
 
 # Redo yadm if all else fails
 hose-yadm
