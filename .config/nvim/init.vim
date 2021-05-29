@@ -120,6 +120,7 @@ autocmd FileType yaml set shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType yml set shiftwidth=2 softtabstop=2 expandtab
 
 autocmd BufNewFile,BufRead *.sublime-settings set syntax=javascript
+autocmd BufNewFile,BufRead *.tsx syntax=javascript
 autocmd BufNewFile,BufRead *.scss set syntax=css
 autocmd BufNewFile,BufRead *.toml set syntax=yaml
 
