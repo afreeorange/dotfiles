@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Dockerfile Syntax Highlighting",
+		"Origami",
 		"Package Control",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
