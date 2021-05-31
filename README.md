@@ -6,6 +6,19 @@ Dotfiles, mine. Managed with [yadm](https://yadm.io).
 
 Most of this is for macOS which the only thing I use these days 🤷‍♂️ Should work on Linux.
 
+### Bootstrap
+
+```bash
+# Bootstrap will check for Homebrew and install stuff
+# specified in ".platform-dependencies/macOS-{version}.
+# It will also install all global packages for Node
+# and Python.
+yadm submodule init
+
+# Redo yadm if all else fails
+hose-yadm
+```
+
 ### Structure
 
 |             Folder             |                            Purpose                            |
@@ -24,13 +37,12 @@ Update Dot Files. Will back up Python, Node, macOS and other dependencies.
 Install Platform Dependencies. Given the detected version of macOS or Python or Node, install all the _global_ dependencies.
 
 ```bash
-# Bootstrap will check for Homebrew and install stuff
-# specified in ".platform-dependencies/macOS-{version}.
-# It will also install all global packages for Node
-# and Python.
-yadm submodule init
+# Install all dependencies
+ipd
 
-
-# Redo yadm if all else fails
-hose-yadm
+# Install node, python, brew, or pipx
+ipd node
+ipd python
+ipd brew
+ipd pipx
 ```
