@@ -1,6 +1,6 @@
-# dotfiles
+# Nikhil's Dotfiles
 
-Dotfiles, mine. Managed with [yadm](https://yadm.io).
+Managed with [yadm](https://yadm.io).
 
 ## Usage
 
