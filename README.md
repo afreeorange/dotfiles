@@ -24,15 +24,15 @@ hose-yadm
 
 ### Structure
 
-|          File/Folder           |                               Purpose                                |
-|--------------------------------|----------------------------------------------------------------------|
-| `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                             |
-| `$HOME/.bin`                   | Custom executables                                                   |
-| `$HOME/.config`                | Standard XDG Base Directory stuff                                    |
-| `$HOME/.completions`           | `bash` completions that I copy and place here for some reason        |
-| `$HOME/.bash_colors`           | Sourced for any colors (like in my prompt)                           |
+| File/Folder                    | Purpose                                                               |
+|--------------------------------|-----------------------------------------------------------------------|
+| `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                              |
+| `$HOME/.bin`                   | Custom executables                                                    |
+| `$HOME/.config`                | Standard XDG Base Directory stuff                                     |
+| `$HOME/.completions`           | `bash` completions that I copy and place here for some reason         |
+| `$HOME/.bash_colors`           | Sourced for any colors (like in my prompt)                            |
 | `$HOME/.bash_excuses`          | Developer excuses for use with `cowsay` 🐮 and automated `git` pushes |
-| Other global config crap       | Yarn, iSort, EditorConfig, etc                                       |
+| Other global config crap       | Yarn, iSort, EditorConfig, etc                                        |
 
 ### `$HOME/.bin`
 
@@ -65,6 +65,10 @@ Play some white noise from the Engine Room of the NCC-1701. Kinda. Best on headp
 
 Make a Base64 [dataurl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) from the argument.
 
+#### `gif-to-mp4`
+
+Convert a GIF to MP4 using `ffmpeg`
+
 #### [`gh-md-toc`](https://github.com/ekalinin/github-markdown-toc)
 
 (Cached) Make a table of contents from a Markdown doc.
@@ -72,3 +76,4 @@ Make a Base64 [dataurl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics
 #### [`semver`](https://github.com/fsaintjacques/semver-tool)
 
 (Cached) Manipulate semantic versioning.
+
