@@ -33,6 +33,7 @@
 	"ignored_packages":
 	[
 		"Vintage",
+		"Markdown",
 	],
 	"remember_open_files": true,
 	"rulers":

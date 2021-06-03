@@ -91,7 +91,7 @@ Plug 'godlygeek/tabular'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
 Plug 'SidOfc/mkdx'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Utility
 Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
