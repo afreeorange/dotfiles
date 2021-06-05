@@ -9,6 +9,6 @@ ffmpeg \
     -filter_complex "[0:v] fps=24" \
     -vsync 0 \
     -movflags faststart \
-    -pix_fmt yuv420p \
     "${FILENAME%%.gif}.mp4"
+#    -pix_fmt yuv420p \
 
