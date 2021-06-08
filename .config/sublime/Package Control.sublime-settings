@@ -16,6 +16,7 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-shellcheck",
 		"Table Editor",
+		"Terraform",
 		"TOML",
 		"Wrap Plus",
 	],
