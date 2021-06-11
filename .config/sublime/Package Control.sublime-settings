@@ -6,12 +6,17 @@
 	"installed_packages":
 	[
 		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"JsPrettier",
 		"MarkdownEditing",
+		"Nunjucks",
+		"Origami",
 		"Package Control",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
 		"SublimeLinter-shellcheck",
 		"Table Editor",
+		"Terraform",
 		"TOML",
 		"Wrap Plus",
 	],

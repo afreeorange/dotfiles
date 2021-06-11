@@ -91,6 +91,7 @@ Plug 'godlygeek/tabular'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
 Plug 'SidOfc/mkdx'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Utility
 Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
@@ -122,7 +123,6 @@ autocmd FileType yml set shiftwidth=2 softtabstop=2 expandtab
 autocmd BufNewFile,BufRead *.sublime-settings set syntax=javascript
 autocmd BufNewFile,BufRead *.tsx syntax=javascript
 autocmd BufNewFile,BufRead *.scss set syntax=css
-autocmd BufNewFile,BufRead *.toml set syntax=yaml
 
 " ------------- Plugin Configuration --------------
 
