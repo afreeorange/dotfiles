@@ -29,7 +29,6 @@ hose-yadm
 | `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                              |
 | `$HOME/.bin`                   | Custom executables                                                    |
 | `$HOME/.config`                | Standard XDG Base Directory stuff                                     |
-| `$HOME/.completions`           | `bash` completions that I copy and place here for some reason         |
 | `$HOME/.bash_colors`           | Sourced for any colors (like in my prompt)                            |
 | `$HOME/.bash_excuses`          | Developer excuses for use with `cowsay` 🐮 and automated `git` pushes |
 | Other global config crap       | Yarn, iSort, EditorConfig, etc                                        |
@@ -76,4 +75,3 @@ Convert a GIF to MP4 using `ffmpeg`
 #### [`semver`](https://github.com/fsaintjacques/semver-tool)
 
 (Cached) Manipulate semantic versioning.
-
