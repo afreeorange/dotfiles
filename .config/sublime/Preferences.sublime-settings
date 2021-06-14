@@ -2,7 +2,7 @@
 	"WrapPlus.wrap_width": 79,
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"color_scheme": "Packages/User/Sublimerge.sublime-color-scheme",
 	"draw_minimap_border": true,
 	"file_exclude_patterns":
 	[
@@ -27,7 +27,7 @@
 		"build"
 	],
 	"font_face": "Dank Mono",
-	"font_size": 18,
+	"font_size": 20,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":

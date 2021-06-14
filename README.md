@@ -9,14 +9,15 @@ Most of this is for macOS which the only thing I use these days 🤷‍♂️ Sh
 ### Bootstrap
 
 ```bash
+yadm clone git@github.com:afreeorange/dotfiles.git
+yadm submodule init
+yadm status
+
 # Bootstrap will check for Homebrew and install stuff
 # specified in ".platform-dependencies/macOS-{version}.
 # It will also install all global packages for Node
 # and Python.
-yadm submodule init
-
-# Set everything up 🤞
-setup-apps
+yadm bootstrap
 
 # Redo yadm if all else fails
 hose-yadm
@@ -29,7 +30,6 @@ hose-yadm
 | `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                              |
 | `$HOME/.bin`                   | Custom executables                                                    |
 | `$HOME/.config`                | Standard XDG Base Directory stuff                                     |
-| `$HOME/.completions`           | `bash` completions that I copy and place here for some reason         |
 | `$HOME/.bash_colors`           | Sourced for any colors (like in my prompt)                            |
 | `$HOME/.bash_excuses`          | Developer excuses for use with `cowsay` 🐮 and automated `git` pushes |
 | Other global config crap       | Yarn, iSort, EditorConfig, etc                                        |
@@ -76,4 +76,3 @@ Convert a GIF to MP4 using `ffmpeg`
 #### [`semver`](https://github.com/fsaintjacques/semver-tool)
 
 (Cached) Manipulate semantic versioning.
-
