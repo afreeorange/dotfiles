@@ -1,7 +1,7 @@
 #!/bin/bash
 
 alias co='cd $HOME/code'
-alias ep='$EDITOR $HOME/.bash_profile'
+alias ep='$EDITOR $HOME/.config/bash/conf.d/'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 alias ll='ls -l'
 alias please='sudo'

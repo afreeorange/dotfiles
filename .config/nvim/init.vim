@@ -18,6 +18,10 @@ set colorcolumn=79,100,120
 " Force vertical diffing
 set diffopt+=vertical
 
+" Automatically change the directory to the file being edited
+" Note: this might cause problems with plugins 🤷‍♂️
+set autochdir
+
 " In netrw, don't show the banner
 let g:netrw_banner=0
 
