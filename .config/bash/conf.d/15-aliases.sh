@@ -43,3 +43,5 @@ alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
 alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
+alias gpom='git pull origin master'
+
