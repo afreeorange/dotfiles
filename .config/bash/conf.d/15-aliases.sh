@@ -1,7 +1,7 @@
 #!/bin/bash
 
 alias co='cd $HOME/code'
-alias ep='$EDITOR $HOME/.bash_profile'
+alias ep='$EDITOR $HOME/.config/bash/conf.d/'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 alias ll='ls -l'
 alias please='sudo'
@@ -16,7 +16,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
 #command -v exa > /dev/null 2>&1 && alias ls="exa" # Use exa instead of ls if present
-alias dro='cd $HOME/Dropbox'
+alias dro='cd $HOM/Dropbox'
 alias dow='cd $HOME/Downloads'
 alias des='cd $HOME/Desktop'
 
@@ -43,3 +43,5 @@ alias gl='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias grm='git rm $(git ls-files --deleted)'
 alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
+alias gpom='git pull origin master'
+

@@ -14,3 +14,9 @@ command -v complete >>/dev/null 2>&1 && {
     command -v aws_completer >/dev/null 2>&1 && complete -C aws_completer aws
     command -v terraform >/dev/null 2>&1 && complete -C terraform terraform
 }
+
+# Pipx is special
+command -v pipx >>/dev/null 2>&1 && {
+    eval "$(register-python-argcomplete pipx)"
+}
+

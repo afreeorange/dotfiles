@@ -7,11 +7,11 @@
 	[
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
+		"gruvbox",
 		"JsPrettier",
 		"LSP",
 		"LSP-bash",
 		"LSP-css",
-		"LSP-Deno",
 		"LSP-dockerfile",
 		"LSP-html",
 		"LSP-json",
