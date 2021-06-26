@@ -1,50 +1,52 @@
 {
-	"WrapPlus.wrap_width": 79,
-	"always_show_minimap_viewport": true,
-	"bold_folder_labels": true,
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
-	"draw_minimap_border": true,
-	"file_exclude_patterns":
-	[
-		".DS_Store",
-		"Thumbs.db",
-		"yarn.lock",
-		"yarn-error.log",
-		"package-lock.json",
-		"*.pid",
-		"*.pyc"
-	],
-	"folder_exclude_patterns":
-	[
-		".git",
-		"__pycache__",
-		".sass-cache",
-		"node_modules",
-		"venv",
-		"_site",
-		".mypy_cache",
-		".pytest_cache",
-		"build"
-	],
-	"font_face": "Dank Mono",
-	"font_size": 15,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Markdown",
-		"Vintage",
-	],
-	"remember_open_files": true,
-	"rulers":
-	[
-		120,
-		100,
-		79
-	],
-	"scroll_past_end": true,
-	"show_git_status": true,
-	"tab_size": 2,
-	"theme": "Default Dark.sublime-theme",
-	"translate_tabs_to_spaces": true,
+    "WrapPlus.wrap_width": 79,
+    "always_show_minimap_viewport": true,
+    "bold_folder_labels": true,
+    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
+    "draw_minimap_border": true,
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "Thumbs.db",
+        "yarn.lock",
+        "yarn-error.log",
+        "package-lock.json",
+        "*.pid",
+        "*.pyc"
+    ],
+    "folder_exclude_patterns":
+    [
+        ".git",
+        "__pycache__",
+        ".sass-cache",
+        "node_modules",
+        "venv",
+        "_site",
+        ".mypy_cache",
+        ".pytest_cache",
+        "build"
+    ],
+    "font_face": "Dank Mono",
+    "font_size": 19,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Markdown",
+        "Vintage",
+    ],
+    "remember_open_files": true,
+    "rulers":
+    [
+        120,
+        100,
+        79
+    ],
+    "scroll_past_end": true,
+    "show_git_status": true,
+    "show_sidebar_button": false,
+    "show_encoding": true,
+    "tab_size": 2,
+    "theme": "Adaptive.sublime-theme",
+    "translate_tabs_to_spaces": true,
 }

@@ -110,8 +110,8 @@ Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
 " Colors, Themes, etc
 Plug 'chriskempson/base16-vim'
 
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" LSP Love
+Plug 'neovim/nvim-lspconfig'
 
 " Initialize plugin system
 call plug#end()
