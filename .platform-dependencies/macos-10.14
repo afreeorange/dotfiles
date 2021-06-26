@@ -77,7 +77,7 @@ brew "lynx"
 brew "make"
 brew "mitmproxy"
 brew "ncdu"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "nmap"
 brew "nvm"
 brew "pandoc"
