@@ -45,6 +45,6 @@
 	"scroll_past_end": true,
 	"show_git_status": true,
 	"tab_size": 2,
-	"theme": "Default Dark.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 }
