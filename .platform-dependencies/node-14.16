@@ -2,6 +2,7 @@
 eleventy
 jsdom
 npm
+prettier
 puppeteer
 readability-cli
 single-file
