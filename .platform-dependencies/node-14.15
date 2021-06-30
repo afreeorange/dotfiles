@@ -1,6 +1,7 @@
 
 eleventy
 copyfiles
+dynamodb-admin
 field-list
 git-stats
 http-server

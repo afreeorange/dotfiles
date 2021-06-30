@@ -1,5 +1,6 @@
 awscli
 base16-shell-preview
+black
 bock
 credstash
 flake8
