@@ -163,7 +163,10 @@ colorscheme base16-gruvbox-dark-pale
 "
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim
 " https://github.com/vim-airline/vim-airline/wiki/Dummies-Guide-to-the-status-bar-symbols-(Powerline-fonts)-on-Fedora,-Ubuntu-and-Windows
-
+"
+" A Good Vimrc
+" https://dougblack.io/words/a-good-vimrc.html
+"
 " This is very lovely stuff:
 " https://stackoverflow.com/a/61625741
 "
