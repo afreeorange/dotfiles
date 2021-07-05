@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias e="$EDITOR"
 alias co='cd $HOME/code'
 alias ep='$EDITOR $HOME/.config/bash/conf.d/'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'

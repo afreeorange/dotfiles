@@ -1,8 +1,9 @@
 awscli
-beets
+base16-shell-preview
+black
+bock
 credstash
 flake8
 isort
 nuitka
-poetry
-sqlite-web
+onelogin-granular-cli
