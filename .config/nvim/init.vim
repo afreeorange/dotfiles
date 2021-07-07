@@ -76,9 +76,12 @@ nnoremap <silent> <C-k><C-b> :Vexplore<CR>
 " inoremap [; [<CR>];<C-c>O<Tab>
 " inoremap [, [<CR>],<C-c>O<Tab>
 
-" Alt + z toggles wrapping
 if g:os == "Darwin"
-   nnoremap <silent> Ω :set wrap!<CR>
+    " Alt + z toggles wrapping
+    nnoremap <silent> Ω :set wrap!<CR>
+
+    " Alt + n toggles line numbers
+    nnoremap <silent> ¬ :set nonumber!<CR>
 endif
 
 let mapleader=","
