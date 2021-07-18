@@ -46,7 +46,7 @@ elif [[ "$1" == "l" ]]; then
     COUNTER=0
 
     for LOG in "${LOGS[@]}"; do
-        echo "$(printf "% 3d.\n" $COUNTER)" "$LOG"
+        echo "$(printf "% 4d.\n" $COUNTER)" "$LOG"
         COUNTER=$((COUNTER + 1))
     done
 
@@ -62,6 +62,4 @@ else
     FILE_TO_EDIT="$LOG_FOLDER""${LOGS[$1]}"
 fi
 
-echo "Opening $FILE_TO_EDIT"
-sleep 1
 $EDITOR "$FILE_TO_EDIT"
