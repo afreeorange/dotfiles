@@ -51,13 +51,14 @@ elif [[ "$1" == "l" ]]; then
 
     exit 0
 
+# Decent search with ye olde grep
 elif [[ "$1" == "s" ]]; then
     if [[ -z "$2" ]]; then
         echo "Must provide search term"
         exit 1
     fi
 
-    grep -Hn "$2" *
+    grep -Hin "$2" $LOG_FOLDER/
 
     exit 0
 
