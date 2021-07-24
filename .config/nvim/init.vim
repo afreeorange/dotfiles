@@ -77,12 +77,16 @@ nnoremap <silent> <C-k><C-b> :Vexplore<CR>
 " inoremap [, [<CR>],<C-c>O<Tab>
 
 if g:os == "Darwin"
-    " Alt + z toggles wrapping
+    " Alt/Option + z toggles wrapping
     nnoremap <silent> Ω :set wrap!<CR>
 
-    " Alt + n toggles line numbers
+    " Alt/Option + n toggles line numbers
     nnoremap <silent> ¬ :set nonumber!<CR>
 endif
+
+" Insert a timestamp for my log posts
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
 let mapleader=","
 

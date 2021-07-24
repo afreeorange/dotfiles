@@ -30,13 +30,33 @@ hose-yadm
 | `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                              |
 | `$HOME/.bin`                   | Custom executables                                                    |
 | `$HOME/.config`                | Standard XDG Base Directory stuff                                     |
-| `$HOME/.bash_colors`           | Sourced for any colors (like in my prompt)                            |
-| `$HOME/.bash_excuses`          | Developer excuses for use with `cowsay` 🐮 and automated `git` pushes |
 | Other global config crap       | Yarn, iSort, EditorConfig, etc                                        |
+
+### Bash
+
+My preferred shell because I'm too old to change (I do love `fish` tho ♥️.) Quite the elaborate setup in `~/.config/bash`.
 
 ### `$HOME/.bin`
 
 Random assortment of utilities. Here are some interesting ones.
+
+#### `worklog`
+
+Maintain a quick log of things I do at work
+
+```bash
+# Create a new log (Will be in ~/Dropbox/Work by default)
+worklog
+
+# Pull up yesterdays work (or the last log if yesterday is not found)
+worklog -1
+
+# List all the logs
+worklog l
+
+# Get the 12th log in the listing
+worklog 12
+```
 
 #### `udf`
 
@@ -76,3 +96,4 @@ Convert a GIF to MP4 using `ffmpeg`
 #### [`semver`](https://github.com/fsaintjacques/semver-tool)
 
 (Cached) Manipulate semantic versioning.
+
