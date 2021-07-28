@@ -70,6 +70,11 @@ elif [[ "$1" == "s" ]]; then
 
     exit 0
 
+# Just pull up a TODO list. "Nice to haves", experiments, etc
+elif [[ "$1" == "t" ]]; then
+    FILE_TO_EDIT="$LOG_FOLDER"/TODO.md
+
+
 # Let me pick a log
 else
     if [[ "$1" -gt "${#LOGS[@]}" ]]; then
@@ -81,3 +86,4 @@ else
 fi
 
 $EDITOR "$FILE_TO_EDIT"
+
