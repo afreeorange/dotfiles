@@ -102,6 +102,7 @@ Plug 'godlygeek/tabular'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-markdown'
 Plug 'SidOfc/mkdx'
+Plug 'lepture/vim-jinja'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Utility
