@@ -78,6 +78,7 @@ brew "lynx"
 brew "make"
 brew "protobuf"
 brew "mitmproxy"
+brew "mutt"
 brew "ncdu"
 brew "neovim", args: ["HEAD"]
 brew "nmap"
