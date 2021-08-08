@@ -1,6 +1,7 @@
 
 eleventy
 copyfiles
+create-fabric-app
 dynamodb-admin
 field-list
 git-stats
