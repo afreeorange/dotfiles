@@ -22,7 +22,7 @@ fi
 # TODO: https://stackoverflow.com/a/23357277
 IFS=$'\n'
 LOGS=($(
-    find "$LOG_FOLDER" -type f -iname "$LOG_FILE_PREFIX*" |
+    find "$LOG_FOLDER" -type f -iname "$LOG_FILE_PREFIX*" -maxdepth 1 |
         tail -r |
         sed "s|$LOG_FOLDER"/"||" |
         sort
@@ -70,10 +70,24 @@ elif [[ "$1" == "s" ]]; then
 
     exit 0
 
+# Push to remote
+elif [[ "$1" == "pu" ]]; then
+    pushd "$LOG_FOLDER" || exit
+    git add .
+    git commit -m "Auto-commit - $(date)"
+    git push origin master
+    popd "$LOG_FOLDER" || exit
+
+    exit 0
+
+# Pull from remote
+elif [[ "$1" == "p" ]]; then
+    git pull origin master
+    exit 0
+
 # Just pull up a TODO list. "Nice to haves", experiments, etc
 elif [[ "$1" == "t" ]]; then
     FILE_TO_EDIT="$LOG_FOLDER"/TODO.md
-
 
 # Let me pick a log
 else
