@@ -199,3 +199,5 @@ colorscheme base16-gruvbox-dark-pale
 "|      | | | |  |
 map #2y 1G"*yG1gs:q!<CR>
 
+" Reference for CoC and Autocompletion and the like
+" https://github.com/meatwallace/dotfiles/blob/master/.vimrc
