@@ -17,6 +17,7 @@ pug-cli
 pyright
 readability-cli
 replace-in-file
+rome
 single-file
 ts-node
 ttypescript
