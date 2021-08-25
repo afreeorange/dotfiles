@@ -26,5 +26,6 @@
       "setting": "word_wrap"
     }
   },
-  { "keys": ["alt+q"], "command": "wrap_lines_plus" }
+  { "keys": ["alt+q"], "command": "wrap_lines_plus" },
+  { "keys": ["alt+shift+f"], "command": "js_prettier" }
 ]
