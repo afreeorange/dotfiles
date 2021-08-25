@@ -7,14 +7,17 @@ field-list
 git-stats
 http-server
 jsdom
+juice
 lr-http-server
 nexe
 npe
 npm
 pkg
+pug-cli
 pyright
 readability-cli
 replace-in-file
+rome
 single-file
 ts-node
 ttypescript

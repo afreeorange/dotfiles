@@ -19,4 +19,3 @@ command -v complete >>/dev/null 2>&1 && {
 command -v pipx >>/dev/null 2>&1 && {
     eval "$(register-python-argcomplete pipx)"
 }
-

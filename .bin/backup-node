@@ -31,3 +31,4 @@ IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
 done
 
 echo "Done"
+
