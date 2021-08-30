@@ -815,7 +815,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>InconsolataNerdFontCompleteM-Medium 16</string>
+			<string>DankMono-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
