@@ -2,7 +2,7 @@
     "WrapPlus.wrap_width": 79,
     "always_show_minimap_viewport": true,
     "bold_folder_labels": true,
-    "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
     "draw_minimap_border": true,
     "file_exclude_patterns":
     [
