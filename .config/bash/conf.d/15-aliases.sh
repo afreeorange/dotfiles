@@ -11,6 +11,7 @@ alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias life="sublime \$HOME/Dropbox/Life.md"
 alias scratch="sublime \$HOME/Dropbox/Scratchpad.md"
 alias lo='cd $HOME/log; yarn new'
+alias clo='cd $HOME/log'
 if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
