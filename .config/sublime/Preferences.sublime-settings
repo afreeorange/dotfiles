@@ -3,7 +3,6 @@
     "always_show_minimap_viewport": true,
     "bold_folder_labels": true,
     "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).sublime-color-scheme",
-    "draw_minimap_border": true,
     "file_exclude_patterns":
     [
         ".DS_Store",
@@ -24,6 +23,7 @@
         "_site",
         ".mypy_cache",
         ".pytest_cache",
+        "dist",
         "build"
     ],
     "font_face": "Dank Mono",

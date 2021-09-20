@@ -49,7 +49,7 @@ endif
 
 " ------------- Key Mappings --------------
 
-" Tab control (Why am I not using emacs again?)
+" Tab control (Why am I not using Emacs again?)
 map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
@@ -94,6 +94,14 @@ endif
 " Insert a timestamp for my log posts
 nmap <F3> i<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+
+" Take the training wheels off: disable the arrow keys!
+for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+  exec 'cnoremap' key '<Nop>'
+  exec 'inoremap' key '<Nop>'
+  exec 'noremap' key '<Nop>'
+  exec 'vnoremap' key '<Nop>'
+endfor
 
 let mapleader=","
 
@@ -208,6 +216,8 @@ colorscheme base16-gruvbox-dark-pale
 "|      | | | |  Quit without saving the file.
 "|      | | | |  |
 map #2y 1G"*yG1gs:q!<CR>
+
+" ------------- References --------------
 
 " Reference for CoC and Autocompletion and the like
 " https://github.com/meatwallace/dotfiles/blob/master/.vimrc
@@ -335,3 +345,4 @@ nnoremap <silent> ,k :<C-u>CocPrevious<CR>
 
 " resume latest coc list
 nnoremap <silent> ,p :<C-u>CocListResume<CR>
+
