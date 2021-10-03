@@ -75,8 +75,8 @@ elif [[ "$WHAT_TO_INSTALL" == "brew" ]]; then
 elif [[ "$WHAT_TO_INSTALL" == "pipx" ]]; then
     install_pipx
 elif [[ -z "$WHAT_TO_INSTALL" ]]; then
+    install_homebrew
     install_node
     install_python
     install_pipx
-    install_homebrew
 fi

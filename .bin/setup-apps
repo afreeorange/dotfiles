@@ -56,3 +56,5 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     echo "${GREEN}! Remember to set up iTerm2 in its preferences!${STOP}"
 fi
 
+echo "${GREEN}Removing 'subl' symlink if it exists. It's annoying...${STOP}"
+rm /usr/local/bin/subl
