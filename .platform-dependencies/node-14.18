@@ -1,8 +1,17 @@
 
 eleventy
+git-stats
 http-server
+jsdom
 lr-http-server
+nexe
 npm
+pkg
 prettier
+pug-cli
+puppeteer
+pyright
 readability-cli
+rome
+typescript
 yarn
