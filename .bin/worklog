@@ -52,6 +52,9 @@ elif [[ "$1" == "-1" ]]; then
 elif [[ "$1" == "l" ]]; then
     COUNTER=0
 
+    echo "Logs are in $LOG_FOLDER"
+    echo "------------------------------------"
+
     for LOG in "${LOGS[@]}"; do
         echo "$(printf "% 4d.\n" $COUNTER)" "$LOG"
         COUNTER=$((COUNTER + 1))
