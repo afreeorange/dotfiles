@@ -21,6 +21,9 @@ alias dro='cd $HOM/Dropbox'
 alias dow='cd $HOME/Downloads'
 alias des='cd $HOME/Desktop'
 
+# Installed via `npm i -g http-server`
+alias hs="http-server"
+
 # Moving around
 alias ..='cd ..'
 alias ...='cd ../..'
