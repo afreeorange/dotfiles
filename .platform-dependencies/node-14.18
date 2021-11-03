@@ -6,5 +6,6 @@ lr-http-server
 npm
 prettier
 readability-cli
+typescript
 yalc
 yarn

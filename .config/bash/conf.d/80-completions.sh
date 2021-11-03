@@ -2,7 +2,7 @@
 
 if [[ $(uname) == "Darwin" ]]; then
     # shellcheck source=/dev/null
-    source "/usr/local/etc/bash_completion"
+    source "$(brew --prefix)/etc/bash_completion"
 fi
 
 command -v complete >>/dev/null 2>&1 && {
