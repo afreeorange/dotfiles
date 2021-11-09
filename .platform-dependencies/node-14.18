@@ -3,7 +3,9 @@ eleventy
 eleventy
 http-server
 lr-http-server
+nexe
 npm
+pkg
 prettier
 readability-cli
 typescript
