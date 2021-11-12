@@ -1,7 +1,9 @@
 
 eleventy
 jsdom
+nexe
 npm
+pkg
 prettier
 puppeteer
 readability-cli
