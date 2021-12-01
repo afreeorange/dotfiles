@@ -2,9 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"LSP-pyright",
-		"LSP-typescript",
-		"LSP-yaml",
 	],
 	"installed_packages":
 	[
