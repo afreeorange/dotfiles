@@ -85,7 +85,10 @@ elif [[ "$1" == "pu" ]]; then
 
 # Pull from remote
 elif [[ "$1" == "p" ]]; then
+    pushd "$LOG_FOLDER" || exit
     git pull origin master
+    popd "$LOG_FOLDER" || exit
+
     exit 0
 
 # Just pull up a TODO list. "Nice to haves", experiments, etc
