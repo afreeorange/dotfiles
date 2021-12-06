@@ -13,21 +13,25 @@ FILE_TO_EDIT=$LOG_FILE
 # Sanity check
 if [[ ! -d $LOG_FOLDER ]]; then
     echo "You said I could store your logs here:"
-    echo $LOG_FOLDER
+    echo "$LOG_FOLDER"
     echo "but it doesn't exist, yo. Make it and call me again."
     exit 1
 fi
 
 # Note: The pipes need a new version of `sed`
 # TODO: https://stackoverflow.com/a/23357277
-IFS=$'\n'
-LOGS=($(
+#
+# Note: https://github.com/koalaman/shellcheck/wiki/SC2207
+#
+LOGS=()
+while IFS=$'\n' read -r line; do
+    LOGS+=("$line")
+done < <(
     find "$LOG_FOLDER" -type f -iname "$LOG_FILE_PREFIX*" -maxdepth 1 |
         tail -r |
         sed "s|$LOG_FOLDER"/"||" |
         sort
-))
-unset IFS
+)
 
 # Create a new log for the day if it doesn't exist
 if [[ "$#" == 0 ]]; then
@@ -106,4 +110,3 @@ else
 fi
 
 $EDITOR "$FILE_TO_EDIT"
-

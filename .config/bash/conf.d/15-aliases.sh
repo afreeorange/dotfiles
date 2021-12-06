@@ -20,6 +20,7 @@ fi
 alias dro='cd $HOM/Dropbox'
 alias dow='cd $HOME/Downloads'
 alias des='cd $HOME/Desktop'
+alias note='worklog'
 
 # Installed via `npm i -g http-server`
 alias hs="http-server"
