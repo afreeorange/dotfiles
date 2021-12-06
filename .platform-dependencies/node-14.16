@@ -1,6 +1,7 @@
 
 eleventy
 jsdom
+light-server
 nexe
 npm
 pkg
