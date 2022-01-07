@@ -28,12 +28,11 @@
         "build"
     ],
     "font_face": "Dank Mono",
-    "font_size": 17,
+    "font_size": 15,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
     [
-        "LSP-pyright",
         "Markdown",
         "Vintage",
     ],
