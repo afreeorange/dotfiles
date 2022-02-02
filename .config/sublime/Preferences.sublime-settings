@@ -2,7 +2,7 @@
     "WrapPlus.wrap_width": 79,
     "always_show_minimap_viewport": true,
     "bold_folder_labels": true,
-    "color_scheme": "gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
+    "color_scheme": "Sixteen.sublime-color-scheme",
     "file_exclude_patterns":
     [
         ".DS_Store",
@@ -28,7 +28,7 @@
         "build"
     ],
     "font_face": "Dank Mono",
-    "font_size": 15,
+    "font_size": 13,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
@@ -50,4 +50,6 @@
     "tab_size": 2,
     "theme": "Adaptive.sublime-theme",
     "translate_tabs_to_spaces": true,
+    "dark_color_scheme": "Mariana.sublime-color-scheme",
+    "light_color_scheme": "Breakers.sublime-color-scheme",
 }
