@@ -2,7 +2,7 @@
     "WrapPlus.wrap_width": 79,
     "always_show_minimap_viewport": true,
     "bold_folder_labels": true,
-    "color_scheme": "auto",
+    "color_scheme": "Packages/Gruvbox Dark/gruvbox.tmTheme",
     "file_exclude_patterns":
     [
         ".DS_Store",
