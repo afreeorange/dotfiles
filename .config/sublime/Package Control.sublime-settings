@@ -5,11 +5,11 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"Emmet",
 		"Git",
-		"Gruvbox Dark",
 		"Increment Selection",
 		"JsPrettier",
 		"LaTeXTools",
