@@ -3,4 +3,5 @@ credstash
 flake8
 isort
 nuitka
-onelogin-aws-cli
+poetry
+sqlite-web
