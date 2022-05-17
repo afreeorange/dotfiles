@@ -9,6 +9,7 @@
 		"EditorConfig",
 		"Emmet",
 		"Git",
+		"Golang",
 		"Increment Selection",
 		"JsPrettier",
 		"LaTeXTools",
@@ -21,6 +22,7 @@
 		"Sass",
 		"Table Editor",
 		"Terraform",
+		"Theme - Cobalt2",
 		"Wrap Plus",
 	],
 }
