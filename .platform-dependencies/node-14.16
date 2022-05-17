@@ -1,8 +1,12 @@
 
 eleventy
 jsdom
+light-server
+nexe
 npm
+pkg
 prettier
 puppeteer
 readability-cli
 single-file
+yarn
