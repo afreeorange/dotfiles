@@ -6,5 +6,6 @@ lr-http-server
 npm
 pkg
 prettier
+readability-cli
 yarn
 yo
