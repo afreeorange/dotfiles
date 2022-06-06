@@ -19,7 +19,7 @@ set colorcolumn=79,100,120
 set diffopt+=vertical
 
 " If the terminal supports it, enable mouse support in all ("a") modes
-set mouse=a
+" set mouse=a
 
 " Automatically change the directory to the file being edited
 " Note: this might cause problems with plugins 🤷‍♂️
