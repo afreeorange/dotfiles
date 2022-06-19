@@ -51,4 +51,4 @@ alias grm='git rm $(git ls-files --deleted)'
 alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
 alias gpom='git pull origin master'
-
+alias grv='git remote -v'
