@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Helps me maintain a quick log of things I do at work.
-# TODO:
-#   - Delete
+#
+# TODO: Deletion. But maybe that's not required.
 
-# Trailing slash!
+# Use a trailing slash for the log folder!
 LOG_FOLDER="$HOME/Dropbox/Work/"
+
+# Change this to whatever you'd like
 LOG_FILE_PREFIX="worklog"
 LOG_FILE="$LOG_FOLDER""$LOG_FILE_PREFIX-$(date "+%F--%b-%a").md"
 FILE_TO_EDIT=$LOG_FILE
@@ -99,7 +101,30 @@ elif [[ "$1" == "p" ]]; then
 elif [[ "$1" == "t" ]]; then
     FILE_TO_EDIT="$LOG_FOLDER"/TODO.md
 
-# Let me pick a log
+    exit 0
+
+elif [[ "$1" == "h" ]]; then
+    cat <<EOF
+worklog l
+    Show a list of logfiles
+worklog <number>
+    Open the numbered logfile in \$EDITOR
+worklog -1
+    Open the last edited file in \$EDITOR
+worklog t
+    Open a TODO list in \$EDITOR
+worklog pu
+    Commit and push logfiles to remote repo (if initialized as a repo)
+worklog p
+    Pull logfiles from repo
+worklog s <term>
+    Search logfiles for the given term
+
+EOF
+
+    exit 0
+
+# Let me pick a logfile
 else
     if [[ "$1" -gt "${#LOGS[@]}" ]]; then
         echo "Why are you like this? That index does not exist."
