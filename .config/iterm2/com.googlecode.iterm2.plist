@@ -223,6 +223,8 @@
 	<real>532904606.11010897</real>
 	<key>DeleteProfile_selection</key>
 	<integer>0</integer>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideTab</key>
@@ -940,7 +942,7 @@
 	<key>TabStyle</key>
 	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>5</integer>
+	<integer>6</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>

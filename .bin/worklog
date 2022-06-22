@@ -101,8 +101,6 @@ elif [[ "$1" == "p" ]]; then
 elif [[ "$1" == "t" ]]; then
     FILE_TO_EDIT="$LOG_FOLDER"/TODO.md
 
-    exit 0
-
 elif [[ "$1" == "h" ]]; then
     cat <<EOF
 worklog l
