@@ -6,11 +6,6 @@
 [user]
 	name = Nikhil Anand
 	email = mail@nikhil.io
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
 [alias]
     s = status
     d = diff
@@ -23,3 +18,8 @@
     p = push
 [pull]
 	rebase = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

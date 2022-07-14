@@ -52,6 +52,8 @@ endif
 
 " ------------- Key Mappings --------------
 
+let mapleader=","
+
 " Tab control (Why am I not using Emacs again?)
 map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
@@ -64,6 +66,8 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 " Quote the current word
 nnoremap <leader>" viw<ESC>a"<ESC>bi"<ESC>lel
 nnoremap <leader>' viw<ESC>a'<ESC>bi'<ESC>lel
+nnoremap <leader>[ viw<ESC>a]<ESC>bi[<ESC>lel
+nnoremap <leader>( viw<ESC>a)<ESC>bi(<ESC>lel
 
 " Invoke the fuzzy finder
 nnoremap <silent> <C-p> :FZF<CR>
@@ -106,23 +110,21 @@ for key in ['<Up>', '<Down>', '<Left>', '<Right>']
   exec 'vnoremap' key '<Nop>'
 endfor
 
-let mapleader=","
-
 " ------------- Plugin Loading --------------
 
 " Use vim-plug and keep plugins here
 call plug#begin('$HOME/.vim/plugged')
 
 " Syntax
+Plug 'SidOfc/mkdx'
 Plug 'cespare/vim-toml'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
-Plug 'stephpy/vim-yaml'
-Plug 'tpope/vim-markdown'
-Plug 'SidOfc/mkdx'
 Plug 'lepture/vim-jinja'
+Plug 'stephpy/vim-yaml'
 
 " Utility
+Plug 'chrisbra/csv.vim'                " Parse CSV
 Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
 Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
 Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
@@ -131,7 +133,6 @@ Plug 'mattn/emmet-vim'                 " Emmet!
 Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
 Plug 'tpope/vim-fugitive'              " Amazing git integration <3
 Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
-Plug 'chrisbra/csv.vim'                " Parse CSV
 
 " Colors, Themes, etc
 Plug 'chriskempson/base16-vim'
