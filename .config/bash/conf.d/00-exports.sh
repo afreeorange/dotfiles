@@ -30,4 +30,3 @@ export AWS_DEFAULT_REGION="us-east-1"
 
 # macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1
-

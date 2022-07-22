@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ $(uname) == "Darwin" ]]; then
-    # shellcheck source=/dev/null
-    source "$(brew --prefix)/etc/bash_completion"
-fi
+# if [[ $(uname) == "Darwin" ]]; then
+#     # shellcheck source=/dev/null
+#     source "$(brew --prefix)/etc/bash_completion"
+# fi
 
 command -v complete >>/dev/null 2>&1 && {
     for COMPLETION in "$BASHRC_D"/completions/*; do

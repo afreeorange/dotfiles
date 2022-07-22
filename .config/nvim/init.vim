@@ -58,7 +58,7 @@ let mapleader=","
 map <C-n> :tabnew<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
-map <C-w> :tabclose<CR>
+map <C-t> :tabclose<CR>
 
 " Edit our $MYVIMRC
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
@@ -118,7 +118,6 @@ call plug#begin('$HOME/.vim/plugged')
 " Syntax
 Plug 'SidOfc/mkdx'
 Plug 'cespare/vim-toml'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'lepture/vim-jinja'
 Plug 'stephpy/vim-yaml'
