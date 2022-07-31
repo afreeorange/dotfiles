@@ -11,6 +11,9 @@ export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 
+# HomeBrew path
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Some scripts I may have in $HOME
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 
