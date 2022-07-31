@@ -23,7 +23,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
             continue
         else
             echo "${GREEN}Symlinking \"$NAME\": $SOURCE 👉 $TARGET${STOP}"
-            ln -sf "$SOURCE" "$TARGET"
+            sudo ln -sf "$SOURCE" "$TARGET"
         fi
     done
 
@@ -44,18 +44,15 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     $(which nvim) +PlugClean +PlugInstall +PlugUpdate +qall
 
-    # Deno
-    command -v deno || {
-        curl -fsSL https://deno.land/x/install/install.sh | sh
-    }
-
-    # Ruby Version Manager
-    curl -sSL https://get.rvm.io | bash -s stable --rails
+    # Deno: done via brew
+    # command -v deno || {
+    #     curl -fsSL https://deno.land/x/install/install.sh | sh
+    # }
 
     # iTerm2
     echo "${GREEN}! Remember to set up iTerm2 in its preferences!${STOP}"
 fi
 
 echo "${GREEN}Removing 'subl' symlink if it exists. It's annoying...${STOP}"
-rm /usr/local/bin/subl
+sudo rm /usr/local/bin/subl >> /dev/null 2>&1
 

@@ -11,11 +11,15 @@ export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a; history -n'
 
-# HomeBrew path
-export PATH="/opt/homebrew/bin:$PATH"
+# Path. Use the Homebrew path if macOS. Note: the /opt/homebrew path might just
+# be an Apple Silicon thing...
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH:/usr/local/bin"
+if [[ $(uname) == "Darwin" ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 # Some scripts I may have in $HOME
-export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
+export PATH=":$PATH"
 
 # FZF configuration
 export FZF_DEFAULT_COMMAND="fd \

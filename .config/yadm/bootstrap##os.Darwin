@@ -16,14 +16,14 @@ command -v brew &>/dev/null || {
     exit
 }
 
-echo "${CYAN}✔︎ Installing runtimes${STOP}"
+echo "${CYAN}✔︎ Installing runtime managers${STOP}"
 brew install pyenv
 pyenv global 3.10
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm install lts/fermium
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install lts/gallium
 
 echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
 "$HOME/.bin/ipd"
