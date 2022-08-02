@@ -13,8 +13,8 @@ export PROMPT_COMMAND='history -a; history -n'
 
 # Path. Use the Homebrew path if macOS. Note: the /opt/homebrew path might just
 # be an Apple Silicon thing...
-export PATH="$HOME/.bin:$HOME/.local/bin:$PATH:/usr/local/bin"
-if [[ $(uname) == "Darwin" ]]; then
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
+if [[ $(uname) == "Darwin" ]] && [[ "$(uname -m)" == "arm64" ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
