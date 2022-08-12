@@ -29,6 +29,8 @@
 		"python-black",
 		"rainbow_csv",
 		"Sass",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
 		"Table Editor",
 		"Terraform",
 		"Wrap Plus",

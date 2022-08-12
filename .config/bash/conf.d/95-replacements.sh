@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Use vim if nvim not available
+# Use vim if nvim not available. Also use 'vim' to read man pages.
 VIM=vim
 command -v nvim >/dev/null 2>&1 && VIM=nvim
 alias vim='$VIM'

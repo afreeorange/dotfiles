@@ -8,10 +8,10 @@ IFS=$'\n'
 cd "$HOME" || return
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_colors"
+source "$HOME/.config/bash/conf.d/20-colors.sh"
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_excuses"
+source "$HOME/.config/bash/conf.d/17-random-excuses.sh"
 
 # shellcheck source=/dev/null
 source "$HOME/.bin/platform-versions"
@@ -87,3 +87,4 @@ yadm commit --quiet --message "$(random_excuse)"
 
 echo "${CYAN}✔︎  Attempting push to Github${STOP}"
 yadm push origin master --quiet
+
