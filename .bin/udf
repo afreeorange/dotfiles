@@ -8,10 +8,15 @@ IFS=$'\n'
 cd "$HOME" || return
 
 # shellcheck source=/dev/null
-source "$HOME/.config/bash/conf.d/20-colors.sh"
-
+source "$HOME/.config/bash/conf.d/00-exports.sh"
+# shellcheck source=/dev/null
+source "$HOME/.config/bash/conf.d/10-options.sh"
+# shellcheck source=/dev/null
+source "$HOME/.config/bash/conf.d/15-aliases.sh"
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/conf.d/17-random-excuses.sh"
+# shellcheck source=/dev/null
+source "$HOME/.config/bash/conf.d/20-colors.sh"
 
 # shellcheck source=/dev/null
 source "$HOME/.bin/platform-versions"
