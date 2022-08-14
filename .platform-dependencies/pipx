@@ -5,4 +5,3 @@ credstash
 flake8
 isort
 nuitka
-onelogin-aws-cli
