@@ -8,7 +8,7 @@ alias ll='ls -l'
 alias please='sudo'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
 alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
-alias life="$EDITOR \$HOME/Dropbox/Life.md"
+alias life="subl $HOME/Dropbox/Life.md"
 alias scratch="subl $HOME/Dropbox/Scratchpad.md"
 alias lo='cd $HOME/log; yarn new'
 alias clo='cd $HOME/log'
@@ -53,4 +53,3 @@ alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
 alias gpom='git pull origin master'
 alias grv='git remote -v'
-
