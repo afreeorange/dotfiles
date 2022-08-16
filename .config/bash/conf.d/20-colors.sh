@@ -21,11 +21,14 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [[ -s "$BASE16_SHELL/profile_helper.sh" ]] &&
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# Only do this if in interactive mode. According to the bash `man` page,
+# $- includes "i" if the shell is started in interactive mode.
 if [[ $- == *i* ]]
 then
+    # Shell theme <3
     base16_gruvbox-dark-hard
+
+    # The Generic Colorizer <3
+    source_if_exists /usr/local/etc/grc.bashrc
 fi
 
-
-# The Generic Colorizer <3
-source_if_exists /usr/local/etc/grc.bashrc
