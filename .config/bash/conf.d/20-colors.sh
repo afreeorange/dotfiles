@@ -21,7 +21,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [[ -s "$BASE16_SHELL/profile_helper.sh" ]] &&
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-base16_gruvbox-dark-hard
+if [[ $- == *i* ]]
+then
+    base16_gruvbox-dark-hard
+fi
+
 
 # The Generic Colorizer <3
 source_if_exists /usr/local/etc/grc.bashrc
