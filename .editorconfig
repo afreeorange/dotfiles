@@ -8,7 +8,7 @@ insert_final_newline = true
 tab_width = 4
 trim_trailing_whitespace = true
 
-[*.{css,js,tsjsx,tsx,json,njk,html}]
+[*.{css,js,tsjsx,tsx,json,njk,html,go}]
 indent_size = 2
 tab_width = 2
 
