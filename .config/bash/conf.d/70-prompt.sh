@@ -67,7 +67,7 @@ function __prompt_git_info() {
             echo '(unknown)')"
 
         [ -n "${STATUS}" ] && STATUS="${FADED_PURPLE}${STATUS}${STOP}"
-        echo -ne "${PURPLE} on Ψ ${BRANCH_NAME}${STOP}${STATUS}"
+        echo -ne "${PURPLE} on ⋲ ${BRANCH_NAME}${STOP}${STATUS}"
 
     else
         return
