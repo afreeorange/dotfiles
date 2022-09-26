@@ -18,6 +18,7 @@ command -v brew &>/dev/null || {
 
 echo "${CYAN}✔︎ Installing runtime managers${STOP}"
 brew install pyenv
+pyenv install 3.10
 pyenv global 3.10
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
