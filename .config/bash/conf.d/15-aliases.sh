@@ -1,7 +1,6 @@
 #!/bin/bash
 
 alias e="$EDITOR"
-alias co='cd $HOME/code'
 alias ep='$EDITOR $HOME/.config/bash/conf.d/'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 alias ll='ls -l'
@@ -10,8 +9,8 @@ alias udl='yadm ls-tree --full-tree -r --name-only master'
 alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
 alias life="subl $HOME/Dropbox/Life.md"
 alias scratch="subl $HOME/Dropbox/Scratchpad.md"
-alias lo='cd $HOME/log; yarn new'
-alias clo='cd $HOME/log'
+alias lo='cd $HOME/personal/log; yarn new'
+alias clo='cd $HOME/personal/log'
 if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
@@ -20,7 +19,7 @@ fi
 alias dro='cd $HOME/Dropbox'
 alias dow='cd $HOME/Downloads'
 alias des='cd $HOME/Desktop'
-alias cod='cd $HOME/code'
+alias co='cd $HOME/code'
 alias per='cd $HOME/personal'
 alias note='worklog'
 
@@ -53,3 +52,4 @@ alias gpt='git push origin $(git branch --show-current) --tags'
 alias gpb='git push origin $(git branch --show-current)'
 alias gpom='git pull origin master'
 alias grv='git remote -v'
+
