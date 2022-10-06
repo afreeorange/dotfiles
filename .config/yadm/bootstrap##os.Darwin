@@ -17,10 +17,12 @@ command -v brew &>/dev/null || {
 }
 
 echo "${CYAN}✔︎ Installing runtime managers${STOP}"
+# Python
 brew install pyenv
 pyenv install 3.10
 pyenv global 3.10
 
+# Node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -28,6 +30,9 @@ nvm install lts/gallium
 
 echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
 "$HOME/.bin/ipd"
+
+echo "${CYAN}✔︎ Making ~/personal and ~/code${STOP}"
+mkdir "$HOME/personal" "$HOME/code"
 
 echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 "$HOME/.bin/setup-apps"

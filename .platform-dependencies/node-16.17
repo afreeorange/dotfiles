@@ -1,3 +1,7 @@
 
 corepack
+http-server
+lr-http-server
 npm
+readability-cli
+yarn
