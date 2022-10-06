@@ -11,7 +11,10 @@ warn() {
 
 trash() {
     if [[ -n "$1" ]]; then
-        if ! mv "$1" ~/.Trash/"$1.$(date "+%Y-%m-%dT%H.%M.%S")"; then
+        # Remove any trailing slash...
+        TO_MOVE=$(basename "$1")
+
+        if ! mv "$TO_MOVE" ~/.Trash/"$TO_MOVE.$(date "+%Y-%m-%dT%H.%M.%S")"; then
             echo "Something bad happened. Does that thing you're trying to trash even exist?"
         fi
     else
