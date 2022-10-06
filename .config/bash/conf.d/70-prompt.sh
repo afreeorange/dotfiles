@@ -97,7 +97,8 @@ function __prompt() {
 #}
 
 # Put everything together
-# export PS1="${GREEN}\u${STOP} at ${BLUE}\\h${STOP} \$(__prompt)
-# $PS_SYMBOL "
-export PS1="${GREEN}\u${STOP}@${BLUE}\\h${STOP} \$(__prompt)
+export PS1="${GREEN}\u${STOP} ${BLUE}at \\h${STOP} \$(__prompt)
 $PS_SYMBOL "
+# export PS1="${GREEN}\u${STOP} \$(__prompt)
+# $PS_SYMBOL "
+
