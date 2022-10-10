@@ -52,7 +52,7 @@ endif
 
 " ------------- Key Mappings --------------
 
-let mapleader=","
+" Map leader is a default of the backslash key
 
 " Tab control (Why am I not using Emacs again?)
 map <C-n> :tabnew<CR>
