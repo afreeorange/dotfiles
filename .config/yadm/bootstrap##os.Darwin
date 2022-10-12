@@ -37,3 +37,6 @@ mkdir "$HOME/personal" "$HOME/code"
 echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 "$HOME/.bin/setup-apps"
 
+echo "${CYAN}✔︎ Random shit"
+defaults write com.apple.screencapture type jpg; killall SystemUIServer
+
