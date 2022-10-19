@@ -27,6 +27,8 @@ echo "" > "$OUTPUT_FILE"
 
 # Finally write dependencies
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
+echo "Writing ${CYAN}${OUTPUT_FILE_BROAD}${STOP}"
+
 DEPENDENCIES="$(pip freeze)"
 echo "$DEPENDENCIES" > "$OUTPUT_FILE"
 cp "$OUTPUT_FILE" "$OUTPUT_FILE_BROAD"
