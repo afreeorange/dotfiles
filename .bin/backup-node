@@ -6,11 +6,11 @@ source "$HOME/.bash_colors"
 # shellcheck source=/dev/null
 source "$HOME/.bin/platform-versions"
 
-# Check if NVM is managing node versions
-if [[ -z "$NVM_BIN" ]]; then
-    echo "${RED}NVM is not managing Node. Stopping.${STOP}"
-    exit
-fi
+# # Check if NVM is managing node versions
+# if [[ -z "$NVM_BIN" ]]; then
+#     echo "${RED}NVM is not managing Node. Stopping.${STOP}"
+#     exit
+# fi
 
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/node"
