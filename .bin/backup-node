@@ -13,6 +13,7 @@ if [[ -z "$NVM_BIN" ]]; then
 fi
 
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
+OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/node"
 
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
 
@@ -30,5 +31,6 @@ IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
     echo "${PACKAGE}" >> "$OUTPUT_FILE"
 done
 
+cp "$OUTPUT_FILE" "$OUTPUT_FILE_BROAD"
 echo "Done"
 
