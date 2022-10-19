@@ -15,10 +15,16 @@ WHAT_TO_INSTALL=$1
 
 function install_node() {
     echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
-    local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
+
+    # Install from the specific version if possible. If not use the broad version.
+    local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
+    local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/node"
+    local DEPS_FILE="$DEPS_FILE_SPECIFIC"
 
     if [[ ! -e "$DEPS_FILE" ]]; then
         echo "${RED}Could not find Node dependencies file for ${NODE_VERSION}${STOP}"
+        echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
+        DEPS_FILE="$DEPS_FILE_BROAD"
     else
         # shellcheck disable=SC2046
         npm i -g $(cat "$DEPS_FILE")
@@ -28,10 +34,14 @@ function install_node() {
 
 function install_python() {
     echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
-    local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
+    local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
+    local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/python"
+    local DEPS_FILE="$DEPS_FILE_SPECIFIC"
 
     if [[ ! -e "$DEPS_FILE" ]]; then
         echo "${RED}Could not find Python dependencies file for ${PYTHON_VERSION}${STOP}"
+        echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
+        DEPS_FILE="$DEPS_FILE_BROAD"
     else
         # shellcheck disable=SC2046
         pip install $(cat "$DEPS_FILE")
