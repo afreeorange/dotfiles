@@ -13,6 +13,7 @@ if [[ -z "$PYENV_ROOT" ]]; then
 fi
 
 OUTPUT_FILE="$HOME/.platform-dependencies/python-$PYTHON_VERSION"
+OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/python"
 
 # Check for pip
 command -v pip &> /dev/null || {
@@ -26,6 +27,9 @@ echo "" > "$OUTPUT_FILE"
 
 # Finally write dependencies
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
+echo "Writing ${CYAN}${OUTPUT_FILE_BROAD}${STOP}"
+
 DEPENDENCIES="$(pip freeze)"
 echo "$DEPENDENCIES" > "$OUTPUT_FILE"
+cp "$OUTPUT_FILE" "$OUTPUT_FILE_BROAD"
 echo "Done"
