@@ -7,4 +7,3 @@ if [[ $MIMETYPE == text/* ]]; then
 fi
 
 echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')";
-

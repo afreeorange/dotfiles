@@ -25,11 +25,11 @@ function install_node() {
         echo "${RED}Could not find Node dependencies file for ${NODE_VERSION}${STOP}"
         echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
         DEPS_FILE="$DEPS_FILE_BROAD"
-    else
-        # shellcheck disable=SC2046
-        npm i -g $(cat "$DEPS_FILE")
-        echo "${GREEN}✓ Done${STOP}"
     fi
+
+    # shellcheck disable=SC2046
+    npm i -g $(cat "$DEPS_FILE")
+    echo "${GREEN}✓ Done${STOP}"
 }
 
 function install_python() {
@@ -42,11 +42,11 @@ function install_python() {
         echo "${RED}Could not find Python dependencies file for ${PYTHON_VERSION}${STOP}"
         echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
         DEPS_FILE="$DEPS_FILE_BROAD"
-    else
-        # shellcheck disable=SC2046
-        pip install $(cat "$DEPS_FILE")
-        echo "${GREEN}✓ Done${STOP}"
     fi
+
+    # shellcheck disable=SC2046
+    pip install $(cat "$DEPS_FILE")
+    echo "${GREEN}✓ Done${STOP}"
 }
 
 function install_pipx() {
