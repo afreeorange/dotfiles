@@ -19,6 +19,7 @@ fi
 alias dro='cd $HOME/Dropbox'
 alias dow='cd $HOME/Downloads'
 alias des='cd $HOME/Desktop'
+alias doc='cd $HOME/Documents'
 alias co='cd $HOME/code'
 alias per='cd $HOME/personal'
 alias note='worklog'

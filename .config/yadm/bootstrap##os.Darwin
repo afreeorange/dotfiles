@@ -40,3 +40,7 @@ echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 echo "${CYAN}✔︎ Random shit"
 defaults write com.apple.screencapture type jpg; killall SystemUIServer
 
+# Finder > Preferences > Advanced
+# When searching, search the current folder and not the entire Mac ffs...
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
