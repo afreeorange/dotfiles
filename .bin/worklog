@@ -75,7 +75,11 @@ elif [[ "$1" == "s" ]]; then
         exit 1
     fi
 
-    grep -Hin "$2" "$LOG_FOLDER"*
+    # Use the silver searcher if present. Else just grep. Will show an error if
+    # ag is not present. I don't care.
+    ag "$2" "$LOG_FOLDER" --markdown || {
+        grep -Hinr "$2" "$LOG_FOLDER"*
+    }
 
     exit 0
 
