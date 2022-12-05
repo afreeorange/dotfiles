@@ -12,12 +12,16 @@ LOG_FILE_PREFIX="worklog"
 LOG_FILE="$LOG_FOLDER""$LOG_FILE_PREFIX-$(date "+%F--%b-%a").md"
 FILE_TO_EDIT=$LOG_FILE
 
+# Error codes
+ERROR_NO_LOG_FOLDER=10
+ERROR_NO_SEARCH_TERM=20
+
 # Sanity check
 if [[ ! -d $LOG_FOLDER ]]; then
     echo "You said I could store your logs here:"
     echo "$LOG_FOLDER"
     echo "but it doesn't exist, yo. Make it and call me again."
-    exit 1
+    exit $ERROR_NO_LOG_FOLDER
 fi
 
 # Note: The pipes need a new version of `sed`
@@ -120,7 +124,11 @@ worklog pu
 worklog p
     Pull logfiles from repo
 worklog s <term>
-    Search logfiles for the given term
+    Search logfiles for the given term. Will use 'ag' (the Silver Searcher)
+    if it can find it. Else, will use 'grep'.
+
+Running this without any flags will create a log file datestamped
+with today's date ❤️
 
 EOF
 
@@ -130,7 +138,7 @@ EOF
 else
     if [[ "$1" -gt "${#LOGS[@]}" ]]; then
         echo "Why are you like this? That index does not exist."
-        exit 1
+        exit $ERROR_NO_SEARCH_TERM
     fi
 
     FILE_TO_EDIT="$LOG_FOLDER""${LOGS[$1]}"
