@@ -91,7 +91,7 @@ function __prompt() {
 ## Spit out a random excuse <3
 command -v cowsay >/dev/null 2>&1 && {
    # shellcheck source=/dev/null
-   random_excuse | cowsay
+   random_excuse | cowsay -s
    echo ""
 }
 
