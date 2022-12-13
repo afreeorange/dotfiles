@@ -1,14 +1,14 @@
 #!/bin/bash
 
-alias e="$EDITOR"
+alias e="\$EDITOR"
 alias ep='$EDITOR $HOME/.config/bash/conf.d/'
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
 alias ll='ls -l'
 alias please='sudo'
 alias udl='yadm ls-tree --full-tree -r --name-only master'
 alias venv_clean='pip uninstall -y $(pip freeze | cut -d= -f1)'
-alias life="subl $HOME/Dropbox/Life.md"
-alias scratch="subl $HOME/Dropbox/Scratchpad.md"
+alias life="subl \$HOME/Dropbox/Life.md"
+alias scratch="subl \$HOME/Dropbox/Scratchpad.md"
 alias lo='cd $HOME/personal/log; yarn new'
 alias clo='cd $HOME/personal/log'
 if [[ $(uname) == "Darwin" ]]; then

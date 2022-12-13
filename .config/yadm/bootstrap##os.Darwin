@@ -16,17 +16,33 @@ command -v brew &>/dev/null || {
     exit
 }
 
-echo "${CYAN}✔︎ Installing runtime managers${STOP}"
+echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
+brew install asdf
+
+echo "${CYAN}✔︎ Installing runtimes...${STOP}"
+asdf plugin add python
+asdf install python latest
+asdf global python latest
+
+asdf plugin add nodejs
+asdf install nodejs latest
+asdf global nodejs latest
+
+asdf plugin add deno
+asdf install deno latest
+asdf global deno latest
+
+# echo "${CYAN}✔︎ Installing runtime managers${STOP}"
 # Python
-brew install pyenv
-pyenv install 3.10
-pyenv global 3.10
+# brew install pyenv
+# pyenv install 3.10
+# pyenv global 3.10
 
 # Node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-nvm install lts/gallium
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# nvm install lts/gallium
 
 echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
 "$HOME/.bin/ipd"
@@ -38,9 +54,10 @@ echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 "$HOME/.bin/setup-apps"
 
 echo "${CYAN}✔︎ Random shit"
-defaults write com.apple.screencapture type jpg; killall SystemUIServer
+
+# Set the screenshot format to be JPEG instead of PNG
+# defaults write com.apple.screencapture type png; killall SystemUIServer
 
 # Finder > Preferences > Advanced
 # When searching, search the current folder and not the entire Mac ffs...
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
