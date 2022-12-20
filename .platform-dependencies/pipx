@@ -1,7 +1,1 @@
-awscli
-base16-shell-preview
-black
-credstash
-flake8
-isort
-nuitka
+beets

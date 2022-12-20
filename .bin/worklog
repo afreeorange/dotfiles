@@ -5,7 +5,11 @@
 # TODO: Deletion. But maybe that's not required.
 
 # Use a trailing slash for the log folder!
-LOG_FOLDER="$HOME/Dropbox/Work/"
+if [[ $(uname) == "Darwin" ]]; then
+    LOG_FOLDER="$HOME/Library/CloudStorage/Dropbox/Work/"
+else
+    LOG_FOLDER="$HOME/Dropbox/Work/"
+fi
 
 # Change this to whatever you'd like
 LOG_FILE_PREFIX="worklog"
