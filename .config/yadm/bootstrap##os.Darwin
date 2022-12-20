@@ -20,17 +20,12 @@ echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
 brew install asdf
 
 echo "${CYAN}✔︎ Installing runtimes...${STOP}"
-asdf plugin add python
-asdf install python latest
-asdf global python latest
-
-asdf plugin add nodejs
-asdf install nodejs latest
-asdf global nodejs latest
-
-asdf plugin add deno
-asdf install deno latest
-asdf global deno latest
+RUNTIMES=(python nodejs deno golang)
+for RUNTIME in ${RUNTIMES[@]}; do
+    asdf plugin add $RUNTIME
+    asdf install $RUNTIME latest
+    asdf global $RUNTIME latest
+done
 
 # echo "${CYAN}✔︎ Installing runtime managers${STOP}"
 # Python
@@ -55,9 +50,12 @@ echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 
 echo "${CYAN}✔︎ Random shit"
 
+# Useful Reference: https://macos-defaults.com
+
 # Set the screenshot format to be JPEG instead of PNG
 # defaults write com.apple.screencapture type png; killall SystemUIServer
 
 # Finder > Preferences > Advanced
 # When searching, search the current folder and not the entire Mac ffs...
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
