@@ -28,6 +28,10 @@ if [[ $- == *i* ]]; then
     # Shell theme <3
     base16_gruvbox-dark-pale
 
-    # The Generic Colorizer <3
-    source_if_exists /usr/local/etc/grc.bashrc
+    # The generic colorizer
+    # https://github.com/garabik/grc
+    if [[ $(uname) == "Darwin" ]]; then
+        export GRC_ALIASES="true"
+        source_if_exists "$(brew --prefix)/etc/grc.sh"
+    fi
 fi

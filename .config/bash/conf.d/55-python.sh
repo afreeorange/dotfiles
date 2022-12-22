@@ -1,4 +1,6 @@
-# #!/bin/bash
+#!/bin/bash
+
+# --- Managed by asdf ---
 
 # # Poetry
 # export PATH="$HOME/.poetry/bin:$PATH"

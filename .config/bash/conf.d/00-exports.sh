@@ -15,7 +15,8 @@ export PROMPT_COMMAND='history -a; history -n'
 # be an Apple Silicon thing...
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 if [[ $(uname) == "Darwin" ]] && [[ "$(uname -m)" == "arm64" ]]; then
-  export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/bin:$PATH"
+    export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
 
 # Some scripts I may have in $HOME
@@ -34,9 +35,6 @@ export FZF_DEFAULT_OPTS="--ansi"
 # AWS Stuff
 export AWS_PROFILE="nikhil.io"
 export AWS_DEFAULT_REGION="us-east-1"
-
-# macOS
-export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Editor
 export EDITOR="nvim"
