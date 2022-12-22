@@ -3,10 +3,10 @@
 # Why not?
 if [[ -z "$PS_SYMBOL" ]]; then
     case "$(uname)" in
-    Darwin) PS_SYMBOL='' ;;
-    Linux) PS_SYMBOL='🐧' ;;
-    FreeBSD) PS_SYMBOL='😈' ;;
-    *) PS_SYMBOL='→' ;;
+    Darwin) PS_SYMBOL="" ;;
+    Linux) PS_SYMBOL="🐧" ;;
+    FreeBSD) PS_SYMBOL="😈" ;;
+    *) PS_SYMBOL="→" ;;
     esac
 fi
 
@@ -27,14 +27,14 @@ function __prompt_pyenv_version() {
 }
 
 function __prompt_git_info() {
-    local STATUS=''
-    local BRANCH_NAME=''
+    local STATUS=""
+    local BRANCH_NAME=""
 
     if [[ $(
         git rev-parse --is-inside-work-tree &>/dev/null
         echo "${?}"
-    ) == '0' ]]; then
-        if [[ "$(git rev-parse --is-inside-git-dir 2>/dev/null)" == 'false' ]]; then
+    ) == "0" ]]; then
+        if [[ "$(git rev-parse --is-inside-git-dir 2>/dev/null)" == "false" ]]; then
 
             # Ensure the index is up to date.
             git update-index --really-refresh -q &>/dev/null
@@ -90,14 +90,14 @@ function __prompt() {
 
 ## Spit out a random excuse <3
 command -v cowsay >/dev/null 2>&1 && {
-   # shellcheck source=/dev/null
-   random_excuse | cowsay -s
-   echo ""
+    # shellcheck source=/dev/null
+    random_excuse | cowsay -s
+    echo ""
 }
 
 # Put everything together
 export PS1="${GREEN}\u${STOP} ${BLUE}at \\h${STOP} \$(__prompt)
 $PS_SYMBOL "
+
 # export PS1="${GREEN}\u${STOP} \$(__prompt)
 # $PS_SYMBOL "
-

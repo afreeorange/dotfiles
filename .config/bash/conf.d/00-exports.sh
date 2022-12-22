@@ -6,10 +6,10 @@ export LANG="en_US.UTF-8"
 
 # Bash History
 export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE='ls:bg:fg:history'
+export HISTIGNORE="ls:bg:fg:history"
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
-export PROMPT_COMMAND='history -a; history -n'
+export PROMPT_COMMAND="history -a; history -n"
 
 # Path. Use the Homebrew path if macOS. Note: the /opt/homebrew path might just
 # be an Apple Silicon thing...
