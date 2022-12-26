@@ -1,4 +1,6 @@
-# #!/bin/bash
+#!/bin/bash
+
+# --- Managed by asdf ---
 
 # export NVM_DIR="$HOME/.nvm"
 

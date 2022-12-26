@@ -90,6 +90,7 @@ nnoremap <silent> <C-k><C-f> :NERDTreeFind<CR>
 " inoremap [; [<CR>];<C-c>O<Tab>
 " inoremap [, [<CR>],<C-c>O<Tab>
 
+" Use `:set showcmd` to show the keystrokes in normal mode
 if g:os == "Darwin"
     " Alt/Option + z toggles wrapping
     nnoremap <silent> Ω :set wrap!<CR>
