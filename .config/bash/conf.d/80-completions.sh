@@ -2,6 +2,11 @@
 
 # Running this makes the startup of a session slow :( So only run this when
 # completions are needed.
+#
+# EXCEPT fzf. fzf is cool.
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then
         # shellcheck source=/dev/null
