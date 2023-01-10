@@ -52,3 +52,12 @@ alias gpt="git push origin \$(git branch --show-current) --tags"
 alias gpb="git push origin \$(git branch --show-current)"
 alias gpom="git pull origin master"
 alias grv="git remote -v"
+
+# Miscellaneous
+if [[ $(uname) == "Darwin" ]]; then
+    # Because a company worth more than a trillion dollars cannot be arsed
+    # to fix this shit. Have to do this since Expose and hot screen corners
+    # just suddenly decide to stop working.
+    alias kd="killall Dock"
+fi
+
