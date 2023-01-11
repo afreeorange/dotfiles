@@ -5,3 +5,4 @@ credstash
 flake8
 isort
 nuitka
+onelogin-granular-cli
