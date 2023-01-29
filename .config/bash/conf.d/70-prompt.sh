@@ -41,7 +41,7 @@ function __prompt_git_info() {
 
             # Check for uncommitted changes
             if ! git diff --quiet --ignore-submodules --cached; then
-                STATUS+=":us"
+                STATUS+=":uc"
             fi
 
             # Check for unstaged changes.
@@ -101,3 +101,4 @@ $PS_SYMBOL "
 
 # export PS1="${GREEN}\u${STOP} \$(__prompt)
 # $PS_SYMBOL "
+

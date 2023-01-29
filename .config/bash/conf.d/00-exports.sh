@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # Unicode!
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
+# TODO: Weird issues on Ubuntu...
+if [[ $(uname) == "Darwin" ]]; then
+    export LC_ALL="en_US.UTF-8"
+    export LANG="en_US.UTF-8"
+fi
 
 # Bash History
 export HISTCONTROL=ignoreboth:erasedups

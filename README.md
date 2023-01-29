@@ -97,3 +97,10 @@ Convert a GIF to MP4 using `ffmpeg`
 
 (Cached) Manipulate semantic versioning.
 
+---
+
+## Misc
+
+If ubuntu check for bootstrap
+Add `apt -y install locales` for `LC_ALL` error...
+
