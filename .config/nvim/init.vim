@@ -4,6 +4,9 @@ filetype plugin indent on
 " Show line numbers
 set number
 
+" Show relative line numbers <3
+set relativenumber
+
 " Indentation behaviour
 set tabstop=4
 set shiftwidth=4

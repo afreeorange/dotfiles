@@ -104,3 +104,6 @@ Convert a GIF to MP4 using `ffmpeg`
 If ubuntu check for bootstrap
 Add `apt -y install locales` for `LC_ALL` error...
 
+## TODO
+
+[Just use Lua and Nvim](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
