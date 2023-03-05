@@ -705,3 +705,5 @@ require('mason-lspconfig').setup_handlers({
 
 -- https://github.com/VonHeikemen/nvim-starter/blob/04-lsp-installer/init.lua
 -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+
+-- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
