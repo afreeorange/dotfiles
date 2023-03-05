@@ -3,7 +3,7 @@
 # Why not?
 if [[ -z "$PS_SYMBOL" ]]; then
     case "$(uname)" in
-    Darwin) PS_SYMBOL="" ;;
+    Darwin) PS_SYMBOL="" ;;
     Linux) PS_SYMBOL="🐧" ;;
     FreeBSD) PS_SYMBOL="😈" ;;
     *) PS_SYMBOL="→" ;;

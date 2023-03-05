@@ -106,4 +106,9 @@ Add `apt -y install locales` for `LC_ALL` error...
 
 ## TODO
 
+## References
+
 [Just use Lua and Nvim](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
+[Another nice nvim setup guide](https://bryankegley.me/posts/nvim-getting-started/)
+[NerdFonts Cheatsheet](https://www.nerdfonts.com/cheat-sheet)
+
