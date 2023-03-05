@@ -50,6 +50,11 @@ echo "${CYAN}✔︎ Running setup script for macOS${STOP}"
 
 echo "${CYAN}✔︎ Random shit"
 
+if [[ -f "$HOME/.config/yadm/encrypt" ]]; then
+  echo "${YELLOW}👉 Make sure you run 'yadm decrypt' for encrypted files!"
+fi
+
+# shellcheck source=/dev/null
 # Useful Reference: https://macos-defaults.com
 
 # Set the screenshot format to be JPEG instead of PNG
