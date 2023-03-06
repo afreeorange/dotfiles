@@ -1,25 +1,20 @@
 [push]
-	default = simple
+  default = simple
+
 [core]
-	excludesfile = ~/.gitignore.global
-    ignorecase = false
+  excludesfile = ~/.gitignore
+  ignorecase = false
+
 [user]
-	name = Nikhil Anand
-	email = anand.nikhil@gmail.com
-[alias]
-    s = status
-    d = diff
-    a = add
-    c = commit
-    co = checkout
-    b = branch
-    ba = branch --all
-    r = remote --verbose
-    p = push
+  name = Nikhil Anand
+  email = anand.nikhil@gmail.com
+
 [pull]
-	rebase = false
+  rebase = false
+
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  required = true
+  smudge = git-lfs smudge -- %f
+

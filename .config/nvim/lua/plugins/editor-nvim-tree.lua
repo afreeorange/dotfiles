@@ -46,7 +46,11 @@ Plugin.opts = {
 }
 
 function Plugin.init()
+  -- Shortcut to toggle tree
   vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
+
+  -- Switch to the current directory in the tree
+  vim.g.nvim_tree_respect_buf_cwd = 1
 end
 
 return Plugin

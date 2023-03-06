@@ -40,3 +40,6 @@ vim.opt.signcolumn = 'yes'
 -- Some pre-configuration for theming
 vim.opt.termguicolors = true
 vim.opt.background = "dark" -- or "light" for light mode
+
+-- Change to the current directory
+vim.opt.autochdir = true

@@ -31,9 +31,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-# Brew
-alias bru="brew cleanup && brew update && brew upgrade"
-
 # Docker
 alias dkill="docker kill \$(docker ps -aq)"
 alias drm="docker rm -f \$(docker ps -aq)"
@@ -55,9 +52,12 @@ alias grv="git remote -v"
 
 # Miscellaneous
 if [[ $(uname) == "Darwin" ]]; then
-    # Because a company worth more than a trillion dollars cannot be arsed
-    # to fix this shit. Have to do this since Expose and hot screen corners
-    # just suddenly decide to stop working.
-    alias kd="killall Dock"
+  # Because a company worth more than a trillion dollars cannot be arsed
+  # to fix this shit. Have to do this since Expose and hot screen corners
+  # just suddenly decide to stop working.
+  alias kd="killall Dock"
+
+  # Brew
+  alias bru="brew cleanup && brew update && brew upgrade"
 fi
 
