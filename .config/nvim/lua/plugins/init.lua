@@ -42,6 +42,12 @@ local Plugins = {
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
   { 'hrsh7th/cmp-nvim-lsp' },
+
+  -- Utilities
+  -----------------------------------------------------------------------------
+  {'godlygeek/tabular'},
+  {'SidOfc/mkdx'},
+  {'dhruvasagar/vim-table-mode'},
 }
 
 return Plugins

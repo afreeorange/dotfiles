@@ -10,7 +10,6 @@ Most of this is for macOS which the only thing I use these days 🤷‍♂️ Sh
 
 ```bash
 yadm clone git@github.com:afreeorange/dotfiles.git
-yadm submodule init
 yadm status
 
 # Bootstrap will check for Homebrew and install stuff
@@ -18,6 +17,7 @@ yadm status
 # It will also install all global packages for Node
 # and Python.
 yadm bootstrap
+yadm decrypt
 
 # Redo yadm if all else fails
 hose-yadm
@@ -105,10 +105,4 @@ If ubuntu check for bootstrap
 Add `apt -y install locales` for `LC_ALL` error...
 
 ## TODO
-
-## References
-
-[Just use Lua and Nvim](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
-[Another nice nvim setup guide](https://bryankegley.me/posts/nvim-getting-started/)
-[NerdFonts Cheatsheet](https://www.nerdfonts.com/cheat-sheet)
 
