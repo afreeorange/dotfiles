@@ -15,13 +15,17 @@ if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
-alias dro="cd \$HOME/Dropbox"
-alias dow="cd \$HOME/Downloads"
+alias note="worklog"
+
+# Locations
+alias  co="cd \$HOME/code"
 alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
-alias co="cd \$HOME/code"
+alias dow="cd \$HOME/Downloads"
+alias dro="cd \$HOME/Dropbox"
 alias per="cd \$HOME/personal"
-alias note="worklog"
+alias pic="cd \$HOME/Pictures"
+alias pro="cd \$HOME/Projects"
 
 # Installed via `npm i -g http-server`
 alias hs="http-server"
