@@ -4,16 +4,13 @@
 # the checks, sets things up, backs things up, updates things.
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_colors"
-
-echo "${CYAN}✔︎ Initializing yadm submodules${STOP}"
-yadm submodule update --recursive --init
+source "$HOME/.config/bash/colors"
 
 # Need HomeBrew on macOS for all other stuff
 command -v brew &>/dev/null || {
-    echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
-    echo "https://docs.brew.sh/Installation"
-    exit
+  echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
+  echo "https://docs.brew.sh/Installation"
+  exit
 }
 
 echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
@@ -22,22 +19,10 @@ brew install asdf
 echo "${CYAN}✔︎ Installing runtimes...${STOP}"
 RUNTIMES=(python nodejs deno golang)
 for RUNTIME in ${RUNTIMES[@]}; do
-    asdf plugin add $RUNTIME
-    asdf install $RUNTIME latest
-    asdf global $RUNTIME latest
+  asdf plugin add $RUNTIME
+  asdf install $RUNTIME latest
+  asdf global $RUNTIME latest
 done
-
-# echo "${CYAN}✔︎ Installing runtime managers${STOP}"
-# Python
-# brew install pyenv
-# pyenv install 3.10
-# pyenv global 3.10
-
-# Node
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# nvm install lts/gallium
 
 echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
 "$HOME/.bin/ipd"
@@ -58,7 +43,8 @@ fi
 # Useful Reference: https://macos-defaults.com
 
 # Set the screenshot format to be JPEG instead of PNG
-# defaults write com.apple.screencapture type png; killall SystemUIServer
+defaults write com.apple.screencapture type jpeg
+killall SystemUIServer
 
 # Finder > Preferences > Advanced
 # When searching, search the current folder and not the entire Mac ffs...
@@ -66,4 +52,3 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Use OpenSSL for yadm secrects
 yadm config yadm.cipher openssl
-

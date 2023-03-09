@@ -8,3 +8,13 @@ source_if_exists() {
 warn() {
     echo "$RED""❕$1""$STOP"
 }
+
+dataurl() {
+    MIMETYPE=$(file -b --mime-type "$1")
+
+    if [[ $MIMETYPE == text/* ]]; then
+        MIMETYPE="${MIMETYPE};charset=utf-8"
+    fi
+
+    echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+}

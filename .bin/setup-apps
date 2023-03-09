@@ -3,7 +3,7 @@
 # Most of this is just symlinking, except for Sublime.
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_colors"
+source "$HOME/.config/bash/colors"
 
 LINKS_MACOS=(
     # Source;Target;Name

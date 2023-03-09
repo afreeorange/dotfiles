@@ -113,36 +113,6 @@ for key in ['<Up>', '<Down>', '<Left>', '<Right>']
   exec 'vnoremap' key '<Nop>'
 endfor
 
-" ------------- Plugin Loading --------------
-
-" Use vim-plug and keep plugins here
-call plug#begin('$HOME/.vim/plugged')
-
-" Syntax
-Plug 'SidOfc/mkdx'
-Plug 'cespare/vim-toml'
-Plug 'godlygeek/tabular'
-Plug 'lepture/vim-jinja'
-Plug 'stephpy/vim-yaml'
-
-" Utility
-Plug 'chrisbra/csv.vim'                " Parse CSV
-Plug 'dhruvasagar/vim-table-mode'      " Because I'm too lazy and inept to hack tabular.vim
-Plug 'hashivim/vim-terraform'          " Autoformat Terraform files
-Plug 'itspriddle/vim-shellcheck'       " Check bash scripts
-Plug 'junegunn/fzf'                    " Fuzzy file finder! See .bash_profile for export
-Plug 'mattn/emmet-vim'                 " Emmet!
-Plug 'scrooloose/nerdcommenter'        " Because I don't want to copypasta key bindings I don't understand
-Plug 'tpope/vim-fugitive'              " Amazing git integration <3
-Plug 'tpope/vim-surround'              " Surround stuff with all sorts of things
-
-" Colors, Themes, etc
-Plug 'chriskempson/base16-vim'
-Plug 'preservim/nerdtree'
-
-" Initialize plugin system
-call plug#end()
-
 " ------------- Syntaxes --------------
 
 autocmd FileType js set shiftwidth=2 softtabstop=2 expandtab
@@ -158,33 +128,10 @@ autocmd BufNewFile,BufRead *.sublime-settings set syntax=javascript
 autocmd BufNewFile,BufRead *.tsx syntax=javascript
 autocmd BufNewFile,BufRead *.scss set syntax=css
 
-" ------------- Plugin Configuration --------------
-
-" Make nice text tables <3
-let g:table_mode_always_active=1
-
-" Disable automatic folding in vim-markdown
-let g:vim_markdown_folding_disabled=1
-
-" Use Emmett everywhere
-let g:user_emmet_mode='a'
-
-" Remap the Emmett leader (C-y is a bit awkward).
-" Still have to type the ',' !
-let g:user_emmet_leader_key='<Leader>e'
-
-" Terraform autoformatter
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
-
-" EditorConfig
-let g:EditorConfig_core_mode = 'external_command'
-
 " ------------- Colors --------------
 
-" Access colors present in 256 colorspace, set theme
+" Access colors present in 256 colorspace
 let base16colorspace=256
-colorscheme base16-gruvbox-dark-pale
 
 " ------------- References --------------
 "

@@ -3,7 +3,7 @@
 # Install Platform Dependencies
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_colors"
+source "$HOME/.config/bash/colors"
 
 # shellcheck source=/dev/null
 source "$HOME/.bin/platform-versions"
@@ -14,79 +14,60 @@ IFS=$'\n'
 WHAT_TO_INSTALL=$1
 
 function install_node() {
-    echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
+  echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
 
-    # Install from the specific version if possible. If not use the broad version.
-    local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
-    local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/node"
-    local DEPS_FILE="$DEPS_FILE_SPECIFIC"
+  # Install from the specific version if possible. If not use the broad version.
+  local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/node-$NODE_VERSION"
+  local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/node"
+  local DEPS_FILE="$DEPS_FILE_SPECIFIC"
 
-    if [[ ! -e "$DEPS_FILE" ]]; then
-        echo "${RED}Could not find Node dependencies file for ${NODE_VERSION}${STOP}"
-        echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
-        DEPS_FILE="$DEPS_FILE_BROAD"
-    fi
+  if [[ ! -e "$DEPS_FILE" ]]; then
+    echo "${RED}Could not find Node dependencies file for ${NODE_VERSION}${STOP}"
+    echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
+    DEPS_FILE="$DEPS_FILE_BROAD"
+  fi
 
-    # shellcheck disable=SC2046
-    npm i -g $(cat "$DEPS_FILE")
-    echo "${GREEN}✓ Done${STOP}"
+  # shellcheck disable=SC2046
+  npm i -g $(cat "$DEPS_FILE")
+  echo "${GREEN}✓ Done${STOP}"
 }
 
 function install_python() {
-    echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
-    local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
-    local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/python"
-    local DEPS_FILE="$DEPS_FILE_SPECIFIC"
+  echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
+  local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
+  local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/python"
+  local DEPS_FILE="$DEPS_FILE_SPECIFIC"
 
-    if [[ ! -e "$DEPS_FILE" ]]; then
-        echo "${RED}Could not find Python dependencies file for ${PYTHON_VERSION}${STOP}"
-        echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
-        DEPS_FILE="$DEPS_FILE_BROAD"
-    fi
+  if [[ ! -e "$DEPS_FILE" ]]; then
+    echo "${RED}Could not find Python dependencies file for ${PYTHON_VERSION}${STOP}"
+    echo "${YELLOW}Trying $DEPS_FILE_BROAD${STOP}"
+    DEPS_FILE="$DEPS_FILE_BROAD"
+  fi
 
-    # shellcheck disable=SC2046
-    pip install $(cat "$DEPS_FILE")
-    echo "${GREEN}✓ Done${STOP}"
-}
-
-function install_pipx() {
-    echo "${YELLOW}→ Pipx${STOP}"
-    local DEPS_FILE="$PLATFORM_DEPENDENCIES_ROOT/pipx"
-
-    if [[ ! -e "$DEPS_FILE" ]]; then
-        echo "${RED}Could not find Pipx dependencies file for ${PYTHON_VERSION}${STOP}"
-    else
-        # shellcheck disable=SC2013
-        for DEP in $(cat "$DEPS_FILE"); do
-            pipx install "$DEP"
-        done
-
-        echo "${GREEN}✓ Done${STOP}"
-    fi
+  # shellcheck disable=SC2046
+  pip install $(cat "$DEPS_FILE")
+  echo "${GREEN}✓ Done${STOP}"
 }
 
 function install_homebrew() {
-    if [[ "$(uname -s)" == "Darwin" ]]; then
-        echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
+  if [[ "$(uname -s)" == "Darwin" ]]; then
+    echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
 
-        brew bundle --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
-        echo "${GREEN}✓ Done${STOP}"
-    else
-        echo "${RED}ⅹ Not macOS. Quitting.${STOP}"
-    fi
+    brew bundle --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
+    echo "${GREEN}✓ Done${STOP}"
+  else
+    echo "${RED}ⅹ Not macOS. Quitting.${STOP}"
+  fi
 }
 
 if [[ "$WHAT_TO_INSTALL" == "node" ]]; then
-    install_node
+  install_node
 elif [[ "$WHAT_TO_INSTALL" == "python" ]]; then
-    install_python
+  install_python
 elif [[ "$WHAT_TO_INSTALL" == "brew" ]]; then
-    install_homebrew
-elif [[ "$WHAT_TO_INSTALL" == "pipx" ]]; then
-    install_pipx
+  install_homebrew
 elif [[ -z "$WHAT_TO_INSTALL" ]]; then
-    install_homebrew
-    install_node
-    install_python
-    install_pipx
+  install_homebrew
+  install_node
+  install_python
 fi

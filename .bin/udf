@@ -85,4 +85,3 @@ yadm commit --quiet --message "$(random_excuse)"
 
 echo "${CYAN}✔︎  Attempting push to Github${STOP}"
 yadm push origin master --quiet
-

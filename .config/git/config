@@ -2,7 +2,7 @@
   default = simple
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore.global
   ignorecase = false
 
 [user]

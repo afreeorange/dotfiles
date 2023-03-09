@@ -5,7 +5,8 @@
 #
 # EXCEPT fzf. fzf is cool.
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# shellcheck source=/dev/null
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then

@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_colors"
+source "$HOME/.config/bash/colors"
 
 # shellcheck source=/dev/null
 source "$HOME/.bin/platform-versions"
+
+OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
+OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/node"
 
 # # Check if NVM is managing node versions
 # if [[ -z "$NVM_BIN" ]]; then
@@ -12,26 +15,22 @@ source "$HOME/.bin/platform-versions"
 #     exit
 # fi
 
-OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
-OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/node"
-
 echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
 echo "Writing ${CYAN}${OUTPUT_FILE_BROAD}${STOP}"
 
 # `truncate` not found on fucking macOS
-echo "" > "$OUTPUT_FILE"
+echo "" >"$OUTPUT_FILE"
 
-PACKAGE_PATHS="$(npm list -g --depth 0 --parseable 2> /dev/null | grep node_modules)"
+PACKAGE_PATHS="$(npm list -g --depth 0 --parseable 2>/dev/null | grep node_modules)"
 IFS=$'\n' && for PACKAGE_PATH in $PACKAGE_PATHS; do
-    PACKAGE="$(basename "$PACKAGE_PATH")"
+  PACKAGE="$(basename "$PACKAGE_PATH")"
 
-    # Weirdness with this 🤷‍♂️ Not capturing package versions.
-    # VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
-    # echo "${PACKAGE}@${VERSION}" >> "$OUTPUT_FILE"
+  # Weirdness with this 🤷‍♂️ Not capturing package versions.
+  # VERSION="$(grep \"version\" "$PACKAGE_PATH"/package.json | cut -d\" -f4)"
+  # echo "${PACKAGE}@${VERSION}" >> "$OUTPUT_FILE"
 
-    echo "${PACKAGE}" >> "$OUTPUT_FILE"
+  echo "${PACKAGE}" >>"$OUTPUT_FILE"
 done
 
 cp "$OUTPUT_FILE" "$OUTPUT_FILE_BROAD"
 echo "Done"
-

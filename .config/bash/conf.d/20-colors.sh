@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_colors"
+source "$HOME/.config/bash/colors"
 
 # Color Reference
 # https://unix.stackexchange.com/a/269085
