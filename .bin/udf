@@ -23,32 +23,20 @@ source "$HOME/.bin/platform-versions"
 
 OS=$(uname -s)
 
-if [[ "$OS" == "Darwin" ]]; then
-    OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
-    OUTPUT_FILE_BROAD="${HOME}/.platform-dependencies/macos"
-
-    echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
-    echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE_BROAD}${STOP}"
-
-    brew bundle dump \
-        --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" \
-        --force
-
-    cp "$OUTPUT_FILE" "$OUTPUT_FILE_BROAD"
-fi
-
 # ---
 
 echo "${CYAN}✔︎  Backing up dependencies${STOP}"
+
+if [[ "$OS" == "Darwin" ]]; then
+  echo "${YELLOW}+  HomeBrew${STOP}"
+  "$HOME/.bin/backup-homebrew"
+fi
 
 echo "${YELLOW}+  Node${STOP}"
 "$HOME/.bin/backup-node"
 
 echo "${YELLOW}+  Python${STOP}"
 "$HOME/.bin/backup-python"
-
-echo "${YELLOW}+  Pipx${STOP}"
-"$HOME/.bin/backup-pipx"
 
 # Forcing since I can use nvm or pyenv to switch interpreters and
 # don't want to forget to commit the packages associated with the
@@ -63,15 +51,15 @@ CHANGED_FILES=()
 while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
 
 if [[ "${#CHANGED_FILES[@]}" -eq 0 ]]; then
-    echo "${GRAY}>  Nothing has changed since the last commit${STOP}"
+  echo "${GRAY}>  Nothing has changed since the last commit${STOP}"
 elif [[ "${#CHANGED_FILES[@]}" -eq 1 ]]; then
-    echo "${GRAY}>  Just one file changed since the last commit${STOP}"
+  echo "${GRAY}>  Just one file changed since the last commit${STOP}"
 else
-    echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
+  echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
 fi
 
 for FILE in "${CHANGED_FILES[@]}"; do
-    echo "${GRAY}${FILE}${STOP}"
+  echo "${GRAY}${FILE}${STOP}"
 done
 
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
@@ -79,17 +67,17 @@ FILES=()
 while IFS='' read -r line; do FILES+=("$line"); done < <(yadm status -uno --porcelain | cut -c4- | sed s/\"//g)
 
 if [[ "${#FILES[@]}" -eq 0 ]]; then
-    echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
-    exit 1
+  echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
+  exit 1
 elif [[ "${#FILES[@]}" -eq 1 ]]; then
-    echo "${GREEN}>  Just one file has changed${STOP}"
+  echo "${GREEN}>  Just one file has changed${STOP}"
 else
-    echo "${GREEN}>  ${#FILES[@]} files have changed"
+  echo "${GREEN}>  ${#FILES[@]} files have changed"
 fi
 
 for FILE in "${FILES[@]}"; do
-    echo "${GREEN}+  Adding $HOME/$FILE${STOP}"
-    yadm add "$HOME/$FILE"
+  echo "${GREEN}+  Adding $HOME/$FILE${STOP}"
+  yadm add "$HOME/$FILE"
 done
 
 echo "${CYAN}✔︎  Committing${STOP}"
