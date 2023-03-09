@@ -1,9 +1,17 @@
 #!/bin/bash
 
-if [[ $(uname) == "Darwin" ]]; then
+if [[ $(uname -s) == "Darwin" ]]; then
     # shellcheck source=/dev/null
     source "$(brew --prefix asdf)/libexec/asdf.sh"
 
     # shellcheck source=/dev/null
     source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
+
+elif [[ $(uname -s) == "Linux" ]]; then
+    # shellcheck source=/dev/null
+    . "$HOME/.asdf/asdf.sh"
+
+    # shellcheck source=/dev/null
+    . "$HOME/.asdf/completions/asdf.bash"
+
 fi

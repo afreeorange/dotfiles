@@ -21,13 +21,11 @@ source "$HOME/.config/bash/conf.d/20-colors.sh"
 # shellcheck source=/dev/null
 source "$HOME/.bin/platform-versions"
 
-OS=$(uname -s)
-
 # ---
 
 echo "${CYAN}✔︎  Backing up dependencies${STOP}"
 
-if [[ "$OS" == "Darwin" ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
   echo "${YELLOW}+  HomeBrew${STOP}"
   "$HOME/.bin/backup-homebrew"
 fi

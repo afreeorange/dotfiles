@@ -1,1 +1,105 @@
-bootstrap##os.Darwin
+#!/usr/bin/env bash
+
+# Bootstraps both macOS and Linux (Ubuntu).
+
+# shellcheck source=/dev/null
+source "$HOME/.config/bash/colors"
+
+# ========== LINUX ==========
+
+if [[ "$(uname -s)" == "Linux" ]]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
+fi
+
+# ========== MACOS ==========
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  # Need HomeBrew on macOS for all other stuff
+  command -v brew &>/dev/null || {
+    echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
+    echo "https://docs.brew.sh/Installation"
+    exit
+  }
+
+  echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
+  brew install asdf
+
+  echo "${GREEN}Removing 'subl' symlink if it exists. It's annoying...${STOP}"
+  sudo rm /usr/local/bin/subl >>/dev/null 2>&1
+
+  echo "${CYAN}✔︎ Running setup for macOS${STOP}"
+  LINKS_MACOS=(
+    # Source;Target;Name
+    '/Applications/GitHub Desktop.app/Contents/Resources/app/static/github.sh;/usr/local/bin/github;Github Desktop'
+    '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl;/usr/local/bin/sublime;Sublime Text'
+    '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code;/usr/local/bin/code;VSCode'
+  )
+
+  for LINK in "${LINKS_MACOS[@]}"; do
+    SOURCE=$(echo "$LINK" | cut -d";" -f1)
+    TARGET=$(echo "$LINK" | cut -d";" -f2)
+    NAME=$(echo "$LINK" | cut -d";" -f3)
+
+    if [[ ! -e "$SOURCE" ]]; then
+      echo "${RED}$NAME is not installed... skipping${STOP}"
+      continue
+    else
+      echo "${GREEN}Symlinking \"$NAME\": $SOURCE 👉 $TARGET${STOP}"
+      sudo ln -sf "$SOURCE" "$TARGET"
+    fi
+  done
+
+  # For Sublime Text, make sure we are pointing to our config
+  SUBLIME_PREFS_FOLDER="$HOME/Library/Application Support/Sublime Text/Packages/User"
+  echo "${CYAN}✔︎ Configuring Sublime Text${STOP}"
+  rm -rf "${SUBLIME_PREFS_FOLDER}.old"
+  mv "$SUBLIME_PREFS_FOLDER" "${SUBLIME_PREFS_FOLDER}.old"
+  ln -s "$HOME/.config/sublime" "$SUBLIME_PREFS_FOLDER"
+  rm -rf "${SUBLIME_PREFS_FOLDER}.old"
+  echo "${GREEN}! Done but you need to start it and install Package Control!${STOP}"
+
+  # shellcheck source=/dev/null
+  # Useful Reference: https://macos-defaults.com
+
+  # Set the screenshot format to be JPEG instead of PNG
+  defaults write com.apple.screencapture type jpeg
+  killall SystemUIServer
+
+  # Finder > Preferences > Advanced
+  # When searching, search the current folder and not the entire Mac ffs...
+  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+fi
+
+# ----------
+
+echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
+"$HOME/.bin/ipd"
+
+# # Vim
+# echo "${CYAN}✔︎ Configuring Neovim${STOP}"
+# curl --silent \
+#   --create-dirs \
+#   -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
+#   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# $(which vim) +PlugClean +PlugInstall +PlugUpdate +qall
+
+echo "${CYAN}✔︎ Random shit"
+if [[ -f "$HOME/.config/yadm/encrypt" ]]; then
+  echo "${YELLOW}👉 Make sure you run 'yadm decrypt' for encrypted files!"
+fi
+
+# Use OpenSSL for yadm secrects
+yadm config yadm.cipher openssl
+
+# Install asdf stuff
+echo "${CYAN}✔︎ Installing runtimes...${STOP}"
+RUNTIMES=(python nodejs deno golang)
+for RUNTIME in ${RUNTIMES[@]}; do
+  asdf plugin add $RUNTIME
+  asdf install $RUNTIME latest
+  asdf global $RUNTIME latest
+done
+
+# Some common personal folders
+echo "${CYAN}✔︎ Making ~/personal and ~/code${STOP}"
+mkdir "$HOME/personal" "$HOME/code"
