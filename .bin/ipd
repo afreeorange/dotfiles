@@ -5,15 +5,16 @@
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
 
-# shellcheck source=/dev/null
-source "$HOME/.bin/platform-versions"
-
 PLATFORM_DEPENDENCIES_ROOT="$HOME/.platform-dependencies"
 IFS=$'\n'
 
 WHAT_TO_INSTALL=$1
 
 function install_node() {
+  MAJOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[0]);")
+  MINOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[1]);")
+  NODE_VERSION="${MAJOR_NODE_VERSION}.${MINOR_NODE_VERSION}"
+
   echo "${YELLOW}→ Node${STOP} ${CYAN}${NODE_VERSION}${STOP}"
 
   # Install from the specific version if possible. If not use the broad version.
@@ -51,6 +52,10 @@ function install_python() {
 
 function install_homebrew() {
   if [[ "$(uname -s)" == "Darwin" ]]; then
+    MAJOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f1)
+    MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
+    MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
+
     echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
 
     brew bundle --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"

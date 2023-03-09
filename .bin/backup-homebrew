@@ -3,11 +3,18 @@
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
 
-# shellcheck source=/dev/null
-source "$HOME/.bin/platform-versions"
+# ----------
+
+MAJOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f1)
+MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
+MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
+
+# ----------
 
 OUTPUT_FILE="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}"
 OUTPUT_FILE_BROAD="${HOME}/.platform-dependencies/macos"
+
+# ----------
 
 echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
 echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE_BROAD}${STOP}"

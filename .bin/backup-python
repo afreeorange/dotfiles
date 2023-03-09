@@ -3,11 +3,18 @@
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
 
-# shellcheck source=/dev/null
-source "$HOME/.bin/platform-versions"
+# ----------
+
+MAJOR_PYTHON_VERSION=$(python -c "import sys; print(sys.version_info.major)")
+MINOR_PYTHON_VERSION=$(python -c "import sys; print(sys.version_info.minor)")
+PYTHON_VERSION="${MAJOR_PYTHON_VERSION}.${MINOR_PYTHON_VERSION}"
+
+# ----------
 
 OUTPUT_FILE="$HOME/.platform-dependencies/python-$PYTHON_VERSION"
 OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/python"
+
+# ----------
 
 # # Check if pyenv is managing things
 # if [[ -z "$PYENV_ROOT" ]]; then

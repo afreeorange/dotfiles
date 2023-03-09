@@ -3,11 +3,18 @@
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
 
-# shellcheck source=/dev/null
-source "$HOME/.bin/platform-versions"
+# ----------
+
+MAJOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[0]);")
+MINOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[1]);")
+NODE_VERSION="${MAJOR_NODE_VERSION}.${MINOR_NODE_VERSION}"
+
+# ----------
 
 OUTPUT_FILE="$HOME/.platform-dependencies/node-$NODE_VERSION"
 OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/node"
+
+# ----------
 
 # # Check if NVM is managing node versions
 # if [[ -z "$NVM_BIN" ]]; then

@@ -2,13 +2,17 @@
 
 # Bootstraps both macOS and Linux (Ubuntu).
 
-command -v yadm &>/dev/null || {
-  echo "yadm is not installed! Going to quit now."
-  exit 1
-}
-
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
+
+# Some pre-flight checks...
+PREREQS=(yadm curl git)
+for PREREQ in "${PREREQS[@]}"; do
+  command -v "$PREREQ" &>/dev/null || {
+    echo "${RED}$PREREQ is not installed! Going to quit now.${STOP}"
+    exit 1
+  }
+done
 
 # ========== LINUX ==========
 
@@ -79,7 +83,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 
   # ----------
 
-  # shellcheck source=/dev/null
   # Useful Reference: https://macos-defaults.com
 
   # Set the screenshot format to be JPEG instead of PNG
@@ -95,7 +98,7 @@ fi
 
 # Some common personal folders
 echo "${CYAN}✔︎ Making ~/personal and ~/code${STOP}"
-mkdir "$HOME/personal" "$HOME/code"
+mkdir -p "$HOME/personal" "$HOME/code"
 
 # Configure yadm
 echo "${CYAN}✔︎ yadm stuff"
@@ -107,10 +110,10 @@ fi
 # Install asdf stuff
 echo "${CYAN}✔︎ Installing asdf runtimes...${STOP}"
 RUNTIMES=(python nodejs deno golang)
-for RUNTIME in ${RUNTIMES[@]}; do
-  asdf plugin add $RUNTIME
-  asdf install $RUNTIME latest
-  asdf global $RUNTIME latest
+for RUNTIME in "${RUNTIMES[@]}"; do
+  asdf plugin add "$RUNTIME"
+  asdf install "$RUNTIME" latest
+  asdf global "$RUNTIME" latest
 done
 
 echo "${GREEN}Run 'ipd' to install platform dependencies${STOP}"
