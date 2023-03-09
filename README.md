@@ -1,50 +1,32 @@
 # Nikhil's Dotfiles
 
-Managed with [yadm](https://yadm.io).
-
-## Usage
-
-Most of this is for macOS which the only thing I use these days 🤷‍♂️ Should work on Linux.
-
-### Bootstrap
+Managed with [yadm](https://yadm.io) which will need to be installed on the system. Works fine on macOS and Ubuntu which are the only two OSes I use these days. Needs [asdf](https://asdf-vm.com/) to manage runtimes (will be installed at bootstrap).
 
 ```bash
+# This should run bootstrap
 yadm clone git@github.com:afreeorange/dotfiles.git
-yadm status
-
-# Bootstrap will check for Homebrew and install stuff
-# specified in ".platform-dependencies/macOS-{version}.
-# It will also install all global packages for Node
-# and Python.
-yadm bootstrap
 yadm decrypt
 
-# Redo yadm if all else fails
+# Re-run if things changae
+udf
+yadm bootstrap
+
+# Redo yadm if you borked things somehow.
 hose-yadm
 ```
 
-### Structure
+## Some Executables
 
-| File/Folder                    | Purpose                                                               |
-|--------------------------------|-----------------------------------------------------------------------|
-| `$HOME/.platform-dependencies` | Python, Node, Pipx _global_ dependencies                              |
-| `$HOME/.bin`                   | Custom executables                                                    |
-| `$HOME/.config`                | Standard XDG Base Directory stuff                                     |
-| Other global config crap       | Yarn, iSort, EditorConfig, etc                                        |
+In `.bin` or in the [elaborate bash configuration](https://github.com/afreeorange/dotfiles/tree/master/.config/bash).
 
-### Bash
+### `worklog`
 
-My preferred shell because I'm too old to change (I do love `fish` tho ♥️.) Quite the elaborate setup in `~/.config/bash`.
-
-### `$HOME/.bin`
-
-Random assortment of utilities. Here are some interesting ones.
-
-#### `worklog`
-
-Maintain a quick log of things I do at work
+Maintain a quick log of things I do at work. Simple note-taking. Syncs to Dropbox.
 
 ```bash
+# Show usage
+worklog h
+
 # Create a new log (Will be in ~/Dropbox/Work by default)
 worklog
 
@@ -58,51 +40,36 @@ worklog l
 worklog 12
 ```
 
-#### `udf`
+### `udf`
 
 Update Dot Files. Will back up Python, Node, macOS and other dependencies.
 
-#### `ipd`
+### `ipd`
 
-Install Platform Dependencies. Given the detected version of macOS or Python or Node, install all the _global_ dependencies.
+Install Platform Dependencies: given the detected version of macOS or Python or Node, install all the _global_ dependencies.
 
 ```bash
 # Install all dependencies
 ipd
 
-# Install node, python, brew, or pipx
+# Individually
 ipd node
 ipd python
 ipd brew
-ipd pipx
 ```
 
-#### `engage`
+### `engage`
 
 Play some white noise from the Engine Room of the NCC-1701. Kinda. Best on headphones. Needs `sox` installed.
 
-#### `dataurl`
+### `dataurl`
 
 Make a Base64 [dataurl](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) from the argument.
 
-#### `gif-to-mp4`
+### `random_excuse`
 
-Convert a GIF to MP4 using `ffmpeg`
+Generate a random [developer excuse](https://sorry.nikhil.io/).
 
-#### [`gh-md-toc`](https://github.com/ekalinin/github-markdown-toc)
+### `random_commit_message`
 
-(Cached) Make a table of contents from a Markdown doc.
-
-#### [`semver`](https://github.com/fsaintjacques/semver-tool)
-
-(Cached) Manipulate semantic versioning.
-
----
-
-## Misc
-
-If ubuntu check for bootstrap
-Add `apt -y install locales` for `LC_ALL` error...
-
-## TODO
-
+Generate a random commit message.
