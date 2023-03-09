@@ -9,9 +9,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
 
 elif [[ $(uname -s) == "Linux" ]]; then
     # shellcheck source=/dev/null
-    . "$HOME/.asdf/asdf.sh"
+    source "$HOME/.asdf/asdf.sh"
 
     # shellcheck source=/dev/null
-    . "$HOME/.asdf/completions/asdf.bash"
+    source "$HOME/.asdf/completions/asdf.bash"
 
 fi

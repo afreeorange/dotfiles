@@ -2,13 +2,23 @@
 
 # Bootstraps both macOS and Linux (Ubuntu).
 
+command -v yadm &>/dev/null || {
+  echo "yadm is not installed! Going to quit now."
+  exit 1
+}
+
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
 
 # ========== LINUX ==========
 
 if [[ "$(uname -s)" == "Linux" ]]; then
+  echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
+  # shellcheck source=/dev/null
+  source "$HOME/.asdf/asdf.sh"
+  # shellcheck source=/dev/null
+  source "$HOME/.asdf/completions/asdf.bash"
 fi
 
 # ========== MACOS ==========
@@ -18,14 +28,19 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   command -v brew &>/dev/null || {
     echo "${RED}HomeBrew is not installed${STOP}! Going to quit now."
     echo "https://docs.brew.sh/Installation"
-    exit
+    exit 2
   }
+
+  # ----------
 
   echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
   brew install asdf
+  # shellcheck source=/dev/null
+  source "$(brew --prefix asdf)/libexec/asdf.sh"
+  # shellcheck source=/dev/null
+  source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
 
-  echo "${GREEN}Removing 'subl' symlink if it exists. It's annoying...${STOP}"
-  sudo rm /usr/local/bin/subl >>/dev/null 2>&1
+  # ----------
 
   echo "${CYAN}✔︎ Running setup for macOS${STOP}"
   LINKS_MACOS=(
@@ -49,6 +64,8 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     fi
   done
 
+  # ----------
+
   # For Sublime Text, make sure we are pointing to our config
   SUBLIME_PREFS_FOLDER="$HOME/Library/Application Support/Sublime Text/Packages/User"
   echo "${CYAN}✔︎ Configuring Sublime Text${STOP}"
@@ -57,6 +74,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   ln -s "$HOME/.config/sublime" "$SUBLIME_PREFS_FOLDER"
   rm -rf "${SUBLIME_PREFS_FOLDER}.old"
   echo "${GREEN}! Done but you need to start it and install Package Control!${STOP}"
+  echo "${GREEN}Removing 'subl' symlink if it exists. It's annoying...${STOP}"
+  sudo rm /usr/local/bin/subl >>/dev/null 2>&1
+
+  # ----------
 
   # shellcheck source=/dev/null
   # Useful Reference: https://macos-defaults.com
@@ -70,29 +91,21 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 fi
 
-# ----------
+# ========== GENERAL STUFF ==========
 
-echo "${CYAN}✔︎ Installing all platform dependencies${STOP}"
-"$HOME/.bin/ipd"
+# Some common personal folders
+echo "${CYAN}✔︎ Making ~/personal and ~/code${STOP}"
+mkdir "$HOME/personal" "$HOME/code"
 
-# # Vim
-# echo "${CYAN}✔︎ Configuring Neovim${STOP}"
-# curl --silent \
-#   --create-dirs \
-#   -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
-#   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# $(which vim) +PlugClean +PlugInstall +PlugUpdate +qall
-
-echo "${CYAN}✔︎ Random shit"
+# Configure yadm
+echo "${CYAN}✔︎ yadm stuff"
+yadm config yadm.cipher openssl
 if [[ -f "$HOME/.config/yadm/encrypt" ]]; then
   echo "${YELLOW}👉 Make sure you run 'yadm decrypt' for encrypted files!"
 fi
 
-# Use OpenSSL for yadm secrects
-yadm config yadm.cipher openssl
-
 # Install asdf stuff
-echo "${CYAN}✔︎ Installing runtimes...${STOP}"
+echo "${CYAN}✔︎ Installing asdf runtimes...${STOP}"
 RUNTIMES=(python nodejs deno golang)
 for RUNTIME in ${RUNTIMES[@]}; do
   asdf plugin add $RUNTIME
@@ -100,6 +113,4 @@ for RUNTIME in ${RUNTIMES[@]}; do
   asdf global $RUNTIME latest
 done
 
-# Some common personal folders
-echo "${CYAN}✔︎ Making ~/personal and ~/code${STOP}"
-mkdir "$HOME/personal" "$HOME/code"
+echo "${GREEN}Run 'ipd' to install platform dependencies${STOP}"
