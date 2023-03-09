@@ -9,7 +9,7 @@ IFS=$'\n'
 function install_node() {
   command -v node >>/dev/null 2>&1 || {
     echo "${RED}Could not find Node!${STOP}"
-    exit 1
+    return
   }
 
   MAJOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[0]);")
@@ -37,7 +37,7 @@ function install_node() {
 function install_python() {
   command -v python >>/dev/null 2>&1 || {
     echo "${RED}Could not find Python!${STOP}"
-    exit 1
+    return
   }
 
   echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
@@ -60,7 +60,7 @@ function install_homebrew() {
   if [[ "$(uname -s)" == "Darwin" ]]; then
     command -v brew >>/dev/null 2>&1 || {
       echo "${RED}Could not find HomeBrew!${STOP}"
-      exit 1
+      return
     }
 
     MAJOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f1)
