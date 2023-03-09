@@ -14,6 +14,9 @@ for PREREQ in "${PREREQS[@]}"; do
   }
 done
 
+# Pull in case we're re-running this on a bootstrapped system
+yadm pull
+
 # ========== LINUX ==========
 
 if [[ "$(uname -s)" == "Linux" ]]; then
@@ -23,6 +26,10 @@ if [[ "$(uname -s)" == "Linux" ]]; then
   source "$HOME/.asdf/asdf.sh"
   # shellcheck source=/dev/null
   source "$HOME/.asdf/completions/asdf.bash"
+
+  sudo apt -y install \
+    tmux \
+    neovim
 fi
 
 # ========== MACOS ==========
