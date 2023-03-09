@@ -83,9 +83,8 @@ nnoremap <silent> <C-k><C-f> :NERDTreeFind<CR>
 "nnoremap <leader>pi i![]()<Esc>2hi
 
 " Auto match parentheses sans plugin
-" By the great romainl: https://bit.ly/2Wx5h8t
-" He has a few functions on that thread but I won't add until I
-" get what he's doing
+" By romainl: https://bit.ly/2Wx5h8t
+" He has a few functions on that thread but I won't add until I get what he's doing
 " inoremap (; (<CR>);<C-c>O<Tab>
 " inoremap (, (<CR>),<C-c>O<Tab>
 " inoremap {; {<CR>};<C-c>O<Tab>
