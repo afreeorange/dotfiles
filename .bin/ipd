@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install Platform Dependencies
+set -euo pipefail
 
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/colors"
@@ -8,9 +8,12 @@ source "$HOME/.config/bash/colors"
 PLATFORM_DEPENDENCIES_ROOT="$HOME/.platform-dependencies"
 IFS=$'\n'
 
-WHAT_TO_INSTALL=$1
-
 function install_node() {
+  command -v node >>/dev/null 2>&1 || {
+    echo "${RED}Could not find Node!${STOP}"
+    exit 1
+  }
+
   MAJOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[0]);")
   MINOR_NODE_VERSION=$(node -e "console.log(process.versions.node.split('.')[1]);")
   NODE_VERSION="${MAJOR_NODE_VERSION}.${MINOR_NODE_VERSION}"
@@ -34,6 +37,11 @@ function install_node() {
 }
 
 function install_python() {
+  command -v python >>/dev/null 2>&1 || {
+    echo "${RED}Could not find Python!${STOP}"
+    exit 1
+  }
+
   echo "${YELLOW}→ Python${STOP} ${CYAN}${PYTHON_VERSION}${STOP}"
   local DEPS_FILE_SPECIFIC="$PLATFORM_DEPENDENCIES_ROOT/python-$PYTHON_VERSION"
   local DEPS_FILE_BROAD="$PLATFORM_DEPENDENCIES_ROOT/python"
@@ -52,6 +60,11 @@ function install_python() {
 
 function install_homebrew() {
   if [[ "$(uname -s)" == "Darwin" ]]; then
+    command -v brew >>/dev/null 2>&1 || {
+      echo "${RED}Could not find HomeBrew!${STOP}"
+      exit 1
+    }
+
     MAJOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f1)
     MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
     MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
@@ -65,14 +78,14 @@ function install_homebrew() {
   fi
 }
 
-if [[ "$WHAT_TO_INSTALL" == "node" ]]; then
+if [[ "$1" == "node" ]]; then
   install_node
-elif [[ "$WHAT_TO_INSTALL" == "python" ]]; then
+elif [[ "$1" == "python" ]]; then
   install_python
-elif [[ "$WHAT_TO_INSTALL" == "brew" ]]; then
+elif [[ "$1" == "brew" ]]; then
   install_homebrew
-elif [[ -z "$WHAT_TO_INSTALL" ]]; then
-  install_homebrew
+elif [[ -z "$1" ]]; then
   install_node
   install_python
+  install_homebrew
 fi

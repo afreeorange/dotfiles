@@ -1,14 +1,16 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Helps me maintain a quick log of things I do at work.
 #
 # TODO: Deletion. But maybe that's not required.
 
 # Use a trailing slash for the log folder!
 if [[ $(uname) == "Darwin" ]]; then
-    LOG_FOLDER="$HOME/Library/CloudStorage/Dropbox/Work/"
+  LOG_FOLDER="$HOME/Library/CloudStorage/Dropbox/Work/"
 else
-    LOG_FOLDER="$HOME/Dropbox/Work/"
+  LOG_FOLDER="$HOME/Dropbox/Work/"
 fi
 
 # Change this to whatever you'd like
@@ -22,10 +24,10 @@ ERROR_NO_SEARCH_TERM=20
 
 # Sanity check
 if [[ ! -d $LOG_FOLDER ]]; then
-    echo "You said I could store your logs here:"
-    echo "$LOG_FOLDER"
-    echo "but it doesn't exist, yo. Make it and call me again."
-    exit $ERROR_NO_LOG_FOLDER
+  echo "You said I could store your logs here:"
+  echo "$LOG_FOLDER"
+  echo "but it doesn't exist, yo. Make it and call me again."
+  exit $ERROR_NO_LOG_FOLDER
 fi
 
 # Note: The pipes need a new version of `sed`
@@ -35,87 +37,87 @@ fi
 #
 LOGS=()
 while IFS=$'\n' read -r line; do
-    LOGS+=("$line")
+  LOGS+=("$line")
 done < <(
-    find "$LOG_FOLDER" -type f -iname "$LOG_FILE_PREFIX*" -maxdepth 1 |
-        tail -r |
-        sed "s|$LOG_FOLDER"/"||" |
-        sort
+  find "$LOG_FOLDER" -type f -iname "$LOG_FILE_PREFIX*" -maxdepth 1 |
+    tail -r |
+    sed "s|$LOG_FOLDER"/"||" |
+    sort
 )
 
 # Create a new log for the day if it doesn't exist
 if [[ "$#" == 0 ]]; then
-    if [[ ! -f "$LOG_FILE" ]]; then
-        echo "Will make $LOG_FILE"
-        touch "$LOG_FILE"
+  if [[ ! -f "$LOG_FILE" ]]; then
+    echo "Will make $LOG_FILE"
+    touch "$LOG_FILE"
 
-        cat <<EOF >"$LOG_FILE"
+    cat <<EOF >"$LOG_FILE"
 $(date "+%a, %b %d %Y")
 ----------------
 
-- [ ] 
+- [ ]
 
 EOF
-    fi
+  fi
 
 # Get me the last log. Useful during standup.
 elif [[ "$1" == "-1" ]]; then
-    LENGTH=${#LOGS[@]}
-    FILE_TO_EDIT="$LOG_FOLDER""${LOGS[$((LENGTH - 2))]}"
+  LENGTH=${#LOGS[@]}
+  FILE_TO_EDIT="$LOG_FOLDER""${LOGS[$((LENGTH - 2))]}"
 
 # List all the logs
 elif [[ "$1" == "l" ]]; then
-    COUNTER=0
+  COUNTER=0
 
-    echo "Logs are in $LOG_FOLDER"
-    echo "------------------------------------"
+  echo "Logs are in $LOG_FOLDER"
+  echo "------------------------------------"
 
-    for LOG in "${LOGS[@]}"; do
-        echo "$(printf "% 4d.\n" $COUNTER)" "$LOG"
-        COUNTER=$((COUNTER + 1))
-    done
+  for LOG in "${LOGS[@]}"; do
+    echo "$(printf "% 4d.\n" $COUNTER)" "$LOG"
+    COUNTER=$((COUNTER + 1))
+  done
 
-    exit 0
+  exit 0
 
 # Decent search with ye olde grep
 elif [[ "$1" == "s" ]]; then
-    if [[ -z "$2" ]]; then
-        echo "Must provide search term"
-        exit 1
-    fi
+  if [[ -z "$2" ]]; then
+    echo "Must provide search term"
+    exit 1
+  fi
 
-    # Use the silver searcher if present. Else just grep. Will show an error if
-    # ag is not present. I don't care.
-    ag "$2" "$LOG_FOLDER" --markdown || {
-        grep -Hinr "$2" "$LOG_FOLDER"*
-    }
+  # Use the silver searcher if present. Else just grep. Will show an error if
+  # ag is not present. I don't care.
+  ag "$2" "$LOG_FOLDER" --markdown || {
+    grep -Hinr "$2" "$LOG_FOLDER"*
+  }
 
-    exit 0
+  exit 0
 
 # Push to remote
 elif [[ "$1" == "pu" ]]; then
-    pushd "$LOG_FOLDER" || exit
-    git add .
-    git commit -m "Auto-commit - $(date)"
-    git push origin master
-    popd "$LOG_FOLDER" || exit
+  pushd "$LOG_FOLDER" || exit
+  git add .
+  git commit -m "Auto-commit - $(date)"
+  git push origin master
+  popd "$LOG_FOLDER" || exit
 
-    exit 0
+  exit 0
 
 # Pull from remote
 elif [[ "$1" == "p" ]]; then
-    pushd "$LOG_FOLDER" || exit
-    git pull origin master
-    popd "$LOG_FOLDER" || exit
+  pushd "$LOG_FOLDER" || exit
+  git pull origin master
+  popd "$LOG_FOLDER" || exit
 
-    exit 0
+  exit 0
 
 # Just pull up a TODO list. "Nice to haves", experiments, etc
 elif [[ "$1" == "t" ]]; then
-    FILE_TO_EDIT="$LOG_FOLDER"/TODO.md
+  FILE_TO_EDIT="$LOG_FOLDER"/TODO.md
 
 elif [[ "$1" == "h" ]]; then
-    cat <<EOF
+  cat <<EOF
 worklog l
     Show a list of logfiles
 worklog <number>
@@ -137,16 +139,16 @@ with today's date ❤️
 
 EOF
 
-    exit 0
+  exit 0
 
 # Let me pick a logfile
 else
-    if [[ "$1" -gt "${#LOGS[@]}" ]]; then
-        echo "Why are you like this? That index does not exist."
-        exit $ERROR_NO_SEARCH_TERM
-    fi
+  if [[ "$1" -gt "${#LOGS[@]}" ]]; then
+    echo "Why are you like this? That index does not exist."
+    exit $ERROR_NO_SEARCH_TERM
+  fi
 
-    FILE_TO_EDIT="$LOG_FOLDER""${LOGS[$1]}"
+  FILE_TO_EDIT="$LOG_FOLDER""${LOGS[$1]}"
 fi
 
 $EDITOR "$FILE_TO_EDIT"

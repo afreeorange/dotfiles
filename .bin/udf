@@ -18,7 +18,7 @@ source "$HOME/.config/bash/conf.d/17-random-excuses.sh"
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/conf.d/20-colors.sh"
 
-# ---
+# ----------
 
 echo "${CYAN}✔︎  Backing up dependencies${STOP}"
 
@@ -33,12 +33,14 @@ echo "${YELLOW}+  Node${STOP}"
 echo "${YELLOW}+  Python${STOP}"
 "$HOME/.bin/backup-python"
 
+# ----------
+
 # Forcing since I can use nvm or pyenv to switch interpreters and
 # don't want to forget to commit the packages associated with the
 # new interpreter.
 yadm add -f "$HOME/.platform-dependencies/*"
 
-# ---
+# ----------
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
 yadm pull origin master --quiet --strategy-option=theirs
