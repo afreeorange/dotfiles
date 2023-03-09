@@ -116,4 +116,6 @@ for RUNTIME in "${RUNTIMES[@]}"; do
   asdf global "$RUNTIME" latest
 done
 
-echo "${GREEN}Run 'ipd' to install platform dependencies${STOP}"
+echo "${YELLOW}Running 'ipd' to install platform dependencies...${STOP}"
+"$HOME/.bin/ipd"
+echo "${GREEN}Done${STOP}"
