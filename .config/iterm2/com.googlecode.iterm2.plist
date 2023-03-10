@@ -811,7 +811,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
@@ -821,7 +821,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>LilexNerdFontCompleteM-Light 20</string>
+			<string>DankMonoNerdFontComplete-Regular 20</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -947,8 +947,6 @@
 	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>6</integer>
-	<key>TabViewType</key>
-	<integer>0</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
