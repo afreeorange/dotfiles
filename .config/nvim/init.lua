@@ -1,7 +1,12 @@
-require("user.options")
-require("user.commands")
-require("user.key-mappings")
-require("user.plugin-loader")
+for _, source in ipairs {
+  "user.options",
+  "user.commands",
+  "user.key-mappings",
+  "user.plugin-loader",
+} do
+  local ok, fault = pcall(require, source)
+  if not ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
+end
 
 -- =========== REFERENCES ========== --
 
@@ -25,4 +30,7 @@ require("user.plugin-loader")
 
 -- Possible plugins
 -- https://github.com/moll/vim-bbye
+
+-- AstronVim
+-- https://github.com/AstroNvim/AstroNvim/blob/main/init.lua
 

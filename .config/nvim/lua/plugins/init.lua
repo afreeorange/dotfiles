@@ -43,6 +43,15 @@ local Plugins = {
   { 'hrsh7th/cmp-path' },
   { 'hrsh7th/cmp-nvim-lsp' },
 
+  -- Snippets
+  -----------------------------------------------------------------------------
+  {
+    'L3MON4D3/LuaSnip',
+    version = "<CurrentMajor>.*",
+    build = "make install_jsregexp"
+  },
+  {'rafamadriz/friendly-snippets'},
+
   -- Utilities
   -----------------------------------------------------------------------------
   {'godlygeek/tabular'},
