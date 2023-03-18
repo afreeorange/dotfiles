@@ -104,8 +104,8 @@ fi
 # ========== GENERAL STUFF ==========
 
 # Some common personal folders
-echo "${CYAN}✔︎ Making ~/personal and ~/code${STOP}"
-mkdir -p "$HOME/personal" "$HOME/code"
+echo "${CYAN}✔︎ Making personal folders${STOP}"
+mkdir -p "$HOME/Programming" "$HOME/code"
 
 # Configure yadm
 echo "${CYAN}✔︎ yadm stuff"
@@ -126,3 +126,4 @@ done
 echo "${YELLOW}Running 'ipd' to install platform dependencies...${STOP}"
 "$HOME/.bin/ipd"
 echo "${GREEN}Done${STOP}"
+
