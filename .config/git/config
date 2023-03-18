@@ -18,3 +18,14 @@
   required = true
   smudge = git-lfs smudge -- %f
 
+[alias]
+  a = add
+  b = branch
+  ba = branch --all
+  c = commit
+  co = checkout
+  d = diff
+  p = push
+  r = remote --verbose
+  s = status
+
