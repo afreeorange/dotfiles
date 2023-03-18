@@ -23,7 +23,7 @@ alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
 alias dow="cd \$HOME/Downloads"
 alias dro="cd \$HOME/Dropbox"
-alias per="cd \$HOME/personal"
+alias per="cd \$HOME/Programming"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
 
