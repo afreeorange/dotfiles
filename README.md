@@ -73,3 +73,4 @@ Generate a random [developer excuse](https://sorry.nikhil.io/).
 ### `random_commit_message`
 
 Generate a random commit message.
+
