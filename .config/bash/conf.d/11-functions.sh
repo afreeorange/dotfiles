@@ -18,3 +18,7 @@ dataurl() {
 
     echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
+
+s3_bucket_size() {
+  aws s3 ls --summarize --human-readable --recursive "$1"
+}

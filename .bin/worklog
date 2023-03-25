@@ -4,9 +4,12 @@ set -euo pipefail
 
 # Helps me maintain a quick log of things I do at work.
 #
-# TODO: Deletion. But maybe that's not required.
+# TODO: Deletion. But maybe that's not required. Can just do it by hand 🤷‍♂️
 
-# Use a trailing slash for the log folder!
+# Change this to whatever you'd like but use a trailing slash!
+LOG_FOLDER="/home/nikhil/worklog/"
+
+# I use Dropbox on a Mac to store all logs
 if [[ $(uname) == "Darwin" ]]; then
   LOG_FOLDER="$HOME/Library/CloudStorage/Dropbox/Work/"
 else
@@ -152,3 +155,4 @@ else
 fi
 
 $EDITOR "$FILE_TO_EDIT"
+
