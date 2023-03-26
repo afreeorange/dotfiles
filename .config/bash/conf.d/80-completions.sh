@@ -24,6 +24,9 @@ function _complete() {
         command -v terraform >/dev/null 2>&1 && complete -C terraform terraform
     }
 
+    # pnpm
+    [[ -f ~/.config/tabtab/bash/__tabtab.bash ]] && . ~/.config/tabtab/bash/__tabtab.bash || true
+
     # Pipx is special
     command -v pipx >>/dev/null 2>&1 && {
         eval "$(register-python-argcomplete pipx)"
