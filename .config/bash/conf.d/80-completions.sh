@@ -6,7 +6,14 @@
 # EXCEPT fzf. fzf is cool.
 
 # shellcheck source=/dev/null
-[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+if [[ $(uname) == "Darwin" ]]; then
+  [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+fi
+
+# shellcheck source=/dev/null
+if [[ $(uname) == "Linux" ]]; then
+  [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
 
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then
