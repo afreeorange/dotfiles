@@ -4,6 +4,7 @@ local Plugins = {
   { 'folke/tokyonight.nvim' },
   { 'navarasu/onedark.nvim' },
   { 'ellisonleao/gruvbox.nvim' },
+  { "ellisonleao/gruvbox.nvim" },
 
   -- Editor Customizations
   -----------------------------------------------------------------------------
