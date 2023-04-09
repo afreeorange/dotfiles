@@ -7,7 +7,7 @@
 
 [user]
   name = Nikhil Anand
-  email = anand.nikhil@gmail.com
+  email = mail@nikhil.io
 
 [pull]
   rebase = false
