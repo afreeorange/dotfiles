@@ -34,3 +34,5 @@ end
 -- AstronVim
 -- https://github.com/AstroNvim/AstroNvim/blob/main/init.lua
 
+-- NeoVim and Lua Guide
+-- https://github.com/nanotee/nvim-lua-guide

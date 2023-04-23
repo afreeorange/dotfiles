@@ -27,8 +27,8 @@
         "dist",
         "build"
     ],
-    "font_face": "BlexMono Nerd Font Mono",
-    "font_size": 20,
+    "font_face": "Dank Mono",
+    "font_size": 19,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
@@ -47,7 +47,7 @@
     "show_sidebar_button": false,
     "show_encoding": true,
     "tab_size": 2,
-    "theme": "Adaptive.sublime-theme",
+    "theme": "Default Dark.sublime-theme",
     "translate_tabs_to_spaces": true,
     "gruvbox_sidebar_font_size_13": true,
 }

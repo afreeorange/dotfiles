@@ -27,11 +27,11 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   "$HOME/.bin/backup-homebrew"
 fi
 
-echo "${YELLOW}+  Node${STOP}"
-"$HOME/.bin/backup-node"
-
-echo "${YELLOW}+  Python${STOP}"
-"$HOME/.bin/backup-python"
+# echo "${YELLOW}+  Node${STOP}"
+# "$HOME/.bin/backup-node"
+# 
+# echo "${YELLOW}+  Python${STOP}"
+# "$HOME/.bin/backup-python"
 
 # ----------
 
