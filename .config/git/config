@@ -6,17 +6,17 @@
   ignorecase = false
 
 [user]
-  name = Nikhil Anand
-  email = mail@nikhil.io
+	name = Nikhil Anand
+	email = mail@nikhil.io
 
 [pull]
   rebase = false
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  process = git-lfs filter-process
-  required = true
-  smudge = git-lfs smudge -- %f
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
 
 [alias]
   a = add
