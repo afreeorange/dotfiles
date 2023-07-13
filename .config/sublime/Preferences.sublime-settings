@@ -27,7 +27,7 @@
         "dist",
         "build"
     ],
-    "font_face": "Berkeley Mono",
+    "font_face": "Dank Mono",
     "font_size": 20,
     "highlight_line": true,
     "highlight_modified_tabs": true,
