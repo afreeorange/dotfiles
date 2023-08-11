@@ -28,7 +28,7 @@
         "build"
     ],
     "font_face": "CommitMono",
-    "font_size": 21,
+    "font_size": 18,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
@@ -50,4 +50,5 @@
     "theme": "Default Dark.sublime-theme",
     "translate_tabs_to_spaces": true,
     "gruvbox_sidebar_font_size_13": true,
+    "update_check": false,
 }
