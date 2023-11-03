@@ -15,6 +15,9 @@ if [[ $(uname) == "Linux" ]]; then
   [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
+# shellcheck source=/dev/null
+[ -f ~/.config/tabtab/bash/__tabtab.bash ] && . ~/.config/tabtab/bash/__tabtab.bash || true
+
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then
         # shellcheck source=/dev/null
