@@ -28,7 +28,7 @@
         "build"
     ],
     "font_face": "Berkeley Mono",
-    "font_size": 17,
+    "font_size": 15,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
@@ -51,4 +51,5 @@
     "translate_tabs_to_spaces": true,
     "gruvbox_sidebar_font_size_13": true,
     "update_check": false,
+    "index_files": true,
 }
