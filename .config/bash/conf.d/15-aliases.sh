@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export CLOUD_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+export CLOUD_FOLDER="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 alias e="\$EDITOR"
 alias ep="\$EDITOR \$HOME/.config/bash/conf.d/"
@@ -9,8 +9,8 @@ alias ll="ls -l"
 alias please="sudo"
 alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
-alias life="subl \$CLOUD_FOLDER/Life.md"
-alias scratch="subl \$CLOUD_FOLDER/Scratchpad.md"
+alias life="subl $CLOUD_FOLDER/Life.md"
+alias scratch="subl $CLOUD_FOLDER/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
 if [[ $(uname) == "Darwin" ]]; then
@@ -26,7 +26,7 @@ alias  co="cd \$HOME/code"
 alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
 alias dow="cd \$HOME/Downloads"
-alias dro="cd \$CLOUD_FOLDER"
+alias dro="cd $CLOUD_FOLDER"
 alias per="cd \$HOME/Programming"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
