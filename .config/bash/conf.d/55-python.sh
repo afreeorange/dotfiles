@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# --- Managed by asdf ---
-
-# # Poetry
-# export PATH="$HOME/.poetry/bin:$PATH"
+## --- Managed by asdf ---
+#
+## Poetry
+#export PATH="$HOME/.poetry/bin:$PATH"
 #
 ## Pyenv
 #export PYENV_ROOT="$HOME/.pyenv"
