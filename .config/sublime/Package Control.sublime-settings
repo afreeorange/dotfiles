@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"MarkdownEditing",
 	],
 	"installed_packages":
 	[
@@ -13,6 +14,7 @@
 		"Increment Selection",
 		"JsPrettier",
 		"JSX",
+		"Markdown Extended",
 		"MarkdownEditing",
 		"Nunjucks",
 		"Origami",
