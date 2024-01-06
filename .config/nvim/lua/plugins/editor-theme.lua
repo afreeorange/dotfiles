@@ -20,8 +20,9 @@ Plugin.opts = {
 }
 
 function Plugin.init()
-  require("onedark").load()
+  -- require("onedark").load()
   -- vim.cmd.colorscheme("tokyonight-storm")
+  vim.cmd.colorscheme("ayu")
 end
 
 return Plugin
