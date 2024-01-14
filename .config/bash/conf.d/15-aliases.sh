@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CLOUD_FOLDER="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
+
 alias e="\$EDITOR"
 alias ep="\$EDITOR \$HOME/.config/bash/conf.d/"
 alias isodate='date "+%Y-%m-%dT%H.%M.%S"'
@@ -7,8 +9,8 @@ alias ll="ls -l"
 alias please="sudo"
 alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
-alias life="subl \$HOME/Dropbox/Life.md"
-alias scratch="subl \$HOME/Dropbox/Scratchpad.md"
+alias life="subl $CLOUD_FOLDER/Life.md"
+alias scratch="subl $CLOUD_FOLDER/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
 if [[ $(uname) == "Darwin" ]]; then
@@ -16,13 +18,15 @@ if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
 alias note="worklog"
+alias vnc_tunnel="ssh -p 3689 -L 5901:127.0.0.1:5901 -N -f -l nikhil 10.212.8.10"
+alias p="pnpm"
 
 # Locations
 alias  co="cd \$HOME/code"
 alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
 alias dow="cd \$HOME/Downloads"
-alias dro="cd \$HOME/Dropbox"
+alias dro="cd $CLOUD_FOLDER"
 alias per="cd \$HOME/Programming"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
@@ -52,6 +56,7 @@ alias grm="git rm \$(git ls-files --deleted)"
 alias gpt="git push origin \$(git branch --show-current) --tags"
 alias gpb="git push origin \$(git branch --show-current)"
 alias gpom="git pull origin master"
+alias grao="git remote add origin"
 alias grv="git remote -v"
 
 # Miscellaneous

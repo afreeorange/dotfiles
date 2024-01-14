@@ -116,7 +116,7 @@ fi
 
 # Install asdf stuff
 echo "${CYAN}✔︎ Installing asdf runtimes...${STOP}"
-RUNTIMES=(python nodejs deno golang)
+RUNTIMES=(python nodejs deno golang rust)
 for RUNTIME in "${RUNTIMES[@]}"; do
   asdf plugin add "$RUNTIME"
   asdf install "$RUNTIME" latest

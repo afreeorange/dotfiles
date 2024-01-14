@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Source:
+# https://gist.github.com/gvoze32/95f96992a443e73c4794c342a44e0811
+
+if [[ $# -eq 0 ]]; then
+  echo "Give me a path to a GIF, yo"
+  exit 1
+fi
+
+ffmpeg -i "$1" -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "${1%.*}.mp4"
+
