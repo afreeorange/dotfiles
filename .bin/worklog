@@ -12,7 +12,7 @@ LOG_FOLDER="/home/nikhil/worklog/"
 # I use Dropbox on a Mac to store all logs
 if [[ $(uname) == "Darwin" ]]; then
   #LOG_FOLDER="$HOME/Library/CloudStorage/Dropbox/Work/"
-  LOG_FOLDER="$HOME/Sync/Work/"
+  LOG_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 else
   LOG_FOLDER="$HOME/Sync/Work/"
 fi
