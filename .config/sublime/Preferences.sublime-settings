@@ -34,6 +34,7 @@
     "ignored_packages":
     [
         "MarkdownEditing",
+        "Package Control",
         "Vintage",
     ],
     "remember_open_files": true,
@@ -52,5 +53,5 @@
     "translate_tabs_to_spaces": true,
     "gruvbox_sidebar_font_size_13": true,
     "update_check": false,
-    "index_files": true,
+    "index_files": false,
 }
