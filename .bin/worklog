@@ -9,10 +9,9 @@ set -euo pipefail
 # Change this to whatever you'd like but use a trailing slash!
 LOG_FOLDER="/home/nikhil/worklog/"
 
-# I use Dropbox on a Mac to store all logs
+# I use iCloud Drive on a Mac to store all logs
 if [[ $(uname) == "Darwin" ]]; then
-  #LOG_FOLDER="$HOME/Library/CloudStorage/Dropbox/Work/"
-  LOG_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+  LOG_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 else
   LOG_FOLDER="$HOME/Sync/Work/"
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export CLOUD_FOLDER="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
+export CLOUD_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 
 alias e="\$EDITOR"
 alias ep="\$EDITOR \$HOME/.config/bash/conf.d/"
