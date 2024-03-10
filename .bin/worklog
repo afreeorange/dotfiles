@@ -11,7 +11,7 @@ LOG_FOLDER="/home/nikhil/worklog/"
 
 # I use iCloud Drive on a Mac to store all logs
 if [[ $(uname) == "Darwin" ]]; then
-  LOG_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
+  LOG_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Work/"
 else
   LOG_FOLDER="$HOME/Sync/Work/"
 fi
