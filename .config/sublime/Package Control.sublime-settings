@@ -3,6 +3,7 @@
 	"in_process_packages":
 	[
 		"MarkdownEditing",
+		"Package Control",
 	],
 	"installed_packages":
 	[
