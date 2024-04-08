@@ -10,7 +10,7 @@ fi
 # Bash History
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:bg:fg:history"
-export HISTSIZE=100000
+export HISTSIZE=1000000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND="history -a; history -n"
 
