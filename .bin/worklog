@@ -73,7 +73,7 @@ elif [[ "$1" == "l" ]]; then
   COUNTER=0
 
   echo "Logs are in $LOG_FOLDER"
-  echo "------------------------------------"
+  echo "════════════════════════════════════════════════════════════"
 
   for LOG in "${LOGS[@]}"; do
     echo "$(printf "% 4d.\n" $COUNTER)" "$LOG"
@@ -121,6 +121,7 @@ elif [[ "$1" == "t" ]]; then
 
 elif [[ "$1" == "h" ]]; then
   cat <<EOF
+
 worklog l
     Show a list of logfiles
 worklog <number>
