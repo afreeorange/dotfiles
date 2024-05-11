@@ -823,7 +823,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>BlexMonoNerdFontCompleteM-Regular 20</string>
+			<string>BlexMonoNerdFontCompleteM-Regular 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
