@@ -56,7 +56,9 @@ function __prompt_git_info() {
 
             # Check for stashed files.
             if git rev-parse --verify refs/stash &>/dev/null; then
-                STATUS+=":st"
+                local STASH_LENGTH
+                STASH_LENGTH=$(git stash list | wc -l | xargs)
+                STATUS+=":st($STASH_LENGTH)"
             fi
         fi
 
