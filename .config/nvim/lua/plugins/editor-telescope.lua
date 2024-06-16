@@ -9,7 +9,7 @@ Plugin.name = "telescope"
 
 Plugin.opts = {
   defaults = {
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = { "node_modules", ".git" },
     color_devicons = true,
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -34,7 +34,7 @@ Plugin.opts = {
 function Plugin.init()
   require('telescope').load_extension('fzf')
 
-  vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
+  vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files hidden=true<cr>')
   vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
   vim.keymap.set('n', '<leader><space>', '<cmd>Telescope buffers<cr>')
   vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')

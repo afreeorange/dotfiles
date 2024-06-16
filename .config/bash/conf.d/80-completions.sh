@@ -7,12 +7,12 @@
 
 # shellcheck source=/dev/null
 if [[ $(uname) == "Darwin" ]]; then
-  [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+    [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 fi
 
 # shellcheck source=/dev/null
 if [[ $(uname) == "Linux" ]]; then
-  [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
+    [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
 function _complete() {
@@ -23,8 +23,9 @@ function _complete() {
 
     command -v complete >>/dev/null 2>&1 && {
         for COMPLETION in "$BASHRC_D"/completions/*; do
+            echo "$GRAY""Sourcing $COMPLETION""$STOP"
             # shellcheck source=/dev/null
-            source "$COMPLETION"
+            source "$COMPLETION" >>/dev/null 2>&1
         done
 
         command -v aws_completer >/dev/null 2>&1 && complete -C aws_completer aws
