@@ -19,7 +19,7 @@ local Plugins = {
     },
   },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  { 'lukas-reineke/indent-blankline.nvim' }, -- Adds indent guides in the current file
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl" }, -- Adds indent guides in the current file
   { 'lewis6991/gitsigns.nvim' },             -- Git integration
   { 'nvim-treesitter/nvim-treesitter' },     -- Syntax Highlighting
   { 'nvim-lualine/lualine.nvim' },           -- Status bar
