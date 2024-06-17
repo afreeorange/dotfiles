@@ -40,3 +40,5 @@ function _complete() {
         eval "$(register-python-argcomplete pipx)"
     }
 }
+
+alias _c=_complete
