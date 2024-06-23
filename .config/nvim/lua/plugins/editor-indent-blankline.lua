@@ -4,7 +4,6 @@ local Plugin = { 'lukas-reineke/indent-blankline.nvim' }
 
 Plugin.name = "ibl"
 
-Plugin.opts = {
-}
+Plugin.opts = {}
 
 return Plugin
