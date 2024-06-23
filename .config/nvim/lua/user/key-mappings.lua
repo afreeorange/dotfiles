@@ -12,4 +12,5 @@ vim.keymap.set("n", "<C-t>", "<cmd>tabclose<CR>", { noremap = true, silent = tru
 if jit.os == "OSX" then
   vim.keymap.set("n", "Ω", "<cmd>set wrap!<cr>", { noremap = true, silent = true })
   vim.keymap.set("n", "¬", "<cmd>set nonumber!<cr>", { noremap = true, silent = true })
+  vim.keymap.set("n", "œ", "<cmd>qa!<cr>", { noremap = true, silent = true })
 end
