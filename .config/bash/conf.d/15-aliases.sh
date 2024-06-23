@@ -27,10 +27,10 @@ alias co="cd \$HOME/code"
 alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
 alias dow="cd \$HOME/Downloads"
-alias dro="cd $CLOUD_FOLDER"
 alias per="cd \$HOME/Programming"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
+dro() { cd "$CLOUD_FOLDER" || exit; } # Aliases do not directly support parameter expansion like variables do.
 
 # Installed via `npm i -g http-server`
 alias hs="http-server"
