@@ -42,10 +42,15 @@ function user.setup_mason()
   require('mason-lspconfig').setup({
     ensure_installed = {
       'bashls',
+      'biome',
       'cssls',
       'eslint',
       'html',
+      'jsonls',
       'lua_ls',
+      'rust_analyzer',
+      'somesass_ls',
+      'tailwindcss',
       'tsserver',
     }
   })
@@ -58,7 +63,6 @@ Plugin.cmd = 'LspInfo'
 -- We use mason.nvim to manage LSP servers
 -- We then use mason-lspconfig as a bridge between Mason and nvim-lspconfig
 Plugin.dependencies = {
-  -- { 'hrsh7th/cmp-nvim-lsp' },
   { 'williamboman/mason-lspconfig.nvim', lazy = true },
   {
     'williamboman/mason.nvim',
@@ -74,12 +78,6 @@ function Plugin.config()
   -- See :help lspconfig-global-defaults
   local lspconfig = require('lspconfig')
   local lsp_defaults = lspconfig.util.default_config
-
-  -- lsp_defaults.capabilities = vim.tbl_deep_extend(
-  --   'force',
-  --   lsp_defaults.capabilities,
-  --   require('cmp_nvim_lsp').default_capabilities()
-  -- )
 
   local group = vim.api.nvim_create_augroup('lsp_cmds', { clear = true })
   vim.api.nvim_create_autocmd('LspAttach', {

@@ -1,3 +1,5 @@
+-- Read the actual plugin Lua files for more information
+
 local Plugins = {
   -- Themes
   -----------------------------------------------------------------------------
@@ -29,29 +31,13 @@ local Plugins = {
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
 
-  { 'windwp/nvim-autopairs' },
+  { 'windwp/nvim-autopairs', event = 'InsertEnter' }, -- Insert closing bracket or whatever
 
   -- LSP support
   -----------------------------------------------------------------------------
   { 'neovim/nvim-lspconfig' },
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
-
-  -- Autocomplete (no snippets... yet!)
-  -----------------------------------------------------------------------------
-  { 'hrsh7th/nvim-cmp' },
-  { 'hrsh7th/cmp-buffer' },
-  { 'hrsh7th/cmp-path' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-
-  -- Snippets
-  -----------------------------------------------------------------------------
-  {
-    'L3MON4D3/LuaSnip',
-    version = "<CurrentMajor>.*",
-    build = "make install_jsregexp"
-  },
-  {'rafamadriz/friendly-snippets'},
 
   -- Utilities
   -----------------------------------------------------------------------------
