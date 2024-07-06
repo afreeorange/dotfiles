@@ -79,4 +79,3 @@ fi
 # Enterprise Engine white noise generator :D Need "sox" on OS X
 # http://goo.gl/x1Ow6k
 alias engage="play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +25 fade h 1 864000 1"
-
