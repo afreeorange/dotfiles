@@ -237,6 +237,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0_selection</key>
