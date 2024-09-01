@@ -1,3 +1,19 @@
 {
-	"bootstrapped": true
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ayu",
+		"EditorConfig",
+		"gruvbox",
+		"JsPrettier",
+		"LSP",
+		"LSP-typescript",
+		"MarkdownEditing",
+		"Package Control",
+		"rainbow_csv",
+		"Wrap Plus",
+	],
 }

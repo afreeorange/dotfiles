@@ -1,3 +1,25 @@
 {
-	"font_size": 16,
+  "always_show_minimap_viewport": true,
+  "bold_folder_labels": true,
+  "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+  "font_face": "BlexMono Nerd Font Mono",
+  "font_size": 16,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages": ["Vintage",
+  ],
+  "index_files": false,
+  "remember_open_files": true,
+  "rulers": [120, 100, 79],
+  "scroll_past_end": true,
+  "show_encoding": true,
+  "show_git_status": true,
+  "show_sidebar_button": false,
+  "theme": "ayu-dark.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "update_check": false,
+  "folder_exclude_patterns": [".git", "node_modules", "dist", "build"],
+
+  // Package Settings
+  "WrapPlus.wrap_width": 79,
 }

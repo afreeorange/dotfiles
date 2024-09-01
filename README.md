@@ -18,7 +18,4 @@ hose-yadm
 ## Some Executables
 
 In `.bin` or in the [elaborate bash configuration](https://github.com/afreeorange/dotfiles/tree/master/.config/bash)
-## Other
-
-Glyph for `vim` code hierarchy ┊
 
