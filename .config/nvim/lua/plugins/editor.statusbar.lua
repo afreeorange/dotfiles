@@ -1,4 +1,5 @@
 -- https://github.com/nvim-lualine/lualine.nvim#default-configuration
+--
 return {
     'nvim-lualine/lualine.nvim',
     name = 'lualine',

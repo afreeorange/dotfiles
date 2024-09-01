@@ -1,7 +1,10 @@
 -- https://github.com/nvim-tree/nvim-tree.lua
+--
 local Plugin = {'nvim-tree/nvim-tree.lua'}
 
 Plugin.name = "nvim-tree"
+
+Plugin.dependencies = {'nvim-tree/nvim-web-devicons'}
 
 Plugin.opts = {
     filters = {

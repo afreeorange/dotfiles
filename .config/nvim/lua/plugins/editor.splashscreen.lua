@@ -6,7 +6,6 @@
 -- https://github.com/goolord/alpha-nvim/discussions/16#discussioncomment-4803194
 -- https://github.com/AllanChain/custom-chad/blob/main/plugins/alpha.lua
 --
---
 -----------------------------------------------------------------------------
 local function button(sc, txt, keybind)
     local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
