@@ -7,8 +7,19 @@ local user = {}
 -- See :help mason-lspconfig-settings
 -- Available servers
 -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-local servers = {'bashls', 'biome', 'cssls', 'eslint', 'html', 'jsonls', 'lua_ls', 'rust_analyzer', 'somesass_ls',
-                 'tailwindcss', 'tsserver'}
+local servers = {
+  'bashls',
+  'biome',
+  'cssls',
+  'eslint',
+  'html',
+  'jsonls',
+  'lua_ls',
+  'rust_analyzer',
+  'somesass_ls',
+  'tailwindcss',
+  'tsserver'
+}
 
 -------------------------------------------------------------------------------
 
