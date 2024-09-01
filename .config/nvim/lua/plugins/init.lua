@@ -9,7 +9,18 @@ local Plugins = {
   -- Editor Customizations
   -- ==========================================================================
   -- Show git statuses in the gutter.
-  { 'lewis6991/gitsigns.nvim' },
+  { 'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add          = { text = '+' },
+        change       = { text = '~' },
+        delete       = { text = 'x' },
+        topdelete    = { text = '^' },
+        changedelete = { text = '~' },
+        untracked    = { text = '?' },
+      }
+    }
+  },
 
   -- Add indentation guides
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
