@@ -12,3 +12,4 @@ end
 
 -- Set the color scheme here. It's a bit messy doing this via Lazy.vim
 pcall(vim.cmd.colorscheme, 'tokyonight')
+
