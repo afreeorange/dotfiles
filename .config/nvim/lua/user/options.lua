@@ -1,3 +1,5 @@
+-- =========== OPTIONS ========== --
+
 -- Enable line numbers
 vim.opt.number = true
 
@@ -19,7 +21,7 @@ vim.opt.expandtab = true
 vim.opt.cursorline = false
 
 -- Show a ruler at various widths
-vim.opt.colorcolumn = {79, 100, 120}
+vim.opt.colorcolumn = { 79, 100, 120 }
 
 -- If the terminal supports it, enable mouse support in all ("a") modes
 vim.opt.mouse = 'a'
@@ -32,8 +34,7 @@ vim.opt.undofile = true
 -- vim.g.mapleader = ' '
 -- vim.g.maplocalleader = ' '
 
--- Keep signcolumn on by default. I with with files that are in git repos 90%+
--- of the time
+-- Keep signcolumn on by default. I with with files that are in git repos 90%+ of the time
 vim.opt.signcolumn = 'yes'
 
 -- Some pre-configuration for theming

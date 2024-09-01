@@ -1,6 +1,7 @@
+-- =========== COMMANDS ========== --
+
 -- Autoreload $MYVIMRC on save
 -- https://superuser.com/a/1120318
---
 vim.cmd [[
 if has ('autocmd')
     augroup vimrc
