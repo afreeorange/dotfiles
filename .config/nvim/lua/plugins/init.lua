@@ -1,48 +1,68 @@
--- Read the actual plugin Lua files for more information
-
 local Plugins = {
   -- Themes
-  -----------------------------------------------------------------------------
-  { 'folke/tokyonight.nvim' },
-  { 'navarasu/onedark.nvim' },
+  -- ==========================================================================
   { 'ellisonleao/gruvbox.nvim' },
+  { 'folke/tokyonight.nvim' },
   { 'Shatur/neovim-ayu' },
 
+
   -- Editor Customizations
-  -----------------------------------------------------------------------------
-  { 'norcalli/nvim-colorizer.lua' }, -- Colorizes RGB/CMYK/Hex values
-  { 'nvim-tree/nvim-tree.lua' },     -- Explorer/File Tree Stuff
-  { 'nvim-tree/nvim-web-devicons' }, -- Show better filetype icons in the tree!
-  {
-    'nvim-telescope/telescope.nvim', -- Fuzzy finder!
-    branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim'
-    },
+  -- ==========================================================================
+  -- Show git statuses in the gutter.
+  { 'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add          = { text = '+' },
+        change       = { text = '~' },
+        delete       = { text = 'x' },
+        topdelete    = { text = '^' },
+        changedelete = { text = '~' },
+        untracked    = { text = '?' },
+      }
+    }
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- Adds indent guides in the current file
-  { 'lewis6991/gitsigns.nvim' },             -- Git integration
-  { 'nvim-treesitter/nvim-treesitter' },     -- Syntax Highlighting
-  { 'nvim-lualine/lualine.nvim' },           -- Status bar
-  { 'goolord/alpha-nvim' },                  -- Splashscreen
+
+  -- Add indentation guides
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+  -- Better tabs
   {
-    'akinsho/bufferline.nvim',               -- Tabs
+    'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
 
-  { 'windwp/nvim-autopairs', event = 'InsertEnter' }, -- Insert closing bracket or whatever
+  -- Insert closing parens, squigglies, brackets or whatever
+  { 'windwp/nvim-autopairs', event = 'InsertEnter' },
 
-  -- LSP support
-  -----------------------------------------------------------------------------
-  { 'neovim/nvim-lspconfig' },
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
 
-  -- Utilities
-  -----------------------------------------------------------------------------
+  -- Code Helpers
+  -- ==========================================================================
+  -- Colorizes RGB/CMYK/Hex values
+  { 'norcalli/nvim-colorizer.lua' },
+
+  -- Align all the things
   {'godlygeek/tabular'},
+
+  -- Better syntax highlighting
+  { 'nvim-treesitter/nvim-treesitter',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    -- config = function()
+    --   require("nvim-treesitter.configs").setup({
+    --     highlight = {
+    --       enabled = true
+    --     }
+    --   })
+    -- end,
+  },
+
+  -- Highlight JSX/TSX properly.
+  -- TODO: Treesitter should be able to do this...
+  {'MaxMEllon/vim-jsx-pretty'},
+
+  -- Markdown shortcuts and goodness
   {'SidOfc/mkdx'},
+
+  -- Markdown table editing
   {'dhruvasagar/vim-table-mode'},
 }
 

@@ -1,4 +1,6 @@
--- ========== PLUGIN SETUP ========== --
+-- Set up lazy.nvim if it's not installed. This line can be removed after
+-- inital setup. But it appears to make very little difference to this almighty
+-- startup time people appear to be concerned about 🤷‍♂️
 
 local lazy = {}
 
@@ -18,9 +20,6 @@ function lazy.install(path)
 end
 
 function lazy.setup(plugins)
-  -- Set up lazy.nvim if it's not installed. This line can be removed after
-  -- inital setup. But it appears to make very little difference to this
-  -- almighty startup time people appear to be concerned about 🤷‍♂️
   lazy.install(lazy.path)
 
   vim.opt.rtp:prepend(lazy.path)

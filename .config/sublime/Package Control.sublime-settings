@@ -2,28 +2,18 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"MarkdownEditing",
-		"Package Control",
 	],
 	"installed_packages":
 	[
-		"Dockerfile Syntax Highlighting",
+		"ayu",
 		"EditorConfig",
-		"Emmet",
-		"Git",
 		"gruvbox",
-		"Increment Selection",
 		"JsPrettier",
-		"JSX",
-		"Markdown Extended",
+		"LSP",
+		"LSP-typescript",
 		"MarkdownEditing",
-		"Nunjucks",
-		"Origami",
 		"Package Control",
 		"rainbow_csv",
-		"Sass",
-		"Table Editor",
-		"Terraform",
 		"Wrap Plus",
 	],
 }
