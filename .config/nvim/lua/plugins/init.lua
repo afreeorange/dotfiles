@@ -58,6 +58,30 @@ local Plugins = {
   -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#table-of-contents
   { "nvim-treesitter/nvim-treesitter",
     dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        -- A list of parser names, or "all" (the listed parsers MUST always be
+        -- installed)
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+
+        -- Install parsers synchronously (only applied to `ensure_installed`)
+        sync_install = false,
+
+        -- Automatically install missing parsers when entering buffer
+        auto_install = false,
+
+        highlight = {
+          enable = true,
+
+          -- Setting this to true will run `:h syntax` and tree-sitter at the same
+          -- time. Set this to `true` if you depend on 'syntax' being enabled (like
+          -- for indentation). Using this option may slow down your editor, and you
+          -- may see some duplicate highlights. Instead of true it can also be a list
+          -- of languages
+          additional_vim_regex_highlighting = false,
+        },
+      }
+    end
   },
 
   -- Highlight JSX/TSX properly.
@@ -69,6 +93,39 @@ local Plugins = {
 
   -- Markdown table editing
   { "dhruvasagar/vim-table-mode" },
+
+  -- Markdown rendering
+  { "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+    config = function()
+      require("render-markdown").setup({
+        pipe_table = { preset = "round" },
+        heading = {
+          sign = false,
+        },
+        code = {
+          sign = false,
+          position = "left",
+        },
+        checkbox = {
+          unchecked = {
+            icon = "✘ "
+          },
+          checked = {
+            icon = "✔ "
+          },
+          custom = {
+            todo = {
+              rendered = "◯ "
+            }
+          },
+        },
+      })
+    end
+  }
 }
 
 return Plugins
