@@ -1,12 +1,10 @@
 -- https://github.com/nvim-tree/nvim-tree.lua
 --
-local Plugin = {'nvim-tree/nvim-tree.lua'}
-
-Plugin.name = "nvim-tree"
-
-Plugin.dependencies = {'nvim-tree/nvim-web-devicons'}
-
-Plugin.opts = {
+local Plugin = {
+  "nvim-tree/nvim-tree.lua",
+  name = "nvim-tree",
+  dependencies = {"nvim-tree/nvim-web-devicons"},
+  opts = {
     filters = {
         dotfiles = false,
         exclude = {vim.fn.stdpath "config" .. "/lua/custom"}
@@ -44,6 +42,7 @@ Plugin.opts = {
             enable = false
         }
     }
+}
 }
 
 function Plugin.init()

@@ -1,4 +1,6 @@
--- The default. Rather nice.
+-- Just having some fun <3
+--
+-- References:
 -- https://github.com/goolord/alpha-nvim/blob/main/lua/alpha/themes/startify.lua
 -- require 'alpha'.setup(require 'alpha.themes.startify'.config)
 -- https://github.com/NvChad/NvChad/blob/main/lua/plugins/configs/alpha.lua
@@ -40,14 +42,23 @@ end
 
 local function header_hl_today()
     local wday = os.date("*t").wday
-    local colors = {"Keyword", "Constant", "Number", "Type", "String", "Special", "Function"}
+    local colors = {
+      "Keyword",
+      "Constant",
+      "Number",
+      "Type",
+      "String",
+      "Special",
+      "Function"
+    }
+
     return colors[wday]
 end
 
 -----------------------------------------------------------------------------
 
 return {
-    'goolord/alpha-nvim',
+    "goolord/alpha-nvim",
     name = "alpha",
     opts = {
         layout = {{
@@ -74,7 +85,7 @@ return {
             }
         }, {
             type = "padding",
-            val = 5
+            val = 2
         }, {
             type = "group",
             val = {button("<leader> f f", "Find File", ":Telescope find_files<CR>"),

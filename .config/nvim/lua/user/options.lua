@@ -22,7 +22,7 @@ vim.opt.cursorline = false
 vim.opt.colorcolumn = { 79, 100, 120 }
 
 -- If the terminal supports it, enable mouse support in all ("a") modes
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Save undo history
 vim.opt.undofile = true
@@ -33,7 +33,7 @@ vim.opt.undofile = true
 -- vim.g.maplocalleader = ' '
 
 -- Keep signcolumn on by default. I with with files that are in git repos 90%+ of the time
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Some pre-configuration for theming
 vim.opt.termguicolors = true

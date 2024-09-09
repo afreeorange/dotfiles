@@ -4,6 +4,14 @@
 
 With Lazy.vim, [some plugins require `setup()` and some don't](https://stackoverflow.com/questions/76808040/lazyvim-why-do-some-neovim-plugins-need-require-and-setup-functions-to-be-c).
 
+## Todo
+
+- [ ] Closing tags
+- [ ] Tab display and movement
+- [ ] `nvim-tree` open in new tab
+- [ ] Completion
+- [ ] Tabular shortcuts
+
 ## References
 
 - [Lua Cheatsheet](https://learnxinyminutes.com/docs/lua/)

@@ -4,39 +4,38 @@
 -- https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
 --
 --
-local Plugin = {"nvim-telescope/telescope.nvim"}
-
-Plugin.name = "telescope"
-
-Plugin.tag = '0.1.8';
-
-Plugin.dependencies = {'nvim-lua/plenary.nvim', {
+local Plugin = {
+  "nvim-telescope/telescope.nvim",
+  name = "telescope",
+  tag = '0.1.8',
+  dependencies = {'nvim-lua/plenary.nvim', {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make'
-}};
+  }},
 
-Plugin.opts = {
-    defaults = {
-        file_ignore_patterns = {"node_modules", ".git"},
-        color_devicons = true,
-        borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
-        -- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-        layout_strategy = "horizontal",
-        path_display = {"truncate"},
-        layout_config = {
-            width = 0.80, -- Percent of viewport/width/whatever
-            height = 0.95, -- Ditto but height
-            preview_cutoff = 120,
-            horizontal = {
-                prompt_position = "top",
-                results_width = 0.45, -- (1 - x)
-                preview_width = 0.55 -- (x)
-            },
-            vertical = {
-                mirror = false
-            }
-        }
-    }
+  opts = {
+      defaults = {
+          file_ignore_patterns = {"node_modules", ".git"},
+          color_devicons = true,
+          borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
+          -- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+          layout_strategy = "horizontal",
+          path_display = {"truncate"},
+          layout_config = {
+              width = 0.80, -- Percent of viewport/width/whatever
+              height = 0.95, -- Ditto but height
+              preview_cutoff = 120,
+              horizontal = {
+                  prompt_position = "top",
+                  results_width = 0.45, -- (1 - x)
+                  preview_width = 0.55 -- (x)
+              },
+              vertical = {
+                  mirror = false
+              }
+          }
+      }
+  }
 }
 
 function Plugin.init()
