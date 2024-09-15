@@ -95,37 +95,37 @@ local Plugins = {
   { "dhruvasagar/vim-table-mode" },
 
   -- Markdown rendering
-  { "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons"
-    },
-    config = function()
-      require("render-markdown").setup({
-        pipe_table = { preset = "round" },
-        heading = {
-          sign = false,
-        },
-        code = {
-          sign = false,
-          position = "left",
-        },
-        checkbox = {
-          unchecked = {
-            icon = "✘ "
-          },
-          checked = {
-            icon = "✔ "
-          },
-          custom = {
-            todo = {
-              rendered = "◯ "
-            }
-          },
-        },
-      })
-    end
-  }
+  -- { "MeanderingProgrammer/render-markdown.nvim",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "nvim-tree/nvim-web-devicons"
+  --   },
+  --   config = function()
+  --     require("render-markdown").setup({
+  --       pipe_table = { preset = "round" },
+  --       heading = {
+  --         sign = false,
+  --       },
+  --       code = {
+  --         sign = false,
+  --         position = "left",
+  --       },
+  --       checkbox = {
+  --         unchecked = {
+  --           icon = "✘ "
+  --         },
+  --         checked = {
+  --           icon = "✔ "
+  --         },
+  --         custom = {
+  --           todo = {
+  --             rendered = "◯ "
+  --           }
+  --         },
+  --       },
+  --     })
+  --   end
+  -- }
 }
 
 return Plugins
