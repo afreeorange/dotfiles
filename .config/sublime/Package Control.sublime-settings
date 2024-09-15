@@ -2,17 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"Dockerfile Syntax Highlighting",
-		"Emmet",
-		"Git",
-		"Increment Selection",
-		"JSX",
-		"Markdown Extended",
-		"Nunjucks",
-		"Origami",
-		"Sass",
-		"Table Editor",
-		"Terraform",
 	],
 	"installed_packages":
 	[
