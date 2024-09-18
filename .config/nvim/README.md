@@ -15,6 +15,7 @@
 - Maybe [Neo Tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - Format Doc setup and shortcut
 - This is super cool: https://camo.githubusercontent.com/345cd28ced9b61da6e7d47e33032ccd85a02c7b5bf2c66e22f8b946d0af4278f/68747470733a2f2f6e76636861642e636f6d2f66656174757265732f6e76646173682e77656270
+- Telescope needs to be 'rooted' in the directory `nvim` opens in: https://github.com/desdic/telescope-rooter.nvim/blob/main/lua/telescope/_extensions/rooter.lua
 
 ## Notes
 
