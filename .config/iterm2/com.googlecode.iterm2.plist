@@ -8,8 +8,6 @@
 	<integer>0</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
-	<key>AlternateMouseScroll</key>
-	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>cobalt2</key>
@@ -237,8 +235,6 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
-	<key>IRMemory</key>
-	<integer>4</integer>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0_selection</key>
@@ -489,6 +485,8 @@
 			<key>Description</key>
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
+			<true/>
+			<key>Draw Powerline Glyphs</key>
 			<true/>
 			<key>Flashing Bell</key>
 			<false/>
@@ -825,7 +823,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>BlexMonoNerdFontCompleteM-Regular 18</string>
+			<string>BlexMonoNFM 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -887,7 +885,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.1499999999999999</real>
+			<real>1.1000000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -953,8 +951,6 @@
 	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>6</integer>
-	<key>TabViewType</key>
-	<integer>0</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
@@ -971,5 +967,7 @@
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
+	<key>userAccessCode</key>
+	<string></string>
 </dict>
 </plist>
