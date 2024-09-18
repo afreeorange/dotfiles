@@ -88,11 +88,13 @@ return {
             val = 2
         }, {
             type = "group",
-            val = {button("<leader> f f", "Find File", ":Telescope find_files<CR>"),
-                   button("<leader> f g", "Find Word", ":Telescope live_grep<CR>"),
-                   button("<leader> f o", "Recent", ":Telescope oldfiles<CR>"),
-                   button("<leader> e s", "Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
-                   button("<leader> b m", "Bookmarks", ":Telescope marks<CR>")},
+            val = {
+                button("<leader> f f", "Find File", ":Telescope find_files<CR>"),
+                button("<leader> f g", "Find Word", ":Telescope live_grep<CR>"),
+                -- button("<leader> f o", "Recent", ":Telescope oldfiles<CR>"),
+                -- button("<leader> e s", "Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+                -- button("<leader> b m", "Bookmarks", ":Telescope marks<CR>"),
+            },
             opts = {
                 spacing = 0
             }
