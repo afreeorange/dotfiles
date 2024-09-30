@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
+	<key>CopyLastNewline</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>cobalt2</key>
@@ -223,6 +225,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>F3722FB6-01B8-452E-898D-5F2393AC67A0</string>
+	<key>DefaultTabBarHeight</key>
+	<real>28</real>
 	<key>DeleteProfile_SilenceUntil</key>
 	<real>532904606.11010897</real>
 	<key>DeleteProfile_selection</key>
@@ -235,6 +239,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F3722FB6-01B8-452E-898D-5F2393AC67A0_selection</key>
@@ -813,7 +819,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
