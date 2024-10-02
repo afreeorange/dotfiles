@@ -2,6 +2,8 @@
 
 ## Stuff Left to Do
 
+- Ctrl P opens in a new tab
+- Tab styling :)
 - Persistent file explorer
 - Telescope/Ctrl+p searches the parent folder `vim` was called in
 - IntelliSense
