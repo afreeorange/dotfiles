@@ -18,7 +18,6 @@ vim.keymap.set("n", "<leader>|", "<cmd>vsplit<CR>", {
 })
 
 if jit.os == "OSX" then
-
     vim.keymap.set("n", "<C-n>", "<cmd>tabnew<CR>", {
         noremap = true,
         silent = true
