@@ -43,4 +43,4 @@ With Lazy.vim, [some plugins require `setup()` and some don't](https://stackover
 - [Possible plugins](https://github.com/moll/vim-bbye)
 - [AstroVim](https://github.com/AstroNvim/AstroNvim/blob/main/init.lua)
 - [NeoVim and Lua Guide](https://github.com/nanotee/nvim-lua-guide)
-
+- Use `if jit.os == "macos"` for platform detection
