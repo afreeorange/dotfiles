@@ -2,6 +2,8 @@
 
 ## Stuff Left to Do
 
+- Ctrl P opens in a new tab
+- Tab styling :)
 - Persistent file explorer
 - Telescope/Ctrl+p searches the parent folder `vim` was called in
 - IntelliSense
@@ -15,6 +17,7 @@
 - Maybe [Neo Tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - Format Doc setup and shortcut
 - This is super cool: https://camo.githubusercontent.com/345cd28ced9b61da6e7d47e33032ccd85a02c7b5bf2c66e22f8b946d0af4278f/68747470733a2f2f6e76636861642e636f6d2f66656174757265732f6e76646173682e77656270
+- Telescope needs to be 'rooted' in the directory `nvim` opens in: https://github.com/desdic/telescope-rooter.nvim/blob/main/lua/telescope/_extensions/rooter.lua
 
 ## Notes
 
@@ -40,4 +43,4 @@ With Lazy.vim, [some plugins require `setup()` and some don't](https://stackover
 - [Possible plugins](https://github.com/moll/vim-bbye)
 - [AstroVim](https://github.com/AstroNvim/AstroNvim/blob/main/init.lua)
 - [NeoVim and Lua Guide](https://github.com/nanotee/nvim-lua-guide)
-
+- Use `if jit.os == "macos"` for platform detection
