@@ -8,6 +8,7 @@
 # shellcheck source=/dev/null
 if [[ $(uname) == "Darwin" ]]; then
     [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+    [[ -f ~/.fzf.git.bash ]] && source ~/.fzf.git.bash
 fi
 
 # shellcheck source=/dev/null
