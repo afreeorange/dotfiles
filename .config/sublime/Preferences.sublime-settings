@@ -1,7 +1,7 @@
 {
   /** --- Look and feel --- */
   "font_face": "BlexMono Nerd Font Mono",
-  "font_size": 17,
+  "font_size": 18,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages": ["Vintage"],
@@ -14,5 +14,5 @@
   /** --- Package Settings --- */
   "WrapPlus.wrap_width": 79,
   "color_scheme": "ayu-dark.sublime-color-scheme",
-  "theme": "ayu-dark.sublime-theme"
+  "theme": "ayu-dark.sublime-theme",
 }
