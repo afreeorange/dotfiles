@@ -14,6 +14,6 @@
 
   /** --- Package Settings --- */
   "WrapPlus.wrap_width": 79,
-  "color_scheme": "ayu-dark.sublime-color-scheme",
-  "theme": "ayu-dark.sublime-theme",
+  // "color_scheme": "ayu-dark.sublime-color-scheme",
+  // "theme": "ayu-dark.sublime-theme",
 }
