@@ -26,9 +26,10 @@ BASE16_SHELL_PATH="$HOME/.config/base16-shell"
 # $- includes "i" if the shell is started in interactive mode.
 if [[ $- == *i* ]]; then
     # Shell theme <3
-    base16_ayu-dark
+    #base16_ayu-dark
     #base16_gruvbox-dark-pale
     #base16_tokyodark
+    base16_tokyo-night-storm
 
     # The generic colorizer
     # https://github.com/garabik/grc
