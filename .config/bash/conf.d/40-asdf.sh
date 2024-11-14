@@ -15,3 +15,16 @@ elif [[ $(uname -s) == "Linux" ]]; then
     source "$HOME/.asdf/completions/asdf.bash"
 
 fi
+
+_asdf-setup() {
+  ASDF_PLUGINS=$(cut -d" " -f1 < ~/.tool-versions | sort);
+  for PLUGIN in $ASDF_PLUGINS; do
+      echo "Adding $PLUGIN"
+      asdf plugin add "$PLUGIN"
+  done
+
+  echo "Installing stuff"
+  pushd "$HOME" || exit
+  asdf install
+  popd || exit
+}
