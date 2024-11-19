@@ -100,6 +100,17 @@ local Plugins = {
     end
   },
 
+  -- Distraction Free Editing 🧘‍♀️
+  -- ==========================================================================
+  {
+    -- https://github.com/folke/zen-mode.nvim?tab=readme-ov-file#%EF%B8%8F-configuration
+    "folke/zen-mode.nvim",
+  },
+  {
+    -- https://github.com/folke/twilight.nvim?tab=readme-ov-file#-installation
+    "folke/twilight.nvim",
+  },
+
   -- Highlight JSX/TSX properly.
   -- TODO: Treesitter should be able to do this...
   { "MaxMEllon/vim-jsx-pretty" },
