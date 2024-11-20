@@ -41,3 +41,6 @@ vim.opt.background = "dark" -- or "light" for light mode
 
 -- Change to the current directory
 vim.opt.autochdir = true
+
+-- Do not break in the middle of a word lol
+vim.opt.linebreak = true

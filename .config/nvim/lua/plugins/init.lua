@@ -74,6 +74,7 @@ local Plugins = {
           "css",
           "javascript",
           "lua",
+          "yaml",
           "python",
           "scss",
           "sql",
@@ -84,7 +85,7 @@ local Plugins = {
         sync_install = false,
 
         -- Automatically install missing parsers when entering buffer
-        auto_install = false,
+        auto_install = true,
 
         highlight = {
           enable = true,
@@ -98,6 +99,17 @@ local Plugins = {
         },
       }
     end
+  },
+
+  -- Distraction Free Editing 🧘‍♀️
+  -- ==========================================================================
+  {
+    -- https://github.com/folke/zen-mode.nvim?tab=readme-ov-file#%EF%B8%8F-configuration
+    "folke/zen-mode.nvim",
+  },
+  {
+    -- https://github.com/folke/twilight.nvim?tab=readme-ov-file#-installation
+    "folke/twilight.nvim",
   },
 
   -- Highlight JSX/TSX properly.

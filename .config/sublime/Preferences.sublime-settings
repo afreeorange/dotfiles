@@ -1,9 +1,7 @@
 {
   /** --- Look and feel --- */
-  // "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
-  // "theme": "ayu-dark.sublime-theme",
   "font_face": "BlexMono Nerd Font Mono",
-  "font_size": 15,
+  "font_size": 21,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages": ["Vintage",
@@ -16,6 +14,7 @@
 
   /** --- Package Settings --- */
   "WrapPlus.wrap_width": 79,
-  "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
-  "theme": "ayu-dark.sublime-theme",
+  // "color_scheme": "ayu-dark.sublime-color-scheme",
+  // "theme": "ayu-dark.sublime-theme",
+  "color_scheme": "Mariana.sublime-color-scheme",
 }

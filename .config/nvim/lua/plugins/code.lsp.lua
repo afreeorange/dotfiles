@@ -15,8 +15,7 @@ local servers = {
   "lua_ls",
   "rust_analyzer",
   "somesass_ls",
-  "tailwindcss",
-  "ts_ls"
+  "tailwindcss"
 }
 
 local Plugin = {"neovim/nvim-lspconfig"}
