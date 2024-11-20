@@ -74,6 +74,7 @@ local Plugins = {
           "css",
           "javascript",
           "lua",
+          "yaml",
           "python",
           "scss",
           "sql",
@@ -84,7 +85,7 @@ local Plugins = {
         sync_install = false,
 
         -- Automatically install missing parsers when entering buffer
-        auto_install = false,
+        auto_install = true,
 
         highlight = {
           enable = true,
