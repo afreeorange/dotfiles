@@ -37,7 +37,7 @@ alias pro="cd \$HOME/Projects"
 dro() { cd "$CLOUD_FOLDER" || exit; } # Aliases do not directly support parameter expansion like variables do.
 
 # Installed via `npm i -g http-server`
-alias hs="http-server"
+alias hs="caddy file-server -b -l 127.0.0.1:8080 && echo -e '\nListening on http://127.0.0.1:8080\n'"
 
 # Moving around
 alias ..="cd .."
