@@ -38,3 +38,4 @@ export FZF_DEFAULT_OPTS="--ansi"
 # AWS Stuff
 export AWS_PROFILE="nikhil.io"
 export AWS_DEFAULT_REGION="us-east-1"
+
