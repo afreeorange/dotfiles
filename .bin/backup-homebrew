@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck source=/dev/null
-source "$HOME/.config/bash/colors"
+source "$HOME/.config/bash/conf.d/20-colors.sh"
 
 # ----------
 
