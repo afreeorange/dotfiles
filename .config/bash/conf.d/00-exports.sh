@@ -39,3 +39,8 @@ export FZF_DEFAULT_OPTS="--ansi"
 export AWS_PROFILE="nikhil.io"
 export AWS_DEFAULT_REGION="us-east-1"
 
+# Homebrew
+if [[ $(uname) == "Darwin" ]]; then
+    export HOMEBREW_NO_ENV_HINTS=1
+fi
+
