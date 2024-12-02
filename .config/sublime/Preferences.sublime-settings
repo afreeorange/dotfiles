@@ -1,7 +1,13 @@
 {
   /** --- Look and feel --- */
   "font_face": "BlexMono Nerd Font Mono",
+<<<<<<< HEAD
   "font_size": 16,
+||||||| 0b3e64c
+  "font_size": 21,
+=======
+  "font_size": 18,
+>>>>>>> fdc8ca6e770cd55e36d5791b7d03d9f97307e273
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages": ["Vintage",

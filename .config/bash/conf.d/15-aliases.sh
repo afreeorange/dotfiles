@@ -9,8 +9,8 @@ alias ll="ls -l"
 alias please="sudo"
 alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
-alias life="subl \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Life.md"
-alias scratch="subl \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Scratchpad.md"
+alias life="code \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Life.md"
+alias scratch="code \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
 alias wik="cd \$HOME/Programming/wiki.nikhil.io.articles"
@@ -35,6 +35,8 @@ alias per="cd \$HOME/Programming"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
 dro() { cd "$CLOUD_FOLDER" || exit; } # Aliases do not directly support parameter expansion like variables do.
+
+# Remote Locations - See local bash aliases lol
 
 # Installed via `npm i -g http-server`
 alias hs="caddy file-server -b -l 127.0.0.1:8080 && echo -e '\nListening on http://127.0.0.1:8080\n'"

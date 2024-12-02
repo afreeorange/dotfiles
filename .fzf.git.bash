@@ -294,6 +294,7 @@ if [[ -n "${BASH_VERSION:-}" ]]; then
 
     local o c
     for o in "$@"; do
+<<<<<<< HEAD
       c=${o:0:1}
       bind -m emacs-standard '"\C-g\C-'$c'": " \C-u \C-a\C-k`_fzf_git_'$o'`\e\C-e\C-y\C-a\C-y\ey\C-h\C-e\er \C-h"'
       bind -m vi-command     '"\C-g\C-'$c'": "\C-z\C-g\C-'$c'\C-z"'
@@ -303,6 +304,23 @@ if [[ -n "${BASH_VERSION:-}" ]]; then
       bind -m vi-insert      '"\C-g'$c'":    "\C-z\C-g'$c'\C-z"'
     done
   }
+||||||| 0b3e64c
+=======
+      # This is the first letter of the command ("files" -> "f", "branches" -> "b")
+      c=${o:0:1}
+
+      bind -m emacs-standard '"\C-g'$c'":    " \C-u \C-a\C-k`_fzf_git_'$o'`\e\C-e\C-y\C-a\C-y\ey\C-h\C-e\er \C-h"'
+      bind -m emacs-standard '"\C-g\C-'$c'": " \C-u \C-a\C-k`_fzf_git_'$o'`\e\C-e\C-y\C-a\C-y\ey\C-h\C-e\er \C-h"'
+
+      bind -m vi-command     '"\C-g'$c'":    "\C-z\C-g'$c'\C-z"'
+      bind -m vi-command     '"\C-g\C-'$c'": "\C-z\C-g\C-'$c'\C-z"'
+
+      bind -m vi-insert      '"\C-g'$c'":    "\C-z\C-g'$c'\C-z"'
+      bind -m vi-insert      '"\C-g\C-'$c'": "\C-z\C-g\C-'$c'\C-z"'
+    done
+  }
+
+>>>>>>> fdc8ca6e770cd55e36d5791b7d03d9f97307e273
 elif [[ -n "${ZSH_VERSION:-}" ]]; then
   __fzf_git_join() {
     local item
