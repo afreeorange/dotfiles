@@ -6,6 +6,10 @@ fi
 
 # Auto-completion
 # ---------------
+[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.bash" 2> /dev/null
+
+# Key bindings
+# ------------
 # shellcheck disable=SC1091
 [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.bash" 2>/dev/null
 
