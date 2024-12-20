@@ -1,6 +1,9 @@
 [core]
   pager = delta
 
+[branch]
+	autoSetupMerge = always
+
 [interactive]
   diffFilter = delta --color-only --features=interactive
 

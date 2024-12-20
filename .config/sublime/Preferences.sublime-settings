@@ -1,11 +1,12 @@
 {
   /** --- Look and feel --- */
   "font_face": "BlexMono Nerd Font Mono",
-  "font_size": 15,
+  "font_size": 18,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages": ["Vintage",
   ],
+  "scroll_past_end": true,
   "index_files": false,
   "remember_open_files": true,
   "translate_tabs_to_spaces": true,
@@ -16,5 +17,6 @@
   "WrapPlus.wrap_width": 79,
   // "color_scheme": "ayu-dark.sublime-color-scheme",
   // "theme": "ayu-dark.sublime-theme",
-  "color_scheme": "Mariana.sublime-color-scheme",
+  "color_scheme": "ayu-dark.sublime-color-scheme",
+  "theme": "Adaptive.sublime-theme",
 }
