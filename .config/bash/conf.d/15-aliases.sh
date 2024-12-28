@@ -38,9 +38,6 @@ dro() { cd "$CLOUD_FOLDER" || exit; } # Aliases do not directly support paramete
 
 # Remote Locations - See local bash aliases lol
 
-# Installed via `npm i -g http-server`
-alias hs="caddy file-server -b -l 127.0.0.1:8080 -r $1"
-
 # Moving around
 alias ..="cd .."
 alias ...="cd ../.."
