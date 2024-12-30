@@ -41,6 +41,7 @@ local Plugins = {
     dependencies = "nvim-tree/nvim-web-devicons"
   },
 
+
   -- Insert closing parens, squigglies, brackets or whatever
   { "windwp/nvim-autopairs", event = "InsertEnter" },
 
