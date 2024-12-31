@@ -109,6 +109,7 @@ local Plugins = {
     "folke/zen-mode.nvim",
   },
   {
+    -- Only highlight sections you're editing. Only activated in Zen Mode.
     -- https://github.com/folke/twilight.nvim?tab=readme-ov-file#-installation
     "folke/twilight.nvim",
   },
