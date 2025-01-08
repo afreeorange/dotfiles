@@ -3,20 +3,19 @@
 set -euo pipefail
 
 # Helps me maintain a quick log of things I do at work.
-#
 # TODO: Deletion. But maybe that's not required. Can just do it by hand 🤷‍♂️
 
 # Change this to whatever you'd like but use a trailing slash!
-LOG_FOLDER="/home/nikhil/worklog/"
+LOG_FOLDER="$HOME/worklog/"
 
 # I use iCloud Drive on a Mac to store all logs
 if [[ $(uname) == "Darwin" ]]; then
   LOG_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Work/"
 fi
 
-# Change this to whatever you'd like
+# Change this stuff to whatever you'd like
 LOG_FILE_PREFIX="worklog"
-LOG_FILE="$LOG_FOLDER""$LOG_FILE_PREFIX-$(date "+%F--%b-%a").md"
+LOG_FILE="$LOG_FOLDER""$LOG_FILE_PREFIX-$(date "+%Y-%m").md"
 FILE_TO_EDIT=$LOG_FILE
 
 # Error codes
@@ -27,7 +26,7 @@ ERROR_NO_SEARCH_TERM=20
 if [[ ! -d $LOG_FOLDER ]]; then
   echo "You said I could store your logs here:"
   echo "$LOG_FOLDER"
-  echo "but it doesn't exist, yo. Make it and call me again."
+  echo "but it doesn't exist, yo. Make it and call me again 🙄"
   exit $ERROR_NO_LOG_FOLDER
 fi
 
@@ -53,10 +52,23 @@ if [[ "$#" == 0 ]]; then
     touch "$LOG_FILE"
 
     cat <<EOF >"$LOG_FILE"
-$(date "+%a, %b %d %Y")
-----------------
+# $(date "+%B %Y")
 
-- [ ]
+## Week 01
+
+
+
+## Week 02
+
+
+
+## Week 03
+
+
+
+## Week 04
+
+
 
 EOF
   fi
