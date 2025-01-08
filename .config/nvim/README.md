@@ -45,3 +45,4 @@ With Lazy.vim, [some plugins require `setup()` and some don't](https://stackover
 - [NeoVim and Lua Guide](https://github.com/nanotee/nvim-lua-guide)
 - Use `if jit.os == "macos"` for platform detection
 - [spawning lsp servers fails regularly](https://old.reddit.com/r/neovim/comments/1cx05ws/spawning_lsp_servers_fails_regularly/) (idea is to use `:LspLog`)
+- [Kickstart.vim](https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua)

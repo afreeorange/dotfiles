@@ -20,8 +20,7 @@ local Plugin = {
     },
     view = {
         adaptive_size = true,
-        side = "left",
-        width = 40
+        side = "left"
     },
     git = {
         enable = false,

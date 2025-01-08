@@ -32,14 +32,12 @@ alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
 alias dow="cd \$HOME/Downloads"
 alias per="cd \$HOME/Programming"
+alias mus="cd \$HOME/Music"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
 dro() { cd "$CLOUD_FOLDER" || exit; } # Aliases do not directly support parameter expansion like variables do.
 
 # Remote Locations - See local bash aliases lol
-
-# Installed via `npm i -g http-server`
-alias hs="caddy file-server -b -l 127.0.0.1:8080 -r $1"
 
 # Moving around
 alias ..="cd .."

@@ -23,3 +23,18 @@ s3_bucket_size() {
   aws s3 ls --summarize --human-readable --recursive "$1"
 }
 
+hs() {
+    local WORKING_DIR
+    WORKING_DIR=$(pwd)
+
+    if [[ -n "$1" ]]; then
+        WORKING_DIR=$1
+    fi
+
+    echo "Using this as root: $WORKING_DIR"
+    echo "Starting server at"
+    echo "http://127.0.0.1:8080"
+    echo "─────────────────────────────────────────────────────────────────"
+
+    caddy file-server -b -l 127.0.0.1:8080 -r "$WORKING_DIR"
+}
