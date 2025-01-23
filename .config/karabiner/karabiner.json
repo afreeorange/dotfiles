@@ -60,26 +60,6 @@
                 ]
               }
             ]
-          },
-          {
-            "description": "Map (Left Control + Left Command + Esc) to (Ctrl + `) for VSCode",
-            "manipulators": [
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "escape",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_command"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "grave_accent_and_tilde",
-                    "modifiers": ["left_control"]
-                  }
-                ]
-              }
-            ]
           }
         ]
       }
