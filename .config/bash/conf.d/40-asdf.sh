@@ -2,6 +2,7 @@
 
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
+source "$BASHRC_D"/completions/asdf
 
 _asdf-setup() {
   ASDF_PLUGINS=$(cut -d" " -f1 < ~/.tool-versions | sort);

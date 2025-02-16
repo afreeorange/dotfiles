@@ -11,9 +11,6 @@ if [[ $(uname) == "Darwin" ]]; then
     [[ -f ~/.fzf.git.bash ]] && source ~/.fzf.git.bash
 fi
 
-# asdf is cool too
-source "$BASHRC_D"/completions/asdf
-
 # shellcheck source=/dev/null
 if [[ $(uname) == "Linux" ]]; then
     [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
