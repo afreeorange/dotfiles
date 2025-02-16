@@ -1,20 +1,7 @@
 #!/bin/bash
 
-if [[ $(uname -s) == "Darwin" ]]; then
-    # shellcheck source=/dev/null
-    source "$(brew --prefix asdf)/libexec/asdf.sh"
-
-    # shellcheck source=/dev/null
-    source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
-
-elif [[ $(uname -s) == "Linux" ]]; then
-    # shellcheck source=/dev/null
-    source "$HOME/.asdf/asdf.sh"
-
-    # shellcheck source=/dev/null
-    source "$HOME/.asdf/completions/asdf.bash"
-
-fi
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 _asdf-setup() {
   ASDF_PLUGINS=$(cut -d" " -f1 < ~/.tool-versions | sort);
@@ -28,3 +15,4 @@ _asdf-setup() {
   asdf install
   popd || exit
 }
+
