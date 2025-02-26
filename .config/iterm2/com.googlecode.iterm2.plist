@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
+	<key>ClickToSelectCommand</key>
+	<true/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>Custom Color Presets</key>
