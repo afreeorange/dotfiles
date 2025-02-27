@@ -1,3 +1,9 @@
+# To migrate existing files based on this manifest (of sorts):
+#
+#   git lfs install
+#   git lfs migrate import --everything --include="*.bmp,*.gif,*.jpeg,*.jpg,*.png,*.tiff,*.webp,*.aac,*.flac,*.mp3,*.wav,*.avi,*.mkv,*.mov,*.mp4,*.doc,*.docx,*.pdf,*.ppt,*.pptx,*.zip,*.tar,*.gz,*.rar,*.woff,*.woff2,*.eot,*.exe,*.dll,*.bin,*.iso"
+#
+
 # Image files
 *.bmp filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
@@ -32,8 +38,15 @@
 *.gz filter=lfs diff=lfs merge=lfs -text
 *.rar filter=lfs diff=lfs merge=lfs -text
 
+# Font files
+*.woff filter=lfs diff=lfs merge=lfs -text
+*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.eot filter=lfs diff=lfs merge=lfs -text
+
 # Other binary files
 *.exe filter=lfs diff=lfs merge=lfs -text
 *.dll filter=lfs diff=lfs merge=lfs -text
 *.bin filter=lfs diff=lfs merge=lfs -text
 *.iso filter=lfs diff=lfs merge=lfs -text
+
+
