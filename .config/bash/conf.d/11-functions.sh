@@ -20,7 +20,7 @@ dataurl() {
 }
 
 s3_bucket_size() {
-  aws s3 ls --summarize --human-readable --recursive "$1"
+    aws s3 ls --summarize --human-readable --recursive "$1"
 }
 
 hs() {
@@ -36,5 +36,10 @@ hs() {
     echo "http://127.0.0.1:8080"
     echo "─────────────────────────────────────────────────────────────────"
 
-    caddy file-server -b -l 127.0.0.1:8080 -r "$WORKING_DIR"
+    caddy file-server \
+        --access-log \
+        --browse \
+        --reveal-symlinks \
+        --listen 127.0.0.1:8080 \
+        --root "$WORKING_DIR"
 }
