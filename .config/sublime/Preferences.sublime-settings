@@ -11,7 +11,7 @@
   "scroll_past_end": true,
 
   /** --- Behaviour -- */
-  "index_files": false,
+  "index_files": true,
   "remember_open_files": true,
   "translate_tabs_to_spaces": true,
   "update_check": false,
