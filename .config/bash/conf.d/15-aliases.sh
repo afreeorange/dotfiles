@@ -74,8 +74,8 @@ if [[ $(uname) == "Darwin" ]]; then
     # Brew
     alias bru="brew cleanup && brew update && brew upgrade"
 
-    # I use this a lot
     alias o="open"
+    # alias ls="lsd"
 fi
 
 # Enterprise Engine white noise generator :D Need "sox" on OS X
