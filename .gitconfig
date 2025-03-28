@@ -27,5 +27,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	email = 1223767+afreeorange@users.noreply.github.com
