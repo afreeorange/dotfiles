@@ -8,12 +8,12 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 # Bash History
-export HISTCONTROL="ignoreboth:erasedups"
-export HISTIGNORE="&:ls:[bf]g:exit:pwd:clear:mount:umount:history"
-export HISTSIZE=2000 # How many will be stored in memory
-export HISTFILESIZE=100000 # How many will be stored on disk
 export HISTTIMEFORMAT="%F %T "
-export PROMPT_COMMAND="history -a; history -n" # Append to history immediately and not at the end of a session
+export HISTCONTROL=ignoreboth:erasedups # Ignore commands with a space AND duplicate commands (ignorespace + ignoredups)
+export HISTIGNORE="&:ls:[bf]g:exit:pwd:clear:mount:umount:history"
+export HISTSIZE=5000 # How many will be stored in memory
+export HISTFILESIZE=100000 # How many will be stored on disk
+export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND" # Append to history immediately and not at the end of a session
 
 # Path. Use the Homebrew path if macOS. Note: the /opt/homebrew path might just
 # be an Apple Silicon thing...
