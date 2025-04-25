@@ -19,12 +19,10 @@ if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
 fi
-alias note="worklog"
 alias vnc_tunnel="ssh -p 3689 -L 5901:127.0.0.1:5901 -N -f -l nikhil 10.212.8.10"
 alias ora="ssh nikhil@10.212.8.10 -p 3689"
 alias p="pnpm"
 alias y="yadm"
-alias dt="deno task"
 
 # Locations
 alias co="cd \$HOME/code"

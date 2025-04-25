@@ -25,4 +25,5 @@ vim.g.markdown_fenced_languages = {
 }
 
 -- Set the color scheme here. It's a bit messy doing this via Lazy.vim
-pcall(vim.cmd.colorscheme, 'tokyonight-storm')
+-- pcall(vim.cmd.colorscheme, 'tokyonight-night')
+pcall(vim.cmd.colorscheme, 'gruvbox')
