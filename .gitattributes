@@ -8,6 +8,10 @@
 #
 #   git lfs migrate import --no-rewrite path/to/file
 #
+# If the files are corrupted, run
+#
+#   git lfs checkout
+#
 
 # Image files
 *.bmp filter=lfs diff=lfs merge=lfs -text
