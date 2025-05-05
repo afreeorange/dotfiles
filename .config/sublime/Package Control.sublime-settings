@@ -6,6 +6,7 @@
 	],
 	"installed_packages":
 	[
+		"AutoSpell",
 		"ayu",
 		"EditorConfig",
 		"Git",
