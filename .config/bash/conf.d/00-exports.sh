@@ -43,5 +43,7 @@ export AWS_DEFAULT_REGION="us-east-1"
 # Homebrew
 if [[ $(uname) == "Darwin" ]]; then
     export HOMEBREW_NO_ENV_HINTS=1
+    export HOMEBREW_NO_ANALYTICS=1
+    export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
