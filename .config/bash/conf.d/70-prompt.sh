@@ -103,4 +103,3 @@ $PS_SYMBOL "
 
 # export PS1="${GREEN}\u${STOP} \$(__prompt)
 # $PS_SYMBOL "
-
