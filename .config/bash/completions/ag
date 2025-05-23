@@ -4,7 +4,7 @@ _ag() {
 
   COMPREPLY=()
   cur=$(_get_cword "=")
-  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  prev="${COMP_WORDS[COMP_CWORD - 1]}"
 
   _expand || return 0
 
@@ -93,43 +93,48 @@ _ag() {
     -V -w -z
   '
 
-  types=$(ag --list-file-types |grep -- '--')
+  types=$(ag --list-file-types | grep -- '--')
 
   # these options require an argument
-  if [[ "${prev}" == -[ABCGgm] ]] ; then
+  if [[ "${prev}" == -[ABCGgm] ]]; then
     return 0
   fi
 
   _split_longopt && split=true
 
   case "${prev}" in
-    --ignore-dir) # directory completion
-              _filedir -d
-              return 0;;
-    --path-to-agignore) # file completion
-              _filedir
-              return 0;;
-    --pager) # command completion
-              COMPREPLY=( $(compgen -c -- "${cur}") )
-              return 0;;
-    --ackmate-dir-filter|--after|--before|--color-*|--context|--depth\
-    |--file-search-regex|--ignore|--max-count|--workers)
-              return 0;;
+  --ignore-dir) # directory completion
+    _filedir -d
+    return 0
+    ;;
+  --path-to-agignore) # file completion
+    _filedir
+    return 0
+    ;;
+  --pager) # command completion
+    COMPREPLY=($(compgen -c -- "${cur}"))
+    return 0
+    ;;
+  --ackmate-dir-filter | --after | --before | --color-* | --context | --depth | --file-search-regex | --ignore | --max-count | --workers)
+    return 0
+    ;;
   esac
 
   $split && return 0
 
   case "${cur}" in
-    -*)
-          COMPREPLY=( $(compgen -W \
-            "${lngopt} ${shtopt} ${types}" -- "${cur}") )
-          return 0;;
-    *)
-          _filedir
-          return 0;;
+  -*)
+    COMPREPLY=($(compgen -W \
+      "${lngopt} ${shtopt} ${types}" -- "${cur}"))
+    return 0
+    ;;
+  *)
+    _filedir
+    return 0
+    ;;
   esac
 } &&
 
-# shellcheck disable=SC2086
-# shellcheck disable=SC2154,SC2086
-complete -F _ag ${nospace} ag
+  # shellcheck disable=SC2086
+  # shellcheck disable=SC2154,SC2086
+  complete -F _ag ${nospace} ag
