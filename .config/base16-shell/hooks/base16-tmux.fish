@@ -13,12 +13,16 @@ if test -z "$BASE16_SHELL_TMUXCONF_PATH"
 end
 
 if test -z "$BASE16_TMUX_PLUGIN_PATH"
-  set -g BASE16_TMUX_PLUGIN_PATH "$HOME/.tmux/plugins/base16-tmux"
+  if test -n "$XDG_CONFIG_HOME"
+    set -g BASE16_TMUX_PLUGIN_PATH "$XDG_CONFIG_HOME/tmux/plugins/base16-tmux"
+  else
+    set -g BASE16_TMUX_PLUGIN_PATH "$HOME/.tmux/plugins/base16-tmux"
+  end
 end
 
 # If base16-tmux path directory doesn't exist, stop hook
 if not test -d $BASE16_TMUX_PLUGIN_PATH
-  exit 2
+  return 2
 end
 
 # ----------------------------------------------------------------------
@@ -26,9 +30,9 @@ end
 # ----------------------------------------------------------------------
 
 # If base16-tmux is used, provide a file for base16-tmux to source
-if test -d "$BASE16_TMUX_PLUGIN_PATH"
+if test -d "$BASE16_TMUX_PLUGIN_PATH"; and command -v 'tmux' > /dev/null
   # Set current theme name
-  read current_theme_name < "$BASE16_SHELL_THEME_NAME_PATH"
+  set current_theme_name (cat "$BASE16_SHELL_THEME_NAME_PATH")
 
   echo "set -g @colors-base16 '$current_theme_name'" > \
     "$BASE16_SHELL_TMUXCONF_PATH"

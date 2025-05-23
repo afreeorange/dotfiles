@@ -13,7 +13,11 @@ if [ -z "$BASE16_SHELL_TMUXCONF_PATH" ]; then
 fi
 
 if [ -z "$BASE16_TMUX_PLUGIN_PATH" ]; then
-  BASE16_TMUX_PLUGIN_PATH="$HOME/.tmux/plugins/base16-tmux"
+  if [ -d "$XDG_CONFIG_HOME/tmux" ]; then
+    BASE16_TMUX_PLUGIN_PATH="$XDG_CONFIG_HOME/tmux/plugins/base16-tmux"
+  else
+    BASE16_TMUX_PLUGIN_PATH="$HOME/.tmux/plugins/base16-tmux"
+  fi
 fi
 
 # If base16-tmux path directory doesn't exist, stop hook
@@ -26,7 +30,7 @@ fi
 # ----------------------------------------------------------------------
 
 # If base16-tmux is used, provide a file for base16-tmux to source
-if [ -d "$BASE16_TMUX_PLUGIN_PATH" ]; then 
+if [[ -d "$BASE16_TMUX_PLUGIN_PATH" && "$(command -v 'tmux')" ]]; then
   # Set current theme name
   read current_theme_name < "$BASE16_SHELL_THEME_NAME_PATH"
 
