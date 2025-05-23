@@ -21,6 +21,14 @@ In `.bin` or in the [elaborate bash configuration](https://github.com/afreeorang
 
 ## Other Notes
 
+### Setting a 'global' version in `asdf`
+
+Because of [this bullshit](https://asdf-vm.com/guide/upgrading-to-v0-16.html#asdf-global-and-asdf-local-commands-have-been-replaced-with-asdf-set).
+
+```bash
+asdf set -u pnpm 9.12.1
+```
+
 ### Karabiner
 
 If you need <kbd>ctrl</kbd>+<kbd>`</kbd> in VSCode to dismiss the search panel,

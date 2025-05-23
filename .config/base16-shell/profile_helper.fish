@@ -4,22 +4,26 @@
 # Setup variables and env
 # ----------------------------------------------------------------------
 
-# Allow users to optionally configure where their base16-shell config is
+# Allow users to optionally configure where their tinted-shell config is
 # stored by specifying BASE16_CONFIG_PATH before loading this script
-if test -z $BASE16_CONFIG_PATH
-  set BASE16_CONFIG_PATH "$HOME/.config/tinted-theming"
+if test -z "$BASE16_CONFIG_PATH"
+  if test -n "$XDG_CONFIG_HOME"
+    set -g BASE16_CONFIG_PATH "$XDG_CONFIG_HOME/tinted-theming"
+  else
+    set -g BASE16_CONFIG_PATH "$HOME/.config/tinted-theming"
+  end
 end
-set BASE16_SHELL_COLORSCHEME_PATH \
+set -g BASE16_SHELL_COLORSCHEME_PATH \
   "$BASE16_CONFIG_PATH/base16_shell_theme"
 # Store the theme name in a file so we aren't reliant on environment
 # variables to store this value alone since it can be inaccurate when
 # using session managers such as TMUX
-set BASE16_SHELL_THEME_NAME_PATH "$BASE16_CONFIG_PATH/theme_name" 
+set -g BASE16_SHELL_THEME_NAME_PATH "$BASE16_CONFIG_PATH/theme_name" 
 
-# Allow users to optionally configure their base16-shell path and set
+# Allow users to optionally configure their tinted-shell path and set
 # the value if one doesn't exist
-if test -z $BASE16_SHELL_PATH
-  set -g BASE16_SHELL_PATH (cd (dirname (status -f)); and pwd)
+if test -z "$BASE16_SHELL_PATH"
+  set -g BASE16_SHELL_PATH (realpath (dirname (status -f)))
 end
 
 # If the user hasn't specified a hooks dir path or it is invalid, use
@@ -45,13 +49,13 @@ end
 function set_theme
   set theme_name $argv[1]
 
-  if not test -e $BASE16_CONFIG_PATH
+  if not test -e "$BASE16_CONFIG_PATH"
     echo "\$BASE16_CONFIG_PATH doesn't exist. Try sourcing this script \
       and then try again"
     return 2
   end
 
-  if test -z $theme_name
+  if test -z "$theme_name"
     echo "Provide a theme name to set_theme or ensure \
       \$BASE16_THEME_DEFAULT is set"
     return 1
@@ -62,7 +66,7 @@ function set_theme
   end
 
   # Symlink and source
-  ln -fs \
+  command ln -fs \
     "$BASE16_SHELL_PATH/scripts/base16-$theme_name.sh" \
     "$BASE16_SHELL_COLORSCHEME_PATH"
   if not test -e "$BASE16_SHELL_COLORSCHEME_PATH"
@@ -76,7 +80,7 @@ function set_theme
     sh $BASE16_SHELL_COLORSCHEME_PATH
 
     # Env variables aren't globally set when bash shell is sourced
-    set -g BASE16_THEME "$theme_name"
+    set -gx BASE16_THEME "$theme_name"
   end
 
   if test -d "$BASE16_SHELL_HOOKS_PATH"; \
@@ -99,10 +103,13 @@ alias reset "command reset \
 # Set base16-* aliases
 for script_path in $BASE16_SHELL_PATH/scripts/*.sh
   set function_name (basename $script_path .sh)
-  set theme_name (string replace -a 'base16-' '' $function_name) 
+  set theme_name (string replace -a 'base16-' '' $function_name)
 
   alias $function_name="set_theme \"$theme_name\""
 end
+
+# unset loop variables to not leak to user's shell
+set -e script_path function_name theme_name
 
 # If $BASE16_THEME is set, this has already been loaded. This guards
 # against a bug where this script is sourced two or more times.

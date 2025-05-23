@@ -9,19 +9,23 @@
 # so it's important to check for previously set values.
 
 if test -z "$BASE16_FZF_PATH"
-  set -g BASE16_FZF_PATH "$HOME/.config/base16-fzf"
+  if test -n "$XDG_CONFIG_HOME"
+    set -g BASE16_FZF_PATH "$XDG_CONFIG_HOME/tinted-theming/base16-fzf"
+  else
+    set -g BASE16_FZF_PATH "$HOME/.config/tinted-theming/base16-fzf"
+  end
 end
 
 # If BASE16_FZF_PATH doesn't exist, stop hook
 if not test -d "$BASE16_FZF_PATH"
-  exit 2
+  return 2
 end
 
 # ----------------------------------------------------------------------
 # Execution
 # ----------------------------------------------------------------------
 
-read current_theme_name < "$BASE16_SHELL_THEME_NAME_PATH"
+set current_theme_name (cat "$BASE16_SHELL_THEME_NAME_PATH")
 
 # If base16-fzf is used, provide a file for base16-fzf to source
 if test -e "$BASE16_FZF_PATH/fish/base16-$current_theme_name.fish"

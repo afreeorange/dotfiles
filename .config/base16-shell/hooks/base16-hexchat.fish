@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 # ----------------------------------------------------------------------
 # Setup config variables and env
@@ -9,29 +9,33 @@
 # switched so it's important to check for previously set values.
 
 if test -z "$BASE16_HEXCHAT_PATH"
-  set BASE16_HEXCHAT_PATH "$HOME/.config/base16-hexchat"
+  if test -n "$XDG_CONFIG_HOME"
+    set -g BASE16_HEXCHAT_PATH "$XDG_CONFIG_HOME/tinted-theming/base16-hexchat"
+  else
+    set -g BASE16_HEXCHAT_PATH "$HOME/.config/tinted-theming/base16-hexchat"
+  end
 end
 
 # If BASE16_HEXCHAT_PATH doesn't exist, stop hook
 if not test -d "$BASE16_HEXCHAT_PATH"
-  exit 2
+  return 2
 end
 
-# If HEXCHAT_COLORS_CONF_PATH hasn't been configured, stop hook
-if test -z "$HEXCHAT_COLORS_CONF_PATH"
-  exit 1
+# If BASE16_HEXCHAT_COLORS_CONF_PATH hasn't been configured, stop hook
+if test -z "$BASE16_HEXCHAT_COLORS_CONF_PATH"
+  return 1
 end
 
-# If HEXCHAT_COLORS_CONF_PATH has been configured, but the file doesn't
+# If BASE16_HEXCHAT_COLORS_CONF_PATH has been configured, but the file doesn't
 # exist
-if test -n "$HEXCHAT_COLORS_CONF_PATH"; \
-  and not test -f "$HEXCHAT_COLORS_CONF_PATH"
-  echo "\$HEXCHAT_COLORS_CONF_PATH is not a file."
-  exit 2
+if test -n "$BASE16_HEXCHAT_COLORS_CONF_PATH"; \
+  and not test -f "$BASE16_HEXCHAT_COLORS_CONF_PATH"
+  echo "\$BASE16_HEXCHAT_COLORS_CONF_PATH is not a file."
+  return 2
 end
 
 # Set current theme name
-read current_theme_name < "$BASE16_SHELL_THEME_NAME_PATH"
+set current_theme_name (cat "$BASE16_SHELL_THEME_NAME_PATH")
 
 set hexchat_theme_path "$BASE16_HEXCHAT_PATH/colors/base16-$current_theme_name.conf"
 
@@ -43,11 +47,11 @@ if not test -f "$hexchat_theme_path"
 
   echo $output
 
-  exit 2
+  return 2
 end
 
 # ----------------------------------------------------------------------
 # Execution
 # ----------------------------------------------------------------------
 
-cp -f "$hexchat_theme_path" "$HEXCHAT_COLORS_CONF_PATH"
+cp -f "$hexchat_theme_path" "$BASE16_HEXCHAT_COLORS_CONF_PATH"
