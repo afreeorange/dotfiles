@@ -62,8 +62,9 @@ export STOP
 export CLICOLOR=1 # This is so macOS behaves
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 
-# shellcheck disable=SC1091
-source "$HOME/.config/base16-shell/base16-shell.plugin.bash" >/dev/null 2>&1
+# Base16 <3 <3 <3
+# https://github.com/tinted-theming/base16-shell
+source "$HOME/.config/base16-shell/base16-shell.plugin.bash"
 
 # Only do this if in interactive mode. According to the bash `man` page,
 # $- includes "i" if the shell is started in interactive mode.
