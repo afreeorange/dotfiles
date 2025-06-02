@@ -62,18 +62,20 @@ export STOP
 export CLICOLOR=1 # This is so macOS behaves
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 
-# Base16 <3 <3 <3
-# https://github.com/tinted-theming/base16-shell
-source_if_exists "$HOME/.config/base16-shell/base16-shell.plugin.bash"
+# shellcheck disable=SC1091
+source "$HOME/.config/base16-shell/base16-shell.plugin.bash" >/dev/null 2>&1
 
 # Only do this if in interactive mode. According to the bash `man` page,
 # $- includes "i" if the shell is started in interactive mode.
 if [[ $- == *i* ]]; then
+    # Base16 <3 <3 <3
+    # https://github.com/tinted-theming/base16-shell
+
     # Shell theme <3
-    #base16_ayu-dark
-    base16_gruvbox-dark-hard
-    #base16_tokyodark
-    #base16_tokyo-night-storm
+    base16_ayu-dark
+    # base16_gruvbox-dark-hard
+    # base16_tokyodark
+    # base16_tokyo-night-storm
 
     # The generic colorizer
     # https://github.com/garabik/grc

@@ -6,8 +6,9 @@ source "$HOME/.config/bash/conf.d/20-colors.sh"
 # ----------
 
 MAJOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f1)
-MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
-MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
+# MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
+MACOS_VERSION="${MAJOR_MACOS_VERSION}"
+# MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
 
 # ----------
 

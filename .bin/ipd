@@ -64,8 +64,9 @@ function install_homebrew() {
     }
 
     MAJOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f1)
-    MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
-    MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
+    # MINOR_MACOS_VERSION=$(sw_vers -productVersion | cut -d"." -f2)
+    MACOS_VERSION="${MAJOR_MACOS_VERSION}"
+    # MACOS_VERSION="${MAJOR_MACOS_VERSION}.${MINOR_MACOS_VERSION}"
 
     echo "${YELLOW}→ Homebrew - macOS ${MACOS_VERSION}${STOP}"
 
