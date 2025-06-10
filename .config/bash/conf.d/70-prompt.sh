@@ -14,7 +14,7 @@ function __prompt_basic() {
     if [[ $PWD == "$HOME" ]]; then
         echo -n "$YELLOW""is home ♥️""$STOP"
     else
-        echo -n "in $YELLOW""$(basename "$PWD")""$STOP"
+        echo -n "$YELLOW""in $(basename "$PWD")""$STOP"
     fi
 }
 
