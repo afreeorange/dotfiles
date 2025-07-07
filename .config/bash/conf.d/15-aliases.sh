@@ -13,6 +13,7 @@ alias life="code \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Life.md"
 alias scratch="code \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
+alias col="cd \$HOME/Programming/columbia-notes"
 alias wik="cd \$HOME/Programming/wiki.nikhil.io.articles"
 alias wiki="cd \$HOME/Programming/wiki.nikhil.io.articles"
 if [[ $(uname) == "Darwin" ]]; then
