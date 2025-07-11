@@ -1,7 +1,7 @@
 nodejs 23.11.0
 python 3.11.1
 deno 2.0.0
-golang 1.19.4
+golang 1.24.4
 rust 1.86.0
 php 8.2.6
 pnpm 9.12.1
