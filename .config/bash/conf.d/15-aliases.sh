@@ -25,6 +25,7 @@ alias ora="ssh nikhil@10.212.8.10 -p 3689"
 alias p="pnpm"
 alias y="yadm"
 alias m='navidrome --musicfolder="$HOME/Music/Library/" --datafolder="$HOME/Music/Navidrome/" --nobanner'
+alias ydlp='yt-dlp -f bestvideo+bestaudio --merge-output-format mp4'
 
 # Locations
 alias co="cd \$HOME/code"
