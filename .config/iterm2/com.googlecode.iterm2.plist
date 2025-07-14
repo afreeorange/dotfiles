@@ -262,8 +262,6 @@
 			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
-			<key>Animate Movement</key>
-			<true/>
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1106,7 +1104,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>GoogleSansCodeNF-Regular 18</string>
+			<string>BlexMonoNFM 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
