@@ -21,12 +21,34 @@ In `.bin` or in the [elaborate bash configuration](https://github.com/afreeorang
 
 ## Other Notes
 
-### Setting a 'global' version in `asdf`
+### Version Manager
 
-Because of [this bullshit](https://asdf-vm.com/guide/upgrading-to-v0-16.html#asdf-global-and-asdf-local-commands-have-been-replaced-with-asdf-set).
+Migrated to `mise` after using `asdf` [because of this](https://asdf-vm.com/guide/upgrading-to-v0-16.html#asdf-global-and-asdf-local-commands-have-been-replaced-with-asdf-set) design choice. It's much cleaner and simple. I like global installs.
 
 ```bash
-asdf set -u pnpm 9.12.1
+# List all installable things (searchable interface!)
+mise use
+
+# List versions of installable stuff
+mise ls-remote node
+
+# Install a specific thing
+mise i node@20
+
+# Make a specific thing global (will download if not present)
+mise use --global node@24
+
+# List installed things
+mise ls
+
+# Upgrade all tools
+mise up --bump
+
+# Clean things
+mise prune
+
+# Install stuff in .tool-versions
+mise i
 ```
 
 ### Karabiner
@@ -34,26 +56,26 @@ asdf set -u pnpm 9.12.1
 If you need <kbd>ctrl</kbd>+<kbd>`</kbd> in VSCode to dismiss the search panel,
 
 ```json
-  {
-    "description": "Map (Left Control + Left Command + Esc) to (Ctrl + `) for VSCode",
-    "manipulators": [
-      {
-        "type": "basic",
-        "from": {
-          "key_code": "escape",
-          "modifiers": {
-            "mandatory": ["left_control", "left_command"]
-          }
-        },
-        "to": [
-          {
-            "key_code": "grave_accent_and_tilde",
-            "modifiers": ["left_control"]
-          }
-        ]
-      }
-    ]
-  }
+{
+  "description": "Map (Left Control + Left Command + Esc) to (Ctrl + `) for VSCode",
+  "manipulators": [
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "escape",
+        "modifiers": {
+          "mandatory": ["left_control", "left_command"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "grave_accent_and_tilde",
+          "modifiers": ["left_control"]
+        }
+      ]
+    }
+  ]
+}
 ```
 
 Not adding this since <kbd>cmd</kbd>+<kbd>j</kbd> works just fine.
