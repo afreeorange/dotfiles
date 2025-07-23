@@ -13,6 +13,7 @@
 		"gruvbox",
 		"JsPrettier",
 		"LSP",
+		"LSP-rust-analyzer",
 		"LSP-terraform",
 		"LSP-typescript",
 		"MarkdownEditing",
