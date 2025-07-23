@@ -7,13 +7,32 @@ if [[ $(uname) == "Darwin" ]]; then
     export LANG="en_US.UTF-8"
 fi
 
+## 1. Store 100,000 commands in history
+#HISTSIZE=100000
+#HISTFILESIZE=100000
+#
+## 2. Erase subsequent duplicate commands in history (do not store duplicates next to each other)
+#HISTCONTROL=erasedups:ignoredups
+#
+## 3. Ignore specific commands in history (ls, bg, fg, history, pwd, clear)
+#HISTIGNORE="ls:bg:fg:history:pwd:clear"
+#
+## 4. Append to the history file, don’t overwrite it
+#shopt -s histappend
+#
+## 5. Immediately sync history between sessions
+#PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # Bash History
 export HISTTIMEFORMAT="%F %T "
-export HISTCONTROL=ignoreboth:erasedups # Ignore commands with a space AND duplicate commands (ignorespace + ignoredups)
-export HISTIGNORE="&:ls:[bf]g:exit:pwd:clear:mount:umount:history"
-export HISTSIZE=5000 # How many will be stored in memory
-export HISTFILESIZE=100000 # How many will be stored on disk
-export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND" # Append to history immediately and not at the end of a session
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export HISTCONTROL=erasedups:ignoredups
+export HISTIGNORE="ls:bg:fg:history:pwd:clear:exit"
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+#export HISTIGNORE="&:ls:[bf]g:exit:pwd:clear:mount:umount:history"
+#export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND" # Append to history immediately and not at the end of a session
 
 # Path. Use the Homebrew path if macOS. Note: the /opt/homebrew path might just
 # be an Apple Silicon thing...
