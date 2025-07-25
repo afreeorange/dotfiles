@@ -18,10 +18,14 @@ fi
 
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then
+        # Contains completions that are installed by a package.
         # shellcheck source=/dev/null
-        source "$(brew --prefix)/etc/bash_completion"
+        source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+        BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+        export BASH_COMPLETION_COMPAT_DIR
     fi
 
+    # All my custom/manually-installed completions.
     command -v complete >>/dev/null 2>&1 && {
         for COMPLETION in "$BASHRC_D"/completions/*; do
             if  [[ $COMPLETION != *"asdf"* ]]; then
@@ -33,14 +37,6 @@ function _complete() {
 
         command -v aws_completer >/dev/null 2>&1 && complete -C aws_completer aws
         command -v terraform >/dev/null 2>&1 && complete -C terraform terraform
-    }
-
-    # pnpm
-    [[ -f ~/.config/tabtab/bash/__tabtab.bash ]] && . ~/.config/tabtab/bash/__tabtab.bash || true
-
-    # Pipx is special
-    command -v pipx >>/dev/null 2>&1 && {
-        eval "$(register-python-argcomplete pipx)"
     }
 }
 

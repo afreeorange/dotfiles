@@ -15,6 +15,35 @@ yadm bootstrap
 hose-yadm
 ```
 
+## Bash (and Completions) on macOS
+
+You need to use the Homebrew `bash` (v5) else you will get errors with `bash-completion`.
+
+```bash
+# Contains a list of approved shells. You'll need to add
+# the Homebrew one here.
+more /etc/shells
+
+# Install the necessary
+brew install bash bash-completion@2
+
+# Add to list of shells
+echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
+
+# Change your shell
+chsh -s "$(brew --prefix)/bin/bash"
+```
+
+Now add these wherever
+
+```bash
+source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+```
+
+[Find more completions here](https://github.com/scop/bash-completion/tree/51b009f6a653c66454816e9bc869c40f61329764/completions). Run `_complete` or `_c` to load completions (they delay session startup time a _lot_).
+
+Bash setup was inspired by [this](https://write.as/bpsylevc6lliaspe.md) and [this](https://lobste.rs/s/r1tpld/your_bashrc_doesn_t_have_be_mess).
+
 ## Some Executables
 
 In `.bin` or in the [elaborate bash configuration](https://github.com/afreeorange/dotfiles/tree/master/.config/bash)
@@ -79,3 +108,10 @@ If you need <kbd>ctrl</kbd>+<kbd>`</kbd> in VSCode to dismiss the search panel,
 ```
 
 Not adding this since <kbd>cmd</kbd>+<kbd>j</kbd> works just fine.
+
+## References
+
+* [More git info](https://github.com/riobard/bash-powerline/blob/master/bash-powerline.sh)
+* [Unicode Symbols](https://tutorialzine.com/2014/12/you-dont-need-icons-here-are-100-unicode-symbols-that-you-can-use) - ⑂ 𣎴 ౻ ✎
+* [Customize fzf colors](https://minsw.github.io/fzf-color-picker/)
+* [Bash cheatsheet](https://devhints.io/bash)
