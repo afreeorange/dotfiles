@@ -90,7 +90,7 @@ function __prompt() {
     __prompt_last_exit_code $EXIT_CODE
 }
 
-## Spit out a random excuse <3
+# Spit out a random excuse <3
 command -v cowsay >/dev/null 2>&1 && {
     # shellcheck source=/dev/null
     random_excuse | cowsay -s
