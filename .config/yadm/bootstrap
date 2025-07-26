@@ -15,21 +15,16 @@ for PREREQ in "${PREREQS[@]}"; do
 done
 
 # Pull in case we're re-running this on a bootstrapped system
-yadm pull
+yadm pull --force --strategy-option=theirs
 
 # ========== LINUX ==========
 
 if [[ "$(uname -s)" == "Linux" ]]; then
-  echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
+  echo "${CYAN}✔︎ Installing mise as the runtime manager${STOP}"
+  curl https://mise.run | sh
+  export PATH="$HOME/.local/bin:$PATH"
   # shellcheck source=/dev/null
-  source "$HOME/.asdf/asdf.sh"
-  # shellcheck source=/dev/null
-  source "$HOME/.asdf/completions/asdf.bash"
-
-  sudo apt -y install \
-    tmux \
-    neovim
+  eval "$(mise activate bash)"
 fi
 
 # ========== MACOS ==========
@@ -44,12 +39,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 
   # ----------
 
-  echo "${CYAN}✔︎ Installing asdf as the runtime manager${STOP}"
-  brew install asdf
+  echo "${CYAN}✔︎ Installing mise as the runtime manager${STOP}"
+  brew install mise
   # shellcheck source=/dev/null
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
-  # shellcheck source=/dev/null
-  source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
+  eval "$(mise activate bash)"
 
   # ----------
 
@@ -114,16 +107,10 @@ if [[ -f "$HOME/.config/yadm/encrypt" ]]; then
   echo "${YELLOW}👉 Make sure you run 'yadm decrypt' for encrypted files!"
 fi
 
-# Install asdf stuff
-echo "${CYAN}✔︎ Installing asdf runtimes...${STOP}"
-RUNTIMES=(python nodejs deno golang rust)
-for RUNTIME in "${RUNTIMES[@]}"; do
-  asdf plugin add "$RUNTIME"
-  asdf install "$RUNTIME" latest
-  asdf global "$RUNTIME" latest
-done
+# Install mise stuff
+echo "${CYAN}✔︎ Installing mise runtimes...${STOP}"
+mise install
 
 echo "${YELLOW}Running 'ipd' to install platform dependencies...${STOP}"
 "$HOME/.bin/ipd"
 echo "${GREEN}Done${STOP}"
-
