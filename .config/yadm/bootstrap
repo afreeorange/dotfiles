@@ -3,7 +3,7 @@
 # Bootstraps both macOS and Linux (Ubuntu).
 
 # shellcheck source=/dev/null
-source "$HOME/.config/bash/colors"
+source "$HOME/.config/bash/conf.d/20-colors.sh"
 
 # Some pre-flight checks...
 PREREQS=(yadm curl git)
@@ -111,6 +111,6 @@ fi
 echo "${CYAN}✔︎ Installing mise runtimes...${STOP}"
 mise install
 
-echo "${YELLOW}Running 'ipd' to install platform dependencies...${STOP}"
-"$HOME/.bin/ipd"
-echo "${GREEN}Done${STOP}"
+# echo "${YELLOW}Running 'ipd' to install platform dependencies...${STOP}"
+# "$HOME/.bin/ipd"
+# echo "${GREEN}Done${STOP}"
