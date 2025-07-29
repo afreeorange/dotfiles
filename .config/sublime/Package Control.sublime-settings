@@ -16,6 +16,7 @@
 		"LSP-rust-analyzer",
 		"LSP-terraform",
 		"LSP-typescript",
+		"LSP-yaml",
 		"MarkdownEditing",
 		"Package Control",
 		"rainbow_csv",
