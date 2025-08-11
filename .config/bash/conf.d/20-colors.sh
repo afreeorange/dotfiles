@@ -73,8 +73,8 @@ if [[ $- == *i* ]]; then
     # https://github.com/tinted-theming/base16-shell
 
     # Shell theme <3
-    # base16_ayu-dark
-    base16_gruvbox-dark-hard
+    base16_ayu-dark
+    # base16_gruvbox-dark-hard
     # base16_tokyodark
     # base16_tokyo-night-storm
 
