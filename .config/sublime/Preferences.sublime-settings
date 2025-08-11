@@ -1,7 +1,7 @@
 {
   /** --- Look and feel --- */
   "font_face": "BlexMono Nerd Font Mono",
-  "font_size": 17,
+  "font_size": 16,
   "highlight_line": true,
   "highlight_modified_tabs": true,
   "ignored_packages": ["Vintage",
@@ -20,4 +20,7 @@
   /** --- Package Settings --- */
   "WrapPlus.wrap_width": 79,
   "mde.auto_fold_link.enabled": false,
+  "in_process_packages":
+  [
+  ],
 }
