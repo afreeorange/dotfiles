@@ -2,6 +2,7 @@ local Plugins = {
   -- Themes
   -- ==========================================================================
   { "ellisonleao/gruvbox.nvim" },
+  { "chriskempson/base16-vim" },
   { "Shatur/neovim-ayu" },
   { "folke/tokyonight.nvim",
     opts = {
