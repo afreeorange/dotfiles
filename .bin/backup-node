@@ -22,8 +22,8 @@ OUTPUT_FILE_BROAD="$HOME/.platform-dependencies/node"
 #     exit
 # fi
 
-echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
-echo "Writing ${CYAN}${OUTPUT_FILE_BROAD}${STOP}"
+echo "Writing ${YELLOW}${OUTPUT_FILE}${STOP}"
+echo "Writing ${YELLOW}${OUTPUT_FILE_BROAD}${STOP}"
 
 # `truncate` not found on fucking macOS
 echo "" >"$OUTPUT_FILE"

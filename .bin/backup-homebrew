@@ -17,8 +17,8 @@ OUTPUT_FILE_BROAD="${HOME}/.platform-dependencies/macos"
 
 # ----------
 
-echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
-echo "${CYAN}✔︎  Backing up Brewfile to ${OUTPUT_FILE_BROAD}${STOP}"
+echo "${GREEN}✔︎  Backing up Brewfile to ${OUTPUT_FILE}${STOP}"
+echo "${GREEN}✔︎  Backing up Brewfile to ${OUTPUT_FILE_BROAD}${STOP}"
 
 brew bundle dump \
   --file="${HOME}/.platform-dependencies/macos-${MACOS_VERSION}" \

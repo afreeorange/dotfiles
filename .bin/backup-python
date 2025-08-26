@@ -33,8 +33,8 @@ command -v pip &>/dev/null || {
 echo "" >"$OUTPUT_FILE"
 
 # Finally write dependencies
-echo "Writing ${CYAN}${OUTPUT_FILE}${STOP}"
-echo "Writing ${CYAN}${OUTPUT_FILE_BROAD}${STOP}"
+echo "Writing ${YELLOW}${OUTPUT_FILE}${STOP}"
+echo "Writing ${YELLOW}${OUTPUT_FILE_BROAD}${STOP}"
 
 DEPENDENCIES="$(pip freeze)"
 echo "$DEPENDENCIES" >"$OUTPUT_FILE"
