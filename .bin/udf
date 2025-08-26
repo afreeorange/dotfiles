@@ -21,9 +21,11 @@ source "$HOME/.config/bash/conf.d/20-colors.sh"
 # ----------
 
 echo "${CYAN}✔︎  Backing up dependencies${STOP}"
+echo "${CYAN}$(draw_line '═')${STOP}"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   echo "${YELLOW}+  HomeBrew${STOP}"
+  echo "${YELLOW}$(draw_line '─')${STOP}"
   "$HOME/.bin/backup-homebrew"
 fi
 
@@ -43,6 +45,7 @@ yadm add -f "$HOME/.platform-dependencies/*"
 # ----------
 
 echo "${CYAN}✔︎  Attempting pull from Github${STOP}"
+echo "${CYAN}$(draw_line '═')${STOP}"
 yadm pull origin master --quiet --strategy-option=theirs
 CHANGED_FILES=()
 while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
@@ -60,6 +63,8 @@ for FILE in "${CHANGED_FILES[@]}"; do
 done
 
 echo "${CYAN}✔︎  Collecting any new changed or deleted files${STOP}"
+echo "${CYAN}$(draw_line '═')${STOP}"
+
 FILES=()
 while IFS='' read -r line; do FILES+=("$line"); done < <(yadm status -uno --porcelain | cut -c4- | sed s/\"//g)
 
@@ -78,7 +83,9 @@ for FILE in "${FILES[@]}"; do
 done
 
 echo "${CYAN}✔︎  Committing${STOP}"
+echo "${CYAN}$(draw_line '═')${STOP}"
 yadm commit --quiet --message "$(random_excuse)"
 
 echo "${CYAN}✔︎  Attempting push to Github${STOP}"
+echo "${CYAN}$(draw_line '═')${STOP}"
 yadm push origin master --quiet

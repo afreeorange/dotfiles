@@ -43,3 +43,14 @@ hs() {
         --listen 127.0.0.1:8080 \
         --root "$WORKING_DIR"
 }
+
+# TODO: Colors...
+draw_line() {
+    local LINE_CHAR=$1
+    local WIDTH
+
+    WIDTH=$(tput cols)
+    LINE=$(printf '%*s' "$WIDTH" '' | tr ' ' "$LINE_CHAR")
+    echo -e "$LINE"
+}
+
