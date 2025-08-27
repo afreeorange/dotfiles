@@ -20,12 +20,12 @@ source "$HOME/.config/bash/conf.d/20-colors.sh"
 
 # ----------
 
-echo "${CYAN}Backing up dependencies${STOP}"
-echo "${CYAN}$(draw_line '═')${STOP}"
+echo "${GREEN}Backing up dependencies${STOP}"
+echo "${GREEN}$(draw_line '═')${STOP}"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  echo "${GREEN}HomeBrew${STOP}"
-  echo "${GREEN}$(draw_line '─')${STOP}"
+  echo "${YELLOW}HomeBrew${STOP}"
+  echo "${YELLOW}$(draw_line '─')${STOP}"
   "$HOME/.bin/backup-homebrew"
 fi
 
@@ -44,8 +44,8 @@ yadm add -f "$HOME/.platform-dependencies/*"
 
 # ----------
 
-echo "${CYAN}Attempting pull from Github${STOP}"
-echo "${CYAN}$(draw_line '═')${STOP}"
+echo "${GREEN}Attempting pull from Github${STOP}"
+echo "${GREEN}$(draw_line '═')${STOP}"
 yadm pull origin master --quiet --strategy-option=theirs
 CHANGED_FILES=()
 while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
@@ -62,8 +62,8 @@ for FILE in "${CHANGED_FILES[@]}"; do
   echo "${GRAY}${FILE}${STOP}"
 done
 
-echo "${CYAN}Collecting any new changed or deleted files${STOP}"
-echo "${CYAN}$(draw_line '═')${STOP}"
+echo "${GREEN}Collecting any new changed or deleted files${STOP}"
+echo "${GREEN}$(draw_line '═')${STOP}"
 
 FILES=()
 while IFS='' read -r line; do FILES+=("$line"); done < <(yadm status -uno --porcelain | cut -c4- | sed s/\"//g)
@@ -72,20 +72,20 @@ if [[ "${#FILES[@]}" -eq 0 ]]; then
   echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
   exit 1
 elif [[ "${#FILES[@]}" -eq 1 ]]; then
-  echo "${GREEN}>  Just one file has changed${STOP}"
+  echo "${YELLOW}>  Just one file has changed${STOP}"
 else
-  echo "${GREEN}>  ${#FILES[@]} files have changed"
+  echo "${YELLOW}>  ${#FILES[@]} files have changed"
 fi
 
 for FILE in "${FILES[@]}"; do
-  echo "${GREEN}+  Adding $HOME/$FILE${STOP}"
+  echo "${YELLOW}+  Adding $HOME/$FILE${STOP}"
   yadm add "$HOME/$FILE"
 done
 
-echo "${CYAN}Committing${STOP}"
-echo "${CYAN}$(draw_line '═')${STOP}"
+echo "${GREEN}Committing${STOP}"
+echo "${GREEN}$(draw_line '═')${STOP}"
 yadm commit --quiet --message "$(random_excuse)"
 
-echo "${CYAN}Attempting push to Github${STOP}"
-echo "${CYAN}$(draw_line '═')${STOP}"
+echo "${GREEN}Attempting push to Github${STOP}"
+echo "${GREEN}$(draw_line '═')${STOP}"
 yadm push origin master --quiet
