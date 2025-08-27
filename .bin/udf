@@ -24,8 +24,8 @@ echo "${CYAN}Backing up dependencies${STOP}"
 echo "${CYAN}$(draw_line '═')${STOP}"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  echo "${YELLOW}+  HomeBrew${STOP}"
-  echo "${YELLOW}$(draw_line '─')${STOP}"
+  echo "${GREEN}HomeBrew${STOP}"
+  echo "${GREEN}$(draw_line '─')${STOP}"
   "$HOME/.bin/backup-homebrew"
 fi
 
