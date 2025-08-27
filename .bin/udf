@@ -58,6 +58,10 @@ else
   echo "${GRAY}>  ${#CHANGED_FILES[@]} files have changed since last commit"
 fi
 
+# ----------------------------------------------------------------------------------------------------
+echo "\n"
+# ----------------------------------------------------------------------------------------------------
+
 for FILE in "${CHANGED_FILES[@]}"; do
   echo "${GRAY}${FILE}${STOP}"
 done
@@ -72,19 +76,27 @@ if [[ "${#FILES[@]}" -eq 0 ]]; then
   echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
   exit 1
 elif [[ "${#FILES[@]}" -eq 1 ]]; then
-  echo "${YELLOW}>  Just one file has changed${STOP}"
+  echo "${YELLOW}> Just one file has changed${STOP}"
 else
-  echo "${YELLOW}>  ${#FILES[@]} files have changed"
+  echo "${YELLOW}> ${#FILES[@]} files have changed"
 fi
 
 for FILE in "${FILES[@]}"; do
-  echo "${YELLOW}+  Adding $HOME/$FILE${STOP}"
+  echo "${YELLOW}+ Adding $HOME/$FILE${STOP}"
   yadm add "$HOME/$FILE"
 done
+
+# ----------------------------------------------------------------------------------------------------
+echo "\n"
+# ----------------------------------------------------------------------------------------------------
 
 echo "${GREEN}Committing${STOP}"
 echo "${GREEN}$(draw_line '═')${STOP}"
 yadm commit --quiet --message "$(random_excuse)"
+
+# ----------------------------------------------------------------------------------------------------
+echo "\n"
+# ----------------------------------------------------------------------------------------------------
 
 echo "${GREEN}Attempting push to Github${STOP}"
 echo "${GREEN}$(draw_line '═')${STOP}"
