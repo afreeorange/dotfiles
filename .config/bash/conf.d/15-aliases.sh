@@ -26,9 +26,10 @@ alias p="pnpm"
 alias y="yadm"
 alias m='navidrome --musicfolder="$HOME/Music/Library/" --datafolder="$HOME/Music/Navidrome/" --nobanner'
 alias ydlp='yt-dlp -f bestvideo+bestaudio --merge-output-format mp4'
+alias cla="cd \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Classes"
 
 # Locations
-alias co="cd \$HOME/Programming"
+alias co="cd  \$HOME/Programming"
 alias des="cd \$HOME/Desktop"
 alias doc="cd \$HOME/Documents"
 alias dow="cd \$HOME/Downloads"
