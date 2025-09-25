@@ -19,7 +19,7 @@ function __prompt_basic() {
 }
 
 function __prompt_last_exit_code() {
-    [[ $1 != 0 ]] && echo -n "$RED"" coughed a $1""$STOP"
+    [[ $1 != 0 ]] && echo -n "$RED""coughed a $1""$STOP"
 }
 
 function __prompt_pyenv_version() {
