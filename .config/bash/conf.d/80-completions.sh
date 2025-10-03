@@ -29,7 +29,7 @@ function _complete() {
     command -v complete >>/dev/null 2>&1 && {
         for COMPLETION in "$BASHRC_D"/completions/*; do
             if  [[ $COMPLETION != *"asdf"* ]]; then
-                echo "$GRAY""Sourcing $COMPLETION""$STOP"
+                # echo "$GRAY""Sourcing $COMPLETION""$STOP"
                 # shellcheck source=/dev/null
                 source "$COMPLETION" >>/dev/null 2>&1
             fi
@@ -41,3 +41,4 @@ function _complete() {
 }
 
 alias _c=_complete
+_c
