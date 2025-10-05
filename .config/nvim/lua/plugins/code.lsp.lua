@@ -34,7 +34,6 @@ Plugin.event = {"BufReadPre", "BufNewFile"} -- When to load this plugin
 -------------------------------------------------------------------------------
 
 function Plugin.config()
-  local lspconfig = require("lspconfig")
   require("mason").setup()
   require("mason-lspconfig").setup({
     ensure_installed = servers,
@@ -49,7 +48,7 @@ function Plugin.config()
       _server = "ts_ls"
     end
 
-    lspconfig[_server].setup {}
+    vim.lsp.enable(_server)
   end
 end
 
@@ -72,7 +71,6 @@ return Plugin
 --             numhl = ''
 --         })
 --       end
-
 --       sign({
 --           name = 'DiagnosticSignError',
 --           text = '✘'
