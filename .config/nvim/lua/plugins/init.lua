@@ -38,14 +38,15 @@ local Plugins = {
 
   -- Better tabs
   {
-    "akinsho/bufferline.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons"
+    "akinsho/bufferline.nvim"
   },
 
 
   -- Insert closing parens, squigglies, brackets or whatever
   { "windwp/nvim-autopairs", event = "InsertEnter" },
 
+  -- Nice little icons for the sidebar and tabs
+  {"nvim-tree/nvim-web-devicons"},
 
   -- Code Helpers
   -- ==========================================================================
@@ -59,7 +60,6 @@ local Plugins = {
   -- Better syntax highlighting
   -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#table-of-contents
   { "nvim-treesitter/nvim-treesitter",
-    dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("nvim-treesitter.configs").setup {
         -- A list of parser names, or "all" (the listed parsers MUST always be
@@ -68,10 +68,11 @@ local Plugins = {
           "vim",
           "vimdoc",
           "query",
+          "latex",
           "markdown",
           "markdown_inline",
 
-          -- These are from `init.lua` two levels above
+          -- These are from `init.lua` two levels above. Copypasta is OK.
           "bash",
           "css",
           "javascript",
@@ -115,6 +116,8 @@ local Plugins = {
     "folke/twilight.nvim",
   },
 
+  -- Other nice-to-haves
+  -- ==========================================================================
   -- Highlight JSX/TSX properly.
   -- TODO: Treesitter should be able to do this...
   { "MaxMEllon/vim-jsx-pretty" },

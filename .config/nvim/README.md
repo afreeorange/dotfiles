@@ -1,5 +1,9 @@
 # My NeoVim Configuration
 
+## Notes
+
+- Cache is in `$HOME/.local/share/nvim`
+
 ## Stuff Left to Do
 
 - Ctrl P opens in a new tab
