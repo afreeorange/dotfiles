@@ -34,6 +34,7 @@ local servers = {
   "somesass_ls",
   "tailwindcss",
   "ts_ls",
+  "vimls",
   "yamlls"
 }
 
@@ -43,7 +44,6 @@ local Plugin = {
     ensure_installed = servers
   },
   dependencies = {
-        { "nvim-mini/mini.completion", version = '*', opts = {} },
         { "mason-org/mason.nvim", opts = {} },
         "neovim/nvim-lspconfig",
     },
