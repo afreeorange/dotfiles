@@ -9,8 +9,8 @@ alias ll="ls -l"
 alias please="sudo"
 alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
-alias life="code \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Life.md"
-alias scratch="code \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Scratchpad.md"
+alias life="code \$CLOUD_FOLDER/Life.md"
+alias scratch="code \$CLOUD_FOLDER/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
 alias col="cd \$HOME/Programming/columbia-notes && code ."
@@ -26,7 +26,7 @@ alias p="pnpm"
 alias y="yadm"
 alias m='navidrome --musicfolder="$HOME/Music/Library/" --datafolder="$HOME/Music/Navidrome/" --nobanner'
 alias ydlp='yt-dlp -f bestvideo+bestaudio --merge-output-format mp4'
-alias cla="cd \$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Classes"
+alias cla="cd \$CLOUD_FOLDER/Classes"
 
 # Locations
 alias co="cd  \$HOME/Programming"
