@@ -44,6 +44,13 @@ hs() {
         --root "$WORKING_DIR"
 }
 
+ydlp() {
+    local file
+    file=$(yt-dlp --print "%(filename)s" "$@")
+    yt-dlp "$@"
+    ffmpeg -i "$file" -c copy "OUTPUT-$file".mp4
+}
+
 # TODO: Colors...
 draw_line() {
     local LINE_CHAR=$1
