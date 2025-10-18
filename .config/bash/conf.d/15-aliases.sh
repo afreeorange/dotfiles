@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Requires symlinking with fucking iCloud because of spaces and chars and shit.
+# ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs" Dropbox
 CLOUD_FOLDER="$HOME/Dropbox"
 
 alias e="\$EDITOR"
