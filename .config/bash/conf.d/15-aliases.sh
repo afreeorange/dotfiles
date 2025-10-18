@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CLOUD_FOLDER="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+CLOUD_FOLDER="$HOME/Dropbox"
 
 alias e="\$EDITOR"
 alias ep="\$EDITOR \$HOME/.config/bash/conf.d/"
@@ -9,8 +9,8 @@ alias ll="ls -l"
 alias please="sudo"
 alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
-alias life="code \$CLOUD_FOLDER/Life.md"
-alias scratch="code \$CLOUD_FOLDER/Scratchpad.md"
+alias life="\$EDITOR \$CLOUD_FOLDER/Life.md"
+alias scratch="\$EDITOR \$CLOUD_FOLDER/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
 alias col="cd \$HOME/Programming/columbia-notes && code ."

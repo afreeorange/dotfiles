@@ -713,8 +713,12 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>RememberWindowPositions</key>
+	<true/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
+	<key>SmartPlacement</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

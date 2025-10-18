@@ -47,8 +47,12 @@ hs() {
 ydlp() {
     local file
     file=$(yt-dlp --print "%(filename)s" "$@")
+
+    echo "Downloading $file"
     yt-dlp "$@"
-    ffmpeg -i "$file" -c copy "OUTPUT-$file".mp4
+
+    echo "Converting $file"
+    ffmpeg -i "$file" "OUTPUT-$file".mp4
 }
 
 # TODO: Colors...
