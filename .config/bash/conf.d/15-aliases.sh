@@ -28,6 +28,7 @@ alias p="pnpm"
 alias y="yadm"
 alias m='navidrome --musicfolder="$HOME/Music/Library/" --datafolder="$HOME/Music/Navidrome/" --nobanner'
 alias cla="cd \$CLOUD_FOLDER/Classes"
+alias uvp="uv run python"
 
 # Locations
 alias co="cd  \$HOME/Programming"

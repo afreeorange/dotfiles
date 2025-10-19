@@ -6,8 +6,9 @@ golang      1.24
 neovim      latest
 nodejs      23
 pnpm        10
-python      3.12
+python      3.14
 rust        latest
 uv          latest
 starship    latest
 tree-sitter latest
+R           latest

@@ -32,6 +32,8 @@
 	<string>https://api.openai.com/v1/responses</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>ClickToSelectCommand</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>cobalt2</key>
@@ -253,6 +255,8 @@
 	<integer>0</integer>
 	<key>DimOnlyText</key>
 	<true/>
+	<key>DismemberScrollView</key>
+	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
@@ -717,6 +721,8 @@
 	<true/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
+	<key>ShowMarksInScrollbar</key>
+	<false/>
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SoundForEsc</key>
