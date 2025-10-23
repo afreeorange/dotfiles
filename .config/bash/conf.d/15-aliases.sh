@@ -11,8 +11,8 @@ alias ll="ls -l"
 alias please="sudo"
 alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
-alias life="\$EDITOR \$CLOUD_FOLDER/Life.md"
-alias scratch="\$EDITOR \$CLOUD_FOLDER/Scratchpad.md"
+alias life="code \$CLOUD_FOLDER/Life.md"
+alias scratch="code \$CLOUD_FOLDER/Scratchpad.md"
 alias lo="cd \$HOME/Programming/log; yarn new"
 alias clo="cd \$HOME/Programming/log"
 alias col="cd \$HOME/Programming/columbia-notes && code ."
@@ -29,6 +29,13 @@ alias y="yadm"
 alias m='navidrome --musicfolder="$HOME/Music/Library/" --datafolder="$HOME/Music/Navidrome/" --nobanner'
 alias cla="cd \$CLOUD_FOLDER/Classes"
 alias uvp="uv run python"
+alias ipy="ipython"
+alias cd..='cd ..'
+alias mdkir='mkdir'
+alias dc='cd'
+alias sl='ls'
+alias sudp='sudo'
+alias pact="source ./.venv/bin/activate"
 
 # Locations
 alias co="cd  \$HOME/Programming"

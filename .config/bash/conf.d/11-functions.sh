@@ -65,3 +65,24 @@ draw_line() {
     echo -e "$LINE"
 }
 
+mkcd () {
+    \mkdir -p "$1"
+    cd "$1"
+}
+
+mksh() {
+    if [ ! $# -eq 1 ]; then
+      echo 'mksh takes one argument' 1>&2
+      exit 1
+    elif [ -e "$1" ]; then
+      echo "$1 already exists" 1>&2
+      exit 1
+    fi
+
+    echo '#!/bin/env bash
+set -euo pipefail
+
+' > "$1"
+
+    chmod u+x "$1"
+}
