@@ -32,8 +32,12 @@
 	<string>https://api.openai.com/v1/responses</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>BracketedPasteMode</key>
+	<true/>
 	<key>ClickToSelectCommand</key>
 	<false/>
+	<key>ConvertDosNewlines</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>cobalt2</key>
@@ -258,6 +262,8 @@
 	<key>DismemberScrollView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
+	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
@@ -595,7 +601,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>GoogleSansCodeNF-Regular 18</string>
+			<string>GoogleSansCodeNF-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -678,6 +684,12 @@
 	<false/>
 	<key>PMPrintingPanelSize</key>
 	<string>{777, 828}</string>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -728,7 +740,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.46760975609756095</real>
+	<real>0.031236852134146342</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>SuppressRestartAnnouncement</key>
