@@ -25,8 +25,8 @@ fi
 
 # Bash History
 export HISTTIMEFORMAT="%F %T "
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=999999999
+export HISTFILESIZE=999999999
 export HISTCONTROL=erasedups:ignoredups
 export HISTIGNORE="ls:bg:fg:history:pwd:clear:exit"
 shopt -s histappend
