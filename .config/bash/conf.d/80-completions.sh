@@ -16,6 +16,9 @@ if [[ $(uname) == "Linux" ]]; then
     [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
+# Run atuin if it exists. Local only.
+command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash)"
+
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then
         # Contains completions that are installed by a package.
