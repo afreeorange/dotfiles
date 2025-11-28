@@ -17,7 +17,7 @@ if [[ $(uname) == "Linux" ]]; then
 fi
 
 # Run atuin if it exists. Local only.
-command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash)"
+command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash --disable-up-arrow)"
 
 function _complete() {
     if [[ $(uname) == "Darwin" ]]; then
