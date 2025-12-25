@@ -1,6 +1,8 @@
+atuin       latest
 bat         latest
 bun         latest
 caddy       latest
+claude-code latest
 delta       latest
 dust        latest
 golang      1.24
