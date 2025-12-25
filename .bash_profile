@@ -9,3 +9,5 @@ BASHRC_D=$HOME/.config/bash
 #export PATH=/Applications/ServBay/script/alias:/Applications/ServBay/bin:/Applications/ServBay/sbin:/Applications/ServBay/script:$PATH
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+. "$HOME/.atuin/bin/env"
