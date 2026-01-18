@@ -43,104 +43,10 @@ if status is-interactive
     end
 
     # ============================================================================
-    # 10-options: Shell options (Fish has sensible defaults)
-    # ============================================================================
-
-    # Fish automatically:
-    # - corrects typos in paths
-    # - updates terminal size
-    # - handles history well
-    # - does case-insensitive completion
-
-    # ============================================================================
-    # 11-functions: Helper functions
-    # ============================================================================
-
-    function source_if_exists
-        test -e $argv[1]; and source $argv[1]
-    end
-
-    function warn
-        echo (set_color red)"❕$argv[1]"(set_color normal)
-    end
-
-    function dataurl
-        set MIMETYPE (file -b --mime-type $argv[1])
-
-        if string match -q "text/*" $MIMETYPE
-            set MIMETYPE "$MIMETYPE;charset=utf-8"
-        end
-
-        echo "data:$MIMETYPE;base64,"(openssl base64 -in $argv[1] | tr -d '\n')
-    end
-
-    function s3_bucket_size
-        aws s3 ls --summarize --human-readable --recursive $argv[1]
-    end
-
-    function hs
-        set WORKING_DIR (pwd)
-
-        if test -n "$argv[1]"
-            set WORKING_DIR $argv[1]
-        end
-
-        echo "Using this as root: $WORKING_DIR"
-        echo "Starting server at"
-        echo "http://127.0.0.1:8080"
-        echo "─────────────────────────────────────────────────────────────────"
-
-        caddy file-server \
-            --access-log \
-            --browse \
-            --reveal-symlinks \
-            --listen 127.0.0.1:8080 \
-            --root $WORKING_DIR
-    end
-
-    function ydlp
-        set file (yt-dlp --print "%(filename)s" $argv)
-
-        echo "Downloading $file"
-        yt-dlp $argv
-
-        echo "Converting $file"
-        ffmpeg -i $file "OUTPUT-$file.mp4"
-    end
-
-    function draw_line
-        set LINE_CHAR $argv[1]
-        set WIDTH (tput cols)
-        printf '%*s' $WIDTH '' | tr ' ' $LINE_CHAR
-    end
-
-    function mkcd
-        mkdir -p $argv[1]
-        cd $argv[1]
-    end
-
-    function mksh
-        if test (count $argv) -ne 1
-            echo 'mksh takes one argument' >&2
-            return 1
-        else if test -e $argv[1]
-            echo "$argv[1] already exists" >&2
-            return 1
-        end
-
-        echo '#!/bin/env bash
-set -euo pipefail
-
-' >$argv[1]
-
-        chmod u+x $argv[1]
-    end
-
-    # ============================================================================
     # 15-aliases: Shortcuts
     # ============================================================================
 
-    set CLOUD_FOLDER "$HOME/Dropbox"
+    set -g CLOUD_FOLDER "$HOME/Dropbox"
 
     alias e="\$EDITOR"
     alias ep="\$EDITOR \$HOME/.config/fish/"
@@ -186,10 +92,6 @@ set -euo pipefail
     alias pic="cd \$HOME/Pictures"
     alias pro="cd \$HOME/Projects"
 
-    function dro
-        cd $CLOUD_FOLDER
-    end
-
     # Moving around
     alias ..="cd .."
     alias ...="cd ../.."
@@ -228,19 +130,12 @@ set -euo pipefail
     # 20-colors: Color definitions
     # ============================================================================
 
-    # Fish uses set_color instead of tput
-    # Colors are built-in: red, green, blue, yellow, cyan, magenta, white, black, etc.
-    # You can use set_color directly in fish
-
     # For ls colors
     set -gx CLICOLOR 1
     set -gx LSCOLORS ExGxFxDxCxHxHxCbCeEbEb
 
     # Base16 shell theme
     source_if_exists "$HOME/.config/base16-shell/base16-shell.plugin.fish"
-
-    # Set theme (uncomment one)
-    # base16_gruvbox-dark-hard
 
     # GRC colorizer (macOS)
     if test (uname) = Darwin
@@ -259,93 +154,6 @@ set -euo pipefail
     end
 
     # ============================================================================
-    # 70-prompt: Custom prompt (Fish has its own prompt system)
-    # ============================================================================
-
-    # Set PS symbol based on OS
-    switch (uname)
-        case Darwin
-            set -g PS_SYMBOL ""
-        case Linux
-            set -g PS_SYMBOL "🐧"
-        case FreeBSD
-            set -g PS_SYMBOL "😈"
-        case '*'
-            set -g PS_SYMBOL "→"
-    end
-
-    function fish_prompt
-        set -l last_status $status
-
-        # User and host
-        echo -n (set_color green)(whoami)(set_color normal)" "(set_color blue)"at "(hostname)(set_color normal)" "
-
-        # Location
-        if test $PWD = $HOME
-            echo -n (set_color yellow)"is home ♥️"(set_color normal)
-        else
-            echo -n (set_color yellow)"in "(basename $PWD)(set_color normal)
-        end
-
-        # Git info
-        if git rev-parse --is-inside-work-tree >/dev/null 2>&1
-            if test (git rev-parse --is-inside-git-dir 2>/dev/null) = false
-                set -l STATUS ""
-
-                # Update index
-                git update-index --really-refresh -q >/dev/null 2>&1
-
-                # Check for uncommitted changes
-                if not git diff --quiet --ignore-submodules --cached
-                    set STATUS "$STATUS:uc"
-                end
-
-                # Check for unstaged changes
-                if not git diff-files --quiet --ignore-submodules --
-                    set STATUS "$STATUS:us"
-                end
-
-                # Check for untracked files
-                if test -n (git ls-files --others --exclude-standard)
-                    set STATUS "$STATUS:ut"
-                end
-
-                # Check for stashed files
-                if git rev-parse --verify refs/stash >/dev/null 2>&1
-                    set STASH_LENGTH (git stash list | wc -l | string trim)
-                    set STATUS "$STATUS:st($STASH_LENGTH)"
-                end
-
-                # Branch name
-                set BRANCH_NAME (git symbolic-ref --quiet --short HEAD 2>/dev/null; or git rev-parse --short HEAD 2>/dev/null; or echo '(unknown)')
-
-                if test -n "$STATUS"
-                    echo -n (set_color magenta)" on  $BRANCH_NAME"(set_color normal)(set_color brmagenta)"$STATUS"(set_color normal)
-                else
-                    echo -n (set_color magenta)" on  $BRANCH_NAME"(set_color normal)
-                end
-            end
-        end
-
-        # Last exit code
-        if test $last_status -ne 0
-            echo -n (set_color red)" coughed a $last_status"(set_color normal)
-        end
-
-        # New line and symbol
-        echo ""
-        echo -n "$PS_SYMBOL "
-    end
-
-    # Show random excuse on startup
-    if command -v cowsay >/dev/null 2>&1
-        if functions -q random_excuse
-            random_excuse | cowsay -s
-            echo ""
-        end
-    end
-
-    # ============================================================================
     # 80-completions: Completion setup
     # ============================================================================
 
@@ -361,8 +169,6 @@ set -euo pipefail
     if command -v atuin >/dev/null 2>&1
         atuin init fish --disable-up-arrow | source
     end
-
-    # Custom completions - Fish will auto-load from ~/.config/fish/completions/
 
     # AWS completion
     if command -v aws_completer >/dev/null 2>&1
