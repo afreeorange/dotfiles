@@ -47,20 +47,20 @@ cp random-functions.fish ~/.config/fish/functions/random-functions.fish
 
 ### Syntax Changes
 
-| Bash | Fish | Notes |
-|------|------|-------|
-| `export VAR=value` | `set -gx VAR value` | `-g` = global, `-x` = export |
-| `VAR=value` | `set VAR value` | Local variable |
-| `$VAR` | `$VAR` | Variable expansion (same) |
-| `$(command)` | `(command)` | Command substitution |
-| `${VAR}` | `$VAR` or `{$VAR}` | Braces optional in fish |
-| `if [ condition ]` | `if test condition` | Fish uses `test` |
-| `[[ condition ]]` | `test condition` | No double brackets |
-| `$1, $2` | `$argv[1], $argv[2]` | Function arguments |
-| `$@` | `$argv` | All arguments |
-| `function name() { }` | `function name; end` | Different syntax |
-| `for i in *; do` | `for i in *` | No `do`/`done` |
-| `source file` | `source file` | Same |
+| Bash                  | Fish                 | Notes                        |
+| --------------------- | -------------------- | ---------------------------- |
+| `export VAR=value`    | `set -gx VAR value`  | `-g` = global, `-x` = export |
+| `VAR=value`           | `set VAR value`      | Local variable               |
+| `$VAR`                | `$VAR`               | Variable expansion (same)    |
+| `$(command)`          | `(command)`          | Command substitution         |
+| `${VAR}`              | `$VAR` or `{$VAR}`   | Braces optional in fish      |
+| `if [ condition ]`    | `if test condition`  | Fish uses `test`             |
+| `[[ condition ]]`     | `test condition`     | No double brackets           |
+| `$1, $2`              | `$argv[1], $argv[2]` | Function arguments           |
+| `$@`                  | `$argv`              | All arguments                |
+| `function name() { }` | `function name; end` | Different syntax             |
+| `for i in *; do`      | `for i in *`         | No `do`/`done`               |
+| `source file`         | `source file`        | Same                         |
 
 ### PATH Management
 
