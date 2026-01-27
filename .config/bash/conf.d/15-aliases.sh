@@ -13,7 +13,7 @@ alias udl="yadm ls-tree --full-tree -r --name-only master"
 alias venv_clean="pip uninstall -y \$(pip freeze | cut -d= -f1)"
 alias life="code \$CLOUD_FOLDER/Life.md"
 alias scratch="code \$CLOUD_FOLDER/Scratchpad.md"
-alias clo="cd \$HOME/Programming/log"
+alias clo="cd \$HOME/Programming/log && code ."
 alias col="cd \$HOME/Programming/columbia-notes && code ."
 alias wik="cd \$HOME/Programming/wiki.nikhil.io.articles"
 alias wiki="cd \$HOME/Programming/wiki.nikhil.io.articles"
@@ -35,6 +35,7 @@ alias dc='cd'
 alias sl='ls'
 alias sudp='sudo'
 alias pact="source ./.venv/bin/activate"
+alias num="numbat"
 
 # Locations
 alias co="cd  \$HOME/Programming"
