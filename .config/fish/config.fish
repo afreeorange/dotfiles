@@ -137,6 +137,9 @@ if status is-interactive
     # Base16 shell theme
     source_if_exists "$HOME/.config/base16-shell/base16-shell.plugin.fish"
 
+    # Fix autosuggestion visibility
+    set -g fish_color_autosuggestion 999
+
     # GRC colorizer (macOS)
     if test (uname) = Darwin
         set -gx GRC_ALIASES true
