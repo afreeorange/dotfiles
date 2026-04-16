@@ -37,11 +37,11 @@ hs() {
     echo "─────────────────────────────────────────────────────────────────"
 
     caddy file-server \
-        --access-log \
-        --browse \
-        --reveal-symlinks \
-        --listen 127.0.0.1:8080 \
-        --root "$WORKING_DIR"
+    --access-log \
+    --browse \
+    --reveal-symlinks \
+    --listen 127.0.0.1:8080 \
+    --root "$WORKING_DIR"
 }
 
 ydlp() {
@@ -72,17 +72,34 @@ mkcd () {
 
 mksh() {
     if [ ! $# -eq 1 ]; then
-      echo 'mksh takes one argument' 1>&2
-      exit 1
-    elif [ -e "$1" ]; then
-      echo "$1 already exists" 1>&2
-      exit 1
+        echo 'mksh takes one argument' 1>&2
+        exit 1
+        elif [ -e "$1" ]; then
+        echo "$1 already exists" 1>&2
+        exit 1
     fi
 
     echo '#!/bin/env bash
 set -euo pipefail
 
-' > "$1"
+    ' > "$1"
 
     chmod u+x "$1"
 }
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    init_conda() {
+        __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+        if [[ $? -eq 0 ]]; then
+            eval "$__conda_setup"
+        else
+            if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+                . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+            else
+                export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+            fi
+        fi
+        unset __conda_setup
+        echo "🐍 Conda initialized."
+    }
+fi
