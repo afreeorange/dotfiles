@@ -57,12 +57,12 @@ ydlp() {
 
 # TODO: Colors...
 draw_line() {
-    local LINE_CHAR=$1
-    local WIDTH
+    local LINE_CHAR="${1:-=}" # Default to = if no arg provided
+    local WIDTH=$(tput cols)
 
-    WIDTH=$(tput cols)
-    LINE=$(printf '%*s' "$WIDTH" '' | tr ' ' "$LINE_CHAR")
-    echo -e "$LINE"
+    # This repeats the string by leveraging printf's padding
+    printf -v LINE "%${WIDTH}s" ""
+    echo "${LINE// /$LINE_CHAR}"
 }
 
 mkcd () {
