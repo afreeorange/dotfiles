@@ -60,6 +60,7 @@ draw_line() {
     local LINE_CHAR="${1:-=}" # Default to = if no arg provided
     local WIDTH=$(tput cols)
 
+    # This repeats the string by leveraging printf's padding
     printf -v LINE "%${WIDTH}s" ""
     echo "${LINE// /$LINE_CHAR}"
 }
