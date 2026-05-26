@@ -59,6 +59,7 @@ alias ....="cd ../../.."
 alias dkill="docker kill \$(docker ps -aq)"
 alias drm="docker rm -f \$(docker ps -aq)"
 alias drmi="docker rmi -f \$(docker images -q)"
+alias dprune="docker system prune --force"
 
 # Git
 alias gs="git status"
