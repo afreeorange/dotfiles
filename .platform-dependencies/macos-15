@@ -187,6 +187,8 @@ brew "llvm"
 brew "localstack"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# CLI tool for saving complete web pages as a single HTML file
+brew "monolith"
 # Mongrel of mail user agents (part elm, pine, mush, mh, etc.)
 brew "mutt"
 # Modern Music Server and Streamer compatible with Subsonic/Airsonic
@@ -376,6 +378,7 @@ vscode "anseki.vscode-color"
 vscode "anthropic.claude-code"
 vscode "ban.spellright"
 vscode "betterthantomorrow.joyride"
+vscode "bierner.markdown-emoji"
 vscode "biomejs.biome"
 vscode "bmalehorn.vscode-fish"
 vscode "bradlc.vscode-tailwindcss"
