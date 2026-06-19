@@ -61,6 +61,10 @@ brew "curlie"
 brew "dillo"
 # Command-line DNS client
 brew "dog"
+# Free lossless audio codec
+brew "flac"
+# DOSBox with accurate emulation and wide testing
+brew "dosbox-x"
 # Maintain consistent coding style between multiple editors
 brew "editorconfig"
 # Run arbitrary commands when files change
@@ -71,8 +75,6 @@ brew "esbuild"
 brew "exiftool"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# Free lossless audio codec
-brew "flac"
 # Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
@@ -325,6 +327,8 @@ cask "iterm2"
 cask "kap"
 # Tool to prevent the system from going into sleep mode
 cask "keepingyouawake"
+# File archiver
+cask "keka"
 # Desktop GUI client for browsing Geminispace
 cask "lagrange"
 # Clipboard manager
@@ -378,7 +382,6 @@ vscode "anseki.vscode-color"
 vscode "anthropic.claude-code"
 vscode "ban.spellright"
 vscode "betterthantomorrow.joyride"
-vscode "bierner.markdown-emoji"
 vscode "biomejs.biome"
 vscode "bmalehorn.vscode-fish"
 vscode "bradlc.vscode-tailwindcss"

@@ -5,7 +5,7 @@
 local lazy = {}
 
 function lazy.install(path)
-  if not vim.loop.fs_stat(path) then
+  if not vim.uv.fs_stat(path) then
     print("Installing lazy.nvim....")
 
     vim.fn.system({

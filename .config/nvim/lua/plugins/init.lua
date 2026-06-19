@@ -58,50 +58,30 @@ local Plugins = {
   {"godlygeek/tabular"},
 
   -- Better syntax highlighting
-  -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#table-of-contents
+  -- On the `main` branch, nvim-treesitter only handles parser installation.
+  -- Highlighting is built into Neovim 0.12+ via vim.treesitter.
   { "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        -- A list of parser names, or "all" (the listed parsers MUST always be
-        -- installed)
-        ensure_installed = {
-          "vim",
-          "vimdoc",
-          "query",
-          "latex",
-          "markdown",
-          "markdown_inline",
+    build = ":TSUpdate",
+    branch = "main",
+    opts = {
+      ensure_installed = {
+        "vim", "vimdoc", "query",
+        "bash", "css", "javascript", "lua",
+        "yaml", "python", "scss", "sql", "typescript",
+      },
+      auto_install = true,
+    },
+    config = function(_, opts)
+      require("nvim-treesitter").setup(opts)
 
-          -- These are from `init.lua` two levels above. Copypasta is OK.
-          "bash",
-          "css",
-          "javascript",
-          "lua",
-          "yaml",
-          "python",
-          "scss",
-          "sql",
-          "typescript",
-        },
-
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
-
-        -- Automatically install missing parsers when entering buffer
-        auto_install = true,
-
-        highlight = {
-          enable = true,
-
-          -- Setting this to true will run `:h syntax` and tree-sitter at the
-          -- same time. Set this to `true` if you depend on 'syntax' being
-          -- enabled (like for indentation). Using this option may slow down
-          -- your editor, and you may see some duplicate highlights. Instead of
-          -- true it can also be a list of languages
-          additional_vim_regex_highlighting = false
-        },
-      }
-    end
+      -- Disable treesitter highlighting for markdown (crashes on 0.12.3)
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "markdown" },
+        callback = function(args)
+          vim.treesitter.stop(args.buf)
+        end,
+      })
+    end,
   },
 
   -- Distraction Free Editing 🧘‍♀️
@@ -118,12 +98,6 @@ local Plugins = {
 
   -- Other nice-to-haves
   -- ==========================================================================
-  -- Highlight JSX/TSX properly.
-  -- TODO: Treesitter should be able to do this...
-  { "MaxMEllon/vim-jsx-pretty" },
-
-  -- Markdown shortcuts and goodness
-  { "SidOfc/mkdx" },
 
   -- Markdown table editing
   { "dhruvasagar/vim-table-mode" },
