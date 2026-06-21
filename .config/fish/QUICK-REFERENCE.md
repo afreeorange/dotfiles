@@ -18,38 +18,38 @@ chsh -s $(which fish)
 
 ## Syntax Cheatsheet
 
-| Task | Bash | Fish |
-|------|------|------|
-| **Variables** |
-| Set local | `var=value` | `set var value` |
-| Set global | `export VAR=value` | `set -gx VAR value` |
-| Use variable | `$VAR` or `${VAR}` | `$VAR` |
-| Command sub | `$(cmd)` or `` `cmd` `` | `(cmd)` |
-| **Conditionals** |
-| If test | `if [ -f file ]` | `if test -f file` |
-| If compare | `if [[ $a == $b ]]` | `if test $a = $b` |
-| If command | `if command -v git` | `if command -v git` |
-| And | `[[ $a ]] && [[ $b ]]` | `test $a; and test $b` |
-| Or | `[[ $a ]] \|\| [[ $b ]]` | `test $a; or test $b` |
-| **Loops** |
-| For loop | `for i in *; do echo $i; done` | `for i in *; echo $i; end` |
-| While | `while read line; do ...; done` | `while read line; ...; end` |
-| **Functions** |
-| Define | `name() { echo $1; }` | `function name; echo $argv[1]; end` |
-| Args | `$1 $2 $@ $*` | `$argv[1] $argv[2] $argv` |
-| Return | `return 0` | `return 0` |
-| **Strings** |
-| Concat | `"$a$b"` | `"$a$b"` or `$a$b` |
-| Match | `[[ $str == *pattern* ]]` | `string match "*pattern*" $str` |
-| Replace | `${var/old/new}` | `string replace old new $var` |
-| Split | `IFS=: read -ra arr <<< "$var"` | `string split : $var` |
-| **PATH** |
-| Add to PATH | `export PATH="/new:$PATH"` | `fish_add_path /new` |
-| **Arrays/Lists** |
-| Create | `arr=(a b c)` | `set arr a b c` |
-| Access | `${arr[0]}` | `$arr[1]` (1-indexed!) |
-| All items | `${arr[@]}` | `$arr` |
-| Count | `${#arr[@]}` | `count $arr` |
+| Task             | Bash                            | Fish                                |
+| ---------------- | ------------------------------- | ----------------------------------- |
+| **Variables**    |                                 |                                     |
+| Set local        | `var=value`                     | `set var value`                     |
+| Set global       | `export VAR=value`              | `set -gx VAR value`                 |
+| Use variable     | `$VAR` or `${VAR}`              | `$VAR`                              |
+| Command sub      | `$(cmd)` or `` `cmd` ``         | `(cmd)`                             |
+| **Conditionals** |                                 |                                     |
+| If test          | `if [ -f file ]`                | `if test -f file`                   |
+| If compare       | `if [[ $a == $b ]]`             | `if test $a = $b`                   |
+| If command       | `if command -v git`             | `if command -v git`                 |
+| And              | `[[ $a ]] && [[ $b ]]`          | `test $a; and test $b`              |
+| Or               | `[[ $a ]] \|\| [[ $b ]]`        | `test $a; or test $b`               |
+| **Loops**        |                                 |                                     |
+| For loop         | `for i in *; do echo $i; done`  | `for i in *; echo $i; end`          |
+| While            | `while read line; do ...; done` | `while read line; ...; end`         |
+| **Functions**    |                                 |                                     |
+| Define           | `name() { echo $1; }`           | `function name; echo $argv[1]; end` |
+| Args             | `$1 $2 $@ $*`                   | `$argv[1] $argv[2] $argv`           |
+| Return           | `return 0`                      | `return 0`                          |
+| **Strings**      |                                 |                                     |
+| Concat           | `"$a$b"`                        | `"$a$b"` or `$a$b`                  |
+| Match            | `[[ $str == *pattern* ]]`       | `string match "*pattern*" $str`     |
+| Replace          | `${var/old/new}`                | `string replace old new $var`       |
+| Split            | `IFS=: read -ra arr <<< "$var"` | `string split : $var`               |
+| **PATH**         |                                 |                                     |
+| Add to PATH      | `export PATH="/new:$PATH"`      | `fish_add_path /new`                |
+| **Arrays/Lists** |                                 |                                     |
+| Create           | `arr=(a b c)`                   | `set arr a b c`                     |
+| Access           | `${arr[0]}`                     | `$arr[1]` (1-indexed!)              |
+| All items        | `${arr[@]}`                     | `$arr`                              |
+| Count            | `${#arr[@]}`                    | `count $arr`                        |
 
 ## Common Patterns
 

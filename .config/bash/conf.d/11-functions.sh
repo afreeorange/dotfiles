@@ -45,14 +45,15 @@ hs() {
 }
 
 ydlp() {
-    local file
+    local file base
     file=$(yt-dlp --print "%(filename)s" "$@")
+    base="${file%.*}"
 
     echo "Downloading $file"
     yt-dlp "$@"
 
     echo "Converting $file"
-    ffmpeg -i "$file" "OUTPUT-$file".mp4
+    ffmpeg -i "$file" "OUTPUT-$base.mp4" && rm -f -- "$file"
 }
 
 # TODO: Colors...

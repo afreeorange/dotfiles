@@ -1,6 +1,6 @@
 {
   /** --- Look and feel --- */
-  "font_face": "Berkeley Mono",
+  "font_face": "GoogleSansCode Nerd Font",
   "font_size": 17,
   "highlight_line": true,
   "highlight_modified_tabs": true,
