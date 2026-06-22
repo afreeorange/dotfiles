@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "jandedobbeleer/oh-my-posh"
 tap "libsql/sqld"
+tap "lihaoyun6/tap"
 tap "liquidaty/zsv"
 tap "lokalise/cli-2"
 tap "saulpw/vd"
@@ -289,6 +290,8 @@ brew "zlib"
 brew "zola"
 # Image editor focused on simplicity
 cask "acorn"
+# Get the battery level of all your devices on your Mac.
+cask "lihaoyun6/tap/airbattery", trusted: true
 # Application launcher and productivity software
 cask "alfred"
 # Not so boring notch That Rocks 🎸🎶 
