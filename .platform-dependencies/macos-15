@@ -182,6 +182,8 @@ brew "libxml2"
 brew "libyaml"
 # CLI for SQLite Databases with auto-completion and syntax highlighting
 brew "litecli"
+# LLM inference in C/C++
+brew "llama.cpp"
 # Find what models run on your hardware
 brew "llmfit"
 # Next-gen compiler infrastructure
