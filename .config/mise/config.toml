@@ -2,6 +2,7 @@
 atuin = "latest"
 bat = "latest"
 bun = "latest"
+biome = "2.5"
 caddy = "latest"
 claude = "latest"
 delta = "latest"
