@@ -8,6 +8,7 @@ tap "jandedobbeleer/oh-my-posh"
 tap "libsql/sqld"
 tap "lihaoyun6/tap"
 tap "liquidaty/zsv"
+tap "localstack/tap"
 tap "lokalise/cli-2"
 tap "saulpw/vd"
 tap "theboredteam/boring-notch"
@@ -290,6 +291,8 @@ brew "youtube-dl"
 brew "zlib"
 # Fast static site generator in a single binary with everything built-in
 brew "zola"
+# Localstack cli packaged using pyinstaller
+brew "localstack/tap/localstack-cli", link: false, trusted: true
 # Image editor focused on simplicity
 cask "acorn"
 # Get the battery level of all your devices on your Mac.
