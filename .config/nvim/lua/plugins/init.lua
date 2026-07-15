@@ -104,6 +104,21 @@ return {
   -- Colorizes RGB/CMYK/Hex values
   { "norcalli/nvim-colorizer.lua" },
 
+  -- Treesitter: better syntax highlighting, indentation, etc.
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter").setup {
+        ensure_installed = {
+          "bash", "c", "css", "go", "html", "javascript", "json",
+          "lua", "markdown", "markdown_inline", "python", "rust", "toml", "typescript",
+          "tsx", "vim", "vimdoc", "yaml",
+        },
+      }
+    end,
+  },
+
   -- Nice little icons for the sidebar and tabs
   { "nvim-tree/nvim-web-devicons" },
 

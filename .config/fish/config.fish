@@ -170,7 +170,7 @@ if status is-interactive
 
     # Atuin (history)
     if command -v atuin >/dev/null 2>&1
-      source (atuin init fish --disable-up-arrow | psub)
+      atuin init fish --disable-up-arrow | source
     end
 
     # AWS completion
