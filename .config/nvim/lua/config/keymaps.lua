@@ -22,15 +22,8 @@ vim.keymap.set("n", "<C-n>", "<cmd>tabnew<CR>", {
   noremap = true,
   silent = true
 })
-vim.keymap.set("n", "”", "<cmd>tabprevious<CR>", {
-  noremap = true,
-  silent = true
-})
-vim.keymap.set("n", "’", "<cmd>tabnext<CR>", {
-  noremap = true,
-  silent = true
-})
--- TODO: Tab Close
+-- Tab close
+vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { noremap = true, silent = true })
 ------------------------------------------------------------------------------
 
 -- Toggle Wrapping (Alt+z)
@@ -95,25 +88,58 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader><space>', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 
--- -- General
--- map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
--- map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
--- map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
+-- Clear search highlight (Esc, like VSCode)
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", { silent = true })
 
--- -- Window navigation
--- map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
--- map("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
--- map("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
--- map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+------------------------------- VSCode-like (Cmd → Alt) ----------------------
 
--- -- Buffer navigation
--- map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
--- map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+-- Close buffer (Alt+w, like Cmd+W)
+vim.keymap.set("n", "∑", "<cmd>bd<cr>", { noremap = true, silent = true })
 
--- -- Move lines in visual mode
--- map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move line down" })
--- map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line up" })
+-- Undo (Alt+u, like Cmd+Z) — also works with native 'u'
+vim.keymap.set("n", "<A-z>", "u", { noremap = true, silent = true })
 
--- -- Better indenting (stay in visual mode)
--- map("v", "<", "<gv")
--- map("v", ">", ">gv")
+-- Redo (Alt+Shift+z, like Cmd+Shift+Z)
+vim.keymap.set("n", "¸", "<C-r>", { noremap = true, silent = true })
+
+-- Delete line (Alt+Shift+k, like Cmd+Shift+K)
+vim.keymap.set("n", "<A-S-k>", "dd", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-S-k>", ":d<cr>", { noremap = true, silent = true })
+
+-- Move line up/down (Alt+Up/Down, same as VSCode)
+vim.keymap.set("n", "<A-Up>", "<cmd>m .-2<cr>==", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Down>", "<cmd>m .+1<cr>==", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-Up>", ":m '<-2<cr>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-Down>", ":m '>+1<cr>gv=gv", { noremap = true, silent = true })
+
+-- Indent/Outdent (Alt+] / Alt+[, like Cmd+] / Cmd+[)
+vim.keymap.set("n", "<A-]>", ">>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-[>", "<<", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-]>", ">gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-[>", "<gv", { noremap = true, silent = true })
+
+-- Find in file (Alt+f is Zen Mode, so use leader)
+-- Alt+Shift+f → search across files (like Cmd+Shift+F)
+vim.keymap.set("n", "Ï", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
+
+-- Go to line (Alt+g, like Cmd+G)
+vim.keymap.set("n", "©", ":", { noremap = true })
+
+-- Select all (Alt+a, like Cmd+A)
+vim.keymap.set("n", "å", "ggVG", { noremap = true, silent = true })
+
+-- Save all (Alt+Shift+s)
+vim.keymap.set("n", "Í", "<cmd>wa<cr>", { noremap = true, silent = true })
+
+-- Insert line below (Alt+Enter, like Cmd+Enter)
+vim.keymap.set("n", "<A-CR>", "o<Esc>", { noremap = true, silent = true })
+
+-- Window navigation (Ctrl+h/j/k/l)
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+
+-- Buffer navigation (Shift+h/l, like tab switching)
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { noremap = true, silent = true })

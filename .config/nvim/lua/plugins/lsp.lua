@@ -11,6 +11,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls", "pyright", "gopls", "rust_analyzer",
+        "ts_ls",
         "cssls", "html", "jsonls", "bashls", "tailwindcss", "yamlls",
         "somesass_ls",
       },
@@ -20,6 +21,7 @@ return {
           local capabilities = require("cmp_nvim_lsp").default_capabilities()
           require("lspconfig")[server_name].setup({ capabilities = capabilities })
         end,
+        -- ts_ls: Mason's bundled TS was downgraded from 7→5 (TS7 dropped tsserver.js)
         -- Custom config for lua_ls to suppress vim global warning
         ["lua_ls"] = function()
           require("lspconfig").lua_ls.setup({
