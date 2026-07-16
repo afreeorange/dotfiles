@@ -1,0 +1,9 @@
+{
+  "Lua.runtime.version": "LuaJIT",
+  "Lua.workspace.library": [
+    "/Users/nikhil/.local/share/mise/installs/neovim/0.12.3/share/nvim/runtime/lua",
+    "${3rd}/luv/library"
+  ],
+  "Lua.workspace.checkThirdParty": false,
+  "Lua.diagnostics.globals": ["vim"]
+}
