@@ -87,6 +87,7 @@ if status is-interactive
     alias des="cd \$HOME/Desktop"
     alias doc="cd \$HOME/Documents"
     alias dow="cd \$HOME/Downloads"
+    alias dro="cd \$CLOUD_FOLDER"
     alias per="cd \$HOME/Programming"
     alias mus="cd \$HOME/Music"
     alias pic="cd \$HOME/Pictures"
