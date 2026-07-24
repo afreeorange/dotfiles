@@ -11,7 +11,7 @@ tap "liquidaty/zsv"
 tap "localstack/tap"
 tap "lokalise/cli-2"
 tap "saulpw/vd"
-tap "theboredteam/boring-notch"
+tap "theboredteam/boring-notch", "https://github.com/TheBoredTeam/homebrew-boring-notch"
 tap "tursodatabase/tap"
 # Manage common tasks with OpenAL applications
 brew "alure"
@@ -299,8 +299,7 @@ cask "acorn"
 cask "lihaoyun6/tap/airbattery", trusted: true
 # Application launcher and productivity software
 cask "alfred"
-# Not so boring notch That Rocks 🎸🎶 
-cask "theboredteam/boring-notch/boring-notch"
+cask "boring-notch"
 # E-books management software
 cask "calibre"
 # Automated testing of webapps for Google Chrome
