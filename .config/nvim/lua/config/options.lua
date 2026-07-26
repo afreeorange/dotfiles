@@ -22,7 +22,7 @@ vim.opt.expandtab = true
 vim.opt.cursorline = false
 
 -- Wrap width for gq formatting (change to 119 if needed)
-vim.opt.textwidth = 79
+-- vim.opt.textwidth = 79
 
 -- Show a ruler at various widths
 vim.opt.colorcolumn = { 79, 120 }
