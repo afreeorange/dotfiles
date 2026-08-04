@@ -1168,7 +1168,7 @@
 	<key>RememberWindowPositions</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowMarksInScrollbar</key>
 	<false/>
 	<key>SmartPlacement</key>

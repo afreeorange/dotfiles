@@ -67,6 +67,8 @@ brew "dog"
 brew "flac"
 # DOSBox with accurate emulation and wide testing
 brew "dosbox-x"
+# YAML Parser
+brew "libyaml"
 # Maintain consistent coding style between multiple editors
 brew "editorconfig"
 # Run arbitrary commands when files change
@@ -179,8 +181,6 @@ brew "libpq"
 brew "libraw"
 # GNOME XML library
 brew "libxml2"
-# YAML Parser
-brew "libyaml"
 # CLI for SQLite Databases with auto-completion and syntax highlighting
 brew "litecli"
 # LLM inference in C/C++
@@ -233,6 +233,8 @@ brew "pygments"
 brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
+# Generic machine emulator and virtualizer
+brew "qemu"
 # Software environment for statistical computing
 brew "r"
 # Search tool like grep and The Silver Searcher
@@ -383,6 +385,7 @@ cask "whatsapp"
 # Video communication and virtual meeting platform
 cask "zoom"
 vscode "adamsome.vscode-theme-gruvbox-minor"
+vscode "ahmedhatem.kintsugi"
 vscode "albymor.increment-selection"
 vscode "ambooth.git-rename"
 vscode "anseki.vscode-color"
