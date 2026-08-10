@@ -49,7 +49,7 @@ function fish_prompt
             end
 
             # Check for untracked files
-            if test -n (git ls-files --others --exclude-standard)
+            if test -n "(git ls-files --others --exclude-standard)"
                 set STATUS "$STATUS:ut"
             end
 
@@ -63,9 +63,9 @@ function fish_prompt
             set BRANCH_NAME (git symbolic-ref --quiet --short HEAD 2>/dev/null; or git rev-parse --short HEAD 2>/dev/null; or echo '(unknown)')
 
             if test -n "$STATUS"
-                echo -n (set_color magenta)" on  $BRANCH_NAME"(set_color normal)(set_color brmagenta)"$STATUS"(set_color normal)
+                echo -n (set_color magenta)" on  $BRANCH_NAME"(set_color normal)(set_color brmagenta)"$STATUS"(set_color normal)
             else
-                echo -n (set_color magenta)" on  $BRANCH_NAME"(set_color normal)
+                echo -n (set_color magenta)" on  $BRANCH_NAME"(set_color normal)
             end
         end
     end
