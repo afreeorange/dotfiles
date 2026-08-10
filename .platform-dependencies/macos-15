@@ -33,6 +33,8 @@ brew "bash-completion@2"
 brew "glib"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # Development kit for the Java programming language
 brew "openjdk"
 # Remove large files or passwords from Git history like git-filter-branch
@@ -85,8 +87,6 @@ brew "p11-kit"
 brew "gnutls"
 # Library for JPEG-2000 image manipulation
 brew "openjpeg"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # Image processing and image analysis library
 brew "leptonica"
 # Validating, recursive, caching DNS resolver
@@ -193,6 +193,8 @@ brew "llvm"
 brew "localstack"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
 # CLI tool for saving complete web pages as a single HTML file
 brew "monolith"
 # Mongrel of mail user agents (part elm, pine, mush, mh, etc.)
@@ -203,6 +205,8 @@ brew "navidrome"
 brew "ncdu"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Libraries for security-enabled client and server applications
+brew "nss"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Netlify command-line tool
@@ -316,8 +320,6 @@ cask "dash"
 cask "disk-inventory-x"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
-# Web browser
-cask "firefox"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
@@ -336,8 +338,6 @@ cask "iterm2"
 cask "kap"
 # Tool to prevent the system from going into sleep mode
 cask "keepingyouawake"
-# File archiver
-cask "keka"
 # Desktop GUI client for browsing Geminispace
 cask "lagrange"
 # Clipboard manager
@@ -376,8 +376,6 @@ cask "transmission"
 cask "transmit"
 # Open-source code editor
 cask "visual-studio-code"
-# Multimedia player
-cask "vlc"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
 # Native desktop client for WhatsApp

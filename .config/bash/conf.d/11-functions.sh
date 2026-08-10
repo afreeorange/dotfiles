@@ -103,4 +103,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         unset __conda_setup
         echo "🐍 Conda initialized."
     }
+
+    function clo() {
+        cd "$HOME/Programming/log" || return
+        osascript -e 'tell application "System Events" to set previousApp to name of first application process whose frontmost is true' \
+                  -e 'tell application "Visual Studio Code" to open POSIX file "'"$PWD"'"' \
+                  -e 'tell application previousApp to activate'
+    }
 fi
+
