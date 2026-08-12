@@ -16,7 +16,7 @@ alias scratch="code \$CLOUD_FOLDER/Scratchpad.md"
 #alias clo="cd \$HOME/Programming/log && code ." # See functions
 alias col="cd \$HOME/Programming/columbia-notes && code ."
 alias wik="cd \$HOME/Programming/wiki.nikhil.io.articles && code . && ./bock-Darwin-arm64 serve --in=/Users/nikhil/Programming/wiki.nikhil.io.articles/ --out=/Users/nikhil/Programming/wiki.nikhil.io.articles/build/"
-alias wiki="cd \$HOME/Programming/wiki.nikhil.io.articles && code . && ./bock-Darwin-arm64 serve --in=/Users/nikhil/Programming/wiki.nikhil.io.articles/ --out=/Users/nikhil/Programming/wiki.nikhil.io.articles/build/"
+alias wiki="cd \$HOME/Programming/wiki.nikhil.io.articles"
 if [[ $(uname) == "Darwin" ]]; then
     alias dotfiles-show="defaults write com.apple.Finder AppleShowAllFiles true && killall Finder"
     alias dotfiles-hide="defaults write com.apple.Finder AppleShowAllFiles false && killall Finder"
