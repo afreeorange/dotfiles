@@ -312,6 +312,8 @@ cask "calibre"
 cask "chromedriver"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Terminal emulator mimicking the old cathode display
 cask "cool-retro-term"
 # API documentation browser and code snippet manager
@@ -431,6 +433,7 @@ vscode "ms-vscode.sublime-keybindings"
 vscode "ms-vscode.wasm-wasi-core"
 vscode "ms-vscode.wordcount"
 vscode "njpwerner.autodocstring"
+vscode "openai.chatgpt"
 vscode "oven.bun-vscode"
 vscode "oxc.oxc-vscode"
 vscode "redhat.vscode-xml"
