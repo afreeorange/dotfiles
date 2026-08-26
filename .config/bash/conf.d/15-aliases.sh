@@ -25,6 +25,7 @@ fi
 alias vnc_tunnel="ssh -p 3689 -L 5901:127.0.0.1:5901 -N -f -l nikhil 10.212.8.10"
 alias ora="ssh nikhil@10.212.8.10 -p 3689"
 alias p="pnpm"
+alias e="exa"
 alias y="yadm"
 alias m='navidrome --musicfolder="$HOME/Music/Library/" --datafolder="$HOME/Music/Navidrome/" --nobanner'
 alias cla="cd \$CLOUD_FOLDER/Classes"
@@ -48,6 +49,7 @@ alias mus="cd \$HOME/Music"
 alias pic="cd \$HOME/Pictures"
 alias pro="cd \$HOME/Projects"
 dro() { cd "$CLOUD_FOLDER" || exit; } # Aliases do not directly support parameter expansion like variables do.
+alias one="cd /Users/nikhil/Library/CloudStorage/OneDrive-ColumbiaUniversityIrvingMedicalCenter"
 
 # Remote Locations - See local bash aliases lol
 
