@@ -138,7 +138,9 @@ if status is-interactive
     set -gx LSCOLORS ExGxFxDxCxHxHxCbCeEbEb
 
     # Base16 shell theme
-    source_if_exists "$HOME/.config/base16-shell/base16-shell.plugin.fish"
+    # if status --is-interactive
+    #   source $HOME/.config/base16-shell/profile_helper.fish
+    # end
 
     # Fix autosuggestion visibility
     set -g fish_color_autosuggestion 666
