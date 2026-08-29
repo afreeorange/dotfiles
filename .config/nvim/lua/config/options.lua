@@ -2,7 +2,7 @@
 vim.opt.number = true
 
 -- Make them relative
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- Ignore case during a search
 vim.opt.ignorecase = true

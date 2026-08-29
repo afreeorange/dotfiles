@@ -37,7 +37,6 @@ hs() {
     echo "─────────────────────────────────────────────────────────────────"
 
     caddy file-server \
-    --access-log \
     --browse \
     --reveal-symlinks \
     --listen 127.0.0.1:8080 \
