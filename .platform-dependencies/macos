@@ -10,9 +10,9 @@ tap "lihaoyun6/tap"
 tap "liquidaty/zsv"
 tap "localstack/tap"
 tap "lokalise/cli-2"
-tap "saulpw/vd"
 tap "theboredteam/boring-notch", "https://github.com/TheBoredTeam/homebrew-boring-notch"
 tap "tursodatabase/tap"
+tap "visidata/vd", "https://github.com/visidata/homebrew-vd.git"
 # Manage common tasks with OpenAL applications
 brew "alure"
 # Fancy terminal browser for the Gemini protocol
@@ -33,8 +33,8 @@ brew "bash-completion@2"
 brew "glib"
 # OpenType text shaping engine
 brew "harfbuzz"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
+# TIFF library and utilities
+brew "libtiff"
 # Development kit for the Java programming language
 brew "openjdk"
 # Remove large files or passwords from Git history like git-filter-branch
@@ -89,8 +89,6 @@ brew "gnutls"
 brew "openjpeg"
 # Image processing and image analysis library
 brew "leptonica"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # Light HTTP/1.1 server library
 brew "libmicrohttpd"
 # Reliable Internet Stream Transport (RIST)
@@ -273,6 +271,8 @@ brew "the_silver_searcher"
 brew "tig"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Config manager based on git
 brew "vcsh"
 # Sends magic packets to wake up network-devices
@@ -322,6 +322,8 @@ cask "dash"
 cask "disk-inventory-x"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# Web browser
+cask "firefox"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
@@ -340,6 +342,8 @@ cask "iterm2"
 cask "kap"
 # Tool to prevent the system from going into sleep mode
 cask "keepingyouawake"
+# File archiver
+cask "keka"
 # Desktop GUI client for browsing Geminispace
 cask "lagrange"
 # Clipboard manager
@@ -378,6 +382,8 @@ cask "transmission"
 cask "transmit"
 # Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
 # Native desktop client for WhatsApp
