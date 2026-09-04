@@ -8,6 +8,8 @@ Before exploring or investigating code at length, propose a concrete plan and ge
 
 When the user pastes a symbol or character that can't be read, ask them for the Unicode codepoint (e.g., U+EA63) immediately rather than guessing.
 
+When writing Markdown files, do not add any line breaks at, for example, 79 characters.
+
 ## Plans
 
 At the end of each plan, give me a list of of unresolved questions if any. Make the questions extremely concise. Sacrifice grammar for the sake of concision.

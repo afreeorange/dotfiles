@@ -38,6 +38,8 @@ alias sl='ls'
 alias sudp='sudo'
 alias pact="source ./.venv/bin/activate"
 alias num="numbat"
+alias screenshot-png="defaults write com.apple.screencapture type png"
+alias screenshot-jpg="defaults write com.apple.screencapture type jpg"
 
 # Locations
 alias co="cd  \$HOME/Programming"
