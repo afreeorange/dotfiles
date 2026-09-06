@@ -306,8 +306,6 @@ cask "boring-notch"
 cask "calibre"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Terminal emulator mimicking the old cathode display
 cask "cool-retro-term"
 # API documentation browser and code snippet manager
