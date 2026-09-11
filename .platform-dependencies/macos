@@ -60,7 +60,7 @@ brew "curl"
 # Power of curl, ease of use of httpie
 brew "curlie"
 # Fast and small graphical web browser
-brew "dillo", link: false
+brew "dillo"
 # Command-line DNS client
 brew "dog"
 # Free lossless audio codec
@@ -352,6 +352,8 @@ cask "ngrok"
 cask "postman"
 # Archive manager for data compression and backups
 cask "rar"
+# Remote desktop application focusing on security
+cask "realvnc-connect-viewer"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Screen recorder with audio
@@ -376,8 +378,6 @@ cask "transmit"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# Remote desktop application focusing on security
-cask "vnc-viewer"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Comic reader
