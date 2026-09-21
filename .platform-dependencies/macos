@@ -295,6 +295,8 @@ brew "localstack/tap/localstack-cli", link: false, trusted: true
 cask "acorn"
 # Get the battery level of all your devices on your Mac.
 cask "lihaoyun6/tap/airbattery", trusted: true
+# Multi-track audio editor and recorder
+cask "audacity"
 cask "boring-notch"
 # E-books management software
 cask "calibre"
