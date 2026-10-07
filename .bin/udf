@@ -3,9 +3,7 @@
 # Update Dot Files
 # Pull and push changes to my dotfiles
 
-IFS=$'\n'
-
-cd "$HOME" || return
+cd "$HOME" || exit 1
 
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/conf.d/00-exports.sh"
@@ -17,6 +15,11 @@ source "$HOME/.config/bash/conf.d/11-functions.sh"
 source "$HOME/.config/bash/conf.d/17-random-excuses.sh"
 # shellcheck source=/dev/null
 source "$HOME/.config/bash/conf.d/20-colors.sh"
+
+set -euo pipefail
+IFS=$'\n'
+
+BRANCH=$(yadm symbolic-ref --short HEAD)
 
 # ----------
 
@@ -45,15 +48,16 @@ echo -e "\r"
 # Forcing since I can use nvm or pyenv to switch interpreters and
 # don't want to forget to commit the packages associated with the
 # new interpreter.
-yadm add -f "$HOME/.platform-dependencies/*"
+yadm add -f "$HOME/.platform-dependencies"
 
 # ----------
 
 echo "${GREEN}Attempting pull from Github${STOP}"
 echo "${GREEN}$(draw_line '═')${STOP}"
-yadm pull origin master --quiet --strategy-option=theirs
+BEFORE=$(yadm rev-parse HEAD)
+yadm pull origin "$BRANCH" --quiet --strategy-option=theirs
 CHANGED_FILES=()
-while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status HEAD~1 HEAD)
+while IFS='' read -r line; do CHANGED_FILES+=("$line"); done < <(yadm diff --name-status "$BEFORE" HEAD)
 
 if [[ "${#CHANGED_FILES[@]}" -eq 0 ]]; then
   echo "${GRAY}>  Nothing has changed since the last commit${STOP}"
@@ -79,7 +83,7 @@ while IFS='' read -r line; do FILES+=("$line"); done < <(yadm status -uno --porc
 
 if [[ "${#FILES[@]}" -eq 0 ]]; then
   echo "${GRAY}🤷‍♀️ Looks like there's nothing new to push${STOP}"
-  exit 1
+  exit 0
 elif [[ "${#FILES[@]}" -eq 1 ]]; then
   echo "${YELLOW}> Just one file has changed${STOP}"
 else
@@ -88,8 +92,8 @@ fi
 
 for FILE in "${FILES[@]}"; do
   echo "${YELLOW}+ Adding $HOME/$FILE${STOP}"
-  yadm add "$HOME/$FILE"
 done
+yadm add -u
 
 # ----------------------------------------------------------------------------------------------------
 echo -e "\r"
@@ -104,5 +108,5 @@ echo -e "\r"
 
 echo "${GREEN}Attempting push to Github${STOP}"
 echo "${GREEN}$(draw_line '═')${STOP}"
-yadm push origin master --quiet
+yadm push origin "$BRANCH" --quiet
 echo "${YELLOW}Done${STOP}"
