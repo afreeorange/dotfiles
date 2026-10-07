@@ -96,10 +96,6 @@ fi
 
 # ========== GENERAL STUFF ==========
 
-# Some common personal folders
-echo "${CYAN}✔︎ Making personal folders${STOP}"
-mkdir -p "$HOME/Programming" "$HOME/code"
-
 # Configure yadm
 echo "${CYAN}✔︎ yadm stuff"
 yadm config yadm.cipher openssl
