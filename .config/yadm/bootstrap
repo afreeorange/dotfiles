@@ -20,8 +20,8 @@ yadm pull --force --strategy-option=theirs
 # ========== LINUX ==========
 
 if [[ "$(uname -s)" == "Linux" ]]; then
-  echo "${CYAN}✔︎ Installing mise as the runtime manager${STOP}"
-  curl https://mise.run | sh
+  echo "${CYAN}✔︎ Installing mise as the runtime manager (setting TMPDIR to HOME/tmp; delete later.)${STOP}"
+  TMPDIR="$HOME/tmp" curl -fsSL https://mise.run | sh
   export PATH="$HOME/.local/bin:$PATH"
   # shellcheck source=/dev/null
   eval "$(mise activate bash)"
