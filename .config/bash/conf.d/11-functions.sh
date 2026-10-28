@@ -73,10 +73,10 @@ mkcd () {
 mksh() {
     if [ ! $# -eq 1 ]; then
         echo 'mksh takes one argument' 1>&2
-        exit 1
+        return 1
         elif [ -e "$1" ]; then
         echo "$1 already exists" 1>&2
-        exit 1
+        return 1
     fi
 
     echo '#!/bin/env bash

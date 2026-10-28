@@ -21,14 +21,20 @@ brew "aom"
 brew "automake"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3", link: true
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.2+
 brew "bash-completion@2"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Core application library for C
 brew "glib"
+# Vector graphics library with cross-device output support
+brew "cairo"
 # OpenType text shaping engine
 brew "harfbuzz"
 # TIFF library and utilities
@@ -177,6 +183,8 @@ brew "libpq"
 brew "libraw"
 # GNOME XML library
 brew "libxml2"
+# X.Org: X Toolkit Intrinsics library
+brew "libxt"
 # CLI for SQLite Databases with auto-completion and syntax highlighting
 brew "litecli"
 # LLM inference in C/C++
@@ -427,6 +435,7 @@ vscode "ms-vscode.wordcount"
 vscode "njpwerner.autodocstring"
 vscode "oven.bun-vscode"
 vscode "phil294.search-plusplus"
+vscode "posit.air-vscode"
 vscode "redhat.vscode-xml"
 vscode "romanpeshkov.vscode-text-tables"
 vscode "ronnidc.nunjucks"
@@ -435,7 +444,6 @@ vscode "rvest.vs-code-prettier-eslint"
 vscode "ryu1kn.edit-with-shell"
 vscode "samuelcolvin.jinjahtml"
 vscode "sdras.night-owl"
-vscode "stevencl.adddoccomments"
 vscode "stkb.rewrap"
 vscode "sumneko.lua"
 vscode "syler.sass-indented"

@@ -20,6 +20,7 @@ rust = "latest"
 starship = "latest"
 tree-sitter = "latest"
 uv = "latest"
+"github:r-lib/rig" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]

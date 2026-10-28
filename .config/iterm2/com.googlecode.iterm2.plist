@@ -1022,6 +1022,19 @@
 					<key>Text</key>
 					<string>f</string>
 				</dict>
+				<key>0xf703-0x300000-0x7c</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>[C</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
 			</dict>
 			<key>Link Color</key>
 			<dict>
