@@ -79,7 +79,7 @@ mksh() {
         return 1
     fi
 
-    echo '#!/bin/env bash
+    echo '#!/usr/bin/env bash
 set -euo pipefail
 
     ' > "$1"
