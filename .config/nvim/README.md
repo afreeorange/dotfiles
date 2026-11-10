@@ -83,9 +83,7 @@
 
 Managed via Mason. Auto-installed:
 
-`lua_ls` `ts_ls` `pyright` `gopls` `rust_analyzer` `cssls` `html` `jsonls` `bashls` `tailwindcss` `yamlls` `somesass_ls`
-
-`ts_ls` is configured to use the global TypeScript install via mise (`~/.local/share/mise/installs/node/23.11.1`) since Mason's bundled TS7 dropped `tsserver.js`.
+`lua_ls` `pyright` `gopls` `rust_analyzer` `cssls` `html` `jsonls` `bashls` `tailwindcss` `yamlls` `somesass_ls`
 
 To add more: run `:Mason` or add to `ensure_installed` in `lua/plugins/lsp.lua`.
 
