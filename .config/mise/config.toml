@@ -1,5 +1,6 @@
 [tools]
 atuin = "latest"
+ag = "latest"
 bat = "latest"
 bun = "latest"
 biome = "2.5"

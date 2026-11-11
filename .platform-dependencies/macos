@@ -75,6 +75,8 @@ brew "flac"
 brew "dosbox-x"
 # YAML Parser
 brew "libyaml"
+# Embeddable SQL OLAP Database Management System
+brew "duckdb"
 # Maintain consistent coding style between multiple editors
 brew "editorconfig"
 # Run arbitrary commands when files change
