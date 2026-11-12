@@ -54,6 +54,7 @@ export FZF_DEFAULT_COMMAND="fd \
    --exclude .nvm \
    --exclude node_modules"
 export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # AWS Stuff
 export AWS_PROFILE="nikhil.io"

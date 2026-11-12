@@ -13,10 +13,12 @@ fi
 
 # shellcheck source=/dev/null
 if [[ $(uname) == "Linux" ]]; then
-    [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && source /usr/share/doc/fzf/examples/key-bindings.bash
+    command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
 fi
 
 # Run atuin if it exists. Local only.
+# shellcheck source=/dev/null
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash --disable-up-arrow)"
 
 function _complete() {
