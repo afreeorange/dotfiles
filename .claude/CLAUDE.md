@@ -13,3 +13,7 @@ When writing Markdown files, do not add any line breaks at, for example, 79 char
 ## Plans
 
 At the end of each plan, give me a list of of unresolved questions if any. Make the questions extremely concise. Sacrifice grammar for the sake of concision.
+
+## Tests and Builds
+
+Do not write tests until asked. Do not run tests or builds until confirming with me.
