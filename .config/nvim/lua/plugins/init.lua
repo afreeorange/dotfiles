@@ -107,15 +107,18 @@ return {
   -- Treesitter: better syntax highlighting, indentation, etc.
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter").setup {
-        ensure_installed = {
-          "bash", "c", "css", "go", "html", "javascript", "json",
-          "lua", "markdown", "markdown_inline", "python", "rust", "toml", "typescript",
-          "tsx", "vim", "vimdoc", "yaml",
-        },
+      require("nvim-treesitter").install {
+        "bash", "c", "css", "go", "html", "javascript", "json",
+        "lua", "markdown", "markdown_inline", "python", "rust", "toml", "typescript",
+        "tsx", "vim", "vimdoc", "yaml",
       }
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(ev) pcall(vim.treesitter.start, ev.buf) end,
+      })
     end,
   },
 

@@ -1,0 +1,3 @@
+# Machine-local override (loaded when MISE_ENV=rhel). glibc 2.34; atuin >18.13.2 needs glibc 2.38+.
+[tools]
+atuin = "18.13.2"
