@@ -14,6 +14,10 @@ When writing Markdown files, do not add any line breaks at, for example, 79 char
 
 At the end of each plan, give me a list of of unresolved questions if any. Make the questions extremely concise. Sacrifice grammar for the sake of concision.
 
-## Tests and Builds
+## Code Rules
 
-Do not write tests until asked. Do not run tests or builds until confirming with me.
+Write the simplest and most canonical possible code. No cleverness until explicitly requested. Do not run a linter or formatter until I ask you to.
+
+### Tests and Builds
+
+Do not write tests until asked. Do not run tests or builds until confirming with me. Do not start headless instances.
