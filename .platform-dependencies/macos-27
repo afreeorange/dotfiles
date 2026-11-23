@@ -19,8 +19,6 @@ brew "amfora"
 brew "aom"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Official Amazon AWS command-line interface
@@ -99,6 +97,8 @@ brew "leptonica"
 brew "libmicrohttpd"
 # Reliable Internet Stream Transport (RIST)
 brew "librist"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3", link: true
 # Framework for layout and rendering of i18n text
 brew "pango"
 # Secure Reliable Transport
@@ -195,8 +195,6 @@ brew "llama.cpp"
 brew "llmfit"
 # Next-gen compiler infrastructure
 brew "llvm"
-# Fully functional local AWS cloud stack
-brew "localstack"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Simple tool to make locally trusted development certificates
@@ -239,10 +237,6 @@ brew "prettier"
 brew "pyenv"
 # Generic syntax highlighter
 brew "pygments"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Software environment for statistical computing
@@ -301,7 +295,7 @@ brew "xsv"
 brew "yadm"
 # General-purpose lossless data-compression library
 brew "zlib"
-# Localstack cli packaged using pyinstaller
+# Deprecated localstack cli packaged with pyinstaller, superseded by lstk
 brew "localstack/tap/localstack-cli", link: false, trusted: true
 # Image editor focused on simplicity
 cask "acorn"
@@ -309,7 +303,7 @@ cask "acorn"
 cask "lihaoyun6/tap/airbattery", trusted: true
 # Multi-track audio editor and recorder
 cask "audacity"
-cask "boring-notch"
+cask "theboredteam/boring-notch/boring-notch"
 # E-books management software
 cask "calibre"
 # Tool to show live information about the batteries in various devices

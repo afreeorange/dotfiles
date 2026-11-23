@@ -10,6 +10,8 @@ When the user pastes a symbol or character that can't be read, ask them for the 
 
 When writing Markdown files, do not add any line breaks at, for example, 79 characters.
 
+When asked to reflow or reorganize or convert text, do not edit or spellcheck the source text unless explicitly instructed. Preserve all wrong punctuation. You can combine words that span more than one sentence (n or mdash).
+
 ## Plans
 
 At the end of each plan, give me a list of of unresolved questions if any. Make the questions extremely concise. Sacrifice grammar for the sake of concision.
