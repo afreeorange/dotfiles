@@ -227,6 +227,8 @@ brew "pmix"
 brew "open-mpi"
 # Implementation of the OpenAL 3D audio API
 brew "openal-soft"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
 # Convert bitmaps to vector graphics
@@ -356,6 +358,8 @@ cask "netnewswire"
 cask "ngrok"
 # Collaboration platform for API development
 cask "postman"
+# Scientific and technical publishing system built on Pandoc
+cask "quarto"
 # Archive manager for data compression and backups
 cask "rar"
 # Move and resize windows using keyboard shortcuts or snap areas
