@@ -370,6 +370,8 @@ cask "spotify"
 cask "subler"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# Menu bar manager
+cask "thaw@beta"
 # Web browser focusing on security
 cask "tor-browser"
 # Open-source BitTorrent client
